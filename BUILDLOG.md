@@ -146,3 +146,89 @@ Page inventory: `/parks/tx/{slug}/` 75 · `/rv-parks/texas/` 1 · `/rv-parks/tex
 5. Affiliate programs: RVshare, Outdoorsy, Harvest Hosts, Passport America, Camping World (brief section 5). Wire into reserved affiliate slots with rel="sponsored nofollow" when live (verify-content.py gate 2 flips to >=1).
 6. Claim/featured-listing funnel (free claim form) + Search Console submission + sitemap ping.
 7. Data freshness: re-run `npm run data:fetch` on a cadence; lastVerified auto-updates; STATE_OVERRIDES makes the state check deterministic without live geocoding.
+## 5. ENRICHMENT 2026-08-19 — nightly rates + ratings + claim funnel (PUSHED)
+
+Repo is now LIVE at https://k00jax.github.io/rv-parks-directory (auto-deploy on push
+to main via GitHub Actions). Three honest data sources; nothing fabricated.
+
+### 5.1 Task A — Google Places ratings (scripts/fetch-google-ratings.py)
+
+- Uses Places API Text Search: `textsearch/json?query=<name+city+state>&key=KEY`.
+- Match rule: keep results whose name shares >= 1 significant token with the park
+  (stopwords park/campground/recreation/area/lake/… excluded), AND within 40 km of
+  the RIDB coordinates (kills wrong-city false positives). Best = highest
+  user_ratings_total. No confident match -> null (never guessed).
+- Stores {rating, reviewCount, priceLevel, placeId, googleUrl} per park; caches to
+  scripts/raw/google-ratings.json (gitignored) so re-runs don't re-bill; 1 s pacing.
+- **Status: SKIPPED this build — GOOGLE_API_KEY empty in .env (Director fills it).**
+  Script exits 0 with a note when the key is missing. `.env.example` documents it.
+  TODO: Director pastes key into `.env`, run `python3 scripts/fetch-google-ratings.py`,
+  rebuild, push (ratings then render as stars + "Google reviews" link).
+
+### 5.2 Task B — Claim form (owner submissions, zero infra)
+
+- `src/components/ClaimForm.tsx` on every park page: "Is this your park? Claim &
+  update rates" — a static-export-safe mailto LINK (styled .btn) to
+  claims@fonger.ai (Director-controlled; change the constant in the component),
+  subject "Claim: <park name>", body prefilled with park name/city/facilityId and
+  blanks for nightlyPriceMin/Max, hookups, website. NO <form>/onSubmit/no client JS
+  (avoids the Next 14 App Router event-handler-on-server-component build error).
+- Copy states rates are verified before display; owner submissions update
+  nightlyPriceMin/Max via the data pipeline.
+
+### 5.3 Task D — TPWD Texas State Park rates (scripts/fetch-tpwd-rates.py)
+
+- TPWD is NOT blocked (HTTP 200). Pulled 93 TPWD parks from
+  tpwd.texas.gov/state-parks/parks-map (slug + name + city).
+- Fuzzy match: shared significant tokens / min(tokens) >= 0.5 AND city match
+  (RIDB park without city: name-only at >= 0.85). City mismatch rejects (e.g. Bear
+  Creek FW vs Bear Creek State Park Concan). Rates parsed from
+  /state-parks/<slug>/fees-facilities/campsites pages — explicit "$NN Nightly|Daily"
+  amounts (entrance fee excluded). Cached in scripts/raw/tpwd-{parks,rates}.json.
+- Result: 1 confident match — Lake Somerville Marina & Campground (248470) ->
+  Lake Somerville State Park & Trailway, $10–$20/night, dataSource='tpwd'.
+  MOTT (232646) keeps its RIDB fee-text price $14–$16/night, dataSource='ridb'.
+- If TPWD ever 403/WAFs, script prints a note and exits 0 (documented stub) — it
+  never scrapes competitor directories.
+
+### 5.4 Schema + UI changes
+
+- types.ts: Park gains dataSource ('ridb'|'tpwd'|null), priceLevel (0-4),
+  placeId, googleUrl (all nullable). fetch-ridb.py emits the new keys as null on
+  re-fetch so the schema stays consistent.
+- Park page: rating row renders star row + "4.3★ (n reviews)" + Google reviews
+  link when present, else "No reviews yet"; nightly price renders
+  "$min–$max/night — Texas Parks & Wildlife rate" (or "Recreation.gov fee data"),
+  else "Rates not published — check reservation page" (links to reservation page).
+- Validator (validate-data.mjs): priceLevel integer 0-4; googleUrl must be a
+  Google place URL; dataSource must be ridb|tpwd|null; invariants: price present
+  <=> dataSource present, rating present -> reviewCount present. All optional —
+  null never fails.
+- verify-content.py: priceLevel included in finite-number scan.
+
+### 5.5 Gates (2026-08-19, real outputs)
+
+| Gate | Command | Result |
+|---|---|---|
+| 1. Google fetch (no key) | `python3 scripts/fetch-google-ratings.py` | exit 0 — skipped with note |
+| 2. TPWD fetch | `python3 scripts/fetch-tpwd-rates.py` | exit 0 — 93 parks, 1 match, rates applied |
+| 3. Validator | `node scripts/validate-data.mjs` | exit 0 — parks 75, cities 38, OK |
+| 4. Typecheck | `npx tsc --noEmit` | exit 0 |
+| 5. Clean rebuild | `rm -rf docs .next && npm run build` | exit 0 — 124 static pages + sitemaps |
+| 6. Content verify | `python3 scripts/verify-content.py` | PASS (all 7 checks) |
+| 7. UI spot check | docs/parks/tx/lake-somerville-marina-and-campground | "$10–$20/night — Texas Parks & Wildlife rate", claim form mailto present |
+| 8. Deploy | git push origin main | GitHub Actions Deploy to GitHub Pages — see run URL in session report |
+
+Counts now: 75 parks · prices 2/75 (ridb 1, tpwd 1) · ratings 0/75 (awaiting
+Google key) · claim form on 75/75 pages.
+
+### 5.6 TODO for human (updated)
+
+1. **Director: fill GOOGLE_API_KEY= in .env** (repo/.env, gitignored) then run
+   `python3 scripts/fetch-google-ratings.py`, rebuild, push → ratings go live.
+2. Point claims@fonger.ai at a real inbox; route submissions into the data pipeline.
+3. Real domain + SITE_URL env for sitemaps (still rvparks.example.com placeholder).
+4. Phase 1 hookups: per-campsite RIDB attributes pull.
+5. Affiliate programs (RVshare/Outdoorsy/Harvest Hosts/Passport America/Camping
+   World) into the reserved slots with rel="sponsored nofollow" (Phase 2).
+6. Data freshness: re-run data:fetch + tpwd + google on a cadence.

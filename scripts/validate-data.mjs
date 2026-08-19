@@ -83,6 +83,7 @@ for (const [i, p] of parks.entries()) {
     ['siteCount', (v) => Number.isInteger(v) && v >= 0],
     ['rating', (v) => v >= 0 && v <= 5],
     ['reviewCount', (v) => Number.isInteger(v) && v >= 0],
+    ['priceLevel', (v) => Number.isInteger(v) && v >= 0 && v <= 4],
   ]) {
     const v = p[field];
     if (v === null || v === undefined) continue;
@@ -91,6 +92,37 @@ for (const [i, p] of parks.entries()) {
     } else if (!op(v)) {
       errors.push(`${where}: ${field} invalid value (${v})`);
     }
+  }
+
+  // enriched optional fields (null is fine; malformed values are not)
+  if (p.dataSource !== null && p.dataSource !== undefined && !['ridb', 'tpwd'].includes(p.dataSource)) {
+    errors.push(`${where}: dataSource invalid value "${p.dataSource}" (expected ridb|tpwd|null)`);
+  }
+  if (p.placeId !== null && p.placeId !== undefined && (typeof p.placeId !== 'string' || p.placeId.trim() === '')) {
+    errors.push(`${where}: placeId must be a non-empty string or null`);
+  }
+  if (
+    p.googleUrl !== null &&
+    p.googleUrl !== undefined &&
+    (typeof p.googleUrl !== 'string' || !p.googleUrl.startsWith('https://www.google.com/maps/place/?q=place_id:'))
+  ) {
+    errors.push(`${where}: googleUrl must be a Google place URL or null`);
+  }
+
+  // data hygiene invariants (never show a price without a source, etc.)
+  const hasPrice = p.nightlyPriceMin !== null || p.nightlyPriceMax !== null;
+  const hasSource = p.dataSource !== null && p.dataSource !== undefined;
+  if (hasPrice && !hasSource) {
+    errors.push(`${where}: nightly price present but dataSource is null`);
+  }
+  if (!hasPrice && hasSource) {
+    errors.push(`${where}: dataSource "${p.dataSource}" set but no nightly price`);
+  }
+  if (p.rating !== null && p.rating !== undefined && (p.reviewCount === null || p.reviewCount === undefined)) {
+    errors.push(`${where}: rating present but reviewCount is null`);
+  }
+  if ((p.reviewCount || 0) > 0 && (p.rating === null || p.rating === undefined)) {
+    warnings.push(`${where}: reviewCount ${p.reviewCount} but rating is null`);
   }
 
   if (

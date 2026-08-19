@@ -554,11 +554,15 @@ def main():
             'website': res_url or (f'https://www.recreation.gov/camping/campgrounds/{fid}' if reservable else None),
             'nightlyPriceMin': price_min,
             'nightlyPriceMax': price_max,
+            'dataSource': 'ridb' if (price_min is not None or price_max is not None) else None,
             'hookups': hookups,
             'amenities': amenities,
             'siteCount': parse_site_count(parse_text),
             'rating': None,
             'reviewCount': None,
+            'priceLevel': None,
+            'placeId': None,
+            'googleUrl': None,
             'petPolicy': None,
             'lastVerified': LAST_VERIFIED,
             'source': {
@@ -614,6 +618,12 @@ def main():
         'parksWithPhone': sum(1 for p in parks if p['phone']),
         'parksWithLatLng': sum(1 for p in parks if p['lat'] is not None and p['lng'] is not None),
         'parksWithPrice': sum(1 for p in parks if p['nightlyPriceMin'] is not None),
+        'priceSourceBreakdown': {k: v for k, v in Counter(
+            p['dataSource'] for p in parks if p['dataSource']).items()},
+        'parksWithRating': sum(1 for p in parks if p['rating'] is not None),
+        'parksWithReviewCount': sum(1 for p in parks if (p['reviewCount'] or 0) > 0),
+        'parksWithPriceLevel': sum(1 for p in parks if p['priceLevel'] is not None),
+        'parksWithGoogleReviews': 0,
         'parksWithSiteCount': sum(1 for p in parks if p['siteCount'] is not None),
         'parksWithAmenities': sum(1 for p in parks if p['amenities']),
         'parksWithHookups': sum(1 for p in parks if p['hookups'] is not None),
@@ -642,7 +652,10 @@ def main():
         'antiFabrication':
             'rating/reviewCount/petPolicy always null (not published at RIDB facility level). '
             'Prices parsed only from FacilityUseFeeDescription with per-night/per-day context. '
-            'Hookups/amenities/siteCount parsed from FacilityDescription/Keywords.',
+            'Hookups/amenities/siteCount parsed from FacilityDescription/Keywords. '
+            'Google ratings (rating/reviewCount/priceLevel/placeId/googleUrl) and TPWD rates '
+            '(dataSource=tpwd) are applied by scripts/fetch-google-ratings.py and '
+            'scripts/fetch-tpwd-rates.py, never fabricated here.',
         'crawlerPacingMs': int(DELAY_MS * 1000),
     }
 

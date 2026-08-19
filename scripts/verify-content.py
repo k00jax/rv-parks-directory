@@ -38,7 +38,7 @@ print("[verify] 1. dataset numeric fields finite")
 for f in sorted(glob.glob(f"{ROOT}/src/data/*.json")):
     d = json.load(open(f))
     blob = json.dumps(d)
-    for m in re.finditer(r'"(lat|lng|nightlyPriceMin|nightlyPriceMax|siteCount|rating|reviewCount)":\s*([^,}\s]+)', blob):
+    for m in re.finditer(r'"(lat|lng|nightlyPriceMin|nightlyPriceMax|siteCount|rating|reviewCount|priceLevel)":\s*([^,}\s]+)', blob):
         key, raw = m.group(1), m.group(2)
         if raw == "null":
             continue

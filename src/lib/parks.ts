@@ -112,6 +112,20 @@ export function fmtRating(park: Park): string {
   return `${park.rating.toFixed(1)}★ (${park.reviewCount} reviews)`;
 }
 
+// Visual star row for a Google rating (0-5). Rounded to the nearest whole
+// star; the exact numeric rating renders next to it.
+export function fmtStars(rating: number): string {
+  const full = Math.max(0, Math.min(5, Math.round(rating)));
+  return '★'.repeat(full) + '☆'.repeat(5 - full);
+}
+
+// Human label for where a park's nightly price came from (never invented).
+export function fmtPriceSource(park: Park): string {
+  if (park.dataSource === 'tpwd') return 'Texas Parks & Wildlife rate';
+  if (park.dataSource === 'ridb') return 'Recreation.gov fee data';
+  return '';
+}
+
 export function fmtSiteCount(park: Park): string {
   if (park.siteCount === null) return '—';
   return `${park.siteCount} sites`;

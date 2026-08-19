@@ -3,6 +3,9 @@
 
 export type Hookups = 'full' | 'partial' | 'none' | null;
 
+// Where a park's nightly price came from. null = no price known (never invent one).
+export type PriceSource = 'ridb' | 'tpwd' | null;
+
 export interface ParkSource {
   orgId: string | null;
   orgName: string | null;
@@ -31,11 +34,17 @@ export interface Park {
   website: string | null;
   nightlyPriceMin: number | null;
   nightlyPriceMax: number | null;
+  // Source of the nightly price: 'ridb' (Recreation.gov fee text) or 'tpwd'
+  // (Texas Parks & Wildlife campsite rates). null when no price is known.
+  dataSource: PriceSource;
   hookups: Hookups;
   amenities: string[];
   siteCount: number | null;
-  rating: number | null;
-  reviewCount: number | null;
+  rating: number | null; // Google Places rating 0-5 (null = not verified)
+  reviewCount: number | null; // Google Places user_ratings_total
+  priceLevel: number | null; // Google Places price_level 0-4
+  placeId: string | null; // Google Places place_id
+  googleUrl: string | null; // https://www.google.com/maps/place/?q=place_id:<id>
   petPolicy: string | null;
   lastVerified: string; // ISO date, e.g. '2026-08-18'
   source: ParkSource;

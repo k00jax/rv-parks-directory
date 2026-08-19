@@ -3,12 +3,15 @@ import { notFound } from 'next/navigation';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import UpdatedBadge from '@/components/UpdatedBadge';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
+import ClaimForm from '@/components/ClaimForm';
 import {
   amenityHubs,
   fmtPhone,
   fmtPrice,
+  fmtPriceSource,
   fmtRating,
   fmtSiteCount,
+  fmtStars,
   getCitySlug,
   getParkBySlug,
   neighbors,
@@ -70,8 +73,8 @@ export default function ParkPage({ params }: Props) {
           '@type': 'Answer',
           text:
             park.nightlyPriceMin !== null
-              ? `Based on Recreation.gov data, nightly rates are ${fmtPrice(park)}.`
-              : 'Recreation.gov data does not publish nightly rates for this campground.',
+              ? `Based on published data, nightly rates are ${fmtPrice(park)}.`
+              : 'Published data does not list nightly rates for this campground.',
         },
       },
       {
@@ -142,15 +145,46 @@ export default function ParkPage({ params }: Props) {
           </tr>
           <tr>
             <th>Nightly price</th>
-            <td>{fmtPrice(park)}</td>
+            <td>
+              {park.nightlyPriceMin !== null || park.nightlyPriceMax !== null ? (
+                <>
+                  {fmtPrice(park)}
+                  {park.dataSource ? (
+                    <span className="muted"> — {fmtPriceSource(park)}</span>
+                  ) : null}
+                  {park.priceLevel !== null && park.priceLevel > 0 ? (
+                    <span className="muted"> · {'$'.repeat(park.priceLevel)}</span>
+                  ) : null}
+                </>
+              ) : park.website ? (
+                <>
+                  Rates not published —{' '}
+                  <Link href={park.website} target="_blank" rel="nofollow noopener">
+                    check reservation page
+                  </Link>
+                </>
+              ) : (
+                <>Rates not published</>
+              )}
+            </td>
           </tr>
           <tr>
             <th>Rating</th>
             <td>
               {park.rating !== null && park.reviewCount !== null ? (
-                <span className="badge ok">{fmtRating(park)}</span>
+                <span className="badge ok">
+                  {fmtStars(park.rating)} {fmtRating(park)}
+                  {park.googleUrl ? (
+                    <>
+                      {' '}
+                      <Link href={park.googleUrl} target="_blank" rel="nofollow noopener">
+                        (Google reviews)
+                      </Link>
+                    </>
+                  ) : null}
+                </span>
               ) : (
-                <span className="badge warn">Not verified</span>
+                <span className="badge warn">No reviews yet</span>
               )}
             </td>
           </tr>
@@ -204,6 +238,9 @@ export default function ParkPage({ params }: Props) {
           ) : null}
         </tbody>
       </table>
+
+      {/* Owner claim/update funnel (mailto to Director-controlled inbox). */}
+      <ClaimForm park={park} />
 
       {/* FTC disclosure sits ABOVE the first affiliate slot on this page. */}
       <AffiliateDisclosure slotId={`park-${park.facilityId}-reserve`} />
