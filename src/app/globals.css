@@ -1,18 +1,29 @@
+/*
+ * Light "nature / outdoors" theme — REI-meets-campground-brochure.
+ * Cream paper background, sage/forest green accents, warm earth-tone secondary,
+ * dark green-gray text. All components consume these vars; no hard-coded hex
+ * anywhere else (audited 2026-08-19). AQI semantics kept (green/yellow/orange/red)
+ * but tuned to nature-friendly, cream-legible shades.
+ */
 :root {
-  --bg: #0f172a;
-  --surface: #1e293b;
-  --surface-2: #334155;
-  --text: #f1f5f9;
-  --muted: #94a3b8;
-  --accent: #22d3ee;
-  --accent-2: #f59e0b;
-  --border: #475569;
-  --ok: #4ade80;
-  --warn: #fbbf24;
-  --aqi-good: #4ade80;       /* green  <50  */
-  --aqi-moderate: #fbbf24;    /* yellow 51-100 */
-  --aqi-unhealthy-sens: #fb923c; /* orange 101-150 */
-  --aqi-unhealthy: #f87171;   /* red    >150  */
+  --bg: #f6f4ec;            /* warm cream paper */
+  --surface: #fdfcf8;       /* near-white warm card/surface */
+  --surface-2: #ede9de;     /* warm sand (badges, disclosure) */
+  --hover: #e7ecdc;         /* light sage-tint row hover */
+  --text: #2e3a2e;          /* dark green-gray body text */
+  --muted: #5b6a5b;         /* muted sage-gray (AA legible on cream) */
+  --accent: #3e6e4e;        /* sage/forest green (links, buttons, header) */
+  --accent-hover: #4f835f;  /* button hover green */
+  --accent-2: #b87a3a;      /* warm earth-tone secondary */
+  --border: #e2e0d6;        /* light warm border */
+  --ok: #3f7d4e;            /* verified / positive */
+  --warn: #8a5a16;          /* not-verified / attention */
+
+  /* AQI buckets — nature-friendly, dark enough to read on cream */
+  --aqi-good: #3f7d4e;          /* green  <50  */
+  --aqi-moderate: #8a6a1c;      /* gold   51-100 */
+  --aqi-unhealthy-sens: #b45a1e; /* orange 101-150 */
+  --aqi-unhealthy: #b3322a;     /* red    >150  */
 }
 
 * {
@@ -44,8 +55,8 @@ a:hover {
 }
 
 header.site-header {
-  border-bottom: 1px solid var(--border);
-  background: var(--surface);
+  border-bottom: 1px solid var(--accent-2);
+  background: var(--accent);
 }
 .site-header .container {
   padding: 0.9rem 1rem;
@@ -57,7 +68,10 @@ header.site-header {
 .site-header .brand {
   font-weight: 700;
   font-size: 1.15rem;
-  color: var(--text);
+  color: #fdfcf7;
+}
+.site-header .brand:hover {
+  text-decoration: none;
 }
 .site-header nav {
   display: flex;
@@ -65,8 +79,12 @@ header.site-header {
   flex-wrap: wrap;
 }
 .site-header nav a {
-  color: var(--muted);
+  color: #e6eee4;
   font-size: 0.95rem;
+}
+.site-header nav a:hover {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 footer.site-footer {
@@ -76,10 +94,20 @@ footer.site-footer {
   font-size: 0.85rem;
   margin-top: 3rem;
 }
+footer.site-footer strong {
+  color: var(--text);
+}
 
+h1,
+h2 {
+  font-family: Georgia, 'Times New Roman', 'Iowan Old Style', 'Palatino', serif;
+  color: var(--text);
+  letter-spacing: 0.005em;
+}
 h1 {
   font-size: 1.9rem;
   margin: 0.4rem 0 0.6rem;
+  font-weight: 700;
 }
 h2 {
   font-size: 1.35rem;
@@ -90,6 +118,7 @@ h2 {
 h3 {
   font-size: 1.05rem;
   margin: 1.2rem 0 0.4rem;
+  color: var(--text);
 }
 
 .muted {
@@ -118,6 +147,7 @@ h3 {
   border-color: var(--warn);
 }
 
+/* Data table — shared by park detail grid + sortable ParkTable */
 table.data {
   width: 100%;
   border-collapse: collapse;
@@ -137,8 +167,48 @@ table.data th {
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
-table.data tr:hover td {
+table.data tbody tr:nth-child(even) {
   background: var(--surface);
+}
+table.data tbody tr:hover {
+  background: var(--hover);
+}
+
+/* Sortable ParkTable (client-side) */
+table.data.sortable thead th {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 1;
+}
+table.data.sortable thead th button.sort-btn {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+table.data.sortable thead th button.sort-btn:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+table.data.sortable .sort-ind {
+  color: var(--accent);
+  font-size: 0.7rem;
+  line-height: 1;
+}
+table.data.sortable thead th[aria-sort='ascending'],
+table.data.sortable thead th[aria-sort='descending'] {
+  color: var(--accent);
 }
 
 .card-grid {
@@ -168,13 +238,16 @@ table.data tr:hover td {
   color: var(--muted);
   margin: 1rem 0;
 }
+.disclosure strong {
+  color: var(--text);
+}
 .affiliate-slot {
   border: 1px dashed var(--accent-2);
   border-radius: 8px;
   padding: 0.8rem 1rem;
   color: var(--muted);
   font-size: 0.85rem;
-  background: rgba(245, 158, 11, 0.06);
+  background: rgba(184, 122, 58, 0.08);
   margin: 1rem 0;
 }
 
@@ -184,7 +257,7 @@ table.data tr:hover td {
   margin-bottom: 0.75rem;
 }
 .breadcrumbs a {
-  color: var(--muted);
+  color: var(--accent);
 }
 
 .updated-badge {
@@ -224,7 +297,7 @@ ul.plain li {
 .btn {
   display: inline-block;
   background: var(--accent);
-  color: #06283a;
+  color: #fdfcf7;
   border: none;
   border-radius: 8px;
   padding: 0.55rem 1.1rem;
@@ -233,7 +306,8 @@ ul.plain li {
   cursor: pointer;
 }
 .btn:hover {
-  background: #67e8f9;
+  background: var(--accent-hover);
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -263,6 +337,7 @@ ul.plain li {
   font-size: 1.9rem;
   font-weight: 700;
   line-height: 1.1;
+  color: var(--text);
 }
 .weather-aqi {
   display: inline-flex;

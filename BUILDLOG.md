@@ -353,3 +353,73 @@ populates `source` objects and updates meta counts.
 - Result: 82 parks, 9 with honest nightly prices (7 fee-description + MOTT ridb + Lake Somerville tpwd). 73 still show "Rates not published — check reservation page" (rec.gov link).
 - Validator now accepts `ridb-fee-description` as a dataSource value.
 - Concurrency note: dev-3's weather/AQI build (0727c1e) and this price work ran in parallel; merged deliberately. dev-3 preserved the intermediate state at scripts/raw/parks-tx-concurrent-readd-backup-20260819.json.
+
+## 8. RE-SKIN 2026-08-19 — LIGHT NATURE THEME + SORTABLE PARK TABLE (PUSHED)
+
+Repo still live at https://k00jax.github.io/rv-parks-directory (auto-deploy on push).
+
+### 8.1 New light nature palette (globals.css `:root`)
+
+Replaces the dark slate palette. Every component consumes these vars (audited all
+components/pages — the only hard-coded hex/rgba in the codebase lived inside
+globals.css itself: `.btn` text `#06283a`, `.btn:hover` `#67e8f9`, `.affiliate-slot`
+`rgba(245,158,11,0.06)` — all replaced).
+
+| Var | Old (dark) | New (light nature) | Role |
+|---|---|---|---|
+| `--bg` | `#0f172a` | `#f6f4ec` | warm cream paper |
+| `--surface` | `#1e293b` | `#fdfcf8` | near-white warm card |
+| `--surface-2` | `#334155` | `#ede9de` | warm sand (badges, disclosure) |
+| `--text` | `#f1f5f9` | `#2e3a2e` | dark green-gray body |
+| `--muted` | `#94a3b8` | `#5b6a5b` | muted sage-gray (AA on cream) |
+| `--accent` | `#22d3ee` | `#3e6e4e` | sage/forest green (links, header, btn) |
+| `--accent-2` | `#f59e0b` | `#b87a3a` | warm earth-tone secondary |
+| `--border` | `#475569` | `#e2e0d6` | light warm border |
+| `--ok` | `#4ade80` | `#3f7d4e` | verified / positive |
+| `--warn` | `#fbbf24` | `#8a5a16` | not-verified / attention |
+| `--aqi-good` | `#4ade80` | `#3f7d4e` | green <50 |
+| `--aqi-moderate` | `#fbbf24` | `#8a6a1c` | gold 51-100 |
+| `--aqi-unhealthy-sens` | `#fb923c` | `#b45a1e` | orange 101-150 |
+| `--aqi-unhealthy` | `#f87171` | `#b3322a` | red >150 |
+
+Plus: `--accent-hover #4f835f`, `--hover #e7ecdc`. AQI color semantics preserved
+(green/yellow/orange/red) but tuned to nature-friendly, cream-legible shades.
+Typography: h1/h2 switch to a system serif stack (Georgia/Iowan/Palatino) for an
+outdoorsy brochure feel; body stays sans. Header now a deep sage-green band
+(`--accent`) with cream nav text for a strong nature identity.
+
+### 8.2 Sortable ParkTable (src/components/ParkTable.tsx)
+
+- `'use client'` + `useState`/`useMemo` — clicks re-sort the rendered rows client-side.
+- 5 columns all sortable: Campground (alpha), City (alpha), Nightly price (numeric),
+  Rating (numeric), Sites (numeric). Numeric nulls ALWAYS sort last regardless of
+  direction. Re-click toggles asc/desc; default sort = name asc.
+- Active column header shows a colored ▲/▼ (`span.sort-ind`); headers are real
+  `<button class="sort-btn">` with hover state + `cursor:pointer`; `<th>` carries
+  `data-sort` + `aria-sort`.
+- Zebra striping (`tbody tr:nth-child(even)`), light-tint hover highlight,
+  sticky header (`thead th { position:sticky; top:0 }`).
+- Static export still server-renders the FULL table (all 82 rows on homepage) — the
+  client hydration is progressive enhancement only; no-JS/SEO intact.
+- Price/rating render via existing `fmtPrice`/`fmtRating`; missing values show `—`.
+
+### 8.3 Gates (2026-08-19, all real outputs)
+
+| Gate | Command | Result |
+|---|---|---|
+| 1. Typecheck | `npx tsc --noEmit` | exit 0 |
+| 2. Validator | `node scripts/validate-data.mjs` | exit 0 — parks 82, cities 38, OK |
+| 3. Clean rebuild | `rm -rf docs .next && npm run build` | exit 0 — 150 static pages generated |
+| 4. Content verify | `python3 scripts/verify-content.py .` | PASS — 10/10 checks |
+| 5. HTML inventory | `find docs -name "*.html" \| wc -l` | 149 HTML files |
+| 6. Leftover dark hex | `grep -rl "#0f172a\|#1e293b\|#334155\|#22d3ee" docs --include="*.html"` | 0 (also 0 in `docs/_next/static` CSS bundle) |
+| 7. Light palette in built CSS | `grep #f6f4ec / #3e6e4e / #fdfcf8 docs/_next/static/css/*.css` | all 3 present |
+| 8. Sortable markup (homepage) | docs/index.html | `class="data sortable"`, all 5 `data-sort` cols, `aria-sort`, default `Campground ▲` |
+| 9. No-JS table render | docs/index.html park links | 82/82 rows server-rendered |
+| 10. Price intact | docs/parks/tx/mott | `$14–$16/night — Recreation.gov fee data`; double-lake "Rates not published" |
+| 11. Light body | park page | `<body>` (no inline dark); bg via CSS bundle `--bg #f6f4ec` |
+| 12. Deploy | git push origin main | GitHub Actions Deploy to GitHub Pages — verify live URL after 2-3 min |
+
+Files changed: `src/app/globals.css` (light palette + sortable/table CSS),
+`src/components/ParkTable.tsx` (sortable client component), `BUILDLOG.md` (this section).
+No data files, lib, or pages touched — theme and table only.
