@@ -48,7 +48,11 @@
         "ridb": 1,
         "tpwd": 1
       },
-      "tpwdMatchedParks": 1
+      "tpwdMatchedParks": 1,
+      "parksWithRating": 60,
+      "parksWithReviewCount": 60,
+      "parksWithPriceLevel": 2,
+      "parksWithGoogleReviews": 70
     },
     "detailFailures": [],
     "websiteDerivation": "FacilityReservationURL when present; otherwise canonical Recreation.gov listing URL (https://www.recreation.gov/camping/campgrounds/{facilityId}) only when Reservable=true.",
@@ -74,8 +78,8 @@
       "hookups": null,
       "amenities": [],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.7,
+      "reviewCount": 33,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -93,8 +97,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJcQvdFZRjR4YRL2YdLUls-nc",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJcQvdFZRjR4YRL2YdLUls-nc"
     },
     {
       "facilityId": "232511",
@@ -118,7 +122,7 @@
       ],
       "siteCount": 46,
       "rating": null,
-      "reviewCount": null,
+      "reviewCount": 0,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -136,8 +140,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJ0SespTOFT4YRFzm7O1LNtEc",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ0SespTOFT4YRFzm7O1LNtEc"
     },
     {
       "facilityId": "232534",
@@ -162,8 +166,8 @@
         "water hookup"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.7,
+      "reviewCount": 282,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -181,8 +185,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJSYaLEMRlNoYRhFALiRzDCJg",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJSYaLEMRlNoYRhFALiRzDCJg"
     },
     {
       "facilityId": "232536",
@@ -207,8 +211,8 @@
         "water hookup"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.6,
+      "reviewCount": 245,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -226,8 +230,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJnwasFmxkNoYRrG7-zvJBCGs",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJnwasFmxkNoYRrG7-zvJBCGs"
     },
     {
       "facilityId": "232544",
@@ -249,8 +253,8 @@
         "flush toilets"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.6,
+      "reviewCount": 1760,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -268,8 +272,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJjZiKA34qRYYRjUc1BV0dvSg",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJjZiKA34qRYYRjUc1BV0dvSg"
     },
     {
       "facilityId": "232547",
@@ -295,8 +299,8 @@
         "showers"
       ],
       "siteCount": 10,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.5,
+      "reviewCount": 188,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -314,8 +318,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJobXdhYy3T4YRd8Ns2XrMN7Y",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJobXdhYy3T4YRd8Ns2XrMN7Y"
     },
     {
       "facilityId": "232552",
@@ -338,8 +342,8 @@
         "water hookup"
       ],
       "siteCount": 23,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.2,
+      "reviewCount": 356,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -357,8 +361,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJS4y7GGUGTIYRIvKD2bniSnY",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJS4y7GGUGTIYRIvKD2bniSnY"
     },
     {
       "facilityId": "232553",
@@ -385,7 +389,7 @@
       ],
       "siteCount": 12,
       "rating": null,
-      "reviewCount": null,
+      "reviewCount": 0,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -403,8 +407,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "EiRDbGVhciBTcHJpbmdzIFJkLCBUZXhhcmthbmEsIFRYLCBVU0EiLiosChQKEgmxkx-sZkc0hhHJPmIg5L3WgxIUChIJV2SgwjJBNIYRcFvbYZI8WJ0",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:EiRDbGVhciBTcHJpbmdzIFJkLCBUZXhhcmthbmEsIFRYLCBVU0EiLiosChQKEgmxkx-sZkc0hhHJPmIg5L3WgxIUChIJV2SgwjJBNIYRcFvbYZI8WJ0"
     },
     {
       "facilityId": "232557",
@@ -431,8 +435,8 @@
         "water hookup"
       ],
       "siteCount": 67,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.5,
+      "reviewCount": 155,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -450,8 +454,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJR82lWrj4UIYRiZEXUvQvOo8",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJR82lWrj4UIYRiZEXUvQvOo8"
     },
     {
       "facilityId": "232588",
@@ -473,8 +477,8 @@
         "water hookup"
       ],
       "siteCount": 50,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 3.8,
+      "reviewCount": 13,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -492,8 +496,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJt5ackhcYV4YRlUJqhE8V-rg",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJt5ackhcYV4YRlUJqhE8V-rg"
     },
     {
       "facilityId": "232594",
@@ -516,8 +520,8 @@
         "showers"
       ],
       "siteCount": 47,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.5,
+      "reviewCount": 143,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -535,8 +539,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJ4bKCo640OIYRPsrpa4eYIpI",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ4bKCo640OIYRPsrpa4eYIpI"
     },
     {
       "facilityId": "232600",
@@ -560,7 +564,7 @@
       ],
       "siteCount": 121,
       "rating": null,
-      "reviewCount": null,
+      "reviewCount": 0,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -578,8 +582,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJa3Col2YxTIYRZeho4uW38xE",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJa3Col2YxTIYRZeho4uW38xE"
     },
     {
       "facilityId": "232612",
@@ -602,8 +606,8 @@
         "showers"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.5,
+      "reviewCount": 1052,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -621,8 +625,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJb1tbSooqRYYR2sEV351EmR0",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJb1tbSooqRYYR2sEV351EmR0"
     },
     {
       "facilityId": "232614",
@@ -647,8 +651,8 @@
         "water hookup"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.5,
+      "reviewCount": 550,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -666,8 +670,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJYUXYPm9lNoYRWvaRvBXSuL8",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJYUXYPm9lNoYRWvaRvBXSuL8"
     },
     {
       "facilityId": "232618",
@@ -690,8 +694,8 @@
         "water hookup"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.7,
+      "reviewCount": 34,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -709,8 +713,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJEanB408YV4YRMVi4n8PO6m8",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJEanB408YV4YRMVi4n8PO6m8"
     },
     {
       "facilityId": "232620",
@@ -733,8 +737,8 @@
         "showers"
       ],
       "siteCount": 38,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.1,
+      "reviewCount": 628,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -752,8 +756,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJtYRzbwMHTIYRZshfy0kQHP4",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJtYRzbwMHTIYRZshfy0kQHP4"
     },
     {
       "facilityId": "232628",
@@ -781,7 +785,7 @@
       ],
       "siteCount": 66,
       "rating": null,
-      "reviewCount": null,
+      "reviewCount": 0,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -799,8 +803,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJ6-Pjz1i5T4YRvRNpcPN_Cpg",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ6-Pjz1i5T4YRvRNpcPN_Cpg"
     },
     {
       "facilityId": "232633",
@@ -821,8 +825,8 @@
         "boat ramp"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.3,
+      "reviewCount": 2357,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -839,9 +843,9 @@
         "description": "Overview Longhorn Park Picnic Area overlooks Benbrook Lake & Dam in north-central Texas, easiley accessible from the Chisholm Trail Parkway and southwest Fort Worth. Along with a scenic overlook, a large group pavilion is available as well as picnicking, fishing and boat launching. Recreation The large group pavilion is popular for family and group activitries. Individual picnic sites and boat launching is also available in the park. The nearby spillway cut for the dam is a popular fossil-hunting locaiotn where visitors can search rof Cretaceous clams and coral remnants form 85 million yeats a"
       },
       "dataSource": null,
-      "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "priceLevel": 2,
+      "placeId": "ChIJpW65dZrZTYYRr75i1vkekqw",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJpW65dZrZTYYRr75i1vkekqw"
     },
     {
       "facilityId": "232635",
@@ -862,8 +866,8 @@
         "boat ramp"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 3.3,
+      "reviewCount": 1051,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -881,8 +885,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJ_9uQepu-ToYRA_zibZoM6X8",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_9uQepu-ToYRA_zibZoM6X8"
     },
     {
       "facilityId": "232637",
@@ -907,8 +911,8 @@
         "water hookup"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.6,
+      "reviewCount": 688,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -926,8 +930,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJ72OXIzG4T4YRpyfoEo3V3rg",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ72OXIzG4T4YRpyfoEo3V3rg"
     },
     {
       "facilityId": "232641",
@@ -952,7 +956,7 @@
       ],
       "siteCount": 37,
       "rating": null,
-      "reviewCount": null,
+      "reviewCount": 0,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -970,8 +974,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJ_29EOWKGT4YR3gRm8DS4vro",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_29EOWKGT4YR3gRm8DS4vro"
     },
     {
       "facilityId": "232646",
@@ -994,8 +998,8 @@
         "showers"
       ],
       "siteCount": 33,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4,
+      "reviewCount": 122,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1013,8 +1017,8 @@
       },
       "dataSource": "ridb",
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJj1U3hLPeToYRVzUDJQdPKcI",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJj1U3hLPeToYRVzUDJQdPKcI"
     },
     {
       "facilityId": "232674",
@@ -1038,8 +1042,8 @@
         "water hookup"
       ],
       "siteCount": 45,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.5,
+      "reviewCount": 185,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1057,8 +1061,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJpYXbEUE5NIYRWeyhlctx_6I",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJpYXbEUE5NIYRWeyhlctx_6I"
     },
     {
       "facilityId": "232676",
@@ -1085,8 +1089,8 @@
         "water hookup"
       ],
       "siteCount": 44,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.4,
+      "reviewCount": 150,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1104,8 +1108,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJR-NIULjLT4YR3cy8Wbjv6MU",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJR-NIULjLT4YR3cy8Wbjv6MU"
     },
     {
       "facilityId": "232681",
@@ -1126,8 +1130,8 @@
         "boat ramp"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 3.6,
+      "reviewCount": 38,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1145,8 +1149,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJEQwoC2_6UIYRVqlCQVxqSsA",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJEQwoC2_6UIYRVqlCQVxqSsA"
     },
     {
       "facilityId": "232685",
@@ -1169,8 +1173,8 @@
         "playground"
       ],
       "siteCount": 16,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.4,
+      "reviewCount": 455,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1188,8 +1192,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJa1GTXveWOYYRK953DPzdvz4",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJa1GTXveWOYYRK953DPzdvz4"
     },
     {
       "facilityId": "232695",
@@ -1215,8 +1219,8 @@
         "showers"
       ],
       "siteCount": 192,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.4,
+      "reviewCount": 369,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1234,8 +1238,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJFz1tI90ZRIYRj_AThrBY_VE",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJFz1tI90ZRIYRj_AThrBY_VE"
     },
     {
       "facilityId": "232696",
@@ -1260,8 +1264,8 @@
         "water hookup"
       ],
       "siteCount": 124,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.7,
+      "reviewCount": 427,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1279,8 +1283,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJK5E07Vw5NIYRGpobld5iHNs",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJK5E07Vw5NIYRGpobld5iHNs"
     },
     {
       "facilityId": "232698",
@@ -1301,8 +1305,8 @@
         "boat ramp"
       ],
       "siteCount": 100,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.5,
+      "reviewCount": 245,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1320,8 +1324,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJbQ7niAfAOYYRiZ7lsLOFEI4",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJbQ7niAfAOYYRiZ7lsLOFEI4"
     },
     {
       "facilityId": "232699",
@@ -1346,8 +1350,8 @@
         "water hookup"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.7,
+      "reviewCount": 164,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1365,8 +1369,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJ5an0EPMJOYYRHVQvpexORJQ",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ5an0EPMJOYYRHVQvpexORJQ"
     },
     {
       "facilityId": "232708",
@@ -1393,8 +1397,8 @@
         "water hookup"
       ],
       "siteCount": 61,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.4,
+      "reviewCount": 223,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1412,8 +1416,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJGQujyd1VUIYR_qU0XN3B4rc",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJGQujyd1VUIYR_qU0XN3B4rc"
     },
     {
       "facilityId": "232709",
@@ -1438,8 +1442,8 @@
         "water hookup"
       ],
       "siteCount": 10,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.3,
+      "reviewCount": 91,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1457,8 +1461,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJv9a5XfaPT4YRSJ8kMgq7r68",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJv9a5XfaPT4YRSJ8kMgq7r68"
     },
     {
       "facilityId": "232718",
@@ -1483,7 +1487,7 @@
       ],
       "siteCount": 48,
       "rating": null,
-      "reviewCount": null,
+      "reviewCount": 0,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1501,8 +1505,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJyxcemt_eRIYRgwlOeCh5lT8",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJyxcemt_eRIYRgwlOeCh5lT8"
     },
     {
       "facilityId": "232726",
@@ -1525,8 +1529,8 @@
         "showers"
       ],
       "siteCount": 48,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.6,
+      "reviewCount": 145,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1544,8 +1548,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJ51-y_i-WOYYR50GhJy4MAcg",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ51-y_i-WOYYR50GhJy4MAcg"
     },
     {
       "facilityId": "232728",
@@ -1570,7 +1574,7 @@
       ],
       "siteCount": 30,
       "rating": null,
-      "reviewCount": null,
+      "reviewCount": 0,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1588,8 +1592,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJw3UDjzo4RYYRJDmHH3JVj7k",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJw3UDjzo4RYYRJDmHH3JVj7k"
     },
     {
       "facilityId": "232737",
@@ -1653,8 +1657,8 @@
         "water hookup"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.4,
+      "reviewCount": 111,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1672,8 +1676,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJ919SpSweRYYRJf_1mh_2UJg",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ919SpSweRYYRJf_1mh_2UJg"
     },
     {
       "facilityId": "232748",
@@ -1696,8 +1700,8 @@
         "water hookup"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.3,
+      "reviewCount": 115,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1715,8 +1719,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJRfvBoQXiRIYRPn9iyjrJjks",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJRfvBoQXiRIYRPn9iyjrJjks"
     },
     {
       "facilityId": "232752",
@@ -1742,8 +1746,8 @@
         "water hookup"
       ],
       "siteCount": 82,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.4,
+      "reviewCount": 373,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1761,8 +1765,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJ9yuY66QZRIYRHM43wk43y-E",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ9yuY66QZRIYRHM43wk43y-E"
     },
     {
       "facilityId": "232917",
@@ -1827,8 +1831,8 @@
         "water hookup"
       ],
       "siteCount": 30,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.3,
+      "reviewCount": 98,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1846,8 +1850,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJybGnQKKFT4YRGKWW6jCWcyo",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJybGnQKKFT4YRGKWW6jCWcyo"
     },
     {
       "facilityId": "233170",
@@ -1873,8 +1877,8 @@
         "water hookup"
       ],
       "siteCount": 34,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.1,
+      "reviewCount": 217,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1892,8 +1896,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJP5zAozDLT4YRnF7wi3gC5Y8",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJP5zAozDLT4YRnF7wi3gC5Y8"
     },
     {
       "facilityId": "233200",
@@ -1953,8 +1957,8 @@
       "hookups": null,
       "amenities": [],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.1,
+      "reviewCount": 39,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -1972,8 +1976,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJTfLx-7UdRYYR3X1EVYfdNLQ",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJTfLx-7UdRYYR3X1EVYfdNLQ"
     },
     {
       "facilityId": "233527",
@@ -1998,8 +2002,8 @@
         "water hookup"
       ],
       "siteCount": 44,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4,
+      "reviewCount": 404,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2016,9 +2020,9 @@
         "description": "Overview The Juniper Point Campground is located on Lake Texoma, in the Cross Timbers region of Texas. The lake is said to be the \"Playground of the Southwest,\" where outdoor activities like fishing, boating, hiking and hunting abound. Recreation Lake Texoma is a large reservoir with an excellent fishery and many access points. Boating, swimming, water skiing, hunting, birding and relaxing on the sandy beaches are the typical pursuits of most visitors. The lake is known as the \"Striper Capital of the World,\" one of the few reservoirs in the nation where striped bass reproduce naturally. Other "
       },
       "dataSource": null,
-      "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "priceLevel": 2,
+      "placeId": "ChIJ_ecB4dGRTIYRL95AQFZ9VBA",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_ecB4dGRTIYRL95AQFZ9VBA"
     },
     {
       "facilityId": "233579",
@@ -2041,8 +2045,8 @@
         "showers"
       ],
       "siteCount": 88,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.4,
+      "reviewCount": 48,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2060,8 +2064,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJnb7K0tTkSoYRrl_bQKTjpP8",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJnb7K0tTkSoYRrl_bQKTjpP8"
     },
     {
       "facilityId": "233586",
@@ -2087,7 +2091,7 @@
       ],
       "siteCount": null,
       "rating": null,
-      "reviewCount": null,
+      "reviewCount": 0,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2105,8 +2109,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJpcejZaWZTIYRe0jd4zEZ6F4",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJpcejZaWZTIYRe0jd4zEZ6F4"
     },
     {
       "facilityId": "233595",
@@ -2132,7 +2136,7 @@
       ],
       "siteCount": 22,
       "rating": null,
-      "reviewCount": null,
+      "reviewCount": 0,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2150,8 +2154,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "EilQcmVzdG9uIEJlbmQgUmQsIFBvdHRzYm9ybywgVFggNzUwNzYsIFVTQSIuKiwKFAoSCVVDSCiMkUyGEUmn9DFSxu_yEhQKEgkPAWbJ2Y1MhhGXvve_IPpH0Q",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:EilQcmVzdG9uIEJlbmQgUmQsIFBvdHRzYm9ybywgVFggNzUwNzYsIFVTQSIuKiwKFAoSCVVDSCiMkUyGEUmn9DFSxu_yEhQKEgkPAWbJ2Y1MhhGXvve_IPpH0Q"
     },
     {
       "facilityId": "233617",
@@ -2174,8 +2178,8 @@
         "showers"
       ],
       "siteCount": 85,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.3,
+      "reviewCount": 31,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2193,8 +2197,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJwceUUgDiRIYRpQ9geaBlP38",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJwceUUgDiRIYRpQ9geaBlP38"
     },
     {
       "facilityId": "233716",
@@ -2219,8 +2223,8 @@
         "water hookup"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.6,
+      "reviewCount": 175,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2238,8 +2242,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJoYUHIlu5T4YR6IxSBTe_PVA",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJoYUHIlu5T4YR6IxSBTe_PVA"
     },
     {
       "facilityId": "233790",
@@ -2260,8 +2264,8 @@
         "boat ramp"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.6,
+      "reviewCount": 283,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2279,8 +2283,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJOyK8qUO8OYYR1O83lGftpMo",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJOyK8qUO8OYYR1O83lGftpMo"
     },
     {
       "facilityId": "233828",
@@ -2304,8 +2308,8 @@
         "water hookup"
       ],
       "siteCount": 39,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4,
+      "reviewCount": 12,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2323,8 +2327,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJC8FFVbE1NIYRHZsdcmhgm0E",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJC8FFVbE1NIYRHZsdcmhgm0E"
     },
     {
       "facilityId": "233875",
@@ -2346,8 +2350,8 @@
         "flush toilets"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.3,
+      "reviewCount": 53,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2365,8 +2369,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJdTbaGLsJOYYRjVgryCMnupU",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJdTbaGLsJOYYRjVgryCMnupU"
     },
     {
       "facilityId": "233951",
@@ -2387,8 +2391,8 @@
         "water hookup"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4,
+      "reviewCount": 2,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2406,8 +2410,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJP0qLICU5NIYRfBBeoUJaqFY",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJP0qLICU5NIYRfBBeoUJaqFY"
     },
     {
       "facilityId": "233991",
@@ -2431,8 +2435,8 @@
         "water hookup"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.5,
+      "reviewCount": 17,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2450,8 +2454,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJMcL4b5o4NIYRfbSybc4VIik",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJMcL4b5o4NIYRfbSybc4VIik"
     },
     {
       "facilityId": "234004",
@@ -2474,8 +2478,8 @@
         "showers"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.6,
+      "reviewCount": 579,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2493,8 +2497,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJ2aP75-sQR4YRFuZ9AWzycPw",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ2aP75-sQR4YRFuZ9AWzycPw"
     },
     {
       "facilityId": "234013",
@@ -2513,8 +2517,8 @@
       "hookups": null,
       "amenities": [],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.8,
+      "reviewCount": 634,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2532,8 +2536,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJHSSRefEQ8oYRrT0BuvVpy6w",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJHSSRefEQ8oYRrT0BuvVpy6w"
     },
     {
       "facilityId": "234014",
@@ -2555,8 +2559,8 @@
         "showers"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.6,
+      "reviewCount": 330,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2574,8 +2578,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJ0wB8F7g38oYRPz500b4r8W4",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ0wB8F7g38oYRPz500b4r8W4"
     },
     {
       "facilityId": "234035",
@@ -2600,7 +2604,7 @@
       ],
       "siteCount": 100,
       "rating": null,
-      "reviewCount": null,
+      "reviewCount": 0,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2618,8 +2622,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJV-Ijvb438oYRTSMZyyGp57U",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJV-Ijvb438oYRTSMZyyGp57U"
     },
     {
       "facilityId": "234038",
@@ -2640,8 +2644,8 @@
         "dump station"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.8,
+      "reviewCount": 634,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2659,8 +2663,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJHSSRefEQ8oYRrT0BuvVpy6w",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJHSSRefEQ8oYRrT0BuvVpy6w"
     },
     {
       "facilityId": "234078",
@@ -2681,8 +2685,8 @@
         "dump station"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.6,
+      "reviewCount": 117,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2700,8 +2704,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJkQhQ5YwK8oYRMGozzDJTp2o",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJkQhQ5YwK8oYRMGozzDJTp2o"
     },
     {
       "facilityId": "234094",
@@ -2724,8 +2728,8 @@
         "water hookup"
       ],
       "siteCount": 35,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.2,
+      "reviewCount": 63,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2743,8 +2747,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJ42QMNWQ9T4YRdeywmgV5Yxs",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ42QMNWQ9T4YRdeywmgV5Yxs"
     },
     {
       "facilityId": "234362",
@@ -2768,8 +2772,8 @@
         "showers"
       ],
       "siteCount": 56,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.8,
+      "reviewCount": 183,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2787,8 +2791,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJ26Q-33j5R4YRJxQARJZUwTc",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ26Q-33j5R4YRJxQARJZUwTc"
     },
     {
       "facilityId": "234628",
@@ -2811,8 +2815,8 @@
         "showers"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.6,
+      "reviewCount": 1200,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2830,8 +2834,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJHXVhQcwsTIYRvmoYtf37RJg",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJHXVhQcwsTIYRvmoYtf37RJg"
     },
     {
       "facilityId": "234643",
@@ -2850,8 +2854,8 @@
       "hookups": null,
       "amenities": [],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.7,
+      "reviewCount": 293,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2869,8 +2873,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJvRxVvgfVWoYR0xWHsEB7sKM",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJvRxVvgfVWoYR0xWHsEB7sKM"
     },
     {
       "facilityId": "234665",
@@ -2892,8 +2896,8 @@
         "flush toilets"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.5,
+      "reviewCount": 735,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2911,8 +2915,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJr3mrPZcqRYYRZ72qVvpBqz8",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJr3mrPZcqRYYRZ72qVvpBqz8"
     },
     {
       "facilityId": "234702",
@@ -2933,8 +2937,8 @@
         "boat ramp"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.3,
+      "reviewCount": 371,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2952,8 +2956,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJlfhNpvASToYRdeVl_B66aR0",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJlfhNpvASToYRdeVl_B66aR0"
     },
     {
       "facilityId": "234703",
@@ -2974,8 +2978,8 @@
         "boat ramp"
       ],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4,
+      "reviewCount": 63,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -2993,8 +2997,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJJ0fuorkTToYR7-pxdpGzf7w",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJJ0fuorkTToYR7-pxdpGzf7w"
     },
     {
       "facilityId": "248408",
@@ -3013,8 +3017,8 @@
       "hookups": null,
       "amenities": [],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4,
+      "reviewCount": 98,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -3032,8 +3036,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJh4iy8ZMTToYRD6yBZnYgAdQ",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJh4iy8ZMTToYRD6yBZnYgAdQ"
     },
     {
       "facilityId": "248432",
@@ -3052,8 +3056,8 @@
       "hookups": null,
       "amenities": [],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.5,
+      "reviewCount": 335,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -3071,8 +3075,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJPa3nyAyRTIYRmc8_eKgtpcc",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJPa3nyAyRTIYRmc8_eKgtpcc"
     },
     {
       "facilityId": "248443",
@@ -3091,8 +3095,8 @@
       "hookups": null,
       "amenities": [],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.3,
+      "reviewCount": 124,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -3110,8 +3114,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJSfpvEwvyTIYR2bL2JGpeVVU",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJSfpvEwvyTIYR2bL2JGpeVVU"
     },
     {
       "facilityId": "248470",
@@ -3130,8 +3134,8 @@
       "hookups": null,
       "amenities": [],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.4,
+      "reviewCount": 1008,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -3149,8 +3153,8 @@
       },
       "dataSource": "tpwd",
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJnQctMRYZRIYRxT1kAo0cwG4",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJnQctMRYZRIYRxT1kAo0cwG4"
     },
     {
       "facilityId": "248473",
@@ -3169,8 +3173,8 @@
       "hookups": null,
       "amenities": [],
       "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
+      "rating": 4.3,
+      "reviewCount": 10,
       "petPolicy": null,
       "lastVerified": "2026-08-19",
       "source": {
@@ -3188,8 +3192,8 @@
       },
       "dataSource": null,
       "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null
+      "placeId": "ChIJPwHo4WYJOYYR9vGjUXIN5Qk",
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJPwHo4WYJOYYR9vGjUXIN5Qk"
     },
     {
       "facilityId": "253578",

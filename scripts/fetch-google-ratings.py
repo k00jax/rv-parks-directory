@@ -91,9 +91,12 @@ def haversine_km(lat1, lng1, lat2, lng2):
 
 
 # --- HTTP --------------------------------------------------------------------
-def get_json(url):
+def get_json(url, data=None, headers=None):
     for attempt in range(1, TRIES + 1):
-        req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept': 'application/json'})
+        hdr = {'User-Agent': UA, 'Accept': 'application/json'}
+        if headers:
+            hdr.update(headers)
+        req = urllib.request.Request(url, data=data, headers=hdr)
         try:
             with urllib.request.urlopen(req, timeout=30) as resp:
                 return json.loads(resp.read().decode('utf-8'))
@@ -115,16 +118,36 @@ def get_json(url):
 
 
 def textsearch(query):
-    url = ('https://maps.googleapis.com/maps/api/place/textsearch/json?'
-           + urllib.parse.urlencode({'query': query, 'key': API_KEY}))
-    data = get_json(url)
+    # Places API (New) — v1 searchText. The legacy textsearch/json endpoint is
+    # disabled on this project (REQUEST_DENIED "legacy API not enabled").
+    url = 'https://places.googleapis.com/v1/places:searchText'
+    payload = json.dumps({'textQuery': query}).encode()
+    headers = {
+        'Content-Type': 'application/json',
+        'X-Goog-Api-Key': API_KEY,
+        'X-Goog-FieldMask': 'places.displayName,places.rating,places.userRatingCount,places.priceLevel,places.id,places.location',
+    }
+    data = get_json(url, data=payload, headers=headers)
     if data is None:
         return None, None
-    status = data.get('status')
-    if status != 'OK':
-        print(f'  [warn] Places status={status} ({data.get("error_message", "")[:120]})')
+    if 'error' in data:
+        err = data['error']
+        status = err.get('status') or 'ERROR'
+        print(f'  [warn] Places status={status} ({err.get("message", "")[:120]})')
         return None, status
-    return data.get('results', []), status
+    results = []
+    for pl in data.get('places', []):
+        dn = (pl.get('displayName') or {}).get('text') or ''
+        loc = pl.get('location') or {}
+        results.append({
+            'place_id': pl.get('id'),
+            'name': dn,
+            'rating': pl.get('rating'),
+            'user_ratings_total': pl.get('userRatingCount'),
+            'price_level': pl.get('priceLevel'),  # string enum e.g. PRICE_LEVEL_MODERATE
+            'geometry': {'location': {'lat': loc.get('latitude'), 'lng': loc.get('longitude')}} if loc else None,
+        })
+    return results, 'OK'
 
 
 # --- main --------------------------------------------------------------------
@@ -178,10 +201,19 @@ def main():
             continue
 
         place_id = best.get('place_id')
+        # New Places API returns priceLevel as string enum; map to legacy 0-4
+        # numeric (0=free,1=inexpensive,2=moderate,3=expensive,4=very expensive)
+        _pl_map = {
+            'PRICE_LEVEL_FREE': 0, 'PRICE_LEVEL_INEXPENSIVE': 1,
+            'PRICE_LEVEL_MODERATE': 2, 'PRICE_LEVEL_EXPENSIVE': 3,
+            'PRICE_LEVEL_VERY_EXPENSIVE': 4,
+        }
+        pl_raw = best.get('price_level')
+        price_level = _pl_map.get(pl_raw) if isinstance(pl_raw, str) else pl_raw
         record = {
             'rating': best.get('rating'),
             'reviewCount': best.get('user_ratings_total') or 0,
-            'priceLevel': best.get('price_level'),  # 0-4, absent for many listings
+            'priceLevel': price_level,  # 0-4, absent for many listings
             'placeId': place_id,
             'googleUrl': f'https://www.google.com/maps/place/?q=place_id:{place_id}' if place_id else None,
             'matchedName': best.get('name'),
