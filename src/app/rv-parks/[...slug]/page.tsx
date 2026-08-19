@@ -6,10 +6,11 @@ import ParkTable from '@/components/ParkTable';
 import { amenityHubs, cities, getAmenityHub, getParksByCity, parks, STATE_NAME } from '@/lib/parks';
 
 /**
- * Family B (geo hubs) + Family C (amenity stubs) share the /rv-parks/ tree:
+ * Family B (geo hubs) + Family C (amenity hubs) share the /rv-parks/ tree:
  *   /rv-parks/texas/                -> state hub
  *   /rv-parks/texas/{city}/         -> city hub
- *   /rv-parks/{amenity}/            -> amenity hub (Family C structure)
+ *   /rv-parks/amenities/            -> amenity index (all amenity pages)
+ *   /rv-parks/{amenity}/            -> amenity hub (Family C)
  *   /rv-parks/texas/{amenity}/      -> amenity hub scoped to Texas
  * Anything else -> 404.
  */
@@ -18,7 +19,7 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  const params: { slug: string[] }[] = [{ slug: ['texas'] }];
+  const params: { slug: string[] }[] = [{ slug: ['texas'] }, { slug: ['amenities'] }];
   for (const c of cities) params.push({ slug: ['texas', c.slug] });
   for (const a of amenityHubs) params.push({ slug: [a.slug] });
   for (const a of amenityHubs) params.push({ slug: ['texas', a.slug] });
@@ -27,6 +28,12 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: Props): Metadata {
   const [a, b] = params.slug;
+  if (a === 'amenities') {
+    return {
+      title: `RV Park Amenities in ${STATE_NAME}`,
+      description: `Browse every RV park in ${STATE_NAME} by amenity: hookups, dump stations, showers, boat ramps, playgrounds, and more — from Recreation.gov data.`,
+    };
+  }
   if (a === 'texas' && !b) {
     return {
       title: `RV Parks & Campgrounds in ${STATE_NAME}`,
@@ -36,7 +43,7 @@ export function generateMetadata({ params }: Props): Metadata {
   if (a === 'texas' && b) {
     const amenity = getAmenityHub(b);
     if (amenity) {
-      return { title: `${amenity.title} in ${STATE_NAME}`, description: amenity.description };
+      return { title: amenity.title, description: amenity.description };
     }
     const cityParks = getParksByCity(b);
     if (cityParks.length > 0) {
@@ -54,6 +61,36 @@ export function generateMetadata({ params }: Props): Metadata {
   return { title: 'Not found' };
 }
 
+function AmenitiesIndexView() {
+  return (
+    <div>
+      <Breadcrumbs crumbs={[{ label: 'Amenities' }]} />
+      <h1>RV Park Amenities in {STATE_NAME}</h1>
+      <p className="muted">
+        Every amenity filter on this site, driven by the actual amenity data published for
+        these campgrounds on Recreation.gov. No estimated or invented amenity listings.
+      </p>
+      <section>
+        <div className="card-grid">
+          {amenityHubs.map((a) => {
+            const count = parks.filter(a.match).length;
+            return (
+              <div className="card" key={a.slug}>
+                <Link href={`/rv-parks/${a.slug}/`}>{a.title}</Link>
+                <div className="muted">{count} parks</div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+      <section>
+        <h2>All campgrounds in {STATE_NAME} ({parks.length})</h2>
+        <ParkTable parks={parks} />
+      </section>
+    </div>
+  );
+}
+
 function AmenityHubView({ amenitySlug, scoped }: { amenitySlug: string; scoped: boolean }) {
   const amenity = getAmenityHub(amenitySlug);
   if (!amenity) notFound();
@@ -61,7 +98,7 @@ function AmenityHubView({ amenitySlug, scoped }: { amenitySlug: string; scoped: 
   const itemList = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: scoped ? `${amenity.title} in ${STATE_NAME}` : amenity.title,
+    name: amenity.title,
     numberOfItems: matched.length,
     itemListElement: matched.map((p, i) => ({
       '@type': 'ListItem',
@@ -76,21 +113,17 @@ function AmenityHubView({ amenitySlug, scoped }: { amenitySlug: string; scoped: 
       <Breadcrumbs
         crumbs={[
           ...(scoped ? [{ label: STATE_NAME, href: '/rv-parks/texas/' }] : []),
+          { label: 'Amenities', href: '/rv-parks/amenities/' },
           { label: amenity.title },
         ]}
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemList) }} />
-      <h1>{scoped ? `${amenity.title} in ${STATE_NAME}` : amenity.title}</h1>
+      <h1>{amenity.title}</h1>
       <p>{amenity.description}</p>
-
-      {amenitySlug === 'full-hookup' ? (
-        <div className="disclosure">
-          <strong>Phase 1 placeholder:</strong> full hookup data (water/sewer/electric per site)
-          requires per-campsite attributes from Recreation.gov, scheduled for Phase 1. This page
-          structure is live; the list below will populate from real data — no estimated values are
-          shown.
-        </div>
-      ) : null}
+      <p className="muted">
+        {matched.length} campground{matched.length === 1 ? '' : 's'} match this amenity filter,
+        from Recreation.gov facility amenity data.
+      </p>
 
       <h2>Campgrounds ({matched.length})</h2>
       <ParkTable parks={matched} />
@@ -98,6 +131,9 @@ function AmenityHubView({ amenitySlug, scoped }: { amenitySlug: string; scoped: 
       <section>
         <h2>Related</h2>
         <ul className="plain">
+          <li>
+            <Link href="/rv-parks/amenities/">All RV park amenities in {STATE_NAME}</Link>
+          </li>
           <li>
             <Link href="/rv-parks/texas/">All RV parks &amp; campgrounds in {STATE_NAME}</Link>
           </li>
@@ -211,6 +247,7 @@ function CityHubView({ citySlug }: { citySlug: string }) {
 
 export default function RvParksPage({ params }: Props) {
   const [a, b] = params.slug;
+  if (a === 'amenities') return <AmenitiesIndexView />;
   if (a === 'texas' && !b) return <StateHubView />;
   if (a === 'texas' && b) {
     if (getAmenityHub(b)) return <AmenityHubView amenitySlug={b} scoped />;

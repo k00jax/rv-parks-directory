@@ -9,6 +9,10 @@
   --border: #475569;
   --ok: #4ade80;
   --warn: #fbbf24;
+  --aqi-good: #4ade80;       /* green  <50  */
+  --aqi-moderate: #fbbf24;    /* yellow 51-100 */
+  --aqi-unhealthy-sens: #fb923c; /* orange 101-150 */
+  --aqi-unhealthy: #f87171;   /* red    >150  */
 }
 
 * {
@@ -231,4 +235,62 @@ ul.plain li {
 .btn:hover {
   background: #67e8f9;
   text-decoration: none;
+}
+
+/* Weather + AQI card (live Google Weather / Air Quality data) */
+.weather-card {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  margin: 1.25rem 0;
+}
+.weather-card h2 {
+  margin: 0 0 0.5rem;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.weather-card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.weather-cell {
+  min-width: 140px;
+}
+.weather-temp {
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.weather-aqi {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-weight: 700;
+  padding: 0.15rem 0.6rem;
+  border-radius: 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+.weather-aqi-value {
+  font-size: 1.5rem;
+  line-height: 1.1;
+}
+.aqi-good {
+  color: var(--aqi-good);
+  border-color: var(--aqi-good);
+}
+.aqi-moderate {
+  color: var(--aqi-moderate);
+  border-color: var(--aqi-moderate);
+}
+.aqi-unhealthy-sens {
+  color: var(--aqi-unhealthy-sens);
+  border-color: var(--aqi-unhealthy-sens);
+}
+.aqi-unhealthy {
+  color: var(--aqi-unhealthy);
+  border-color: var(--aqi-unhealthy);
 }

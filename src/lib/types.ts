@@ -20,6 +20,25 @@ export interface ParkSource {
   description: string;
 }
 
+// Live weather snapshot from Google Weather API (currentConditions:lookup).
+// null fields mean the API did not return them — never fabricated.
+export interface WeatherCurrent {
+  tempF: number | null; // degrees Fahrenheit
+  conditions: string | null; // e.g. 'Mostly cloudy'
+  isDaytime: boolean | null;
+  timeZone: string | null; // IANA id, e.g. 'America/Chicago'
+  fetchedAt: string; // ISO timestamp of the API fetch
+}
+
+// Live air quality snapshot from Google Air Quality API
+// (currentConditions:lookup, Universal AQI index).
+export interface Aqi {
+  aqi: number | null; // Universal AQI (0-500)
+  category: string | null; // e.g. 'Good air quality'
+  dominantPollutant: string | null; // e.g. 'o3'
+  fetchedAt: string; // ISO timestamp of the API fetch
+}
+
 export interface Park {
   facilityId: string;
   name: string;
@@ -46,6 +65,9 @@ export interface Park {
   placeId: string | null; // Google Places place_id
   googleUrl: string | null; // https://www.google.com/maps/place/?q=place_id:<id>
   petPolicy: string | null;
+  // Live Google Weather/Air Quality snapshots (null = API unavailable or not fetched).
+  weatherCurrent: WeatherCurrent | null;
+  aqi: Aqi | null;
   lastVerified: string; // ISO date, e.g. '2026-08-18'
   source: ParkSource;
 }

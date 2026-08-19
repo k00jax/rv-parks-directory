@@ -4,6 +4,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import UpdatedBadge from '@/components/UpdatedBadge';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 import ClaimForm from '@/components/ClaimForm';
+import WeatherCard from '@/components/WeatherCard';
 import {
   amenityHubs,
   fmtPhone,
@@ -12,6 +13,7 @@ import {
   fmtRating,
   fmtSiteCount,
   fmtStars,
+  getAmenityHubsForPark,
   getCitySlug,
   getParkBySlug,
   neighbors,
@@ -45,6 +47,7 @@ export default function ParkPage({ params }: Props) {
 
   const city = park.city ? park.city : null;
   const near = neighbors(park, 2);
+  const parkAmenityHubs = getAmenityHubsForPark(park);
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Campground',
@@ -239,6 +242,8 @@ export default function ParkPage({ params }: Props) {
         </tbody>
       </table>
 
+      <WeatherCard park={park} />
+
       {/* Owner claim/update funnel (mailto to Director-controlled inbox). */}
       <ClaimForm park={park} />
 
@@ -271,6 +276,20 @@ export default function ParkPage({ params }: Props) {
           ) : null}
           <li>
             <Link href="/rv-parks/texas/">All RV parks &amp; campgrounds in {STATE_NAME}</Link>
+          </li>
+          {parkAmenityHubs.length > 0 ? (
+            <li>
+              <span className="muted">Amenity filters this park matches: </span>
+              {parkAmenityHubs.map((a, i) => (
+                <span key={a.slug}>
+                  {i > 0 ? ' · ' : ''}
+                  <Link href={`/rv-parks/${a.slug}/`}>{a.title}</Link>
+                </span>
+              ))}
+            </li>
+          ) : null}
+          <li>
+            <Link href="/rv-parks/amenities/">All RV park amenities in {STATE_NAME}</Link>
           </li>
           {amenityHubs.map((a) => (
             <li key={a.slug}>

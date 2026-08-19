@@ -109,6 +109,44 @@ for (const [i, p] of parks.entries()) {
     errors.push(`${where}: googleUrl must be a Google place URL or null`);
   }
 
+  // live weather/AQI snapshots (null = API unavailable; malformed values are not)
+  const w = p.weatherCurrent;
+  if (w !== null && w !== undefined) {
+    if (typeof w !== 'object') {
+      errors.push(`${where}: weatherCurrent must be an object or null`);
+    } else {
+      if (w.tempF !== null && w.tempF !== undefined && (typeof w.tempF !== 'number' || !Number.isFinite(w.tempF) || w.tempF < -100 || w.tempF > 150)) {
+        errors.push(`${where}: weatherCurrent.tempF invalid (${String(w.tempF)})`);
+      }
+      if (w.conditions !== null && w.conditions !== undefined && (typeof w.conditions !== 'string' || w.conditions.trim() === '')) {
+        errors.push(`${where}: weatherCurrent.conditions must be a non-empty string or null`);
+      }
+      if (typeof w.fetchedAt !== 'string' || !/^\d{4}-\d{2}-\d{2}T/.test(w.fetchedAt || '')) {
+        errors.push(`${where}: weatherCurrent.fetchedAt missing/invalid ("${w.fetchedAt}")`);
+      }
+    }
+  } else if (!('weatherCurrent' in p)) {
+    errors.push(`${where}: missing weatherCurrent field (null when unavailable)`);
+  }
+  const a = p.aqi;
+  if (a !== null && a !== undefined) {
+    if (typeof a !== 'object') {
+      errors.push(`${where}: aqi must be an object or null`);
+    } else {
+      if (a.aqi !== null && a.aqi !== undefined && (typeof a.aqi !== 'number' || !Number.isFinite(a.aqi) || a.aqi < 0 || a.aqi > 500)) {
+        errors.push(`${where}: aqi.aqi invalid (${String(a.aqi)})`);
+      }
+      if (a.category !== null && a.category !== undefined && (typeof a.category !== 'string' || a.category.trim() === '')) {
+        errors.push(`${where}: aqi.category must be a non-empty string or null`);
+      }
+      if (typeof a.fetchedAt !== 'string' || !/^\d{4}-\d{2}-\d{2}T/.test(a.fetchedAt || '')) {
+        errors.push(`${where}: aqi.fetchedAt missing/invalid ("${a.fetchedAt}")`);
+      }
+    }
+  } else if (!('aqi' in p)) {
+    errors.push(`${where}: missing aqi field (null when unavailable)`);
+  }
+
   // data hygiene invariants (never show a price without a source, etc.)
   const hasPrice = p.nightlyPriceMin !== null || p.nightlyPriceMax !== null;
   const hasSource = p.dataSource !== null && p.dataSource !== undefined;

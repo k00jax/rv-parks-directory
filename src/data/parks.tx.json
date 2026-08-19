@@ -52,13 +52,17 @@
       "parksWithRating": 60,
       "parksWithReviewCount": 60,
       "parksWithPriceLevel": 2,
-      "parksWithGoogleReviews": 70
+      "parksWithGoogleReviews": 70,
+      "parksWithWeather": 75,
+      "parksWithAqi": 75,
+      "parksWithoutLatLng": 0
     },
     "detailFailures": [],
     "websiteDerivation": "FacilityReservationURL when present; otherwise canonical Recreation.gov listing URL (https://www.recreation.gov/camping/campgrounds/{facilityId}) only when Reservable=true.",
     "stateVerification": "RIDB state=TX filter is unreliable (returns NM facilities, museums, hotels). Kept only facilities whose facilityaddresses AddressStateCode == TX, or (no address) coordinates inside the Texas bounding box. See droppedPhaseB.",
     "antiFabrication": "rating/reviewCount/petPolicy always null (not published at RIDB facility level). Prices parsed only from FacilityUseFeeDescription with per-night/per-day context. Hookups/amenities/siteCount parsed from FacilityDescription/Keywords.",
-    "crawlerPacingMs": 450
+    "crawlerPacingMs": 450,
+    "weatherFetchedAt": "2026-08-19T19:18:31Z"
   },
   "parks": [
     {
@@ -98,7 +102,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJcQvdFZRjR4YRL2YdLUls-nc",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJcQvdFZRjR4YRL2YdLUls-nc"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJcQvdFZRjR4YRL2YdLUls-nc",
+      "weatherCurrent": {
+        "tempF": 96,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:53:35Z"
+      },
+      "aqi": {
+        "aqi": 71,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:26Z"
+      }
     },
     {
       "facilityId": "232511",
@@ -141,7 +158,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJ0SespTOFT4YRFzm7O1LNtEc",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ0SespTOFT4YRFzm7O1LNtEc"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ0SespTOFT4YRFzm7O1LNtEc",
+      "weatherCurrent": {
+        "tempF": 100,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:53:38Z"
+      },
+      "aqi": {
+        "aqi": 69,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:27Z"
+      }
     },
     {
       "facilityId": "232534",
@@ -186,7 +216,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJSYaLEMRlNoYRhFALiRzDCJg",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJSYaLEMRlNoYRhFALiRzDCJg"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJSYaLEMRlNoYRhFALiRzDCJg",
+      "weatherCurrent": {
+        "tempF": 99.4,
+        "conditions": "Cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:53:40Z"
+      },
+      "aqi": {
+        "aqi": 65,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:28Z"
+      }
     },
     {
       "facilityId": "232536",
@@ -231,7 +274,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJnwasFmxkNoYRrG7-zvJBCGs",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJnwasFmxkNoYRrG7-zvJBCGs"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJnwasFmxkNoYRrG7-zvJBCGs",
+      "weatherCurrent": {
+        "tempF": 99.4,
+        "conditions": "Cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:53:43Z"
+      },
+      "aqi": {
+        "aqi": 64,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:29Z"
+      }
     },
     {
       "facilityId": "232544",
@@ -273,7 +329,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJjZiKA34qRYYRjUc1BV0dvSg",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJjZiKA34qRYYRjUc1BV0dvSg"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJjZiKA34qRYYRjUc1BV0dvSg",
+      "weatherCurrent": {
+        "tempF": 99.7,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:53:46Z"
+      },
+      "aqi": {
+        "aqi": 58,
+        "category": "Moderate air quality",
+        "dominantPollutant": "pm10",
+        "fetchedAt": "2026-08-19T19:00:31Z"
+      }
     },
     {
       "facilityId": "232547",
@@ -319,7 +388,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJobXdhYy3T4YRd8Ns2XrMN7Y",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJobXdhYy3T4YRd8Ns2XrMN7Y"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJobXdhYy3T4YRd8Ns2XrMN7Y",
+      "weatherCurrent": {
+        "tempF": 100.5,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:53:48Z"
+      },
+      "aqi": {
+        "aqi": 73,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:32Z"
+      }
     },
     {
       "facilityId": "232552",
@@ -362,7 +444,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJS4y7GGUGTIYRIvKD2bniSnY",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJS4y7GGUGTIYRIvKD2bniSnY"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJS4y7GGUGTIYRIvKD2bniSnY",
+      "weatherCurrent": {
+        "tempF": 101.7,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:53:51Z"
+      },
+      "aqi": {
+        "aqi": 51,
+        "category": "Moderate air quality",
+        "dominantPollutant": "pm10",
+        "fetchedAt": "2026-08-19T19:00:33Z"
+      }
     },
     {
       "facilityId": "232553",
@@ -408,7 +503,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "EiRDbGVhciBTcHJpbmdzIFJkLCBUZXhhcmthbmEsIFRYLCBVU0EiLiosChQKEgmxkx-sZkc0hhHJPmIg5L3WgxIUChIJV2SgwjJBNIYRcFvbYZI8WJ0",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:EiRDbGVhciBTcHJpbmdzIFJkLCBUZXhhcmthbmEsIFRYLCBVU0EiLiosChQKEgmxkx-sZkc0hhHJPmIg5L3WgxIUChIJV2SgwjJBNIYRcFvbYZI8WJ0"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:EiRDbGVhciBTcHJpbmdzIFJkLCBUZXhhcmthbmEsIFRYLCBVU0EiLiosChQKEgmxkx-sZkc0hhHJPmIg5L3WgxIUChIJV2SgwjJBNIYRcFvbYZI8WJ0",
+      "weatherCurrent": {
+        "tempF": 100.4,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:53:53Z"
+      },
+      "aqi": {
+        "aqi": 61,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:34Z"
+      }
     },
     {
       "facilityId": "232557",
@@ -455,7 +563,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJR82lWrj4UIYRiZEXUvQvOo8",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJR82lWrj4UIYRiZEXUvQvOo8"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJR82lWrj4UIYRiZEXUvQvOo8",
+      "weatherCurrent": {
+        "tempF": 98.9,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:53:56Z"
+      },
+      "aqi": {
+        "aqi": 69,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:36Z"
+      }
     },
     {
       "facilityId": "232588",
@@ -497,7 +618,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJt5ackhcYV4YRlUJqhE8V-rg",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJt5ackhcYV4YRlUJqhE8V-rg"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJt5ackhcYV4YRlUJqhE8V-rg",
+      "weatherCurrent": {
+        "tempF": 96.5,
+        "conditions": "Cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:53:58Z"
+      },
+      "aqi": {
+        "aqi": 66,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:37Z"
+      }
     },
     {
       "facilityId": "232594",
@@ -540,7 +674,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJ4bKCo640OIYRPsrpa4eYIpI",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ4bKCo640OIYRPsrpa4eYIpI"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ4bKCo640OIYRPsrpa4eYIpI",
+      "weatherCurrent": {
+        "tempF": 94.4,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:01Z"
+      },
+      "aqi": {
+        "aqi": 69,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:38Z"
+      }
     },
     {
       "facilityId": "232600",
@@ -583,7 +730,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJa3Col2YxTIYRZeho4uW38xE",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJa3Col2YxTIYRZeho4uW38xE"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJa3Col2YxTIYRZeho4uW38xE",
+      "weatherCurrent": {
+        "tempF": 102.5,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:03Z"
+      },
+      "aqi": {
+        "aqi": 50,
+        "category": "Moderate air quality",
+        "dominantPollutant": "pm10",
+        "fetchedAt": "2026-08-19T19:00:40Z"
+      }
     },
     {
       "facilityId": "232612",
@@ -626,7 +786,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJb1tbSooqRYYR2sEV351EmR0",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJb1tbSooqRYYR2sEV351EmR0"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJb1tbSooqRYYR2sEV351EmR0",
+      "weatherCurrent": {
+        "tempF": 99.7,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:06Z"
+      },
+      "aqi": {
+        "aqi": 58,
+        "category": "Moderate air quality",
+        "dominantPollutant": "pm10",
+        "fetchedAt": "2026-08-19T19:00:41Z"
+      }
     },
     {
       "facilityId": "232614",
@@ -671,7 +844,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJYUXYPm9lNoYRWvaRvBXSuL8",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJYUXYPm9lNoYRWvaRvBXSuL8"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJYUXYPm9lNoYRWvaRvBXSuL8",
+      "weatherCurrent": {
+        "tempF": 99.1,
+        "conditions": "Cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:08Z"
+      },
+      "aqi": {
+        "aqi": 65,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:42Z"
+      }
     },
     {
       "facilityId": "232618",
@@ -714,7 +900,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJEanB408YV4YRMVi4n8PO6m8",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJEanB408YV4YRMVi4n8PO6m8"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJEanB408YV4YRMVi4n8PO6m8",
+      "weatherCurrent": {
+        "tempF": 96.5,
+        "conditions": "Cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:10Z"
+      },
+      "aqi": {
+        "aqi": 67,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:43Z"
+      }
     },
     {
       "facilityId": "232620",
@@ -757,7 +956,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJtYRzbwMHTIYRZshfy0kQHP4",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJtYRzbwMHTIYRZshfy0kQHP4"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJtYRzbwMHTIYRZshfy0kQHP4",
+      "weatherCurrent": {
+        "tempF": 101.7,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:13Z"
+      },
+      "aqi": {
+        "aqi": 50,
+        "category": "Moderate air quality",
+        "dominantPollutant": "pm10",
+        "fetchedAt": "2026-08-19T19:00:45Z"
+      }
     },
     {
       "facilityId": "232628",
@@ -804,7 +1016,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJ6-Pjz1i5T4YRvRNpcPN_Cpg",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ6-Pjz1i5T4YRvRNpcPN_Cpg"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ6-Pjz1i5T4YRvRNpcPN_Cpg",
+      "weatherCurrent": {
+        "tempF": 100.7,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:15Z"
+      },
+      "aqi": {
+        "aqi": 68,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:46Z"
+      }
     },
     {
       "facilityId": "232633",
@@ -845,7 +1070,20 @@
       "dataSource": null,
       "priceLevel": 2,
       "placeId": "ChIJpW65dZrZTYYRr75i1vkekqw",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJpW65dZrZTYYRr75i1vkekqw"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJpW65dZrZTYYRr75i1vkekqw",
+      "weatherCurrent": {
+        "tempF": 101.9,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:18Z"
+      },
+      "aqi": {
+        "aqi": 59,
+        "category": "Moderate air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:47Z"
+      }
     },
     {
       "facilityId": "232635",
@@ -886,7 +1124,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJ_9uQepu-ToYRA_zibZoM6X8",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_9uQepu-ToYRA_zibZoM6X8"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_9uQepu-ToYRA_zibZoM6X8",
+      "weatherCurrent": {
+        "tempF": 100,
+        "conditions": "Cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:20Z"
+      },
+      "aqi": {
+        "aqi": 58,
+        "category": "Moderate air quality",
+        "dominantPollutant": "pm10",
+        "fetchedAt": "2026-08-19T19:00:48Z"
+      }
     },
     {
       "facilityId": "232637",
@@ -931,7 +1182,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJ72OXIzG4T4YRpyfoEo3V3rg",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ72OXIzG4T4YRpyfoEo3V3rg"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ72OXIzG4T4YRpyfoEo3V3rg",
+      "weatherCurrent": {
+        "tempF": 100.3,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:23Z"
+      },
+      "aqi": {
+        "aqi": 72,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:50Z"
+      }
     },
     {
       "facilityId": "232641",
@@ -975,7 +1239,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJ_29EOWKGT4YR3gRm8DS4vro",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_29EOWKGT4YR3gRm8DS4vro"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_29EOWKGT4YR3gRm8DS4vro",
+      "weatherCurrent": {
+        "tempF": 99.6,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:25Z"
+      },
+      "aqi": {
+        "aqi": 69,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:51Z"
+      }
     },
     {
       "facilityId": "232646",
@@ -1018,7 +1295,20 @@
       "dataSource": "ridb",
       "priceLevel": null,
       "placeId": "ChIJj1U3hLPeToYRVzUDJQdPKcI",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJj1U3hLPeToYRVzUDJQdPKcI"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJj1U3hLPeToYRVzUDJQdPKcI",
+      "weatherCurrent": {
+        "tempF": 100.2,
+        "conditions": "Cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:28Z"
+      },
+      "aqi": {
+        "aqi": 54,
+        "category": "Moderate air quality",
+        "dominantPollutant": "pm10",
+        "fetchedAt": "2026-08-19T19:00:52Z"
+      }
     },
     {
       "facilityId": "232674",
@@ -1062,7 +1352,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJpYXbEUE5NIYRWeyhlctx_6I",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJpYXbEUE5NIYRWeyhlctx_6I"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJpYXbEUE5NIYRWeyhlctx_6I",
+      "weatherCurrent": {
+        "tempF": 99.5,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:30Z"
+      },
+      "aqi": {
+        "aqi": 60,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:53Z"
+      }
     },
     {
       "facilityId": "232676",
@@ -1109,7 +1412,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJR-NIULjLT4YR3cy8Wbjv6MU",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJR-NIULjLT4YR3cy8Wbjv6MU"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJR-NIULjLT4YR3cy8Wbjv6MU",
+      "weatherCurrent": {
+        "tempF": 100.9,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:33Z"
+      },
+      "aqi": {
+        "aqi": 71,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:55Z"
+      }
     },
     {
       "facilityId": "232681",
@@ -1150,7 +1466,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJEQwoC2_6UIYRVqlCQVxqSsA",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJEQwoC2_6UIYRVqlCQVxqSsA"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJEQwoC2_6UIYRVqlCQVxqSsA",
+      "weatherCurrent": {
+        "tempF": 100,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:36Z"
+      },
+      "aqi": {
+        "aqi": 67,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:56Z"
+      }
     },
     {
       "facilityId": "232685",
@@ -1193,7 +1522,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJa1GTXveWOYYRK953DPzdvz4",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJa1GTXveWOYYRK953DPzdvz4"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJa1GTXveWOYYRK953DPzdvz4",
+      "weatherCurrent": {
+        "tempF": 94.3,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:38Z"
+      },
+      "aqi": {
+        "aqi": 69,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:57Z"
+      }
     },
     {
       "facilityId": "232695",
@@ -1239,7 +1581,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJFz1tI90ZRIYRj_AThrBY_VE",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJFz1tI90ZRIYRj_AThrBY_VE"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJFz1tI90ZRIYRj_AThrBY_VE",
+      "weatherCurrent": {
+        "tempF": 96.7,
+        "conditions": "Mostly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:40Z"
+      },
+      "aqi": {
+        "aqi": 72,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:00:59Z"
+      }
     },
     {
       "facilityId": "232696",
@@ -1284,7 +1639,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJK5E07Vw5NIYRGpobld5iHNs",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJK5E07Vw5NIYRGpobld5iHNs"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJK5E07Vw5NIYRGpobld5iHNs",
+      "weatherCurrent": {
+        "tempF": 99.6,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:43Z"
+      },
+      "aqi": {
+        "aqi": 61,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:00Z"
+      }
     },
     {
       "facilityId": "232698",
@@ -1325,7 +1693,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJbQ7niAfAOYYRiZ7lsLOFEI4",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJbQ7niAfAOYYRiZ7lsLOFEI4"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJbQ7niAfAOYYRiZ7lsLOFEI4",
+      "weatherCurrent": {
+        "tempF": 95.5,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:45Z"
+      },
+      "aqi": {
+        "aqi": 67,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:01Z"
+      }
     },
     {
       "facilityId": "232699",
@@ -1370,7 +1751,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJ5an0EPMJOYYRHVQvpexORJQ",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ5an0EPMJOYYRHVQvpexORJQ"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ5an0EPMJOYYRHVQvpexORJQ",
+      "weatherCurrent": {
+        "tempF": 95.7,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:48Z"
+      },
+      "aqi": {
+        "aqi": 67,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:03Z"
+      }
     },
     {
       "facilityId": "232708",
@@ -1417,7 +1811,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJGQujyd1VUIYR_qU0XN3B4rc",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJGQujyd1VUIYR_qU0XN3B4rc"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJGQujyd1VUIYR_qU0XN3B4rc",
+      "weatherCurrent": {
+        "tempF": 99.8,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:50Z"
+      },
+      "aqi": {
+        "aqi": 68,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:04Z"
+      }
     },
     {
       "facilityId": "232709",
@@ -1462,7 +1869,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJv9a5XfaPT4YRSJ8kMgq7r68",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJv9a5XfaPT4YRSJ8kMgq7r68"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJv9a5XfaPT4YRSJ8kMgq7r68",
+      "weatherCurrent": {
+        "tempF": 100,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:53Z"
+      },
+      "aqi": {
+        "aqi": 69,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:05Z"
+      }
     },
     {
       "facilityId": "232718",
@@ -1506,7 +1926,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJyxcemt_eRIYRgwlOeCh5lT8",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJyxcemt_eRIYRgwlOeCh5lT8"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJyxcemt_eRIYRgwlOeCh5lT8",
+      "weatherCurrent": {
+        "tempF": 98.6,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:55Z"
+      },
+      "aqi": {
+        "aqi": 59,
+        "category": "Moderate air quality",
+        "dominantPollutant": "pm10",
+        "fetchedAt": "2026-08-19T19:01:06Z"
+      }
     },
     {
       "facilityId": "232726",
@@ -1549,7 +1982,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJ51-y_i-WOYYR50GhJy4MAcg",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ51-y_i-WOYYR50GhJy4MAcg"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ51-y_i-WOYYR50GhJy4MAcg",
+      "weatherCurrent": {
+        "tempF": 93.9,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:54:58Z"
+      },
+      "aqi": {
+        "aqi": 67,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:08Z"
+      }
     },
     {
       "facilityId": "232728",
@@ -1593,7 +2039,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJw3UDjzo4RYYRJDmHH3JVj7k",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJw3UDjzo4RYYRJDmHH3JVj7k"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJw3UDjzo4RYYRJDmHH3JVj7k",
+      "weatherCurrent": {
+        "tempF": 100.7,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:00Z"
+      },
+      "aqi": {
+        "aqi": 74,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:09Z"
+      }
     },
     {
       "facilityId": "232737",
@@ -1635,7 +2094,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": null,
-      "googleUrl": null
+      "googleUrl": null,
+      "weatherCurrent": {
+        "tempF": 100.1,
+        "conditions": "Cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:03Z"
+      },
+      "aqi": {
+        "aqi": 52,
+        "category": "Moderate air quality",
+        "dominantPollutant": "pm10",
+        "fetchedAt": "2026-08-19T19:01:10Z"
+      }
     },
     {
       "facilityId": "232745",
@@ -1677,7 +2149,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJ919SpSweRYYRJf_1mh_2UJg",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ919SpSweRYYRJf_1mh_2UJg"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ919SpSweRYYRJf_1mh_2UJg",
+      "weatherCurrent": {
+        "tempF": 99,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:05Z"
+      },
+      "aqi": {
+        "aqi": 61,
+        "category": "Good air quality",
+        "dominantPollutant": "pm10",
+        "fetchedAt": "2026-08-19T19:01:11Z"
+      }
     },
     {
       "facilityId": "232748",
@@ -1720,7 +2205,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJRfvBoQXiRIYRPn9iyjrJjks",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJRfvBoQXiRIYRPn9iyjrJjks"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJRfvBoQXiRIYRPn9iyjrJjks",
+      "weatherCurrent": {
+        "tempF": 98.4,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:08Z"
+      },
+      "aqi": {
+        "aqi": 62,
+        "category": "Good air quality",
+        "dominantPollutant": "pm10",
+        "fetchedAt": "2026-08-19T19:01:13Z"
+      }
     },
     {
       "facilityId": "232752",
@@ -1766,7 +2264,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJ9yuY66QZRIYRHM43wk43y-E",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ9yuY66QZRIYRHM43wk43y-E"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ9yuY66QZRIYRHM43wk43y-E",
+      "weatherCurrent": {
+        "tempF": 96.6,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:10Z"
+      },
+      "aqi": {
+        "aqi": 72,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:14Z"
+      }
     },
     {
       "facilityId": "232917",
@@ -1809,7 +2320,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": null,
-      "googleUrl": null
+      "googleUrl": null,
+      "weatherCurrent": {
+        "tempF": 101.9,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:13Z"
+      },
+      "aqi": {
+        "aqi": 64,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:15Z"
+      }
     },
     {
       "facilityId": "233125",
@@ -1851,7 +2375,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJybGnQKKFT4YRGKWW6jCWcyo",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJybGnQKKFT4YRGKWW6jCWcyo"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJybGnQKKFT4YRGKWW6jCWcyo",
+      "weatherCurrent": {
+        "tempF": 100.5,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:15Z"
+      },
+      "aqi": {
+        "aqi": 66,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:17Z"
+      }
     },
     {
       "facilityId": "233170",
@@ -1897,7 +2434,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJP5zAozDLT4YRnF7wi3gC5Y8",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJP5zAozDLT4YRnF7wi3gC5Y8"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJP5zAozDLT4YRnF7wi3gC5Y8",
+      "weatherCurrent": {
+        "tempF": 101.4,
+        "conditions": "Cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:18Z"
+      },
+      "aqi": {
+        "aqi": 72,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:18Z"
+      }
     },
     {
       "facilityId": "233200",
@@ -1938,7 +2488,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": null,
-      "googleUrl": null
+      "googleUrl": null,
+      "weatherCurrent": {
+        "tempF": 93.2,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:20Z"
+      },
+      "aqi": {
+        "aqi": 65,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:19Z"
+      }
     },
     {
       "facilityId": "233383",
@@ -1977,7 +2540,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJTfLx-7UdRYYR3X1EVYfdNLQ",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJTfLx-7UdRYYR3X1EVYfdNLQ"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJTfLx-7UdRYYR3X1EVYfdNLQ",
+      "weatherCurrent": {
+        "tempF": 98.7,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:23Z"
+      },
+      "aqi": {
+        "aqi": 64,
+        "category": "Good air quality",
+        "dominantPollutant": "pm10",
+        "fetchedAt": "2026-08-19T19:01:20Z"
+      }
     },
     {
       "facilityId": "233527",
@@ -2022,7 +2598,20 @@
       "dataSource": null,
       "priceLevel": 2,
       "placeId": "ChIJ_ecB4dGRTIYRL95AQFZ9VBA",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_ecB4dGRTIYRL95AQFZ9VBA"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_ecB4dGRTIYRL95AQFZ9VBA",
+      "weatherCurrent": {
+        "tempF": 103.2,
+        "conditions": "Cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:25Z"
+      },
+      "aqi": {
+        "aqi": 49,
+        "category": "Moderate air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:22Z"
+      }
     },
     {
       "facilityId": "233579",
@@ -2065,7 +2654,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJnb7K0tTkSoYRrl_bQKTjpP8",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJnb7K0tTkSoYRrl_bQKTjpP8"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJnb7K0tTkSoYRrl_bQKTjpP8",
+      "weatherCurrent": {
+        "tempF": 102.1,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:27Z"
+      },
+      "aqi": {
+        "aqi": 60,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:23Z"
+      }
     },
     {
       "facilityId": "233586",
@@ -2110,7 +2712,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJpcejZaWZTIYRe0jd4zEZ6F4",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJpcejZaWZTIYRe0jd4zEZ6F4"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJpcejZaWZTIYRe0jd4zEZ6F4",
+      "weatherCurrent": {
+        "tempF": 103.7,
+        "conditions": "Cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:30Z"
+      },
+      "aqi": {
+        "aqi": 52,
+        "category": "Moderate air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:24Z"
+      }
     },
     {
       "facilityId": "233595",
@@ -2155,7 +2770,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "EilQcmVzdG9uIEJlbmQgUmQsIFBvdHRzYm9ybywgVFggNzUwNzYsIFVTQSIuKiwKFAoSCVVDSCiMkUyGEUmn9DFSxu_yEhQKEgkPAWbJ2Y1MhhGXvve_IPpH0Q",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:EilQcmVzdG9uIEJlbmQgUmQsIFBvdHRzYm9ybywgVFggNzUwNzYsIFVTQSIuKiwKFAoSCVVDSCiMkUyGEUmn9DFSxu_yEhQKEgkPAWbJ2Y1MhhGXvve_IPpH0Q"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:EilQcmVzdG9uIEJlbmQgUmQsIFBvdHRzYm9ybywgVFggNzUwNzYsIFVTQSIuKiwKFAoSCVVDSCiMkUyGEUmn9DFSxu_yEhQKEgkPAWbJ2Y1MhhGXvve_IPpH0Q",
+      "weatherCurrent": {
+        "tempF": 101.7,
+        "conditions": "Cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:32Z"
+      },
+      "aqi": {
+        "aqi": 51,
+        "category": "Moderate air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:26Z"
+      }
     },
     {
       "facilityId": "233617",
@@ -2198,7 +2826,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJwceUUgDiRIYRpQ9geaBlP38",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJwceUUgDiRIYRpQ9geaBlP38"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJwceUUgDiRIYRpQ9geaBlP38",
+      "weatherCurrent": {
+        "tempF": 102.1,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:35Z"
+      },
+      "aqi": {
+        "aqi": 60,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:27Z"
+      }
     },
     {
       "facilityId": "233716",
@@ -2243,7 +2884,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJoYUHIlu5T4YR6IxSBTe_PVA",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJoYUHIlu5T4YR6IxSBTe_PVA"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJoYUHIlu5T4YR6IxSBTe_PVA",
+      "weatherCurrent": {
+        "tempF": 100.7,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:37Z"
+      },
+      "aqi": {
+        "aqi": 68,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:28Z"
+      }
     },
     {
       "facilityId": "233790",
@@ -2284,7 +2938,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJOyK8qUO8OYYR1O83lGftpMo",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJOyK8qUO8OYYR1O83lGftpMo"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJOyK8qUO8OYYR1O83lGftpMo",
+      "weatherCurrent": {
+        "tempF": 94,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:40Z"
+      },
+      "aqi": {
+        "aqi": 68,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:29Z"
+      }
     },
     {
       "facilityId": "233828",
@@ -2328,7 +2995,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJC8FFVbE1NIYRHZsdcmhgm0E",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJC8FFVbE1NIYRHZsdcmhgm0E"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJC8FFVbE1NIYRHZsdcmhgm0E",
+      "weatherCurrent": {
+        "tempF": 100.1,
+        "conditions": "Cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:43Z"
+      },
+      "aqi": {
+        "aqi": 61,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:31Z"
+      }
     },
     {
       "facilityId": "233875",
@@ -2370,7 +3050,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJdTbaGLsJOYYRjVgryCMnupU",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJdTbaGLsJOYYRjVgryCMnupU"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJdTbaGLsJOYYRjVgryCMnupU",
+      "weatherCurrent": {
+        "tempF": 95.8,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:45Z"
+      },
+      "aqi": {
+        "aqi": 67,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:32Z"
+      }
     },
     {
       "facilityId": "233951",
@@ -2411,7 +3104,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJP0qLICU5NIYRfBBeoUJaqFY",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJP0qLICU5NIYRfBBeoUJaqFY"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJP0qLICU5NIYRfBBeoUJaqFY",
+      "weatherCurrent": {
+        "tempF": 99.9,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:47Z"
+      },
+      "aqi": {
+        "aqi": 60,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:33Z"
+      }
     },
     {
       "facilityId": "233991",
@@ -2455,7 +3161,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJMcL4b5o4NIYRfbSybc4VIik",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJMcL4b5o4NIYRfbSybc4VIik"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJMcL4b5o4NIYRfbSybc4VIik",
+      "weatherCurrent": {
+        "tempF": 100.3,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:50Z"
+      },
+      "aqi": {
+        "aqi": 60,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:35Z"
+      }
     },
     {
       "facilityId": "234004",
@@ -2498,7 +3217,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJ2aP75-sQR4YRFuZ9AWzycPw",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ2aP75-sQR4YRFuZ9AWzycPw"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ2aP75-sQR4YRFuZ9AWzycPw",
+      "weatherCurrent": {
+        "tempF": 95.1,
+        "conditions": "Mostly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:52Z"
+      },
+      "aqi": {
+        "aqi": 70,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:36Z"
+      }
     },
     {
       "facilityId": "234013",
@@ -2537,7 +3269,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJHSSRefEQ8oYRrT0BuvVpy6w",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJHSSRefEQ8oYRrT0BuvVpy6w"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJHSSRefEQ8oYRrT0BuvVpy6w",
+      "weatherCurrent": {
+        "tempF": 89.4,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:55:55Z"
+      },
+      "aqi": {
+        "aqi": 71,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:37Z"
+      }
     },
     {
       "facilityId": "234014",
@@ -2579,7 +3324,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJ0wB8F7g38oYRPz500b4r8W4",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ0wB8F7g38oYRPz500b4r8W4"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ0wB8F7g38oYRPz500b4r8W4",
+      "weatherCurrent": {
+        "tempF": 100.9,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Monterrey",
+        "fetchedAt": "2026-08-19T18:55:57Z"
+      },
+      "aqi": {
+        "aqi": 71,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:38Z"
+      }
     },
     {
       "facilityId": "234035",
@@ -2623,7 +3381,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJV-Ijvb438oYRTSMZyyGp57U",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJV-Ijvb438oYRTSMZyyGp57U"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJV-Ijvb438oYRTSMZyyGp57U",
+      "weatherCurrent": {
+        "tempF": 100.9,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Monterrey",
+        "fetchedAt": "2026-08-19T18:56:00Z"
+      },
+      "aqi": {
+        "aqi": 71,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:40Z"
+      }
     },
     {
       "facilityId": "234038",
@@ -2664,7 +3435,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJHSSRefEQ8oYRrT0BuvVpy6w",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJHSSRefEQ8oYRrT0BuvVpy6w"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJHSSRefEQ8oYRrT0BuvVpy6w",
+      "weatherCurrent": {
+        "tempF": 89.4,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:56:02Z"
+      },
+      "aqi": {
+        "aqi": 71,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:41Z"
+      }
     },
     {
       "facilityId": "234078",
@@ -2705,7 +3489,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJkQhQ5YwK8oYRMGozzDJTp2o",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJkQhQ5YwK8oYRMGozzDJTp2o"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJkQhQ5YwK8oYRMGozzDJTp2o",
+      "weatherCurrent": {
+        "tempF": 98.8,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Ojinaga",
+        "fetchedAt": "2026-08-19T18:56:05Z"
+      },
+      "aqi": {
+        "aqi": 71,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:42Z"
+      }
     },
     {
       "facilityId": "234094",
@@ -2748,7 +3545,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJ42QMNWQ9T4YRdeywmgV5Yxs",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ42QMNWQ9T4YRdeywmgV5Yxs"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ42QMNWQ9T4YRdeywmgV5Yxs",
+      "weatherCurrent": {
+        "tempF": 99.4,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:56:07Z"
+      },
+      "aqi": {
+        "aqi": 71,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:44Z"
+      }
     },
     {
       "facilityId": "234362",
@@ -2792,7 +3602,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJ26Q-33j5R4YRJxQARJZUwTc",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ26Q-33j5R4YRJxQARJZUwTc"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ26Q-33j5R4YRJxQARJZUwTc",
+      "weatherCurrent": {
+        "tempF": 95.9,
+        "conditions": "Sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:56:10Z"
+      },
+      "aqi": {
+        "aqi": 69,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:45Z"
+      }
     },
     {
       "facilityId": "234628",
@@ -2835,7 +3658,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJHXVhQcwsTIYRvmoYtf37RJg",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJHXVhQcwsTIYRvmoYtf37RJg"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJHXVhQcwsTIYRvmoYtf37RJg",
+      "weatherCurrent": {
+        "tempF": 102.5,
+        "conditions": "Mostly cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:56:12Z"
+      },
+      "aqi": {
+        "aqi": 55,
+        "category": "Moderate air quality",
+        "dominantPollutant": "pm10",
+        "fetchedAt": "2026-08-19T19:01:46Z"
+      }
     },
     {
       "facilityId": "234643",
@@ -2874,7 +3710,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJvRxVvgfVWoYR0xWHsEB7sKM",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJvRxVvgfVWoYR0xWHsEB7sKM"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJvRxVvgfVWoYR0xWHsEB7sKM",
+      "weatherCurrent": {
+        "tempF": 100,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:56:15Z"
+      },
+      "aqi": {
+        "aqi": 59,
+        "category": "Moderate air quality",
+        "dominantPollutant": "pm10",
+        "fetchedAt": "2026-08-19T19:01:48Z"
+      }
     },
     {
       "facilityId": "234665",
@@ -2916,7 +3765,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJr3mrPZcqRYYRZ72qVvpBqz8",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJr3mrPZcqRYYRZ72qVvpBqz8"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJr3mrPZcqRYYRZ72qVvpBqz8",
+      "weatherCurrent": {
+        "tempF": 99.8,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:56:17Z"
+      },
+      "aqi": {
+        "aqi": 58,
+        "category": "Moderate air quality",
+        "dominantPollutant": "pm10",
+        "fetchedAt": "2026-08-19T19:01:49Z"
+      }
     },
     {
       "facilityId": "234702",
@@ -2957,7 +3819,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJlfhNpvASToYRdeVl_B66aR0",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJlfhNpvASToYRdeVl_B66aR0"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJlfhNpvASToYRdeVl_B66aR0",
+      "weatherCurrent": {
+        "tempF": 102.3,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:56:20Z"
+      },
+      "aqi": {
+        "aqi": 61,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:50Z"
+      }
     },
     {
       "facilityId": "234703",
@@ -2998,7 +3873,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJJ0fuorkTToYR7-pxdpGzf7w",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJJ0fuorkTToYR7-pxdpGzf7w"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJJ0fuorkTToYR7-pxdpGzf7w",
+      "weatherCurrent": {
+        "tempF": 102.1,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:56:22Z"
+      },
+      "aqi": {
+        "aqi": 62,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:51Z"
+      }
     },
     {
       "facilityId": "248408",
@@ -3037,7 +3925,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJh4iy8ZMTToYRD6yBZnYgAdQ",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJh4iy8ZMTToYRD6yBZnYgAdQ"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJh4iy8ZMTToYRD6yBZnYgAdQ",
+      "weatherCurrent": {
+        "tempF": 102.2,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:56:25Z"
+      },
+      "aqi": {
+        "aqi": 64,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:53Z"
+      }
     },
     {
       "facilityId": "248432",
@@ -3076,7 +3977,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJPa3nyAyRTIYRmc8_eKgtpcc",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJPa3nyAyRTIYRmc8_eKgtpcc"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJPa3nyAyRTIYRmc8_eKgtpcc",
+      "weatherCurrent": {
+        "tempF": 103.2,
+        "conditions": "Cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:56:27Z"
+      },
+      "aqi": {
+        "aqi": 54,
+        "category": "Moderate air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:54Z"
+      }
     },
     {
       "facilityId": "248443",
@@ -3115,7 +4029,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJSfpvEwvyTIYR2bL2JGpeVVU",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJSfpvEwvyTIYR2bL2JGpeVVU"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJSfpvEwvyTIYR2bL2JGpeVVU",
+      "weatherCurrent": {
+        "tempF": 103.2,
+        "conditions": "Cloudy",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:56:30Z"
+      },
+      "aqi": {
+        "aqi": 48,
+        "category": "Moderate air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:55Z"
+      }
     },
     {
       "facilityId": "248470",
@@ -3154,7 +4081,20 @@
       "dataSource": "tpwd",
       "priceLevel": null,
       "placeId": "ChIJnQctMRYZRIYRxT1kAo0cwG4",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJnQctMRYZRIYRxT1kAo0cwG4"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJnQctMRYZRIYRxT1kAo0cwG4",
+      "weatherCurrent": {
+        "tempF": 96.3,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:56:32Z"
+      },
+      "aqi": {
+        "aqi": 72,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:56Z"
+      }
     },
     {
       "facilityId": "248473",
@@ -3193,7 +4133,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": "ChIJPwHo4WYJOYYR9vGjUXIN5Qk",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJPwHo4WYJOYYR9vGjUXIN5Qk"
+      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJPwHo4WYJOYYR9vGjUXIN5Qk",
+      "weatherCurrent": {
+        "tempF": 95.7,
+        "conditions": "Partly sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:56:35Z"
+      },
+      "aqi": {
+        "aqi": 68,
+        "category": "Good air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:58Z"
+      }
     },
     {
       "facilityId": "253578",
@@ -3232,7 +4185,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": null,
-      "googleUrl": null
+      "googleUrl": null,
+      "weatherCurrent": {
+        "tempF": 98.5,
+        "conditions": "Sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:56:37Z"
+      },
+      "aqi": {
+        "aqi": 59,
+        "category": "Moderate air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:01:59Z"
+      }
     },
     {
       "facilityId": "253635",
@@ -3271,7 +4237,20 @@
       "dataSource": null,
       "priceLevel": null,
       "placeId": null,
-      "googleUrl": null
+      "googleUrl": null,
+      "weatherCurrent": {
+        "tempF": 98.5,
+        "conditions": "Sunny",
+        "isDaytime": true,
+        "timeZone": "America/Chicago",
+        "fetchedAt": "2026-08-19T18:56:40Z"
+      },
+      "aqi": {
+        "aqi": 59,
+        "category": "Moderate air quality",
+        "dominantPollutant": "o3",
+        "fetchedAt": "2026-08-19T19:02:00Z"
+      }
     }
   ]
 }

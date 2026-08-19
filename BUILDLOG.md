@@ -232,3 +232,116 @@ Google key) · claim form on 75/75 pages.
 5. Affiliate programs (RVshare/Outdoorsy/Harvest Hosts/Passport America/Camping
    World) into the reserved slots with rel="sponsored nofollow" (Phase 2).
 6. Data freshness: re-run data:fetch + tpwd + google on a cadence.
+## 6. ENRICHMENT 2026-08-19 — LIVE WEATHER + AQI + REAL AMENITY PAGES (PUSHED)
+
+Repo live at https://k00jax.github.io/rv-parks-directory. This build adds live
+Google Weather + Air Quality per park, and replaces the 3 stub amenity pages
+(full-hookup placeholder, pet-friendly, lakefront) with 12 real dataset-driven
+amenity pages + an amenity index.
+
+### 6.1 Task A — Live weather + AQI (scripts/fetch-weather-aqi.py)
+
+- Weather: `GET https://weather.googleapis.com/v1/currentConditions:lookup?key=KEY&location.latitude=..&location.longitude=..&unitsSystem=IMPERIAL`
+  → `temperature.degrees` (F), `weatherCondition.description.text`, `timeZone.id`, `isDaytime`.
+- AQI: `POST https://airquality.googleapis.com/v1/currentConditions:lookup?key=KEY`
+  body `{"location":{...},"extraComputations":["HEALTH_RECOMMENDATIONS"]}` → `indexes[0].aqi` + `.category`.
+- Per park with lat/lng: fetch both, 1 s pacing, cache raw to
+  `scripts/raw/weather-aqi-<date>.json` (gitignored). Store
+  `weatherCurrent = {tempF, conditions, isDaytime, timeZone, fetchedAt}` and
+  `aqi = {aqi, category, dominantPollutant, fetchedAt}`; on ANY API error both
+  stay null — never fabricated. Missing GOOGLE_API_KEY → skip cleanly (exit 0).
+- **Bug found + fixed during the run:** first attempt got HTTP 403 on all 75 AQI
+  calls because `fetch_aqi()` omitted `?key=` from the URL (weather worked; the
+  key was only on the weather query string). Fixed the URL, re-ran; cache stores
+  only successful fields so transient failures are retried, and the
+  "already fetched today" skip only fires when every park has weather AND AQI.
+- Result: **75/75 parks with weather, 75/75 with AQI** (0 parks skipped — all
+  have lat/lng). AQI categories: 55 Good, 20 Moderate. Sample: Double Lake 96°F
+  Partly sunny, AQI 71 Good air quality.
+
+### 6.2 Task B — Real amenity pages (12 hubs + index)
+
+- Dataset vocabulary (Recreation.gov facility amenities): boat ramp 56, showers
+  39, water hookup 34, dump station 27, playground 22, flush toilets 18,
+  50 amp 12, 30 amp 10, 20 amp 3, laundry 2.
+- Single pages built for all 10 vocabulary terms (slug = term, e.g. `50-amp`,
+  `boat-ramp`, `water-hookup`). Combined pages (≥3 parks rule): `full-hookup`
+  (water hookup + dump station, 18 parks), `50-amp-full-hookup` (50 amp + water
+  hookup + dump station, 6 parks). `boat-ramp-camping` was NOT built — it would
+  be an exact duplicate of the boat-ramp page (same 56 parks, same intent).
+- Stub pages removed: `pet-friendly` (petPolicy is null on all 75 parks — no
+  data), `lakefront` (not a real vocabulary term; its old regex matched
+  boat-ramp parks, which now have their own page). Site header now links
+  Amenities / Full Hookup / 50 Amp.
+- New `/rv-parks/amenities/` index links all 12 amenity pages with live counts.
+- Wired in: homepage amenity section (counts per page + index link), sitemap
+  generator (`sitemap-amenities.xml`: 25 URLs incl. index + texas-scoped
+  variants), park pages (each park links the amenity pages it qualifies for).
+- Park page renders a WeatherCard: temp °F + conditions + day/night + timezone,
+  AQI value + category with color (green <50, yellow 51-100, orange 101-150,
+  red >150), fetch timestamp. Renders only real API data; no data → no card.
+
+### 6.3 Schema + validator changes
+
+- types.ts: `WeatherCurrent` + `Aqi` interfaces; Park gains
+  `weatherCurrent: WeatherCurrent | null`, `aqi: Aqi | null`.
+- validate-data.mjs: weatherCurrent/aqi must be present (object or null);
+  tempF finite -100..150, aqi integer 0..500, conditions/category non-empty
+  strings or null, fetchedAt ISO — null never fails, fabricated values do.
+- verify-content.py: new checks 8-10 — amenity pages exist + render their
+  expected park links (hrefs from raw HTML), amenities index links all pages,
+  and the built HTML contains the REAL weather temp + REAL AQI value from the
+  dataset (cross-checked against the API record, not a stub).
+
+### 6.4 Gates (2026-08-19, real outputs)
+
+| Gate | Command | Result |
+|---|---|---|
+| 1. Validator | `node scripts/validate-data.mjs` | exit 0 — parks 75, cities 38, OK |
+| 2. Typecheck | `npx tsc --noEmit` | exit 0 |
+| 3. Clean rebuild | `rm -rf docs .next && npm run build` | exit 0 — 142 static pages (1 home, 75 park, 38 city, 12 amenity, 12 texas-scoped amenity, amenities index, texas hub, 404) |
+| 4. Content verify | `python3 scripts/verify-content.py .` | PASS (10 checks: finite numbers, 0 sponsored, disclosure order, no tested/reviewed framing, JSON-LD, badge, homepage crawl 75/75, amenity pages, amenities index, live weather+AQI) |
+| 5. Spot check park page | docs/parks/tx/double-lake-recreation-area | WeatherCard: `96°F`, "Partly sunny", day, America/Chicago; AQI `71` + "Good air quality" (aqi-moderate class) |
+| 6. Spot check amenity page | docs/rv-parks/full-hookup | "RV Parks with Full Hookups in Texas", 18 park links (brushy-creek … malden-lake-campground) |
+| 7. Grep built HTML | docs/parks/tx/*/index.html | real temp `96°F` and real AQI `71 Good air quality` present (from API, not stubs) |
+| 8. Deploy | git push origin main | GitHub Actions Deploy to GitHub Pages — verify live URL after 2-3 min |
+
+Page inventory now: 75 park pages · 38 city pages · 12 amenity pages ·
+12 texas-scoped amenity pages · /rv-parks/amenities/ · /rv-parks/texas/ ·
+home · 404 = 142 static HTML files.
+
+### 6.5 TODO for human (updated)
+
+1. Real domain: replace rvparks.example.com (JSON-LD URLs) + SITE_URL env once
+   purchased; verify GitHub Pages settings.
+2. Maps Tile API for a map view (weather/AQI coords are already on every park).
+3. Freshness: weather/AQI are a point-in-time snapshot (2026-08-19 ~18:53 UTC).
+   Re-run `python3 scripts/fetch-weather-aqi.py` on a cadence (cron candidate)
+   to refresh; script is idempotent per day and retries failures.
+4. Phase 1 hookups: per-campsite RIDB attributes pull (still the path to
+   definitive 30/50 amp + water/sewer/electric per site).
+5. Affiliate programs (RVshare/Outdoorsy/Harvest Hosts/Passport America/Camping
+   World) into the reserved slots with rel="sponsored nofollow" (Phase 2).
+6. TPWD state parks (ResRec) as a Phase 2 data source to grow past 75 parks.
+7. Data freshness: re-run data:fetch + tpwd + google + weather on a cadence.
+
+### 6.6 CONCURRENCY NOTE — parallel fee-readd task touched the same working tree
+
+While this build ran (18:53–19:22 UTC), ANOTHER session under the director-1
+profile was simultaneously working in this repo on a "re-add dropped TX
+campgrounds with real fee prices" pipeline (scripts: probe_recgov_price.py,
+parse_fee_prices.py, readd_fee_parks.py, check_missing_parks.py, …; written
+19:08–19:12, parks.tx.json rewritten 19:12:33, validate-data.mjs edited
+19:13:24 to allow dataSource 'ridb-fee-description').
+
+That merged state was NOT shippable: it grew the dataset to 82 parks, but the
+7 readded parks had NO `source` object (park pages render
+`park.source.facilityType` → build crash), meta.counts were stale, and 7
+original parks gained prices with dataSource null (validator failure).
+
+Resolution taken by THIS task: parks.tx.json was restored to the verified
+75-park weather/AQI dataset; the concurrent merged state is preserved at
+`scripts/raw/parks-tx-concurrent-readd-backup-20260819.json` (gitignored), and
+the readd scripts were left UNTRACKED in the tree so that task can re-run on
+top of this commit. DO NOT merge the 82-park file until the readd task
+populates `source` objects and updates meta counts.

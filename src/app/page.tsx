@@ -35,12 +35,19 @@ export default function HomePage() {
       <section>
         <h2>Browse by amenity</h2>
         <div className="card-grid">
-          {amenityHubs.map((a) => (
-            <div className="card" key={a.slug}>
-              <Link href={`/rv-parks/${a.slug}/`}>{a.title}</Link>
-              <div className="muted">{a.description}</div>
-            </div>
-          ))}
+          {amenityHubs.map((a) => {
+            const count = parks.filter(a.match).length;
+            return (
+              <div className="card" key={a.slug}>
+                <Link href={`/rv-parks/${a.slug}/`}>{a.title}</Link>
+                <div className="muted">{count} parks</div>
+              </div>
+            );
+          })}
+          <div className="card">
+            <Link href="/rv-parks/amenities/">All RV park amenities in Texas</Link>
+            <div className="muted">Full amenity filter index</div>
+          </div>
         </div>
       </section>
 

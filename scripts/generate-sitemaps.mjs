@@ -16,7 +16,22 @@ const SITE_URL = (process.env.SITE_URL || 'https://rvparks.example.com').replace
 
 const parks = JSON.parse(readFileSync(join(ROOT, 'src', 'data', 'parks.tx.json'), 'utf8')).parks;
 const cities = JSON.parse(readFileSync(join(ROOT, 'src', 'data', 'cities.tx.json'), 'utf8')).cities;
-const amenities = ['full-hookup', 'pet-friendly', 'lakefront'];
+// Amenity slugs — must match the amenityHubs slugs in src/lib/parks.ts.
+// Single terms from the dataset vocabulary, then the combined pages.
+const amenities = [
+  'boat-ramp',
+  'showers',
+  'water-hookup',
+  'dump-station',
+  'playground',
+  'flush-toilets',
+  '50-amp',
+  '30-amp',
+  '20-amp',
+  'laundry',
+  'full-hookup',
+  '50-amp-full-hookup',
+];
 
 mkdirSync(OUT, { recursive: true });
 
@@ -33,7 +48,7 @@ ${cities
   .map((c) => url(`/rv-parks/texas/${c.slug}/`, parks.find((p) => p.facilityId === c.parkIds[0])?.lastVerified ?? null))
   .join('\n')}\n</urlset>\n`;
 
-const amenitiesXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${amenities
+const amenitiesXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${url('/rv-parks/amenities/', null)}\n${amenities
   .map((a) => `${url(`/rv-parks/${a}/`, null)}\n${url(`/rv-parks/texas/${a}/`, null)}`)
   .join('\n')}\n</urlset>\n`;
 
