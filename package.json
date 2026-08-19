@@ -1,0 +1,31 @@
+{
+  "name": "rv-parks-directory",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Phase 0 pilot: programmatic SEO directory of RV parks & campgrounds (Texas) built from Recreation.gov public data. Static Next.js export for GitHub Pages.",
+  "scripts": {
+    "data:fetch": "python3 scripts/fetch-ridb.py",
+    "validate": "node scripts/validate-data.mjs",
+    "dev": "next dev",
+    "build": "node scripts/validate-data.mjs && next build && node scripts/generate-sitemaps.mjs",
+    "verify": "python3 scripts/verify-content.py",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "rv-parks",
+    "campgrounds",
+    "programmatic-seo",
+    "nextjs",
+    "ridb"
+  ],
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "dependencies": {
+    "@types/node": "20.14.9",
+    "@types/react": "18.3.3",
+    "next": "14.2.30",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "typescript": "5.5.4"
+  }
+}

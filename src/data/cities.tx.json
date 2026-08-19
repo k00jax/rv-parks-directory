@@ -1,0 +1,309 @@
+{
+  "meta": {
+    "state": "Texas",
+    "stateAbbr": "TX"
+  },
+  "cities": [
+    {
+      "name": "COLDSPRING",
+      "slug": "coldspring",
+      "parkIds": [
+        "232430"
+      ]
+    },
+    {
+      "name": "WACO",
+      "slug": "waco",
+      "parkIds": [
+        "232511",
+        "232641",
+        "232709",
+        "233125"
+      ]
+    },
+    {
+      "name": "JEFFERSON",
+      "slug": "jefferson",
+      "parkIds": [
+        "232534",
+        "232536",
+        "232614"
+      ]
+    },
+    {
+      "name": "GEORGETOWN",
+      "slug": "georgetown",
+      "parkIds": [
+        "232544",
+        "232612",
+        "234665"
+      ]
+    },
+    {
+      "name": "Morgan",
+      "slug": "morgan",
+      "parkIds": [
+        "232547"
+      ]
+    },
+    {
+      "name": "PRINCETON",
+      "slug": "princeton",
+      "parkIds": [
+        "232552"
+      ]
+    },
+    {
+      "name": "Texarkana",
+      "slug": "texarkana",
+      "parkIds": [
+        "232553",
+        "233951",
+        "233991"
+      ]
+    },
+    {
+      "name": "COMANCHE",
+      "slug": "comanche",
+      "parkIds": [
+        "232557",
+        "232681",
+        "232708"
+      ]
+    },
+    {
+      "name": "COLEMAN",
+      "slug": "coleman",
+      "parkIds": [
+        "232588",
+        "232618"
+      ]
+    },
+    {
+      "name": "JASPER",
+      "slug": "jasper",
+      "parkIds": [
+        "232594",
+        "232685",
+        "232698",
+        "232699",
+        "232726",
+        "233790"
+      ]
+    },
+    {
+      "name": "Hickory Creek",
+      "slug": "hickory-creek",
+      "parkIds": [
+        "232600"
+      ]
+    },
+    {
+      "name": "LAVON",
+      "slug": "lavon",
+      "parkIds": [
+        "232620"
+      ]
+    },
+    {
+      "name": "East Whitney",
+      "slug": "east-whitney",
+      "parkIds": [
+        "232628"
+      ]
+    },
+    {
+      "name": "FORT WORTH",
+      "slug": "fort-worth",
+      "parkIds": [
+        "232633",
+        "232917",
+        "248408"
+      ]
+    },
+    {
+      "name": "ENNIS",
+      "slug": "ennis",
+      "parkIds": [
+        "232635",
+        "232646",
+        "232737"
+      ]
+    },
+    {
+      "name": "Whitney",
+      "slug": "whitney",
+      "parkIds": [
+        "232637"
+      ]
+    },
+    {
+      "name": "Queen City",
+      "slug": "queen-city",
+      "parkIds": [
+        "232674",
+        "232696"
+      ]
+    },
+    {
+      "name": "Kopperl",
+      "slug": "kopperl",
+      "parkIds": [
+        "232676",
+        "233170"
+      ]
+    },
+    {
+      "name": "SOMERVILLE",
+      "slug": "somerville",
+      "parkIds": [
+        "232695",
+        "232752",
+        "248470"
+      ]
+    },
+    {
+      "name": "Taylor",
+      "slug": "taylor",
+      "parkIds": [
+        "232718"
+      ]
+    },
+    {
+      "name": "Salado",
+      "slug": "salado",
+      "parkIds": [
+        "232728"
+      ]
+    },
+    {
+      "name": "GRANGER",
+      "slug": "granger",
+      "parkIds": [
+        "232745",
+        "232748",
+        "233383"
+      ]
+    },
+    {
+      "name": "Hemphill",
+      "slug": "hemphill",
+      "parkIds": [
+        "233200"
+      ]
+    },
+    {
+      "name": "DENISON",
+      "slug": "denison",
+      "parkIds": [
+        "233527",
+        "233586",
+        "248432",
+        "248443"
+      ]
+    },
+    {
+      "name": "POWDERLY",
+      "slug": "powderly",
+      "parkIds": [
+        "233579",
+        "233617"
+      ]
+    },
+    {
+      "name": "Pottsboro",
+      "slug": "pottsboro",
+      "parkIds": [
+        "233595"
+      ]
+    },
+    {
+      "name": "West Whitney",
+      "slug": "west-whitney",
+      "parkIds": [
+        "233716"
+      ]
+    },
+    {
+      "name": "Maud",
+      "slug": "maud",
+      "parkIds": [
+        "233828"
+      ]
+    },
+    {
+      "name": "WOODVILLE",
+      "slug": "woodville",
+      "parkIds": [
+        "233875",
+        "248473"
+      ]
+    },
+    {
+      "name": "NEW WAVERLY",
+      "slug": "new-waverly",
+      "parkIds": [
+        "234004"
+      ]
+    },
+    {
+      "name": "Big Bend National Park",
+      "slug": "big-bend-national-park",
+      "parkIds": [
+        "234013",
+        "234038"
+      ]
+    },
+    {
+      "name": "BIG BEND NAT. PARK",
+      "slug": "big-bend-nat-park",
+      "parkIds": [
+        "234014",
+        "234035",
+        "234078"
+      ]
+    },
+    {
+      "name": "PURDON",
+      "slug": "purdon",
+      "parkIds": [
+        "234094"
+      ]
+    },
+    {
+      "name": "KENNARD",
+      "slug": "kennard",
+      "parkIds": [
+        "234362"
+      ]
+    },
+    {
+      "name": "Flower Mound",
+      "slug": "flower-mound",
+      "parkIds": [
+        "234628"
+      ]
+    },
+    {
+      "name": "Liberty Hill",
+      "slug": "liberty-hill",
+      "parkIds": [
+        "234643"
+      ]
+    },
+    {
+      "name": "BENBROOK",
+      "slug": "benbrook",
+      "parkIds": [
+        "234702"
+      ]
+    },
+    {
+      "name": "CROWLEY",
+      "slug": "crowley",
+      "parkIds": [
+        "234703"
+      ]
+    }
+  ]
+}

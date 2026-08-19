@@ -1,0 +1,54 @@
+#!/usr/bin/env node
+/**
+ * generate-sitemaps.mjs — emits sitemap-index.xml + per-family segments into docs/
+ * after `next build`. Per brief section 3: sitemap-index + per-family sitemaps,
+ * lastmod = updatedAt (lastVerified).
+ */
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const ROOT = join(__dirname, '..');
+const OUT = join(ROOT, 'docs');
+
+const SITE_URL = (process.env.SITE_URL || 'https://rvparks.example.com').replace(/\/$/, '');
+
+const parks = JSON.parse(readFileSync(join(ROOT, 'src', 'data', 'parks.tx.json'), 'utf8')).parks;
+const cities = JSON.parse(readFileSync(join(ROOT, 'src', 'data', 'cities.tx.json'), 'utf8')).cities;
+const amenities = ['full-hookup', 'pet-friendly', 'lakefront'];
+
+mkdirSync(OUT, { recursive: true });
+
+const url = (loc, lastmod) =>
+  `  <url><loc>${SITE_URL}${loc}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}</url>`;
+
+const parksXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${parks
+  .map((p) => url(`/parks/tx/${p.slug}/`, p.lastVerified))
+  .join('\n')}\n</urlset>\n`;
+
+const citiesXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${url('/', null)}
+${url('/rv-parks/texas/', parks[0]?.lastVerified ?? null)}
+${cities
+  .map((c) => url(`/rv-parks/texas/${c.slug}/`, parks.find((p) => p.facilityId === c.parkIds[0])?.lastVerified ?? null))
+  .join('\n')}\n</urlset>\n`;
+
+const amenitiesXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${amenities
+  .map((a) => `${url(`/rv-parks/${a}/`, null)}\n${url(`/rv-parks/texas/${a}/`, null)}`)
+  .join('\n')}\n</urlset>\n`;
+
+const indexXml = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap><loc>${SITE_URL}/sitemap-parks.xml</loc></sitemap>
+  <sitemap><loc>${SITE_URL}/sitemap-cities.xml</loc></sitemap>
+  <sitemap><loc>${SITE_URL}/sitemap-amenities.xml</loc></sitemap>
+</sitemapindex>\n`;
+
+writeFileSync(join(OUT, 'sitemap-index.xml'), indexXml);
+writeFileSync(join(OUT, 'sitemap-parks.xml'), parksXml);
+writeFileSync(join(OUT, 'sitemap-cities.xml'), citiesXml);
+writeFileSync(join(OUT, 'sitemap-amenities.xml'), amenitiesXml);
+
+const count = (xml, tag) => (xml.match(/<url>/g) || []).length;
+console.log(
+  `[sitemaps] wrote sitemap-index.xml, sitemap-parks.xml (${count(parksXml)}), sitemap-cities.xml (${count(citiesXml)}), sitemap-amenities.xml (${count(amenitiesXml)}) -> docs/`
+);
