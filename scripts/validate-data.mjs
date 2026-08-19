@@ -95,8 +95,8 @@ for (const [i, p] of parks.entries()) {
   }
 
   // enriched optional fields (null is fine; malformed values are not)
-  if (p.dataSource !== null && p.dataSource !== undefined && !['ridb', 'tpwd'].includes(p.dataSource)) {
-    errors.push(`${where}: dataSource invalid value "${p.dataSource}" (expected ridb|tpwd|null)`);
+  if (p.dataSource !== null && p.dataSource !== undefined && !['ridb', 'tpwd', 'ridb-fee-description'].includes(p.dataSource)) {
+    errors.push(`${where}: dataSource invalid value "${p.dataSource}" (expected ridb|tpwd|ridb-fee-description|null)`);
   }
   if (p.placeId !== null && p.placeId !== undefined && (typeof p.placeId !== 'string' || p.placeId.trim() === '')) {
     errors.push(`${where}: placeId must be a non-empty string or null`);
