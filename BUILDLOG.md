@@ -345,3 +345,11 @@ Resolution taken by THIS task: parks.tx.json was restored to the verified
 the readd scripts were left UNTRACKED in the tree so that task can re-run on
 top of this commit. DO NOT merge the 82-park file until the readd task
 populates `source` objects and updates meta counts.
+
+## 7. Nightly prices from RIDB fee descriptions (2026-08-19)
+- 32/75 raw facility files carry `facility_use_fee_description` (HTML, snake_case).
+- `scripts/parse_fee_prices.py` extracts nightly prices: prefers explicit "per night", falls back to camping-context amounts, EXCLUDES day-use/boat-ramp/event-only fees (honest — MUSTANG, TEMPLES LAKE, NORTH HOLIDAY stay unpriced).
+- `scripts/readd_fee_parks.py` re-adds 7 TX campgrounds that were over-pruned by the earlier day-use filter AND carry real fees: Big Bend Backcountry ($10), Frijole Horse Corral ($15–20), Caney Creek ($5–6), Rock Quarry Group ($35–75), HIGH VIEW ($18–22), Holiday TX ($14–40), Pine Springs ($60). Each gets a full `source` object + meta.counts recompute.
+- Result: 82 parks, 9 with honest nightly prices (7 fee-description + MOTT ridb + Lake Somerville tpwd). 73 still show "Rates not published — check reservation page" (rec.gov link).
+- Validator now accepts `ridb-fee-description` as a dataSource value.
+- Concurrency note: dev-3's weather/AQI build (0727c1e) and this price work ran in parallel; merged deliberately. dev-3 preserved the intermediate state at scripts/raw/parks-tx-concurrent-readd-backup-20260819.json.
