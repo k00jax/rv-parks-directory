@@ -104,7 +104,7 @@ function AmenityHubView({ amenitySlug, scoped }: { amenitySlug: string; scoped: 
       '@type': 'ListItem',
       position: i + 1,
       name: p.name,
-      url: `https://rvparks.example.com/parks/tx/${p.slug}/`,
+      url: `https://americanrvparks.com/parks/tx/${p.slug}/`,
     })),
   };
 
@@ -160,7 +160,7 @@ function StateHubView() {
       '@type': 'ListItem',
       position: i + 1,
       name: p.name,
-      url: `https://rvparks.example.com/parks/tx/${p.slug}/`,
+      url: `https://americanrvparks.com/parks/tx/${p.slug}/`,
     })),
   };
   return (
@@ -208,7 +208,7 @@ function CityHubView({ citySlug }: { citySlug: string }) {
       '@type': 'ListItem',
       position: i + 1,
       name: p.name,
-      url: `https://rvparks.example.com/parks/tx/${p.slug}/`,
+      url: `https://americanrvparks.com/parks/tx/${p.slug}/`,
     })),
   };
   return (
