@@ -9,7 +9,7 @@ export default function SiteFooter() {
           and amenities are provided as-is from the source data and may change; always confirm with
           the campground before booking.
         </p>
-        <p className="muted">
+        <p style={{ color: '#fff' }}>
           Data source: Recreation.gov (RIDB) public facility data · v2.0.0 · Updated 2026-08-20 ·
           Not affiliated with Recreation.gov.
         </p>

@@ -312,38 +312,36 @@ export default function HomePage() {
 
       <section>
         <h2>Explore by amenity</h2>
-        <div className="amenity-grid">
-          {amenityHubs.map((a, i) => {
-            const count = parks.filter(a.match).length;
-            const label = amenityLabel(a.slug);
-            return (
-              <Link
-                key={a.slug}
-                className={`amenity-tile ${AMENITY_TINTS[i % AMENITY_TINTS.length]}`}
-                href={`/rv-parks/${a.slug}/`}
-                aria-label={`${label} — ${count} park${count === 1 ? '' : 's'}`}
-              >
-                <span className="amenity-icon" aria-hidden="true">
-                  {AMENITY_EMOJI[a.slug] ?? '⛺'}
-                </span>
-                <span className="amenity-label">{label}</span>
-                <span className="amenity-count">
-                  {count} park{count === 1 ? '' : 's'}
-                </span>
-              </Link>
-            );
-          })}
+        <div className="amenity-group">
           <Link
-            className={`amenity-tile ${AMENITY_TINTS[amenityHubs.length % AMENITY_TINTS.length]}`}
+            className="amenity-group-label"
             href="/rv-parks/amenities/"
             aria-label="All RV park amenities in the United States — full amenity filter index"
           >
-            <span className="amenity-icon" aria-hidden="true">
-              🧭
-            </span>
-            <span className="amenity-label">All Amenities</span>
-            <span className="amenity-count">Full filter index</span>
+            All Amenities →
           </Link>
+          <div className="amenity-grid">
+            {amenityHubs.map((a, i) => {
+              const count = parks.filter(a.match).length;
+              const label = amenityLabel(a.slug);
+              return (
+                <Link
+                  key={a.slug}
+                  className={`amenity-tile ${AMENITY_TINTS[i % AMENITY_TINTS.length]}`}
+                  href={`/rv-parks/${a.slug}/`}
+                  aria-label={`${label} — ${count} park${count === 1 ? '' : 's'}`}
+                >
+                  <span className="amenity-icon" aria-hidden="true">
+                    {AMENITY_EMOJI[a.slug] ?? '⛺'}
+                  </span>
+                  <span className="amenity-label">{label}</span>
+                  <span className="amenity-count">
+                    {count} park{count === 1 ? '' : 's'}
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -389,7 +387,7 @@ export default function HomePage() {
         </p>
       </section>
 
-      <p className="small muted" style={{ marginTop: '2rem' }}>
+      <p className="small table-explain" style={{ marginTop: '2rem' }}>
         v2.0.0. Missing values (prices, ratings, hookups) are shown as “—” when the source
         data does not publish them — nothing on this site is estimated or invented. Data:{' '}
         {datasetMeta.source} · fetched {datasetMeta.fetchedAt}.
