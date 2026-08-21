@@ -304,7 +304,7 @@ export default function HomePage() {
             );
           })}
         </div>
-        <p className="small muted" style={{ marginTop: '0.6rem' }}>
+        <p className="small table-explain" style={{ marginTop: '0.6rem' }}>
           Counting every city would overflow this page — search a specific city above, or browse
           by <Link href="/rv-parks/tx/">state</Link>.
         </p>
