@@ -74,7 +74,7 @@ export function generateMetadata({ params }: Props): Metadata {
 function AmenitiesIndexView() {
   const stName = 'United States';
   return (
-    <div>
+    <div className="park-page">
       <Breadcrumbs crumbs={[{ label: 'Amenities' }]} />
       <h1>RV Park Amenities in {stName}</h1>
       <p className="muted">
@@ -123,7 +123,7 @@ function AmenityHubView({ amenitySlug, state }: { amenitySlug: string; state?: s
   };
 
   return (
-    <div>
+    <div className="park-page">
       <Breadcrumbs
         crumbs={[
           ...(scoped ? [{ label: stName, href: `/rv-parks/${stLower}/` }] : []),
@@ -183,7 +183,7 @@ function StateHubView({ state }: { state: string }) {
     })),
   };
   return (
-    <div>
+    <div className="park-page">
       <Breadcrumbs crumbs={[{ label: stName }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemList) }} />
       <h1>RV Parks &amp; Campgrounds in {stName}</h1>
@@ -233,7 +233,7 @@ function CityHubView({ state, citySlug }: { state: string; citySlug: string }) {
   };
   const nearby = cities.filter((c) => c.slug !== citySlug && (c.state ?? state.toUpperCase()) === state.toUpperCase());
   return (
-    <div>
+    <div className="park-page">
       <Breadcrumbs
         crumbs={[{ label: stName, href: `/rv-parks/${state}/` }, { label: hub.name }]}
       />
