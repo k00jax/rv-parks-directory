@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "state": "NH",
+    "stateAbbr": "NH"
+  },
+  "cities": [
+    {
+      "name": "CONTOOCOOK",
+      "slug": "contoocook",
+      "parkIds": [
+        "234090"
+      ]
+    },
+    {
+      "name": "JACKSON",
+      "slug": "jackson",
+      "parkIds": [
+        "234237",
+        "234238"
+      ]
+    },
+    {
+      "name": "CONWAY",
+      "slug": "conway",
+      "parkIds": [
+        "234241",
+        "234764"
+      ]
+    },
+    {
+      "name": "Keene",
+      "slug": "keene",
+      "parkIds": [
+        "248168",
+        "249980",
+        "249984"
+      ]
+    }
+  ]
+}

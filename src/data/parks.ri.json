@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "fetchedAt": "2026-08-21T04:44:56Z",
+    "lastVerified": "2026-08-21",
+    "state": "RI",
+    "source": "RIDB API v1 (ridb.recreation.gov/api/v1) with registered developer apikey",
+    "sourceUrls": [
+      "https://ridb.recreation.gov/api/v1/facilities?state=RI&limit=100&offset=N",
+      "https://ridb.recreation.gov/api/v1/facilities/{facilityId}",
+      "https://ridb.recreation.gov/api/v1/facilities/{facilityId}/facilityaddresses"
+    ],
+    "counts": {
+      "totalRidbRecords": 1,
+      "phaseACandidates": 0,
+      "parksKept": 0,
+      "droppedPhaseA": {
+        "no-camp-signal": 1
+      },
+      "droppedPhaseB": {},
+      "stateEvidence": {},
+      "typeBreakdown": {},
+      "parksWithAddress": 0,
+      "parksWithCity": 0,
+      "parksWithZip": 0,
+      "parksWithPhone": 0,
+      "parksWithLatLng": 0,
+      "parksWithPrice": 0,
+      "parksWithSiteCount": 0,
+      "parksWithAmenities": 0,
+      "parksWithHookups": 0,
+      "parksWithMedia": 0,
+      "parksWithWebsite": 0
+    },
+    "detailFailures": [],
+    "antiFabrication": "rating/reviewCount/petPolicy always null. Prices only from per-night/per-day fee text.",
+    "crawlerPacingMs": 450
+  },
+  "parks": []
+}

@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "state": "NM",
+    "stateAbbr": "NM"
+  },
+  "cities": [
+    {
+      "name": "Carlsbad",
+      "slug": "carlsbad",
+      "parkIds": [
+        "10278188"
+      ]
+    },
+    {
+      "name": "GRANTS",
+      "slug": "grants",
+      "parkIds": [
+        "231886"
+      ]
+    },
+    {
+      "name": "CLOUDCROFT",
+      "slug": "cloudcroft",
+      "parkIds": [
+        "231887",
+        "231888",
+        "231889",
+        "231890",
+        "232918"
+      ]
+    },
+    {
+      "name": "Pecos",
+      "slug": "pecos",
+      "parkIds": [
+        "231893",
+        "273758"
+      ]
+    },
+    {
+      "name": "Santa Fe",
+      "slug": "santa-fe",
+      "parkIds": [
+        "231894"
+      ]
+    },
+    {
+      "name": "Jemez Springs",
+      "slug": "jemez-springs",
+      "parkIds": [
+        "233390",
+        "274315"
+      ]
+    },
+    {
+      "name": "Los Alamos",
+      "slug": "los-alamos",
+      "parkIds": [
+        "233394",
+        "233395"
+      ]
+    },
+    {
+      "name": "PENA BLANCA",
+      "slug": "pena-blanca",
+      "parkIds": [
+        "233461",
+        "233649"
+      ]
+    },
+    {
+      "name": "ABIQUIU",
+      "slug": "abiquiu",
+      "parkIds": [
+        "233598"
+      ]
+    },
+    {
+      "name": "RUIDOSO",
+      "slug": "ruidoso",
+      "parkIds": [
+        "234460"
+      ]
+    },
+    {
+      "name": "Conchas Dam",
+      "slug": "conchas-dam",
+      "parkIds": [
+        "248169",
+        "248170",
+        "248171",
+        "248172",
+        "248173"
+      ]
+    },
+    {
+      "name": "Santa Rosa",
+      "slug": "santa-rosa",
+      "parkIds": [
+        "248175"
+      ]
+    },
+    {
+      "name": "Nageezi",
+      "slug": "nageezi",
+      "parkIds": [
+        "250009"
+      ]
+    },
+    {
+      "name": "Cuba",
+      "slug": "cuba",
+      "parkIds": [
+        "251358",
+        "251437"
+      ]
+    },
+    {
+      "name": "Questa",
+      "slug": "questa",
+      "parkIds": [
+        "254024"
+      ]
+    }
+  ]
+}

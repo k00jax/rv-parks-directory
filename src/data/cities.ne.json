@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "state": "NE",
+    "stateAbbr": "NE"
+  },
+  "cities": [
+    {
+      "name": "REPUBLICAN CITY",
+      "slug": "republican-city",
+      "parkIds": [
+        "233517",
+        "233551"
+      ]
+    },
+    {
+      "name": "Lincoln",
+      "slug": "lincoln",
+      "parkIds": [
+        "248164"
+      ]
+    },
+    {
+      "name": "Omaha",
+      "slug": "omaha",
+      "parkIds": [
+        "248167"
+      ]
+    }
+  ]
+}

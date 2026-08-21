@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "state": "OK",
+    "stateAbbr": "OK"
+  },
+  "cities": [
+    {
+      "name": "Sawyer",
+      "slug": "sawyer",
+      "parkIds": [
+        "233310",
+        "233529",
+        "233660"
+      ]
+    },
+    {
+      "name": "PONCA CITY",
+      "slug": "ponca-city",
+      "parkIds": [
+        "233423",
+        "233466",
+        "233622",
+        "233668"
+      ]
+    },
+    {
+      "name": "Wagoner",
+      "slug": "wagoner",
+      "parkIds": [
+        "233429",
+        "233606",
+        "233647"
+      ]
+    },
+    {
+      "name": "Claremore",
+      "slug": "claremore",
+      "parkIds": [
+        "233430",
+        "233636"
+      ]
+    },
+    {
+      "name": "Kingston",
+      "slug": "kingston",
+      "parkIds": [
+        "233444"
+      ]
+    },
+    {
+      "name": "Cartwright",
+      "slug": "cartwright",
+      "parkIds": [
+        "233445",
+        "233703"
+      ]
+    },
+    {
+      "name": "SKIATOOK",
+      "slug": "skiatook",
+      "parkIds": [
+        "233451",
+        "233645",
+        "233658",
+        "273362"
+      ]
+    },
+    {
+      "name": "GORE",
+      "slug": "gore",
+      "parkIds": [
+        "233457",
+        "233464",
+        "233495",
+        "233581",
+        "233641"
+      ]
+    },
+    {
+      "name": "WAURIKA",
+      "slug": "waurika",
+      "parkIds": [
+        "233458",
+        "233530"
+      ]
+    },
+    {
+      "name": "Stigler",
+      "slug": "stigler",
+      "parkIds": [
+        "233479"
+      ]
+    },
+    {
+      "name": "Chouteau",
+      "slug": "chouteau",
+      "parkIds": [
+        "233500"
+      ]
+    },
+    {
+      "name": "Oologah",
+      "slug": "oologah",
+      "parkIds": [
+        "233506"
+      ]
+    },
+    {
+      "name": "Eufaula",
+      "slug": "eufaula",
+      "parkIds": [
+        "233511"
+      ]
+    },
+    {
+      "name": "Mead",
+      "slug": "mead",
+      "parkIds": [
+        "233534"
+      ]
+    },
+    {
+      "name": "RINGOLD",
+      "slug": "ringold",
+      "parkIds": [
+        "233540",
+        "233546"
+      ]
+    },
+    {
+      "name": "VALLIANT",
+      "slug": "valliant",
+      "parkIds": [
+        "233584",
+        "233656"
+      ]
+    },
+    {
+      "name": "Porum",
+      "slug": "porum",
+      "parkIds": [
+        "233589"
+      ]
+    },
+    {
+      "name": "CLAYTON",
+      "slug": "clayton",
+      "parkIds": [
+        "233590",
+        "233702"
+      ]
+    },
+    {
+      "name": "COPAN",
+      "slug": "copan",
+      "parkIds": [
+        "233591",
+        "233666",
+        "234152"
+      ]
+    },
+    {
+      "name": "Cookson",
+      "slug": "cookson",
+      "parkIds": [
+        "233632"
+      ]
+    },
+    {
+      "name": "Cleveland",
+      "slug": "cleveland",
+      "parkIds": [
+        "233667"
+      ]
+    },
+    {
+      "name": "SULPHUR",
+      "slug": "sulphur",
+      "parkIds": [
+        "234047",
+        "234048",
+        "234049",
+        "234050",
+        "234051"
+      ]
+    },
+    {
+      "name": "Edmond",
+      "slug": "edmond",
+      "parkIds": [
+        "251701"
+      ]
+    }
+  ]
+}

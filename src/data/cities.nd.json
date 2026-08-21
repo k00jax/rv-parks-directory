@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "state": "ND",
+    "stateAbbr": "ND"
+  },
+  "cities": [
+    {
+      "name": "Valley City",
+      "slug": "valley-city",
+      "parkIds": [
+        "233286",
+        "233419",
+        "233550",
+        "233813",
+        "248191"
+      ]
+    },
+    {
+      "name": "MEDORA",
+      "slug": "medora",
+      "parkIds": [
+        "72481"
+      ]
+    }
+  ]
+}

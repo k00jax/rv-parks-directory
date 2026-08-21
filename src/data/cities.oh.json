@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "state": "OH",
+    "stateAbbr": "OH"
+  },
+  "cities": [
+    {
+      "name": "PEDRO",
+      "slug": "pedro",
+      "parkIds": [
+        "232062",
+        "232903",
+        "232904"
+      ]
+    },
+    {
+      "name": "NEW MATAMORAS",
+      "slug": "new-matamoras",
+      "parkIds": [
+        "232389"
+      ]
+    },
+    {
+      "name": "BERLIN CENTER",
+      "slug": "berlin-center",
+      "parkIds": [
+        "233553"
+      ]
+    },
+    {
+      "name": "Warsaw",
+      "slug": "warsaw",
+      "parkIds": [
+        "248292",
+        "248294"
+      ]
+    },
+    {
+      "name": "Waynesville",
+      "slug": "waynesville",
+      "parkIds": [
+        "250852"
+      ]
+    }
+  ]
+}

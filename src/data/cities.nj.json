@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "state": "NJ",
+    "stateAbbr": "NJ"
+  },
+  "cities": [
+    {
+      "name": "Highlands",
+      "slug": "highlands",
+      "parkIds": [
+        "234714",
+        "252275"
+      ]
+    }
+  ]
+}

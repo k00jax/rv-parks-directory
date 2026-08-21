@@ -1,0 +1,157 @@
+{
+  "meta": {
+    "state": "MI",
+    "stateAbbr": "MI"
+  },
+  "cities": [
+    {
+      "name": "EMPIRE",
+      "slug": "empire",
+      "parkIds": [
+        "232456",
+        "232457"
+      ]
+    },
+    {
+      "name": "Honor",
+      "slug": "honor",
+      "parkIds": [
+        "232458"
+      ]
+    },
+    {
+      "name": "Munising",
+      "slug": "munising",
+      "parkIds": [
+        "233210",
+        "233211",
+        "233212",
+        "234790",
+        "247602",
+        "256367"
+      ]
+    },
+    {
+      "name": "Oscoda",
+      "slug": "oscoda",
+      "parkIds": [
+        "233253",
+        "234130",
+        "234679"
+      ]
+    },
+    {
+      "name": "Hale",
+      "slug": "hale",
+      "parkIds": [
+        "233255"
+      ]
+    },
+    {
+      "name": "Wellston",
+      "slug": "wellston",
+      "parkIds": [
+        "233342"
+      ]
+    },
+    {
+      "name": "BALDWIN",
+      "slug": "baldwin",
+      "parkIds": [
+        "233769",
+        "249987"
+      ]
+    },
+    {
+      "name": "HESPERIA",
+      "slug": "hesperia",
+      "parkIds": [
+        "233849"
+      ]
+    },
+    {
+      "name": "WATERSMEET",
+      "slug": "watersmeet",
+      "parkIds": [
+        "234526"
+      ]
+    },
+    {
+      "name": "STRONGS",
+      "slug": "strongs",
+      "parkIds": [
+        "234620"
+      ]
+    },
+    {
+      "name": "Big Rapids",
+      "slug": "big-rapids",
+      "parkIds": [
+        "234678"
+      ]
+    },
+    {
+      "name": "National City",
+      "slug": "national-city",
+      "parkIds": [
+        "234763"
+      ]
+    },
+    {
+      "name": "Manistee",
+      "slug": "manistee",
+      "parkIds": [
+        "249990",
+        "250045",
+        "251845"
+      ]
+    },
+    {
+      "name": "Glen Arbor",
+      "slug": "glen-arbor",
+      "parkIds": [
+        "259242"
+      ]
+    },
+    {
+      "name": "Mio",
+      "slug": "mio",
+      "parkIds": [
+        "265539"
+      ]
+    },
+    {
+      "name": "Rapid River",
+      "slug": "rapid-river",
+      "parkIds": [
+        "273333",
+        "273334",
+        "273338",
+        "273339",
+        "273340",
+        "273341",
+        "273342",
+        "273344",
+        "273346",
+        "273347",
+        "273349",
+        "273350",
+        "273351",
+        "273353",
+        "273355",
+        "273356",
+        "273357",
+        "273358",
+        "273361",
+        "273363"
+      ]
+    },
+    {
+      "name": "Ironwood",
+      "slug": "ironwood",
+      "parkIds": [
+        "273343"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "state": "SC",
+    "stateAbbr": "SC"
+  },
+  "cities": [
+    {
+      "name": "CLARKS HILL",
+      "slug": "clarks-hill",
+      "parkIds": [
+        "232551",
+        "232592",
+        "248353"
+      ]
+    },
+    {
+      "name": "MCCORMICK",
+      "slug": "mccormick",
+      "parkIds": [
+        "232596"
+      ]
+    },
+    {
+      "name": "MODOC",
+      "slug": "modoc",
+      "parkIds": [
+        "232645"
+      ]
+    },
+    {
+      "name": "PLUM BRANCH",
+      "slug": "plum-branch",
+      "parkIds": [
+        "232664"
+      ]
+    },
+    {
+      "name": "Mountain Rest",
+      "slug": "mountain-rest",
+      "parkIds": [
+        "233343",
+        "234450",
+        "234479"
+      ]
+    },
+    {
+      "name": "Huger",
+      "slug": "huger",
+      "parkIds": [
+        "234128"
+      ]
+    }
+  ]
+}

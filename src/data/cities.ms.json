@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "state": "MS",
+    "stateAbbr": "MS"
+  },
+  "cities": [
+    {
+      "name": "ACKERMAN",
+      "slug": "ackerman",
+      "parkIds": [
+        "232255"
+      ]
+    },
+    {
+      "name": "ABERDEEN",
+      "slug": "aberdeen",
+      "parkIds": [
+        "232528"
+      ]
+    },
+    {
+      "name": "COLUMBUS",
+      "slug": "columbus",
+      "parkIds": [
+        "232574",
+        "248096"
+      ]
+    },
+    {
+      "name": "NEW SITE",
+      "slug": "new-site",
+      "parkIds": [
+        "232673"
+      ]
+    },
+    {
+      "name": "West Point",
+      "slug": "west-point",
+      "parkIds": [
+        "232722"
+      ]
+    },
+    {
+      "name": "COLLINSVILLE",
+      "slug": "collinsville",
+      "parkIds": [
+        "232725"
+      ]
+    },
+    {
+      "name": "FULTON",
+      "slug": "fulton",
+      "parkIds": [
+        "232743"
+      ]
+    },
+    {
+      "name": "OXFORD",
+      "slug": "oxford",
+      "parkIds": [
+        "233375"
+      ]
+    },
+    {
+      "name": "ENID",
+      "slug": "enid",
+      "parkIds": [
+        "233456",
+        "233634",
+        "233662",
+        "233669"
+      ]
+    },
+    {
+      "name": "SARDIS",
+      "slug": "sardis",
+      "parkIds": [
+        "233460",
+        "248093"
+      ]
+    },
+    {
+      "name": "COLDWATER",
+      "slug": "coldwater",
+      "parkIds": [
+        "233492",
+        "233684"
+      ]
+    },
+    {
+      "name": "Hernando",
+      "slug": "hernando",
+      "parkIds": [
+        "233507"
+      ]
+    },
+    {
+      "name": "GRENADA",
+      "slug": "grenada",
+      "parkIds": [
+        "233564",
+        "234277",
+        "248086"
+      ]
+    },
+    {
+      "name": "Rolling Fork",
+      "slug": "rolling-fork",
+      "parkIds": [
+        "253459"
+      ]
+    }
+  ]
+}

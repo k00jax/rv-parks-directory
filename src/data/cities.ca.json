@@ -1,0 +1,1064 @@
+{
+  "meta": {
+    "state": "CA",
+    "stateAbbr": "CA"
+  },
+  "cities": [
+    {
+      "name": "YOSEMITE",
+      "slug": "yosemite",
+      "parkIds": [
+        "10004152"
+      ]
+    },
+    {
+      "name": "CEDARVILLE",
+      "slug": "cedarville",
+      "parkIds": [
+        "10005351"
+      ]
+    },
+    {
+      "name": "OAKDALE",
+      "slug": "oakdale",
+      "parkIds": [
+        "10029004",
+        "10029012"
+      ]
+    },
+    {
+      "name": "El Centro",
+      "slug": "el-centro",
+      "parkIds": [
+        "10048516"
+      ]
+    },
+    {
+      "name": "Yosemite National Park",
+      "slug": "yosemite-national-park",
+      "parkIds": [
+        "10086745",
+        "232446",
+        "232448",
+        "232449",
+        "232450",
+        "232451",
+        "232452",
+        "232453"
+      ]
+    },
+    {
+      "name": "Sausalito",
+      "slug": "sausalito",
+      "parkIds": [
+        "10088963"
+      ]
+    },
+    {
+      "name": "Alturas",
+      "slug": "alturas",
+      "parkIds": [
+        "14768",
+        "14770"
+      ]
+    },
+    {
+      "name": "Bakersfield",
+      "slug": "bakersfield",
+      "parkIds": [
+        "14790",
+        "14791",
+        "14792",
+        "14804",
+        "14805",
+        "14808"
+      ]
+    },
+    {
+      "name": "Auberry",
+      "slug": "auberry",
+      "parkIds": [
+        "14806",
+        "14807"
+      ]
+    },
+    {
+      "name": "Susanville",
+      "slug": "susanville",
+      "parkIds": [
+        "14887",
+        "14888",
+        "232901"
+      ]
+    },
+    {
+      "name": "Redding",
+      "slug": "redding",
+      "parkIds": [
+        "15072",
+        "232234",
+        "232235",
+        "232361",
+        "232362",
+        "232363",
+        "232754",
+        "233344",
+        "233346",
+        "234369",
+        "273375",
+        "273376",
+        "273378",
+        "273379",
+        "273755"
+      ]
+    },
+    {
+      "name": "E Centro",
+      "slug": "e-centro",
+      "parkIds": [
+        "15083"
+      ]
+    },
+    {
+      "name": "Barstow",
+      "slug": "barstow",
+      "parkIds": [
+        "15172",
+        "274437"
+      ]
+    },
+    {
+      "name": "Palm Springs",
+      "slug": "palm-springs",
+      "parkIds": [
+        "15179",
+        "15180",
+        "15181"
+      ]
+    },
+    {
+      "name": "LAKE ELSINORE",
+      "slug": "lake-elsinore",
+      "parkIds": [
+        "231947"
+      ]
+    },
+    {
+      "name": "ALPINE",
+      "slug": "alpine",
+      "parkIds": [
+        "231948",
+        "231950",
+        "231951",
+        "231952"
+      ]
+    },
+    {
+      "name": "GEORGETOWN",
+      "slug": "georgetown",
+      "parkIds": [
+        "231953",
+        "232021",
+        "232107"
+      ]
+    },
+    {
+      "name": "LEE VINING",
+      "slug": "lee-vining",
+      "parkIds": [
+        "231955"
+      ]
+    },
+    {
+      "name": "MAMMOTH LAKES",
+      "slug": "mammoth-lakes",
+      "parkIds": [
+        "231956",
+        "232269",
+        "232271",
+        "232398",
+        "233830",
+        "234330"
+      ]
+    },
+    {
+      "name": "GREENFIELD",
+      "slug": "greenfield",
+      "parkIds": [
+        "231958"
+      ]
+    },
+    {
+      "name": "BIG SUR",
+      "slug": "big-sur",
+      "parkIds": [
+        "231959"
+      ]
+    },
+    {
+      "name": "SANTA BARBARA",
+      "slug": "santa-barbara",
+      "parkIds": [
+        "231960",
+        "231961",
+        "233870",
+        "234001",
+        "234106"
+      ]
+    },
+    {
+      "name": "BLAIRSDEN",
+      "slug": "blairsden",
+      "parkIds": [
+        "231963",
+        "232137",
+        "232829",
+        "232830",
+        "232832",
+        "232833",
+        "251855"
+      ]
+    },
+    {
+      "name": "IDYLLWILD",
+      "slug": "idyllwild",
+      "parkIds": [
+        "231969",
+        "231973",
+        "232020",
+        "232022",
+        "234530"
+      ]
+    },
+    {
+      "name": "SAN BERNADINO",
+      "slug": "san-bernadino",
+      "parkIds": [
+        "231974"
+      ]
+    },
+    {
+      "name": "ANGELUS OAKS",
+      "slug": "angelus-oaks",
+      "parkIds": [
+        "231976",
+        "232030",
+        "232031",
+        "232068"
+      ]
+    },
+    {
+      "name": "Truckee",
+      "slug": "truckee",
+      "parkIds": [
+        "231977",
+        "232755",
+        "232858",
+        "232883",
+        "232884",
+        "234114",
+        "234115",
+        "234117",
+        "234210"
+      ]
+    },
+    {
+      "name": "Foresthill",
+      "slug": "foresthill",
+      "parkIds": [
+        "232032",
+        "232045",
+        "232047",
+        "232048",
+        "232887",
+        "232888",
+        "233180"
+      ]
+    },
+    {
+      "name": "FAWNSKIN",
+      "slug": "fawnskin",
+      "parkIds": [
+        "232037",
+        "232054",
+        "232250",
+        "232296",
+        "233952",
+        "233993",
+        "234000"
+      ]
+    },
+    {
+      "name": "BRIDGEPORT",
+      "slug": "bridgeport",
+      "parkIds": [
+        "232053",
+        "232058",
+        "232090",
+        "232117",
+        "232119",
+        "232367",
+        "233102"
+      ]
+    },
+    {
+      "name": "LONE PINE",
+      "slug": "lone-pine",
+      "parkIds": [
+        "232069",
+        "232123"
+      ]
+    },
+    {
+      "name": "SHAVER LAKE",
+      "slug": "shaver-lake",
+      "parkIds": [
+        "232136"
+      ]
+    },
+    {
+      "name": "OJAI",
+      "slug": "ojai",
+      "parkIds": [
+        "232138",
+        "232342"
+      ]
+    },
+    {
+      "name": "MARKLEEVILLE",
+      "slug": "markleeville",
+      "parkIds": [
+        "232185",
+        "232186",
+        "232187",
+        "234739"
+      ]
+    },
+    {
+      "name": "INYO",
+      "slug": "inyo",
+      "parkIds": [
+        "232237"
+      ]
+    },
+    {
+      "name": "GASQUET",
+      "slug": "gasquet",
+      "parkIds": [
+        "232245",
+        "232316",
+        "232322",
+        "234262"
+      ]
+    },
+    {
+      "name": "Chester",
+      "slug": "chester",
+      "parkIds": [
+        "232246"
+      ]
+    },
+    {
+      "name": "FALL RIVER MILLS",
+      "slug": "fall-river-mills",
+      "parkIds": [
+        "232248"
+      ]
+    },
+    {
+      "name": "PINECREST",
+      "slug": "pinecrest",
+      "parkIds": [
+        "232254"
+      ]
+    },
+    {
+      "name": "Camptonville",
+      "slug": "camptonville",
+      "parkIds": [
+        "232264",
+        "232321",
+        "234536",
+        "234587"
+      ]
+    },
+    {
+      "name": "Oroville",
+      "slug": "oroville",
+      "parkIds": [
+        "232267",
+        "233729",
+        "251445"
+      ]
+    },
+    {
+      "name": "Palo Alto",
+      "slug": "palo-alto",
+      "parkIds": [
+        "232270",
+        "233404"
+      ]
+    },
+    {
+      "name": "Mt. Laguna",
+      "slug": "mt-laguna",
+      "parkIds": [
+        "232278"
+      ]
+    },
+    {
+      "name": "CAMINO",
+      "slug": "camino",
+      "parkIds": [
+        "232348",
+        "232349",
+        "233104",
+        "233981",
+        "234006"
+      ]
+    },
+    {
+      "name": "Whiskeytown",
+      "slug": "whiskeytown",
+      "parkIds": [
+        "232455",
+        "272243",
+        "272244",
+        "272247",
+        "272248",
+        "272250",
+        "274349"
+      ]
+    },
+    {
+      "name": "Three Rivers",
+      "slug": "three-rivers",
+      "parkIds": [
+        "232460",
+        "232461",
+        "233692",
+        "234752",
+        "234753",
+        "249979",
+        "249982",
+        "251008",
+        "253917"
+      ]
+    },
+    {
+      "name": "Twentynine Palms",
+      "slug": "twentynine-palms",
+      "parkIds": [
+        "232470",
+        "232471",
+        "272299",
+        "272300"
+      ]
+    },
+    {
+      "name": "Yucca Valley",
+      "slug": "yucca-valley",
+      "parkIds": [
+        "232473",
+        "234723"
+      ]
+    },
+    {
+      "name": "Death Valley",
+      "slug": "death-valley",
+      "parkIds": [
+        "232496"
+      ]
+    },
+    {
+      "name": "Ventura",
+      "slug": "ventura",
+      "parkIds": [
+        "232497",
+        "232498",
+        "232499",
+        "232500",
+        "232501",
+        "232502",
+        "261700"
+      ]
+    },
+    {
+      "name": "Lakehead",
+      "slug": "lakehead",
+      "parkIds": [
+        "232753",
+        "232758",
+        "232760",
+        "232761",
+        "232762",
+        "232763",
+        "232764",
+        "232765",
+        "233096",
+        "233097"
+      ]
+    },
+    {
+      "name": "South Lake Tahoe",
+      "slug": "south-lake-tahoe",
+      "parkIds": [
+        "232768",
+        "232769",
+        "232875"
+      ]
+    },
+    {
+      "name": "KERNVILLE",
+      "slug": "kernville",
+      "parkIds": [
+        "232786",
+        "232790",
+        "232794",
+        "232819",
+        "232889",
+        "232890",
+        "232891",
+        "234601"
+      ]
+    },
+    {
+      "name": "BASS LAKE",
+      "slug": "bass-lake",
+      "parkIds": [
+        "232801",
+        "232802",
+        "232878",
+        "232909",
+        "232910",
+        "232911",
+        "232912"
+      ]
+    },
+    {
+      "name": "LAKESHORE",
+      "slug": "lakeshore",
+      "parkIds": [
+        "232810",
+        "232811",
+        "232812",
+        "232813",
+        "232814",
+        "232906"
+      ]
+    },
+    {
+      "name": "Verdi",
+      "slug": "verdi",
+      "parkIds": [
+        "232859"
+      ]
+    },
+    {
+      "name": "SIERRAVILLE",
+      "slug": "sierraville",
+      "parkIds": [
+        "232869",
+        "232871",
+        "232907",
+        "232908",
+        "233130",
+        "234131",
+        "252037"
+      ]
+    },
+    {
+      "name": "Tahoe City",
+      "slug": "tahoe-city",
+      "parkIds": [
+        "232874"
+      ]
+    },
+    {
+      "name": "Willow Creek",
+      "slug": "willow-creek",
+      "parkIds": [
+        "233142"
+      ]
+    },
+    {
+      "name": "Stonyford",
+      "slug": "stonyford",
+      "parkIds": [
+        "233161",
+        "233162"
+      ]
+    },
+    {
+      "name": "Lake Isabella",
+      "slug": "lake-isabella",
+      "parkIds": [
+        "233182"
+      ]
+    },
+    {
+      "name": "Bridgeville",
+      "slug": "bridgeville",
+      "parkIds": [
+        "233218",
+        "234650"
+      ]
+    },
+    {
+      "name": "June Lake",
+      "slug": "june-lake",
+      "parkIds": [
+        "233235"
+      ]
+    },
+    {
+      "name": "McCloud",
+      "slug": "mccloud",
+      "parkIds": [
+        "233256",
+        "234403",
+        "234436"
+      ]
+    },
+    {
+      "name": "Palomar Mountain",
+      "slug": "palomar-mountain",
+      "parkIds": [
+        "233300",
+        "233303"
+      ]
+    },
+    {
+      "name": "Piedra",
+      "slug": "piedra",
+      "parkIds": [
+        "233314"
+      ]
+    },
+    {
+      "name": "Springville",
+      "slug": "springville",
+      "parkIds": [
+        "233325"
+      ]
+    },
+    {
+      "name": "Reading",
+      "slug": "reading",
+      "parkIds": [
+        "233345"
+      ]
+    },
+    {
+      "name": "Weaverville",
+      "slug": "weaverville",
+      "parkIds": [
+        "233347",
+        "234404",
+        "234405"
+      ]
+    },
+    {
+      "name": "Mineral",
+      "slug": "mineral",
+      "parkIds": [
+        "233356",
+        "233357",
+        "233358",
+        "233372",
+        "234039",
+        "234040",
+        "234041",
+        "234042",
+        "234156",
+        "234162",
+        "234524"
+      ]
+    },
+    {
+      "name": "Dunlap",
+      "slug": "dunlap",
+      "parkIds": [
+        "233363",
+        "234457",
+        "234458"
+      ]
+    },
+    {
+      "name": "Acton",
+      "slug": "acton",
+      "parkIds": [
+        "233366"
+      ]
+    },
+    {
+      "name": "Malibu",
+      "slug": "malibu",
+      "parkIds": [
+        "233381"
+      ]
+    },
+    {
+      "name": "RAYMOND",
+      "slug": "raymond",
+      "parkIds": [
+        "233414",
+        "233440",
+        "233701",
+        "247864",
+        "247865",
+        "247866",
+        "251645",
+        "251647"
+      ]
+    },
+    {
+      "name": "GEYSERVILLE",
+      "slug": "geyserville",
+      "parkIds": [
+        "233431",
+        "233537",
+        "233664"
+      ]
+    },
+    {
+      "name": "ORLAND",
+      "slug": "orland",
+      "parkIds": [
+        "233439",
+        "233568"
+      ]
+    },
+    {
+      "name": "Sanger",
+      "slug": "sanger",
+      "parkIds": [
+        "233521",
+        "247870",
+        "247872"
+      ]
+    },
+    {
+      "name": "VALLEY SPRINGS",
+      "slug": "valley-springs",
+      "parkIds": [
+        "233683",
+        "233754",
+        "233779",
+        "270421"
+      ]
+    },
+    {
+      "name": "La Porte",
+      "slug": "la-porte",
+      "parkIds": [
+        "233728"
+      ]
+    },
+    {
+      "name": "WRIGHTWOOD",
+      "slug": "wrightwood",
+      "parkIds": [
+        "233733",
+        "233734",
+        "233735"
+      ]
+    },
+    {
+      "name": "POLLOCK PINES",
+      "slug": "pollock-pines",
+      "parkIds": [
+        "233768",
+        "233879",
+        "234133",
+        "234135",
+        "234654"
+      ]
+    },
+    {
+      "name": "GROVELAND",
+      "slug": "groveland",
+      "parkIds": [
+        "233772",
+        "233775",
+        "234756",
+        "234761"
+      ]
+    },
+    {
+      "name": "BISHOP",
+      "slug": "bishop",
+      "parkIds": [
+        "233807",
+        "233907",
+        "273816"
+      ]
+    },
+    {
+      "name": "FISH CAMP",
+      "slug": "fish-camp",
+      "parkIds": [
+        "233837"
+      ]
+    },
+    {
+      "name": "EL PORTAL",
+      "slug": "el-portal",
+      "parkIds": [
+        "233839",
+        "233842"
+      ]
+    },
+    {
+      "name": "CAMP NELSON",
+      "slug": "camp-nelson",
+      "parkIds": [
+        "233933"
+      ]
+    },
+    {
+      "name": "Floriston",
+      "slug": "floriston",
+      "parkIds": [
+        "234113",
+        "234116"
+      ]
+    },
+    {
+      "name": "PIONEER",
+      "slug": "pioneer",
+      "parkIds": [
+        "234172"
+      ]
+    },
+    {
+      "name": "CROWLEY LAKE",
+      "slug": "crowley-lake",
+      "parkIds": [
+        "234311"
+      ]
+    },
+    {
+      "name": "FORT JONES",
+      "slug": "fort-jones",
+      "parkIds": [
+        "234344",
+        "234349"
+      ]
+    },
+    {
+      "name": "ORLEANS",
+      "slug": "orleans",
+      "parkIds": [
+        "234348",
+        "234598",
+        "234608"
+      ]
+    },
+    {
+      "name": "QUINCY",
+      "slug": "quincy",
+      "parkIds": [
+        "234382"
+      ]
+    },
+    {
+      "name": "HAPPY CAMP",
+      "slug": "happy-camp",
+      "parkIds": [
+        "234400",
+        "234401",
+        "234455"
+      ]
+    },
+    {
+      "name": "SAN FERNANDO",
+      "slug": "san-fernando",
+      "parkIds": [
+        "234553"
+      ]
+    },
+    {
+      "name": "UPPER LAKE",
+      "slug": "upper-lake",
+      "parkIds": [
+        "234600"
+      ]
+    },
+    {
+      "name": "RED BLUFFF",
+      "slug": "red-blufff",
+      "parkIds": [
+        "234633"
+      ]
+    },
+    {
+      "name": "Tom's Place",
+      "slug": "tom-s-place",
+      "parkIds": [
+        "234663"
+      ]
+    },
+    {
+      "name": "Aguanga",
+      "slug": "aguanga",
+      "parkIds": [
+        "234719"
+      ]
+    },
+    {
+      "name": "Carson City, Nevada",
+      "slug": "carson-city-nevada",
+      "parkIds": [
+        "234728"
+      ]
+    },
+    {
+      "name": "Oak Grove",
+      "slug": "oak-grove",
+      "parkIds": [
+        "234736"
+      ]
+    },
+    {
+      "name": "Bucks Lake",
+      "slug": "bucks-lake",
+      "parkIds": [
+        "234738"
+      ]
+    },
+    {
+      "name": "Macdoel",
+      "slug": "macdoel",
+      "parkIds": [
+        "234750"
+      ]
+    },
+    {
+      "name": "Corona",
+      "slug": "corona",
+      "parkIds": [
+        "247873"
+      ]
+    },
+    {
+      "name": "Porterville",
+      "slug": "porterville",
+      "parkIds": [
+        "247876",
+        "247877",
+        "247878"
+      ]
+    },
+    {
+      "name": "LaPorte",
+      "slug": "laporte",
+      "parkIds": [
+        "251446"
+      ]
+    },
+    {
+      "name": "ELDORADO NATIONAL FOREST",
+      "slug": "eldorado-national-forest",
+      "parkIds": [
+        "251578"
+      ]
+    },
+    {
+      "name": "Mount Shasta",
+      "slug": "mount-shasta",
+      "parkIds": [
+        "251582"
+      ]
+    },
+    {
+      "name": "Tulelake",
+      "slug": "tulelake",
+      "parkIds": [
+        "255303"
+      ]
+    },
+    {
+      "name": "Arcata",
+      "slug": "arcata",
+      "parkIds": [
+        "261783",
+        "262790"
+      ]
+    },
+    {
+      "name": "Imperial County",
+      "slug": "imperial-county",
+      "parkIds": [
+        "262678",
+        "262681"
+      ]
+    },
+    {
+      "name": "Honeydew",
+      "slug": "honeydew",
+      "parkIds": [
+        "262781"
+      ]
+    },
+    {
+      "name": "Whitethorn, CA 95589",
+      "slug": "whitethorn-ca-95589",
+      "parkIds": [
+        "262792"
+      ]
+    },
+    {
+      "name": "Whitethorn",
+      "slug": "whitethorn",
+      "parkIds": [
+        "262796"
+      ]
+    },
+    {
+      "name": "Whitehorn",
+      "slug": "whitehorn",
+      "parkIds": [
+        "266047"
+      ]
+    },
+    {
+      "name": "Brawley",
+      "slug": "brawley",
+      "parkIds": [
+        "272108",
+        "272177",
+        "272179"
+      ]
+    },
+    {
+      "name": "Winterhaven",
+      "slug": "winterhaven",
+      "parkIds": [
+        "272178"
+      ]
+    },
+    {
+      "name": "San Francisco",
+      "slug": "san-francisco",
+      "parkIds": [
+        "273757"
+      ]
+    },
+    {
+      "name": "Briceburg",
+      "slug": "briceburg",
+      "parkIds": [
+        "273835",
+        "274292"
+      ]
+    },
+    {
+      "name": "Ukiah",
+      "slug": "ukiah",
+      "parkIds": [
+        "275140"
+      ]
+    }
+  ]
+}

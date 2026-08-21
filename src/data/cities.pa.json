@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "state": "PA",
+    "stateAbbr": "PA"
+  },
+  "cities": [
+    {
+      "name": "SAEGERTOWN",
+      "slug": "saegertown",
+      "parkIds": [
+        "10006149",
+        "248338"
+      ]
+    },
+    {
+      "name": "BRADFORD",
+      "slug": "bradford",
+      "parkIds": [
+        "232003",
+        "232036",
+        "232088"
+      ]
+    },
+    {
+      "name": "Tioga",
+      "slug": "tioga",
+      "parkIds": [
+        "233523",
+        "234687",
+        "234690"
+      ]
+    },
+    {
+      "name": "TIONESTA",
+      "slug": "tionesta",
+      "parkIds": [
+        "233573",
+        "251946",
+        "251959"
+      ]
+    },
+    {
+      "name": "HESSTON",
+      "slug": "hesston",
+      "parkIds": [
+        "233626",
+        "233644",
+        "248332",
+        "248334",
+        "251963"
+      ]
+    },
+    {
+      "name": "HERMITAGE",
+      "slug": "hermitage",
+      "parkIds": [
+        "233627",
+        "251632"
+      ]
+    },
+    {
+      "name": "Lawrenceville",
+      "slug": "lawrenceville",
+      "parkIds": [
+        "233652",
+        "234689"
+      ]
+    },
+    {
+      "name": "CONFLUENCE",
+      "slug": "confluence",
+      "parkIds": [
+        "233679",
+        "248339"
+      ]
+    },
+    {
+      "name": "Danville",
+      "slug": "danville",
+      "parkIds": [
+        "248327"
+      ]
+    },
+    {
+      "name": "Saltsburg",
+      "slug": "saltsburg",
+      "parkIds": [
+        "248330",
+        "272174"
+      ]
+    },
+    {
+      "name": "New Bethlehem",
+      "slug": "new-bethlehem",
+      "parkIds": [
+        "248331"
+      ]
+    },
+    {
+      "name": "Leesport",
+      "slug": "leesport",
+      "parkIds": [
+        "251120"
+      ]
+    },
+    {
+      "name": "Bushkill",
+      "slug": "bushkill",
+      "parkIds": [
+        "251575"
+      ]
+    },
+    {
+      "name": "Ford City",
+      "slug": "ford-city",
+      "parkIds": [
+        "251642",
+        "251643",
+        "255176",
+        "255202"
+      ]
+    },
+    {
+      "name": "Gettysburg",
+      "slug": "gettysburg",
+      "parkIds": [
+        "261322"
+      ]
+    }
+  ]
+}

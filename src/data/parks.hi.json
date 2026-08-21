@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "fetchedAt": "2026-08-21T04:08:49Z",
+    "lastVerified": "2026-08-21",
+    "state": "HI",
+    "source": "RIDB API v1 (ridb.recreation.gov/api/v1) with registered developer apikey",
+    "sourceUrls": [
+      "https://ridb.recreation.gov/api/v1/facilities?state=HI&limit=100&offset=N",
+      "https://ridb.recreation.gov/api/v1/facilities/{facilityId}",
+      "https://ridb.recreation.gov/api/v1/facilities/{facilityId}/facilityaddresses"
+    ],
+    "counts": {
+      "totalRidbRecords": 14,
+      "phaseACandidates": 1,
+      "parksKept": 1,
+      "droppedPhaseA": {
+        "no-camp-signal": 13
+      },
+      "droppedPhaseB": {},
+      "stateEvidence": {
+        "address": 1
+      },
+      "typeBreakdown": {
+        "Campground": 1
+      },
+      "parksWithAddress": 1,
+      "parksWithCity": 1,
+      "parksWithZip": 1,
+      "parksWithPhone": 1,
+      "parksWithLatLng": 1,
+      "parksWithPrice": 0,
+      "parksWithSiteCount": 0,
+      "parksWithAmenities": 1,
+      "parksWithHookups": 0,
+      "parksWithMedia": 0,
+      "parksWithWebsite": 1
+    },
+    "detailFailures": [],
+    "antiFabrication": "rating/reviewCount/petPolicy always null. Prices only from per-night/per-day fee text.",
+    "crawlerPacingMs": 450
+  },
+  "parks": [
+    {
+      "facilityId": "234783",
+      "name": "Haleakal\u0101 National Park",
+      "slug": "haleakal-national-park",
+      "street": "PO Box 369",
+      "city": "Makawao",
+      "state": "HI",
+      "zip": "96768",
+      "lat": 20.7097222,
+      "lng": -156.1644444,
+      "phone": "808-572-4487",
+      "website": "https://www.recreation.gov/camping/campgrounds/234783",
+      "nightlyPriceMin": null,
+      "nightlyPriceMax": null,
+      "dataSource": null,
+      "hookups": null,
+      "amenities": [
+        "laundry",
+        "showers",
+        "tent sites",
+        "water"
+      ],
+      "siteCount": null,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
+      "petPolicy": null,
+      "lastVerified": "2026-08-21",
+      "source": {
+        "orgId": "AN412739",
+        "orgName": null,
+        "parentId": "128",
+        "parentName": null,
+        "reservable": true,
+        "facilityType": "Campground",
+        "equipment": [],
+        "maxVehicleLength": null,
+        "imageUrl": null,
+        "timeZone": null,
+        "description": "Overview Located on the island of Maui, Haleakal\u0101 National Park maintains three wilderness cabins for visitor use-- H\u014dlua, Palik\u016b, and Kapalaoa. All cabins are accessible only by trail from the summit area and require you to hike a minimum of 3.7 mi (5.9 km). Backcountry users must plan to enter the park entrance for their stay no earlier than 7 am unless they have also obtained a sunrise reservation granting access to the park between 3 and 7 am. Sunrise reservations can be made on recreation.gov. Horses, mules, and donkeys are permitted as pack animals on the Keonehe\u02bbehe\u02bbe Trail, Halemau\u02bbu T"
+      },
+      "weatherCurrent": null,
+      "aqi": null
+    }
+  ]
+}

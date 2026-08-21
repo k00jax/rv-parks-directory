@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "state": "IL",
+    "stateAbbr": "IL"
+  },
+  "cities": [
+    {
+      "name": "Marion",
+      "slug": "marion",
+      "parkIds": [
+        "12800"
+      ]
+    },
+    {
+      "name": "Shattuc",
+      "slug": "shattuc",
+      "parkIds": [
+        "233433"
+      ]
+    },
+    {
+      "name": "CARLYLE",
+      "slug": "carlyle",
+      "parkIds": [
+        "233463",
+        "233483",
+        "233528",
+        "233780",
+        "233786"
+      ]
+    },
+    {
+      "name": "SHELBYVILLE",
+      "slug": "shelbyville",
+      "parkIds": [
+        "233465",
+        "233496",
+        "233539",
+        "233541",
+        "233567",
+        "233753",
+        "247943"
+      ]
+    },
+    {
+      "name": "Thomson",
+      "slug": "thomson",
+      "parkIds": [
+        "233651"
+      ]
+    },
+    {
+      "name": "Modoc",
+      "slug": "modoc",
+      "parkIds": [
+        "247944"
+      ]
+    }
+  ]
+}

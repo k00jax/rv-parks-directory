@@ -9,6 +9,7 @@ import 'leaflet/dist/leaflet.css';
 export interface MapPark {
   name: string;
   slug: string;
+  state: string;
   lat: number | null;
   lng: number | null;
   rating: number | null;
@@ -69,7 +70,7 @@ function popupHtml(p: MapPark): string {
         ? `$${p.nightlyPriceMax}/night`
         : null;
   return [
-    `<a href="/parks/tx/${p.slug}/" class="arvp-popup-name">${escapeHtml(p.name)}</a>`,
+    `<a href="/parks/${p.state.toLowerCase()}/${p.slug}/" class="arvp-popup-name">${escapeHtml(p.name)}</a>`,
     rating ? `<span class="arvp-popup-rating">${rating}</span>` : '',
     price
       ? `<span class="arvp-popup-price">${price}</span>`
@@ -92,8 +93,8 @@ const TILE_URL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const TILE_ATTR =
   '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors';
 
-// Texas fallback view (used only if every marker were filtered out).
-const TX_CENTER: [number, number] = [31.0, -99.5];
+// US fallback view (used only if every marker were filtered out).
+const US_CENTER: [number, number] = [39.8, -98.5];
 
 export default function ParkMap({ parks }: { parks: MapPark[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -186,20 +187,32 @@ export default function ParkMap({ parks }: { parks: MapPark[] }) {
     if (!didFitRef.current) {
       if (group.getLayers().length > 0) {
         // Fit to the plotted pins; maxZoom cap keeps a dense city cluster from
-        // zooming in on one neighborhood — the map opens on all of Texas.
+        // zooming in on one neighborhood — the map opens on all of the US.
         map.fitBounds(group.getBounds(), { padding: [30, 30], maxZoom: 10 });
       } else {
-        map.setView(TX_CENTER, 6);
+        map.setView(US_CENTER, 4);
       }
       didFitRef.current = true;
     }
   }, [visibleParks]);
 
+  const [filtersOpen, setFiltersOpen] = useState(false);
+
   return (
     <div className="park-map-wrap">
-      <div className="park-map-filters" role="group" aria-label="Filter map">
+      <div className="park-map-tools" role="group" aria-label="Filter map">
         <div className="park-map-filters-head">
-          <span className="park-map-filters-title">Filter map</span>
+          <button
+            type="button"
+            className="park-map-toggle"
+            aria-expanded={filtersOpen}
+            onClick={() => setFiltersOpen((v) => !v)}
+          >
+            <span className="park-map-filters-title">Filter map</span>
+            <span className="park-map-toggle-arrow" aria-hidden="true">
+              {filtersOpen ? '−' : '+'}
+            </span>
+          </button>
           {hasActiveFilters && (
             <button type="button" className="park-map-clear" onClick={clearAllFilters}>
               Clear all
@@ -207,56 +220,61 @@ export default function ParkMap({ parks }: { parks: MapPark[] }) {
           )}
         </div>
 
-        <div className="park-map-filter-group">
-          <span className="park-map-filter-label" id="park-map-amenities-label">
-            Amenities
-          </span>
-          <div
-            className="park-map-chip-row"
-            role="group"
-            aria-labelledby="park-map-amenities-label"
-          >
-            {AMENITY_FILTERS.map((a) => {
-              const active = amenityFilters.includes(a.value);
-              return (
-                <button
-                  key={a.value}
-                  type="button"
-                  className={`park-map-chip${active ? ' is-active' : ''}`}
-                  aria-pressed={active}
-                  onClick={() => toggleAmenity(a.value)}
-                >
-                  {a.label}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        <div className="park-map-chip-row" role="group" aria-label="Reviews and pricing">
-          <button
-            type="button"
-            className={`park-map-chip${withReviews ? ' is-active' : ''}`}
-            aria-pressed={withReviews}
-            onClick={() => setWithReviews((v) => !v)}
-          >
-            With reviews
-          </button>
-          <button
-            type="button"
-            className={`park-map-chip${withPricing ? ' is-active' : ''}`}
-            aria-pressed={withPricing}
-            onClick={() => setWithPricing((v) => !v)}
-          >
-            With pricing
-          </button>
-        </div>
-
         <p className="park-map-count" aria-live="polite">
           Showing {visibleParks.length} of {parks.length} parks
         </p>
-        {visibleParks.length === 0 && (
-          <p className="park-map-empty">No parks match your filters</p>
+
+        {filtersOpen && (
+          <div className="park-map-filters-body">
+            <div className="park-map-filter-group">
+              <span className="park-map-filter-label" id="park-map-amenities-label">
+                Amenities
+              </span>
+              <div
+                className="park-map-chip-row"
+                role="group"
+                aria-labelledby="park-map-amenities-label"
+              >
+                {AMENITY_FILTERS.map((a) => {
+                  const active = amenityFilters.includes(a.value);
+                  return (
+                    <button
+                      key={a.value}
+                      type="button"
+                      className={`park-map-chip${active ? ' is-active' : ''}`}
+                      aria-pressed={active}
+                      onClick={() => toggleAmenity(a.value)}
+                    >
+                      {a.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="park-map-chip-row" role="group" aria-label="Reviews and pricing">
+              <button
+                type="button"
+                className={`park-map-chip${withReviews ? ' is-active' : ''}`}
+                aria-pressed={withReviews}
+                onClick={() => setWithReviews((v) => !v)}
+              >
+                With reviews
+              </button>
+              <button
+                type="button"
+                className={`park-map-chip${withPricing ? ' is-active' : ''}`}
+                aria-pressed={withPricing}
+                onClick={() => setWithPricing((v) => !v)}
+              >
+                With pricing
+              </button>
+            </div>
+
+            {visibleParks.length === 0 && (
+              <p className="park-map-empty">No parks match your filters</p>
+            )}
+          </div>
         )}
       </div>
 
@@ -264,7 +282,7 @@ export default function ParkMap({ parks }: { parks: MapPark[] }) {
         ref={containerRef}
         className="park-map"
         role="region"
-        aria-label="Interactive map of all Texas RV parks and campgrounds"
+        aria-label="Interactive map of all US RV parks and campgrounds"
       />
     </div>
   );

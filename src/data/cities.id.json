@@ -1,0 +1,471 @@
+{
+  "meta": {
+    "state": "ID",
+    "stateAbbr": "ID"
+  },
+  "cities": [
+    {
+      "name": "ST. MARIE'S",
+      "slug": "st-marie-s",
+      "parkIds": [
+        "10006204"
+      ]
+    },
+    {
+      "name": "SMELTERVILLE",
+      "slug": "smelterville",
+      "parkIds": [
+        "10007160",
+        "234435"
+      ]
+    },
+    {
+      "name": "Murphy",
+      "slug": "murphy",
+      "parkIds": [
+        "14997"
+      ]
+    },
+    {
+      "name": "Silver City",
+      "slug": "silver-city",
+      "parkIds": [
+        "14999"
+      ]
+    },
+    {
+      "name": "Pocatello",
+      "slug": "pocatello",
+      "parkIds": [
+        "15021",
+        "202062",
+        "202064",
+        "202075",
+        "202082",
+        "202085",
+        "2079",
+        "233966",
+        "233967",
+        "233968",
+        "233969",
+        "233971",
+        "234605",
+        "234609",
+        "261724"
+      ]
+    },
+    {
+      "name": "Salmon",
+      "slug": "salmon",
+      "parkIds": [
+        "15036",
+        "202101",
+        "234286",
+        "255256",
+        "255257"
+      ]
+    },
+    {
+      "name": "Idaho Falls",
+      "slug": "idaho-falls",
+      "parkIds": [
+        "15043",
+        "202102",
+        "255262",
+        "255263"
+      ]
+    },
+    {
+      "name": "Twin Falls",
+      "slug": "twin-falls",
+      "parkIds": [
+        "15050",
+        "15057",
+        "15058"
+      ]
+    },
+    {
+      "name": "Challis",
+      "slug": "challis",
+      "parkIds": [
+        "202091",
+        "233355",
+        "234276",
+        "234623",
+        "255249",
+        "255252",
+        "255253"
+      ]
+    },
+    {
+      "name": "Kooskia",
+      "slug": "kooskia",
+      "parkIds": [
+        "231831",
+        "233126",
+        "233128",
+        "234325",
+        "234408",
+        "234440",
+        "234444",
+        "234749"
+      ]
+    },
+    {
+      "name": "ISLAND PARK",
+      "slug": "island-park",
+      "parkIds": [
+        "231925",
+        "231926",
+        "232219",
+        "233825",
+        "233826",
+        "234107",
+        "234576"
+      ]
+    },
+    {
+      "name": "CASCADE",
+      "slug": "cascade",
+      "parkIds": [
+        "232012",
+        "232046",
+        "232087",
+        "232098",
+        "232402",
+        "232417",
+        "233208"
+      ]
+    },
+    {
+      "name": "EMMETT",
+      "slug": "emmett",
+      "parkIds": [
+        "232016",
+        "232041",
+        "232060",
+        "232092",
+        "233230",
+        "233881",
+        "233943",
+        "250047"
+      ]
+    },
+    {
+      "name": "STANLEY",
+      "slug": "stanley",
+      "parkIds": [
+        "232028",
+        "232040",
+        "232050",
+        "232085",
+        "232358",
+        "233980",
+        "234150"
+      ]
+    },
+    {
+      "name": "Lowman",
+      "slug": "lowman",
+      "parkIds": [
+        "232169",
+        "232170",
+        "232310",
+        "232312",
+        "232313",
+        "232400",
+        "232401",
+        "232431",
+        "234096",
+        "234097",
+        "234098",
+        "234100"
+      ]
+    },
+    {
+      "name": "PRIEST RIVER",
+      "slug": "priest-river",
+      "parkIds": [
+        "232199",
+        "233263",
+        "233264",
+        "233901",
+        "234740"
+      ]
+    },
+    {
+      "name": "Targhee",
+      "slug": "targhee",
+      "parkIds": [
+        "232210"
+      ]
+    },
+    {
+      "name": "MOUNTAIN HOME",
+      "slug": "mountain-home",
+      "parkIds": [
+        "232217",
+        "232218",
+        "232309",
+        "232335"
+      ]
+    },
+    {
+      "name": "ASHTON",
+      "slug": "ashton",
+      "parkIds": [
+        "232223",
+        "233391",
+        "234303",
+        "234305"
+      ]
+    },
+    {
+      "name": "Bonners Ferry",
+      "slug": "bonners-ferry",
+      "parkIds": [
+        "233252",
+        "234386",
+        "234429"
+      ]
+    },
+    {
+      "name": "Coeur d'Alene",
+      "slug": "coeur-d-alene",
+      "parkIds": [
+        "233267",
+        "233368",
+        "234438",
+        "255232",
+        "255235",
+        "259560"
+      ]
+    },
+    {
+      "name": "Hayden Lake",
+      "slug": "hayden-lake",
+      "parkIds": [
+        "233270"
+      ]
+    },
+    {
+      "name": "Idaho City",
+      "slug": "idaho-city",
+      "parkIds": [
+        "233349",
+        "233352",
+        "233958",
+        "233960",
+        "233962",
+        "234007",
+        "234134"
+      ]
+    },
+    {
+      "name": "OROFINO",
+      "slug": "orofino",
+      "parkIds": [
+        "233487"
+      ]
+    },
+    {
+      "name": "OLDTOWN",
+      "slug": "oldtown",
+      "parkIds": [
+        "233596",
+        "233600",
+        "233637",
+        "233791"
+      ]
+    },
+    {
+      "name": "MONTPELIER",
+      "slug": "montpelier",
+      "parkIds": [
+        "233853",
+        "233856",
+        "233977",
+        "234251",
+        "234263",
+        "234266",
+        "234771"
+      ]
+    },
+    {
+      "name": "Preston",
+      "slug": "preston",
+      "parkIds": [
+        "233857"
+      ]
+    },
+    {
+      "name": "Harrison",
+      "slug": "harrison",
+      "parkIds": [
+        "233908"
+      ]
+    },
+    {
+      "name": "WEISER",
+      "slug": "weiser",
+      "parkIds": [
+        "234029",
+        "234034",
+        "234619",
+        "255223"
+      ]
+    },
+    {
+      "name": "MCCALL",
+      "slug": "mccall",
+      "parkIds": [
+        "234030",
+        "234254",
+        "250043"
+      ]
+    },
+    {
+      "name": "DRIGGS",
+      "slug": "driggs",
+      "parkIds": [
+        "234153"
+      ]
+    },
+    {
+      "name": "BURLEY",
+      "slug": "burley",
+      "parkIds": [
+        "234190",
+        "234192",
+        "234656"
+      ]
+    },
+    {
+      "name": "Ketchum",
+      "slug": "ketchum",
+      "parkIds": [
+        "234264"
+      ]
+    },
+    {
+      "name": "MACKAY",
+      "slug": "mackay",
+      "parkIds": [
+        "234312",
+        "251899"
+      ]
+    },
+    {
+      "name": "DUBOIS",
+      "slug": "dubois",
+      "parkIds": [
+        "234380",
+        "234381",
+        "250038"
+      ]
+    },
+    {
+      "name": "AVERY",
+      "slug": "avery",
+      "parkIds": [
+        "234395",
+        "234447"
+      ]
+    },
+    {
+      "name": "SANDPOINT",
+      "slug": "sandpoint",
+      "parkIds": [
+        "234430"
+      ]
+    },
+    {
+      "name": "SMELTERVILL",
+      "slug": "smeltervill",
+      "parkIds": [
+        "234437"
+      ]
+    },
+    {
+      "name": "GRANGEVILLE",
+      "slug": "grangeville",
+      "parkIds": [
+        "234443",
+        "234446"
+      ]
+    },
+    {
+      "name": "ELK CITY",
+      "slug": "elk-city",
+      "parkIds": [
+        "234445"
+      ]
+    },
+    {
+      "name": "POTLATCH",
+      "slug": "potlatch",
+      "parkIds": [
+        "234505",
+        "234507"
+      ]
+    },
+    {
+      "name": "COUNCIL",
+      "slug": "council",
+      "parkIds": [
+        "234616"
+      ]
+    },
+    {
+      "name": "Garden Valley",
+      "slug": "garden-valley",
+      "parkIds": [
+        "234653"
+      ]
+    },
+    {
+      "name": "Ahsahka",
+      "slug": "ahsahka",
+      "parkIds": [
+        "247937"
+      ]
+    },
+    {
+      "name": "North Fork",
+      "slug": "north-fork",
+      "parkIds": [
+        "251847"
+      ]
+    },
+    {
+      "name": "Cottonwood",
+      "slug": "cottonwood",
+      "parkIds": [
+        "255238",
+        "255239",
+        "255247"
+      ]
+    },
+    {
+      "name": "Leadore",
+      "slug": "leadore",
+      "parkIds": [
+        "260558"
+      ]
+    },
+    {
+      "name": "Saint Maries",
+      "slug": "saint-maries",
+      "parkIds": [
+        "272098"
+      ]
+    },
+    {
+      "name": "Calder",
+      "slug": "calder",
+      "parkIds": [
+        "273785"
+      ]
+    }
+  ]
+}

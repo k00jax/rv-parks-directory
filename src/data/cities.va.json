@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "state": "VA",
+    "stateAbbr": "VA"
+  },
+  "cities": [
+    {
+      "name": "TRIANGLE",
+      "slug": "triangle",
+      "parkIds": [
+        "10007130",
+        "233379",
+        "234717"
+      ]
+    },
+    {
+      "name": "Covington",
+      "slug": "covington",
+      "parkIds": [
+        "232161",
+        "233190"
+      ]
+    },
+    {
+      "name": "Troutdale",
+      "slug": "troutdale",
+      "parkIds": [
+        "232180"
+      ]
+    },
+    {
+      "name": "Luray",
+      "slug": "luray",
+      "parkIds": [
+        "232432",
+        "232459",
+        "251745"
+      ]
+    },
+    {
+      "name": "Elkton",
+      "slug": "elkton",
+      "parkIds": [
+        "232433"
+      ]
+    },
+    {
+      "name": "NATURAL BRIDGE",
+      "slug": "natural-bridge",
+      "parkIds": [
+        "233138"
+      ]
+    },
+    {
+      "name": "Natural Bridge Station",
+      "slug": "natural-bridge-station",
+      "parkIds": [
+        "233139",
+        "233397"
+      ]
+    },
+    {
+      "name": "Fort Valley",
+      "slug": "fort-valley",
+      "parkIds": [
+        "233176"
+      ]
+    },
+    {
+      "name": "Sugar Grove",
+      "slug": "sugar-grove",
+      "parkIds": [
+        "233308",
+        "234574"
+      ]
+    },
+    {
+      "name": "BOYDTON",
+      "slug": "boydton",
+      "parkIds": [
+        "233442",
+        "233545",
+        "233610"
+      ]
+    },
+    {
+      "name": "Henry",
+      "slug": "henry",
+      "parkIds": [
+        "233515",
+        "233616"
+      ]
+    },
+    {
+      "name": "BASSETT",
+      "slug": "bassett",
+      "parkIds": [
+        "233582",
+        "233687"
+      ]
+    },
+    {
+      "name": "Marion",
+      "slug": "marion",
+      "parkIds": [
+        "234109",
+        "251741"
+      ]
+    },
+    {
+      "name": "Rural Retreat",
+      "slug": "rural-retreat",
+      "parkIds": [
+        "234256"
+      ]
+    },
+    {
+      "name": "Wytheville",
+      "slug": "wytheville",
+      "parkIds": [
+        "234258"
+      ]
+    },
+    {
+      "name": "Ivanhoe",
+      "slug": "ivanhoe",
+      "parkIds": [
+        "234259",
+        "256935"
+      ]
+    },
+    {
+      "name": "Warm Springs",
+      "slug": "warm-springs",
+      "parkIds": [
+        "234557",
+        "234558"
+      ]
+    },
+    {
+      "name": "Haysi",
+      "slug": "haysi",
+      "parkIds": [
+        "248503"
+      ]
+    },
+    {
+      "name": "Blacksburg",
+      "slug": "blacksburg",
+      "parkIds": [
+        "251902",
+        "251909"
+      ]
+    }
+  ]
+}

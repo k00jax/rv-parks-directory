@@ -6,7 +6,7 @@ export default function NotFound() {
       <h1>Page not found</h1>
       <p className="muted">
         This page does not exist. Browse the full directory from the{' '}
-        <Link href="/">homepage</Link> or the <Link href="/rv-parks/texas/">Texas hub</Link>.
+        <Link href="/">homepage</Link> or browse <Link href="/rv-parks/tx/">Texas RV parks</Link>.
       </p>
     </div>
   );

@@ -1,0 +1,144 @@
+{
+  "meta": {
+    "state": "MN",
+    "stateAbbr": "MN"
+  },
+  "cities": [
+    {
+      "name": "Middle River",
+      "slug": "middle-river",
+      "parkIds": [
+        "12783"
+      ]
+    },
+    {
+      "name": "DEER RIVER",
+      "slug": "deer-river",
+      "parkIds": [
+        "231997",
+        "231998",
+        "232149",
+        "233533",
+        "233827",
+        "233848",
+        "233850"
+      ]
+    },
+    {
+      "name": "Walker",
+      "slug": "walker",
+      "parkIds": [
+        "231999",
+        "233134"
+      ]
+    },
+    {
+      "name": "COOK",
+      "slug": "cook",
+      "parkIds": [
+        "232000"
+      ]
+    },
+    {
+      "name": "COOK,",
+      "slug": "cook",
+      "parkIds": [
+        "232133"
+      ]
+    },
+    {
+      "name": "AURORA",
+      "slug": "aurora",
+      "parkIds": [
+        "232134",
+        "232188",
+        "232189"
+      ]
+    },
+    {
+      "name": "Cass Lake",
+      "slug": "cass-lake",
+      "parkIds": [
+        "232151",
+        "233140",
+        "233141"
+      ]
+    },
+    {
+      "name": "ELY",
+      "slug": "ely",
+      "parkIds": [
+        "232283",
+        "233840",
+        "233841",
+        "233843"
+      ]
+    },
+    {
+      "name": "GRAND MARAIS",
+      "slug": "grand-marais",
+      "parkIds": [
+        "232429",
+        "233165"
+      ]
+    },
+    {
+      "name": "Blackduck",
+      "slug": "blackduck",
+      "parkIds": [
+        "233144",
+        "233145"
+      ]
+    },
+    {
+      "name": "Tofte",
+      "slug": "tofte",
+      "parkIds": [
+        "233146",
+        "233147"
+      ]
+    },
+    {
+      "name": "Duluth",
+      "slug": "duluth",
+      "parkIds": [
+        "233396"
+      ]
+    },
+    {
+      "name": "Crosslake",
+      "slug": "crosslake",
+      "parkIds": [
+        "233472"
+      ]
+    },
+    {
+      "name": "FEDERAL DAM",
+      "slug": "federal-dam",
+      "parkIds": [
+        "233535"
+      ]
+    },
+    {
+      "name": "GRAND RAPIDS",
+      "slug": "grand-rapids",
+      "parkIds": [
+        "233588"
+      ]
+    },
+    {
+      "name": "Brainerd",
+      "slug": "brainerd",
+      "parkIds": [
+        "233648"
+      ]
+    },
+    {
+      "name": "Fountain City",
+      "slug": "fountain-city",
+      "parkIds": [
+        "247972"
+      ]
+    }
+  ]
+}

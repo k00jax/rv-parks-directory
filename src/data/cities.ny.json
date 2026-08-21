@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "state": "NY",
+    "stateAbbr": "NY"
+  },
+  "cities": [
+    {
+      "name": "Brooklyn",
+      "slug": "brooklyn",
+      "parkIds": [
+        "233309"
+      ]
+    },
+    {
+      "name": "HECTOR",
+      "slug": "hector",
+      "parkIds": [
+        "234476"
+      ]
+    },
+    {
+      "name": "Staten Island",
+      "slug": "staten-island",
+      "parkIds": [
+        "234715"
+      ]
+    },
+    {
+      "name": "Patchogue",
+      "slug": "patchogue",
+      "parkIds": [
+        "234768"
+      ]
+    },
+    {
+      "name": "Danville",
+      "slug": "danville",
+      "parkIds": [
+        "248176",
+        "248177"
+      ]
+    }
+  ]
+}

@@ -386,6 +386,28 @@ table.data tbody tr:last-child td { border-bottom: none; }
 table.data a { font-weight: 700; }
 table.data a:hover { text-decoration: underline; }
 
+/* Top-picks rank column flare */
+table.data .rank-head {
+  width: 2.6rem;
+  text-align: center;
+}
+table.data td.rank-cell {
+  text-align: center;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--asphalt);
+}
+table.data tbody tr.row-top-pick td:not(.rank-cell) {
+  background: linear-gradient(90deg, rgba(255, 209, 102, 0.28), rgba(255, 77, 0, 0.10));
+}
+table.data tbody tr.row-top-pick:hover td:not(.rank-cell) {
+  background: linear-gradient(90deg, rgba(255, 209, 102, 0.42), rgba(255, 77, 0, 0.18));
+}
+table.data tbody tr.row-top-pick td.rank-cell {
+  font-size: 1.15rem;
+}
+
 /* Sortable ParkTable (client-side) */
 table.data.sortable thead th {
   position: sticky;
@@ -738,30 +760,53 @@ ul.plain a { font-weight: 700; }
   color: var(--muted);
 }
 
-/* ---------- Map filter bar (white card above the map) ---------- */
+/* ---------- Map filter panel (floating card overlaid on the map) ---------- */
 .park-map-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
+  position: relative;
 }
-.park-map-filters {
+.park-map-tools {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 500; /* above Leaflet panes (400) but below popups (700) */
+  width: 250px;
+  max-width: calc(100% - 1.7rem);
   background: var(--white);
   border: 3px solid var(--asphalt);
   border-radius: 16px;
   box-shadow: 4px 4px 0 rgba(10, 25, 47, 0.5);
-  padding: 0.9rem 1rem 0.75rem;
+  padding: 0.7rem 0.85rem 0.65rem;
+}
+.park-map-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+.park-map-toggle-arrow {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
 }
 .park-map-filters-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.35rem;
 }
 .park-map-filters-title {
   font-family: 'Fredoka', 'Paytone One', 'Trebuchet MS', sans-serif;
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   color: var(--asphalt);
 }
 .park-map-clear {
@@ -769,10 +814,11 @@ ul.plain a { font-weight: 700; }
   border: none;
   padding: 0;
   font: inherit;
-  font-size: 0.82rem;
-  font-weight: 800;
   color: var(--orange);
+  font-size: 0.82rem;
+  font-weight: 700;
   cursor: pointer;
+  white-space: nowrap;
 }
 .park-map-clear:hover { text-decoration: underline; }
 .park-map-filter-group { margin-bottom: 0.55rem; }

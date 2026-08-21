@@ -5,11 +5,11 @@ import SiteFooter from '@/components/SiteFooter';
 
 export const metadata: Metadata = {
   title: {
-    default: 'RV Parks & Campgrounds Directory — Texas',
+    default: 'RV Parks & Campgrounds Directory — United States',
     template: '%s | RV Parks & Campgrounds',
   },
   description:
-    'Data-driven directory of campgrounds and RV parks in Texas, built from Recreation.gov public facility data.',
+    'Data-driven directory of campgrounds and RV parks across the United States, built from Recreation.gov public facility data.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

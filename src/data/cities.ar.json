@@ -1,0 +1,284 @@
+{
+  "meta": {
+    "state": "AR",
+    "stateAbbr": "AR"
+  },
+  "cities": [
+    {
+      "name": "ARKADELPHIA",
+      "slug": "arkadelphia",
+      "parkIds": [
+        "10012078",
+        "233415",
+        "233417",
+        "233446",
+        "233494",
+        "233520",
+        "233630"
+      ]
+    },
+    {
+      "name": "OZARK",
+      "slug": "ozark",
+      "parkIds": [
+        "232517"
+      ]
+    },
+    {
+      "name": "Gamaliel",
+      "slug": "gamaliel",
+      "parkIds": [
+        "232523",
+        "232591"
+      ]
+    },
+    {
+      "name": "MOUNTAIN HOME",
+      "slug": "mountain-home",
+      "parkIds": [
+        "232560",
+        "232598",
+        "232694"
+      ]
+    },
+    {
+      "name": "OMAHA",
+      "slug": "omaha",
+      "parkIds": [
+        "232562"
+      ]
+    },
+    {
+      "name": "LOWELL",
+      "slug": "lowell",
+      "parkIds": [
+        "232601"
+      ]
+    },
+    {
+      "name": "Peel",
+      "slug": "peel",
+      "parkIds": [
+        "232603"
+      ]
+    },
+    {
+      "name": "ROGERS",
+      "slug": "rogers",
+      "parkIds": [
+        "232608",
+        "232680",
+        "233280"
+      ]
+    },
+    {
+      "name": "DIERKS",
+      "slug": "dierks",
+      "parkIds": [
+        "232611"
+      ]
+    },
+    {
+      "name": "Lakeview",
+      "slug": "lakeview",
+      "parkIds": [
+        "232619"
+      ]
+    },
+    {
+      "name": "Diamond City",
+      "slug": "diamond-city",
+      "parkIds": [
+        "232621"
+      ]
+    },
+    {
+      "name": "Garfield",
+      "slug": "garfield",
+      "parkIds": [
+        "232634",
+        "233100",
+        "233278"
+      ]
+    },
+    {
+      "name": "TICHNOR",
+      "slug": "tichnor",
+      "parkIds": [
+        "232640",
+        "233814"
+      ]
+    },
+    {
+      "name": "RUSSELLVILLE",
+      "slug": "russellville",
+      "parkIds": [
+        "232662"
+      ]
+    },
+    {
+      "name": "HAVANA",
+      "slug": "havana",
+      "parkIds": [
+        "232663",
+        "232736"
+      ]
+    },
+    {
+      "name": "DUMAS",
+      "slug": "dumas",
+      "parkIds": [
+        "232667",
+        "232744"
+      ]
+    },
+    {
+      "name": "LONDON",
+      "slug": "london",
+      "parkIds": [
+        "232672"
+      ]
+    },
+    {
+      "name": "PINE BLUFF",
+      "slug": "pine-bluff",
+      "parkIds": [
+        "232688",
+        "232717",
+        "232746",
+        "234242"
+      ]
+    },
+    {
+      "name": "NEW BLAINE",
+      "slug": "new-blaine",
+      "parkIds": [
+        "232704"
+      ]
+    },
+    {
+      "name": "BARLING",
+      "slug": "barling",
+      "parkIds": [
+        "232710"
+      ]
+    },
+    {
+      "name": "Bigelow",
+      "slug": "bigelow",
+      "parkIds": [
+        "232721"
+      ]
+    },
+    {
+      "name": "Lead Hill",
+      "slug": "lead-hill",
+      "parkIds": [
+        "232723"
+      ]
+    },
+    {
+      "name": "ST. JOE",
+      "slug": "st-joe",
+      "parkIds": [
+        "233119"
+      ]
+    },
+    {
+      "name": "Jasper",
+      "slug": "jasper",
+      "parkIds": [
+        "233120"
+      ]
+    },
+    {
+      "name": "Eureka Springs",
+      "slug": "eureka-springs",
+      "parkIds": [
+        "233277",
+        "234651"
+      ]
+    },
+    {
+      "name": "Springdale",
+      "slug": "springdale",
+      "parkIds": [
+        "233279"
+      ]
+    },
+    {
+      "name": "MURFREESBORO",
+      "slug": "murfreesboro",
+      "parkIds": [
+        "233469",
+        "233578"
+      ]
+    },
+    {
+      "name": "PARIS",
+      "slug": "paris",
+      "parkIds": [
+        "233834"
+      ]
+    },
+    {
+      "name": "YELVILLE",
+      "slug": "yelville",
+      "parkIds": [
+        "234043"
+      ]
+    },
+    {
+      "name": "FAYETTEVILLE",
+      "slug": "fayetteville",
+      "parkIds": [
+        "234586"
+      ]
+    },
+    {
+      "name": "Heber Springs",
+      "slug": "heber-springs",
+      "parkIds": [
+        "247825"
+      ]
+    },
+    {
+      "name": "Royal",
+      "slug": "royal",
+      "parkIds": [
+        "247850",
+        "247851",
+        "247860",
+        "247861"
+      ]
+    },
+    {
+      "name": "Mountain View",
+      "slug": "mountain-view",
+      "parkIds": [
+        "250010"
+      ]
+    },
+    {
+      "name": "Ben Lomand",
+      "slug": "ben-lomand",
+      "parkIds": [
+        "250013"
+      ]
+    },
+    {
+      "name": "MINERAL SPRINGS",
+      "slug": "mineral-springs",
+      "parkIds": [
+        "251355"
+      ]
+    },
+    {
+      "name": "SARATOGA",
+      "slug": "saratoga",
+      "parkIds": [
+        "251361"
+      ]
+    }
+  ]
+}

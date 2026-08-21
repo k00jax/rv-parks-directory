@@ -1,17 +1,49 @@
 import type { AmenityHub, CityDataset, CityHub, Park, ParkDataset } from './types';
-import parksData from '../data/parks.tx.json';
-import citiesData from '../data/cities.tx.json';
+import parksData from '../data/parks.us.json';
+import citiesData from '../data/cities.us.json';
 
 const parksDataset = parksData as ParkDataset;
 const citiesDataset = citiesData as CityDataset;
-
-export const STATE_ABBR = 'TX';
-export const STATE_NAME = 'Texas';
 
 export const parks: Park[] = parksDataset.parks;
 export const cities: CityHub[] = citiesDataset.cities;
 
 export const datasetMeta = parksDataset.meta;
+
+export const STATE_ABBR = 'US';
+export const STATE_NAME = 'United States';
+
+export const STATE_NAMES: Record<string, string> = {
+  AL: 'Alabama', AK: 'Alaska', AZ: 'Arizona', AR: 'Arkansas', CA: 'California',
+  CO: 'Colorado', CT: 'Connecticut', DE: 'Delaware', DC: 'District of Columbia',
+  FL: 'Florida', GA: 'Georgia', HI: 'Hawaii', ID: 'Idaho', IL: 'Illinois',
+  IN: 'Indiana', IA: 'Iowa', KS: 'Kansas', KY: 'Kentucky', LA: 'Louisiana',
+  ME: 'Maine', MD: 'Maryland', MA: 'Massachusetts', MI: 'Michigan', MN: 'Minnesota',
+  MS: 'Mississippi', MO: 'Missouri', MT: 'Montana', NE: 'Nebraska', NV: 'Nevada',
+  NH: 'New Hampshire', NJ: 'New Jersey', NM: 'New Mexico', NY: 'New York',
+  NC: 'North Carolina', ND: 'North Dakota', OH: 'Ohio', OK: 'Oklahoma',
+  OR: 'Oregon', PA: 'Pennsylvania', RI: 'Rhode Island', SC: 'South Carolina',
+  SD: 'South Dakota', TN: 'Tennessee', TX: 'Texas', UT: 'Utah', VT: 'Vermont',
+  VA: 'Virginia', WA: 'Washington', WV: 'West Virginia', WI: 'Wisconsin', WY: 'Wyoming',
+};
+
+export function stateName(abbr: string): string {
+  return STATE_NAMES[abbr.toUpperCase()] ?? abbr;
+}
+
+/** Parks in one state (abbr lowercase, e.g. 'tx'). */
+export function parksInState(state: string): Park[] {
+  const s = state.toUpperCase();
+  return parks.filter((p) => p.state === s);
+}
+
+/** Cities in one state (abbr lowercase). */
+export function citiesInState(state: string): CityHub[] {
+  const s = state.toUpperCase();
+  return cities.filter((c) => c.state === s);
+}
+
+export const stateAbbrs: string[] = Array.from(new Set(parks.map((p) => p.state))).sort();
 
 export function slugify(name: string): string {
   return (name || '')
@@ -66,94 +98,94 @@ function haversine(
 }
 
 // Amenity hubs (Family C). Driven by the REAL amenity vocabulary present in
-// parks.tx.json (Recreation.gov facility amenity data) — no invented terms.
+// the parks dataset (Recreation.gov facility amenity data) — no invented terms.
 // Single-amenity pages cover each vocabulary value; combined pages cover
 // meaningful combinations that actually exist in the dataset (>=3 parks).
 export const amenityHubs: AmenityHub[] = [
   // ---- single-amenity pages (every vocabulary term in the dataset) ----
   {
     slug: 'boat-ramp',
-    title: 'RV Parks with Boat Ramp in Texas',
+    title: 'RV Parks with Boat Ramp in the United States',
     description:
-      'Campgrounds and RV parks in Texas with a boat ramp on site, from Recreation.gov facility amenity data. Great for anglers and boaters who want to launch within walking distance of their site.',
+      'Campgrounds and RV parks in the United States with a boat ramp on site, from Recreation.gov facility amenity data. Great for anglers and boaters who want to launch within walking distance of their site.',
     match: (p) => p.amenities.includes('boat ramp'),
   },
   {
     slug: 'showers',
-    title: 'RV Parks with Showers in Texas',
+    title: 'RV Parks with Showers in the United States',
     description:
-      'RV parks and campgrounds in Texas with shower facilities, from Recreation.gov facility amenity data. A hot shower after a long day on the road makes all the difference.',
+      'RV parks and campgrounds in the United States with shower facilities, from Recreation.gov facility amenity data. A hot shower after a long day on the road makes all the difference.',
     match: (p) => p.amenities.includes('showers'),
   },
   {
     slug: 'water-hookup',
-    title: 'RV Parks with Water Hookup in Texas',
+    title: 'RV Parks with Water Hookup in the United States',
     description:
-      'RV parks in Texas with water hookups at campsites, from Recreation.gov facility amenity data. Skip the tank fills and camp with running water at your site.',
+      'RV parks in the United States with water hookups at campsites, from Recreation.gov facility amenity data. Skip the tank fills and camp with running water at your site.',
     match: (p) => p.amenities.includes('water hookup'),
   },
   {
     slug: 'dump-station',
-    title: 'RV Parks with Dump Station in Texas',
+    title: 'RV Parks with Dump Station in the United States',
     description:
-      'RV parks and campgrounds in Texas with an on-site dump station, from Recreation.gov facility amenity data. Empty your tanks before the drive home without hunting for a service stop.',
+      'RV parks and campgrounds in the United States with an on-site dump station, from Recreation.gov facility amenity data. Empty your tanks before the drive home without hunting for a service stop.',
     match: (p) => p.amenities.includes('dump station'),
   },
   {
     slug: 'playground',
-    title: 'RV Parks with Playground in Texas',
+    title: 'RV Parks with Playground in the United States',
     description:
-      'Family-friendly RV parks and campgrounds in Texas with a playground, from Recreation.gov facility amenity data. Keep the kids entertained while you set up camp.',
+      'Family-friendly RV parks and campgrounds in the United States with a playground, from Recreation.gov facility amenity data. Keep the kids entertained while you set up camp.',
     match: (p) => p.amenities.includes('playground'),
   },
   {
     slug: 'flush-toilets',
-    title: 'RV Parks with Flush Toilets in Texas',
+    title: 'RV Parks with Flush Toilets in the United States',
     description:
-      'RV parks and campgrounds in Texas with flush toilets, from Recreation.gov facility amenity data. Real restrooms instead of vault toilets make campground life a lot more comfortable.',
+      'RV parks and campgrounds in the United States with flush toilets, from Recreation.gov facility amenity data. Real restrooms instead of vault toilets make campground life a lot more comfortable.',
     match: (p) => p.amenities.includes('flush toilets'),
   },
   {
     slug: '50-amp',
-    title: 'RV Parks with 50 Amp Service in Texas',
+    title: 'RV Parks with 50 Amp Service in the United States',
     description:
-      'RV parks in Texas with 50-amp electrical service, from Recreation.gov facility amenity data. Run your air conditioner and high-draw appliances without tripping a breaker.',
+      'RV parks in the United States with 50-amp electrical service, from Recreation.gov facility amenity data. Run your air conditioner and high-draw appliances without tripping a breaker.',
     match: (p) => p.amenities.includes('50 amp'),
   },
   {
     slug: '30-amp',
-    title: 'RV Parks with 30 Amp Service in Texas',
+    title: 'RV Parks with 30 Amp Service in the United States',
     description:
-      'RV parks in Texas with 30-amp electrical service, from Recreation.gov facility amenity data. The standard hookup for most travel trailers and motorhomes.',
+      'RV parks in the United States with 30-amp electrical service, from Recreation.gov facility amenity data. The standard hookup for most travel trailers and motorhomes.',
     match: (p) => p.amenities.includes('30 amp'),
   },
   {
     slug: '20-amp',
-    title: 'RV Parks with 20 Amp Service in Texas',
+    title: 'RV Parks with 20 Amp Service in the United States',
     description:
-      'RV parks in Texas with 20-amp electrical service, from Recreation.gov facility amenity data. Basic power for tent campers and small rigs.',
+      'RV parks in the United States with 20-amp electrical service, from Recreation.gov facility amenity data. Basic power for tent campers and small rigs.',
     match: (p) => p.amenities.includes('20 amp'),
   },
   {
     slug: 'laundry',
-    title: 'RV Parks with Laundry in Texas',
+    title: 'RV Parks with Laundry in the United States',
     description:
-      'RV parks and campgrounds in Texas with on-site laundry facilities, from Recreation.gov facility amenity data. Pack lighter and wash clothes on the road.',
+      'RV parks and campgrounds in the United States with on-site laundry facilities, from Recreation.gov facility amenity data. Pack lighter and wash clothes on the road.',
     match: (p) => p.amenities.includes('laundry'),
   },
   // ---- combined amenity pages (only combos that exist in the dataset) ----
   {
     slug: 'full-hookup',
-    title: 'RV Parks with Full Hookups in Texas',
+    title: 'RV Parks with Full Hookups in the United States',
     description:
-      'RV parks in Texas with full hookups — water hookup plus dump station at the campground, from Recreation.gov facility amenity data. The classic full-hookup setup for worry-free camping.',
+      'RV parks in the United States with full hookups — water hookup plus dump station at the campground, from Recreation.gov facility amenity data. The classic full-hookup setup for worry-free camping.',
     match: (p) => p.amenities.includes('water hookup') && p.amenities.includes('dump station'),
   },
   {
     slug: '50-amp-full-hookup',
-    title: 'RV Parks with 50 Amp Full Hookups in Texas',
+    title: 'RV Parks with 50 Amp Full Hookups in the United States',
     description:
-      'RV parks in Texas with 50-amp service plus full hookups (water hookup and dump station), from Recreation.gov facility amenity data. The complete setup for big rigs: all the power, water, and tank service you need.',
+      'RV parks in the United States with 50-amp service plus full hookups (water hookup and dump station), from Recreation.gov facility amenity data. The complete setup for big rigs: all the power, water, and tank service you need.',
     match: (p) =>
       p.amenities.includes('50 amp') &&
       p.amenities.includes('water hookup') &&

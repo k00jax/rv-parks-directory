@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "state": "AL",
+    "stateAbbr": "AL"
+  },
+  "cities": [
+    {
+      "name": "PITTSVIEW",
+      "slug": "pittsview",
+      "parkIds": [
+        "232529"
+      ]
+    },
+    {
+      "name": "ALBERTA",
+      "slug": "alberta",
+      "parkIds": [
+        "232548"
+      ]
+    },
+    {
+      "name": "FRANKLIN",
+      "slug": "franklin",
+      "parkIds": [
+        "232568"
+      ]
+    },
+    {
+      "name": "TUSCALOOSA",
+      "slug": "tuscaloosa",
+      "parkIds": [
+        "232571"
+      ]
+    },
+    {
+      "name": "CAMDEN",
+      "slug": "camden",
+      "parkIds": [
+        "232582"
+      ]
+    },
+    {
+      "name": "Forkland",
+      "slug": "forkland",
+      "parkIds": [
+        "232590"
+      ]
+    },
+    {
+      "name": "MONTGOMERY",
+      "slug": "montgomery",
+      "parkIds": [
+        "232593"
+      ]
+    },
+    {
+      "name": "ABBEVILLE",
+      "slug": "abbeville",
+      "parkIds": [
+        "232595"
+      ]
+    },
+    {
+      "name": "CARROLLTON",
+      "slug": "carrollton",
+      "parkIds": [
+        "232669"
+      ]
+    },
+    {
+      "name": "LOWNDESBORO",
+      "slug": "lowndesboro",
+      "parkIds": [
+        "232679"
+      ]
+    },
+    {
+      "name": "Silas",
+      "slug": "silas",
+      "parkIds": [
+        "232701"
+      ]
+    },
+    {
+      "name": "SELMA",
+      "slug": "selma",
+      "parkIds": [
+        "232707"
+      ]
+    },
+    {
+      "name": "Eufaula",
+      "slug": "eufaula",
+      "parkIds": [
+        "232741"
+      ]
+    },
+    {
+      "name": "ADGER",
+      "slug": "adger",
+      "parkIds": [
+        "233946"
+      ]
+    }
+  ]
+}

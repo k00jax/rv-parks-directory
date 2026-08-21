@@ -1,0 +1,287 @@
+{
+  "meta": {
+    "state": "AZ",
+    "stateAbbr": "AZ"
+  },
+  "cities": [
+    {
+      "name": "KINGMAN",
+      "slug": "kingman",
+      "parkIds": [
+        "10000305",
+        "10000309",
+        "10000330",
+        "10000944",
+        "202052",
+        "2046"
+      ]
+    },
+    {
+      "name": "Phoenix",
+      "slug": "phoenix",
+      "parkIds": [
+        "10219692",
+        "261712",
+        "261714",
+        "262775",
+        "275045",
+        "275056"
+      ]
+    },
+    {
+      "name": "Bullhead City",
+      "slug": "bullhead-city",
+      "parkIds": [
+        "200028"
+      ]
+    },
+    {
+      "name": "Yuma",
+      "slug": "yuma",
+      "parkIds": [
+        "201883",
+        "227765"
+      ]
+    },
+    {
+      "name": "Safford",
+      "slug": "safford",
+      "parkIds": [
+        "202054",
+        "202060",
+        "202267",
+        "233233",
+        "233234",
+        "233398",
+        "233399",
+        "233400",
+        "234626",
+        "234627",
+        "251864",
+        "253992"
+      ]
+    },
+    {
+      "name": "Gila Bend",
+      "slug": "gila-bend",
+      "parkIds": [
+        "202059"
+      ]
+    },
+    {
+      "name": "LAKESIDE",
+      "slug": "lakeside",
+      "parkIds": [
+        "231885"
+      ]
+    },
+    {
+      "name": "FOREST LAKES",
+      "slug": "forest-lakes",
+      "parkIds": [
+        "232193"
+      ]
+    },
+    {
+      "name": "SEDONA",
+      "slug": "sedona",
+      "parkIds": [
+        "232194",
+        "232299",
+        "234287"
+      ]
+    },
+    {
+      "name": "CAMP VERDE",
+      "slug": "camp-verde",
+      "parkIds": [
+        "232206",
+        "233887",
+        "270420"
+      ]
+    },
+    {
+      "name": "Prescott",
+      "slug": "prescott",
+      "parkIds": [
+        "232207",
+        "232208",
+        "232209",
+        "233306",
+        "234077",
+        "234550",
+        "234759",
+        "234762",
+        "251846",
+        "251964",
+        "256933",
+        "273335"
+      ]
+    },
+    {
+      "name": "Mt. Lemmon",
+      "slug": "mt-lemmon",
+      "parkIds": [
+        "232284",
+        "234564"
+      ]
+    },
+    {
+      "name": "North Rim",
+      "slug": "north-rim",
+      "parkIds": [
+        "232489"
+      ]
+    },
+    {
+      "name": "NOGALES",
+      "slug": "nogales",
+      "parkIds": [
+        "233169",
+        "233221",
+        "233402"
+      ]
+    },
+    {
+      "name": "DOUGLAS",
+      "slug": "douglas",
+      "parkIds": [
+        "233177",
+        "233227",
+        "250019",
+        "250027"
+      ]
+    },
+    {
+      "name": "Pearce",
+      "slug": "pearce",
+      "parkIds": [
+        "233178"
+      ]
+    },
+    {
+      "name": "Tucson",
+      "slug": "tucson",
+      "parkIds": [
+        "233219",
+        "233220",
+        "233223",
+        "250033",
+        "262591",
+        "262592"
+      ]
+    },
+    {
+      "name": "Oracle",
+      "slug": "oracle",
+      "parkIds": [
+        "233222"
+      ]
+    },
+    {
+      "name": "Hereford",
+      "slug": "hereford",
+      "parkIds": [
+        "233224",
+        "233226"
+      ]
+    },
+    {
+      "name": "Grand Canyon",
+      "slug": "grand-canyon",
+      "parkIds": [
+        "233242",
+        "234488"
+      ]
+    },
+    {
+      "name": "COCONINO",
+      "slug": "coconino",
+      "parkIds": [
+        "233928"
+      ]
+    },
+    {
+      "name": "WILLIAMS",
+      "slug": "williams",
+      "parkIds": [
+        "233955",
+        "233956",
+        "233957",
+        "234439"
+      ]
+    },
+    {
+      "name": "FLAGSTAFF",
+      "slug": "flagstaff",
+      "parkIds": [
+        "234459"
+      ]
+    },
+    {
+      "name": "ALPINE",
+      "slug": "alpine",
+      "parkIds": [
+        "234515"
+      ]
+    },
+    {
+      "name": "Springerville",
+      "slug": "springerville",
+      "parkIds": [
+        "234708"
+      ]
+    },
+    {
+      "name": "ROOSEVELT",
+      "slug": "roosevelt",
+      "parkIds": [
+        "249254",
+        "249291",
+        "249308",
+        "249312",
+        "266135",
+        "266136"
+      ]
+    },
+    {
+      "name": "Payson",
+      "slug": "payson",
+      "parkIds": [
+        "251764"
+      ]
+    },
+    {
+      "name": "Fredonia",
+      "slug": "fredonia",
+      "parkIds": [
+        "251825"
+      ]
+    },
+    {
+      "name": "Lake Havasu City",
+      "slug": "lake-havasu-city",
+      "parkIds": [
+        "261843",
+        "262585",
+        "274288",
+        "274875"
+      ]
+    },
+    {
+      "name": "Scottsdale",
+      "slug": "scottsdale",
+      "parkIds": [
+        "267559"
+      ]
+    },
+    {
+      "name": "Globe",
+      "slug": "globe",
+      "parkIds": [
+        "272095",
+        "272097"
+      ]
+    }
+  ]
+}

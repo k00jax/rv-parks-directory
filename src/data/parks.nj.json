@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "fetchedAt": "2026-08-21T04:44:56Z",
+    "lastVerified": "2026-08-21",
+    "state": "NJ",
+    "source": "RIDB API v1 (ridb.recreation.gov/api/v1) with registered developer apikey",
+    "sourceUrls": [
+      "https://ridb.recreation.gov/api/v1/facilities?state=NJ&limit=100&offset=N",
+      "https://ridb.recreation.gov/api/v1/facilities/{facilityId}",
+      "https://ridb.recreation.gov/api/v1/facilities/{facilityId}/facilityaddresses"
+    ],
+    "counts": {
+      "totalRidbRecords": 6,
+      "phaseACandidates": 2,
+      "parksKept": 2,
+      "droppedPhaseA": {
+        "no-camp-signal": 4
+      },
+      "droppedPhaseB": {},
+      "stateEvidence": {
+        "address": 2
+      },
+      "typeBreakdown": {
+        "Campground": 1,
+        "Ticket Facility": 1
+      },
+      "parksWithAddress": 2,
+      "parksWithCity": 2,
+      "parksWithZip": 2,
+      "parksWithPhone": 2,
+      "parksWithLatLng": 2,
+      "parksWithPrice": 0,
+      "parksWithSiteCount": 0,
+      "parksWithAmenities": 1,
+      "parksWithHookups": 0,
+      "parksWithMedia": 0,
+      "parksWithWebsite": 2
+    },
+    "detailFailures": [],
+    "antiFabrication": "rating/reviewCount/petPolicy always null. Prices only from per-night/per-day fee text.",
+    "crawlerPacingMs": 450
+  },
+  "parks": [
+    {
+      "facilityId": "234714",
+      "name": "CAMP GATEWAY - SANDY HOOK",
+      "slug": "camp-gateway-sandy-hook",
+      "street": "CAMP GATEWAY - SANDY HOOK",
+      "city": "Highlands",
+      "state": "NJ",
+      "zip": "07732",
+      "lat": 40.450082,
+      "lng": -73.995096,
+      "phone": "(347) 630-1124 OR (732) 872-5918",
+      "website": "https://www.recreation.gov/camping/campgrounds/234714",
+      "nightlyPriceMin": null,
+      "nightlyPriceMax": null,
+      "dataSource": null,
+      "hookups": null,
+      "amenities": [
+        "electric",
+        "pets allowed",
+        "picnic table",
+        "restrooms",
+        "showers",
+        "water",
+        "wifi"
+      ],
+      "siteCount": null,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
+      "petPolicy": null,
+      "lastVerified": "2026-08-21",
+      "source": {
+        "orgId": "AN406833",
+        "orgName": null,
+        "parentId": "128",
+        "parentName": null,
+        "reservable": true,
+        "facilityType": "Campground",
+        "equipment": [],
+        "maxVehicleLength": null,
+        "imageUrl": null,
+        "timeZone": null,
+        "description": "Overview Welcome to Gateway National Recreation Area, Sandy Hook Unit! There are a variety of cultural and recreational opportunities available at the park including history tours, living history demonstrations, hiking, birding, kayaking, camping, swimming, and biking. Sandy Hook is known for its beautiful beaches, the Fort Hancock and Sandy Hook Proving Ground National Historic Landmark, and the country's oldest continuing working lighthouse. Recreation Lifeguards are on duty from 10 a.m. to 6 p.m. from Memorial Day weekend through Labor Day at five ocean beaches. Please swim only at guarded "
+      },
+      "weatherCurrent": null,
+      "aqi": null
+    },
+    {
+      "facilityId": "252275",
+      "name": "Gateway National Recreation Area - Sandy Hook Canoe Cruise",
+      "slug": "gateway-national-recreation-area-sandy-hook-canoe-cruise",
+      "street": "26 Hudson Rd",
+      "city": "Highlands",
+      "state": "NJ",
+      "zip": "7732",
+      "lat": 40.4076111,
+      "lng": -74.0305,
+      "phone": "732-872-5970",
+      "website": "https://www.recreation.gov/camping/campgrounds/252275",
+      "nightlyPriceMin": null,
+      "nightlyPriceMax": null,
+      "dataSource": null,
+      "hookups": null,
+      "amenities": [],
+      "siteCount": null,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
+      "petPolicy": null,
+      "lastVerified": "2026-08-21",
+      "source": {
+        "orgId": "AN440590",
+        "orgName": null,
+        "parentId": "128",
+        "parentName": null,
+        "reservable": true,
+        "facilityType": "Ticket Facility",
+        "equipment": [],
+        "maxVehicleLength": null,
+        "imageUrl": null,
+        "timeZone": null,
+        "description": "Overview: Gateway National Recreation Area's Sandy Hook is a barrier beach at the northern end of the New Jersey Shore. Its location at the entrance to New York Harbor assured Sandy Hook's importance for coastal and harbor defense. For more than 200 years most of the peninsula has been a federal reserve. The military presence both shaped Sandy Hook's history and assured its preservation as open space. During the summer, visitors enjoy swimming and strolling along the Sandy Hook beaches. Throughout the year there are opportunities for birding, fishing, hiking, camping or discovering the park's "
+      },
+      "weatherCurrent": null,
+      "aqi": null
+    }
+  ]
+}

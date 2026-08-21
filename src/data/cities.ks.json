@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "state": "KS",
+    "stateAbbr": "KS"
+  },
+  "cities": [
+    {
+      "name": "Lebo",
+      "slug": "lebo",
+      "parkIds": [
+        "233418"
+      ]
+    },
+    {
+      "name": "COUNCIL GROVE",
+      "slug": "council-grove",
+      "parkIds": [
+        "233449",
+        "233599",
+        "233621",
+        "250874"
+      ]
+    },
+    {
+      "name": "VASSAR",
+      "slug": "vassar",
+      "parkIds": [
+        "233450",
+        "233552",
+        "233574",
+        "233677"
+      ]
+    },
+    {
+      "name": "MELVERN",
+      "slug": "melvern",
+      "parkIds": [
+        "233462",
+        "233695"
+      ]
+    },
+    {
+      "name": "MARION",
+      "slug": "marion",
+      "parkIds": [
+        "233468",
+        "233512"
+      ]
+    },
+    {
+      "name": "JUNCTION CITY",
+      "slug": "junction-city",
+      "parkIds": [
+        "233474",
+        "233608",
+        "234647",
+        "248008",
+        "251450",
+        "251453"
+      ]
+    },
+    {
+      "name": "CHERRYVALE",
+      "slug": "cherryvale",
+      "parkIds": [
+        "233491",
+        "233555",
+        "233696"
+      ]
+    },
+    {
+      "name": "PERRY",
+      "slug": "perry",
+      "parkIds": [
+        "233544",
+        "233566",
+        "233580",
+        "233605",
+        "233631"
+      ]
+    },
+    {
+      "name": "SYLVAN GROVE",
+      "slug": "sylvan-grove",
+      "parkIds": [
+        "233547",
+        "233554",
+        "233896"
+      ]
+    },
+    {
+      "name": "MARQUETTE",
+      "slug": "marquette",
+      "parkIds": [
+        "233601",
+        "233659"
+      ]
+    },
+    {
+      "name": "Burlington",
+      "slug": "burlington",
+      "parkIds": [
+        "233602",
+        "233603"
+      ]
+    },
+    {
+      "name": "MANHATTAN",
+      "slug": "manhattan",
+      "parkIds": [
+        "233639",
+        "234280"
+      ]
+    },
+    {
+      "name": "Osage City",
+      "slug": "osage-city",
+      "parkIds": [
+        "233657"
+      ]
+    },
+    {
+      "name": "FALL RIVER",
+      "slug": "fall-river",
+      "parkIds": [
+        "233831",
+        "233832"
+      ]
+    },
+    {
+      "name": "Lawrence",
+      "slug": "lawrence",
+      "parkIds": [
+        "250850"
+      ]
+    }
+  ]
+}

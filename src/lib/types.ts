@@ -88,6 +88,9 @@ export interface ParkDataset {
 export interface CityHub {
   name: string;
   slug: string;
+  /** Optional state abbrev (e.g. 'TX') — present in the US-wide dataset so
+   * same-named cities in different states get distinct hubs/slugs. */
+  state?: string;
   parkIds: string[];
 }
 

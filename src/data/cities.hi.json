@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "state": "HI",
+    "stateAbbr": "HI"
+  },
+  "cities": [
+    {
+      "name": "Makawao",
+      "slug": "makawao",
+      "parkIds": [
+        "234783"
+      ]
+    }
+  ]
+}

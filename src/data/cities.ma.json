@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "state": "MA",
+    "stateAbbr": "MA"
+  },
+  "cities": [
+    {
+      "name": "wellfleet",
+      "slug": "wellfleet",
+      "parkIds": [
+        "10004657",
+        "10004661",
+        "10004663",
+        "10004667"
+      ]
+    },
+    {
+      "name": "Uxbridge",
+      "slug": "uxbridge",
+      "parkIds": [
+        "233291"
+      ]
+    },
+    {
+      "name": "Chesterfield",
+      "slug": "chesterfield",
+      "parkIds": [
+        "233519"
+      ]
+    },
+    {
+      "name": "Charlton",
+      "slug": "charlton",
+      "parkIds": [
+        "234411"
+      ]
+    },
+    {
+      "name": "Royalston",
+      "slug": "royalston",
+      "parkIds": [
+        "248071",
+        "251564"
+      ]
+    },
+    {
+      "name": "Fiskdale",
+      "slug": "fiskdale",
+      "parkIds": [
+        "249997"
+      ]
+    }
+  ]
+}

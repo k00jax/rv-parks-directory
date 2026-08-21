@@ -1,0 +1,455 @@
+{
+  "meta": {
+    "state": "MT",
+    "stateAbbr": "MT"
+  },
+  "cities": [
+    {
+      "name": "HELENA",
+      "slug": "helena",
+      "parkIds": [
+        "10003362",
+        "10003401",
+        "233151",
+        "234449",
+        "234451",
+        "249995",
+        "249996",
+        "249999",
+        "250001",
+        "250002",
+        "261822",
+        "272173",
+        "272276"
+      ]
+    },
+    {
+      "name": "Miles City",
+      "slug": "miles-city",
+      "parkIds": [
+        "10009605",
+        "274381"
+      ]
+    },
+    {
+      "name": "EUREKA",
+      "slug": "eureka",
+      "parkIds": [
+        "232251",
+        "233778",
+        "234383",
+        "234384",
+        "234385",
+        "234464"
+      ]
+    },
+    {
+      "name": "Sula",
+      "slug": "sula",
+      "parkIds": [
+        "232327",
+        "234278",
+        "234292",
+        "234295",
+        "234296"
+      ]
+    },
+    {
+      "name": "West Glacier",
+      "slug": "west-glacier",
+      "parkIds": [
+        "232492",
+        "232493",
+        "234669"
+      ]
+    },
+    {
+      "name": "RED LODGE",
+      "slug": "red-lodge",
+      "parkIds": [
+        "232770",
+        "232771",
+        "232772",
+        "232773",
+        "232774",
+        "232775",
+        "233771"
+      ]
+    },
+    {
+      "name": "Hungry Horse",
+      "slug": "hungry-horse",
+      "parkIds": [
+        "233203",
+        "234337",
+        "234338",
+        "234339",
+        "234340",
+        "234341",
+        "234342",
+        "234343",
+        "234474",
+        "234511",
+        "234788",
+        "234789",
+        "234791",
+        "250044",
+        "253198"
+      ]
+    },
+    {
+      "name": "Choteau",
+      "slug": "choteau",
+      "parkIds": [
+        "233229",
+        "234418"
+      ]
+    },
+    {
+      "name": "NYE",
+      "slug": "nye",
+      "parkIds": [
+        "233238",
+        "234314"
+      ]
+    },
+    {
+      "name": "Swan Lake",
+      "slug": "swan-lake",
+      "parkIds": [
+        "233272",
+        "234480"
+      ]
+    },
+    {
+      "name": "Philipsburg",
+      "slug": "philipsburg",
+      "parkIds": [
+        "233336",
+        "233337",
+        "234373",
+        "234375"
+      ]
+    },
+    {
+      "name": "Libby",
+      "slug": "libby",
+      "parkIds": [
+        "233360",
+        "234399",
+        "234465",
+        "234466"
+      ]
+    },
+    {
+      "name": "Sula Ranger District",
+      "slug": "sula-ranger-district",
+      "parkIds": [
+        "233882"
+      ]
+    },
+    {
+      "name": "WEST OF ANACONDA",
+      "slug": "west-of-anaconda",
+      "parkIds": [
+        "234008"
+      ]
+    },
+    {
+      "name": "DARBY",
+      "slug": "darby",
+      "parkIds": [
+        "234281",
+        "234283",
+        "234288",
+        "234301",
+        "234614",
+        "234618"
+      ]
+    },
+    {
+      "name": "STEVENSVILLE",
+      "slug": "stevensville",
+      "parkIds": [
+        "234291"
+      ]
+    },
+    {
+      "name": "LIVINGSTON",
+      "slug": "livingston",
+      "parkIds": [
+        "234298",
+        "234299",
+        "234300",
+        "234307",
+        "234309",
+        "234410",
+        "234413",
+        "234414",
+        "234415",
+        "234659"
+      ]
+    },
+    {
+      "name": "ENNIS",
+      "slug": "ennis",
+      "parkIds": [
+        "234318",
+        "234319",
+        "234320",
+        "234321",
+        "234322",
+        "234361",
+        "234364",
+        "234372"
+      ]
+    },
+    {
+      "name": "BOZEMAN",
+      "slug": "bozeman",
+      "parkIds": [
+        "234326",
+        "234328",
+        "234333",
+        "234334",
+        "234335",
+        "234336",
+        "234607"
+      ]
+    },
+    {
+      "name": "Whitefish",
+      "slug": "whitefish",
+      "parkIds": [
+        "234345",
+        "234472"
+      ]
+    },
+    {
+      "name": "WISDOM",
+      "slug": "wisdom",
+      "parkIds": [
+        "234350",
+        "234351",
+        "234352",
+        "234355"
+      ]
+    },
+    {
+      "name": "WISE RIVER",
+      "slug": "wise-river",
+      "parkIds": [
+        "234353"
+      ]
+    },
+    {
+      "name": "Butte",
+      "slug": "butte",
+      "parkIds": [
+        "234356",
+        "234397",
+        "234398",
+        "261817",
+        "261818",
+        "261819",
+        "262603"
+      ]
+    },
+    {
+      "name": "ASHLAND",
+      "slug": "ashland",
+      "parkIds": [
+        "234358",
+        "234359"
+      ]
+    },
+    {
+      "name": "BIGFORK",
+      "slug": "bigfork",
+      "parkIds": [
+        "234360",
+        "234379",
+        "251710"
+      ]
+    },
+    {
+      "name": "WEST YELLOWSTONE",
+      "slug": "west-yellowstone",
+      "parkIds": [
+        "234365",
+        "234366",
+        "234367",
+        "234368",
+        "250035"
+      ]
+    },
+    {
+      "name": "Phillipsburg",
+      "slug": "phillipsburg",
+      "parkIds": [
+        "234376",
+        "234377",
+        "234378",
+        "234448"
+      ]
+    },
+    {
+      "name": "TROY",
+      "slug": "troy",
+      "parkIds": [
+        "234387",
+        "234388",
+        "234426",
+        "234432",
+        "234463",
+        "251905"
+      ]
+    },
+    {
+      "name": "MISSOULA",
+      "slug": "missoula",
+      "parkIds": [
+        "234389"
+      ]
+    },
+    {
+      "name": "SUPERIOR",
+      "slug": "superior",
+      "parkIds": [
+        "234390"
+      ]
+    },
+    {
+      "name": "DILLON",
+      "slug": "dillon",
+      "parkIds": [
+        "234391",
+        "234392",
+        "234406",
+        "251352",
+        "261802",
+        "261804"
+      ]
+    },
+    {
+      "name": "TROUT CREEK",
+      "slug": "trout-creek",
+      "parkIds": [
+        "234402",
+        "234433",
+        "234434",
+        "250012"
+      ]
+    },
+    {
+      "name": "WHITE SULPHUR SPRING",
+      "slug": "white-sulphur-spring",
+      "parkIds": [
+        "234409"
+      ]
+    },
+    {
+      "name": "HARLOWTON",
+      "slug": "harlowton",
+      "parkIds": [
+        "234416"
+      ]
+    },
+    {
+      "name": "PLAINS",
+      "slug": "plains",
+      "parkIds": [
+        "234421",
+        "234423"
+      ]
+    },
+    {
+      "name": "STANFORD",
+      "slug": "stanford",
+      "parkIds": [
+        "234422",
+        "234425",
+        "234427"
+      ]
+    },
+    {
+      "name": "NEIHART",
+      "slug": "neihart",
+      "parkIds": [
+        "234431"
+      ]
+    },
+    {
+      "name": "LINCOLN",
+      "slug": "lincoln",
+      "parkIds": [
+        "234452",
+        "234453",
+        "253491"
+      ]
+    },
+    {
+      "name": "MARTIN CITY",
+      "slug": "martin-city",
+      "parkIds": [
+        "234484"
+      ]
+    },
+    {
+      "name": "Condon",
+      "slug": "condon",
+      "parkIds": [
+        "234486"
+      ]
+    },
+    {
+      "name": "TOWNSEND",
+      "slug": "townsend",
+      "parkIds": [
+        "234565",
+        "234566",
+        "234567",
+        "234568",
+        "253500"
+      ]
+    },
+    {
+      "name": "Ft. Peck",
+      "slug": "ft-peck",
+      "parkIds": [
+        "248148",
+        "248151"
+      ]
+    },
+    {
+      "name": "White Sulphur Springs",
+      "slug": "white-sulphur-springs",
+      "parkIds": [
+        "250004"
+      ]
+    },
+    {
+      "name": "Wolf Creek",
+      "slug": "wolf-creek",
+      "parkIds": [
+        "261696"
+      ]
+    },
+    {
+      "name": "Lewistown",
+      "slug": "lewistown",
+      "parkIds": [
+        "261808",
+        "262717",
+        "262732"
+      ]
+    },
+    {
+      "name": "Malta",
+      "slug": "malta",
+      "parkIds": [
+        "262761"
+      ]
+    }
+  ]
+}

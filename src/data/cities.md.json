@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "state": "MD",
+    "stateAbbr": "MD"
+  },
+  "cities": [
+    {
+      "name": "Thurmont",
+      "slug": "thurmont",
+      "parkIds": [
+        "232503",
+        "233241"
+      ]
+    },
+    {
+      "name": "BERLIN",
+      "slug": "berlin",
+      "parkIds": [
+        "232507"
+      ]
+    },
+    {
+      "name": "Sabillasville",
+      "slug": "sabillasville",
+      "parkIds": [
+        "247762",
+        "251264"
+      ]
+    },
+    {
+      "name": "Sharpsburg",
+      "slug": "sharpsburg",
+      "parkIds": [
+        "251263"
+      ]
+    }
+  ]
+}

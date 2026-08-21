@@ -14,8 +14,9 @@ const OUT = join(ROOT, 'docs');
 
 const SITE_URL = (process.env.SITE_URL || 'https://rvparks.example.com').replace(/\/$/, '');
 
-const parks = JSON.parse(readFileSync(join(ROOT, 'src', 'data', 'parks.tx.json'), 'utf8')).parks;
-const cities = JSON.parse(readFileSync(join(ROOT, 'src', 'data', 'cities.tx.json'), 'utf8')).cities;
+const parks = JSON.parse(readFileSync(join(ROOT, 'src', 'data', 'parks.us.json'), 'utf8')).parks;
+const cities = JSON.parse(readFileSync(join(ROOT, 'src', 'data', 'cities.us.json'), 'utf8')).cities;
+const stateAbbrs = Array.from(new Set(parks.map((p) => p.state))).sort();
 // Amenity slugs — must match the amenityHubs slugs in src/lib/parks.ts.
 // Single terms from the dataset vocabulary, then the combined pages.
 const amenities = [
@@ -39,17 +40,19 @@ const url = (loc, lastmod) =>
   `  <url><loc>${SITE_URL}${loc}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}</url>`;
 
 const parksXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${parks
-  .map((p) => url(`/parks/tx/${p.slug}/`, p.lastVerified))
+  .map((p) => url(`/parks/${p.state.toLowerCase()}/${p.slug}/`, p.lastVerified))
   .join('\n')}\n</urlset>\n`;
 
 const citiesXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${url('/', null)}
-${url('/rv-parks/texas/', parks[0]?.lastVerified ?? null)}
+${stateAbbrs
+  .map((s) => url(`/rv-parks/${s.toLowerCase()}/`, parks.find((p) => p.state === s)?.lastVerified ?? null))
+  .join('\n')}
 ${cities
-  .map((c) => url(`/rv-parks/texas/${c.slug}/`, parks.find((p) => p.facilityId === c.parkIds[0])?.lastVerified ?? null))
+  .map((c) => url(`/rv-parks/${(c.state ?? 'tx').toLowerCase()}/${c.slug}/`, parks.find((p) => p.facilityId === c.parkIds[0])?.lastVerified ?? null))
   .join('\n')}\n</urlset>\n`;
 
 const amenitiesXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${url('/rv-parks/amenities/', null)}\n${amenities
-  .map((a) => `${url(`/rv-parks/${a}/`, null)}\n${url(`/rv-parks/texas/${a}/`, null)}`)
+  .map((a) => `${url(`/rv-parks/${a}/`, null)}\n${stateAbbrs.map((s) => url(`/rv-parks/${s.toLowerCase()}/${a}/`, null)).join('\n')}`)
   .join('\n')}\n</urlset>\n`;
 
 const indexXml = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

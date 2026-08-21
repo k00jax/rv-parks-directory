@@ -1,4 +1,55 @@
 {
+  "meta": {
+    "fetchedAt": "2026-08-21T04:08:49Z",
+    "lastVerified": "2026-08-21",
+    "state": "TX",
+    "source": "RIDB API v1 (ridb.recreation.gov/api/v1) with registered developer apikey",
+    "sourceUrls": [
+      "https://ridb.recreation.gov/api/v1/facilities?state=TX&limit=100&offset=N",
+      "https://ridb.recreation.gov/api/v1/facilities/{facilityId}",
+      "https://ridb.recreation.gov/api/v1/facilities/{facilityId}/facilityaddresses"
+    ],
+    "counts": {
+      "totalRidbRecords": 269,
+      "phaseACandidates": 88,
+      "parksKept": 83,
+      "droppedPhaseA": {
+        "no-camp-signal": 168,
+        "type-campground-but-day-use-name": 10,
+        "day-use-name-no-name-camp-signal": 3
+      },
+      "droppedPhaseB": {
+        "not-TX (lat=35.158544, lng=-108.108507)": 1,
+        "not-TX (lat=35.37072, lng=-108.52272)": 1,
+        "not-TX (lat=34.02608798, lng=-107.13658332)": 1,
+        "not-TX (lat=34.025466, lng=-107.132365)": 1,
+        "not-TX (lat=0, lng=0)": 1
+      },
+      "stateEvidence": {
+        "unknown": 5,
+        "address": 73,
+        "coords-bbox": 10
+      },
+      "typeBreakdown": {
+        "Campground": 79,
+        "Facility": 4
+      },
+      "parksWithAddress": 68,
+      "parksWithCity": 73,
+      "parksWithZip": 68,
+      "parksWithPhone": 66,
+      "parksWithLatLng": 83,
+      "parksWithPrice": 1,
+      "parksWithSiteCount": 35,
+      "parksWithAmenities": 67,
+      "parksWithHookups": 51,
+      "parksWithMedia": 0,
+      "parksWithWebsite": 68
+    },
+    "detailFailures": [],
+    "antiFabrication": "rating/reviewCount/petPolicy always null. Prices only from per-night/per-day fee text.",
+    "crawlerPacingMs": 450
+  },
   "parks": [
     {
       "facilityId": "232430",
@@ -14,13 +65,19 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232430",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
-      "amenities": [],
+      "amenities": [
+        "electric"
+      ],
       "siteCount": null,
-      "rating": 4.7,
-      "reviewCount": 33,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN370845",
         "orgName": null,
@@ -30,27 +87,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/11/27/18/48/232430_1c690c95-ad84-4553-925c-35b77141fc3b_700.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Double Lake Recreation Area was built in 1937 by the Civilian Conservation Corps and offers a little of everything, including camping, fishing, swimming, picnicking, hiking and simply relaxing in nature. A variety of tent, RV and group campsites are available. Recreation Double Lake is open for fishing year round. Only boats with small electric motors are allowed. A 5-mile hiking trail leads to Big Creek Scenic Area, and there is access to part of the 128-mile Lone Star Hiking Trail. A 20-mile mountain bike trail meanders around the lake. Swimmers can relax on a sandy beach after taki"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJcQvdFZRjR4YRL2YdLUls-nc",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJcQvdFZRjR4YRL2YdLUls-nc",
-      "weatherCurrent": {
-        "tempF": 96,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:53:35Z"
-      },
-      "aqi": {
-        "aqi": 71,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:26Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232511",
@@ -66,17 +108,22 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232511",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "50 amp",
-        "boat ramp",
-        "water hookup"
+        "electric",
+        "picnic tables",
+        "sewer",
+        "water"
       ],
       "siteCount": 46,
       "rating": null,
-      "reviewCount": 0,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371001",
         "orgName": null,
@@ -86,27 +133,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/07/19/19/21/2c63913d-df24-4479-bfe3-7437af94d228_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview The year-round campground at Airport Park is perfectly located between Waco Lake and the Waco Airport. Campers can look south and view the pristine waters of the lake, or look north and watch airplanes take off and land. Recreation The main lake shoreline has a large amount of submerged timber, which typically holds fish year-round. Anglers will find plenty of catfish, crappie, large and smallmouth bass as well as sunfish. A boat ramp and dock help visitors enjoy the lake. Facilities Airport Park has 46 sites with 50-amp electric and water hookups, and 22 of these also have sewer hook"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJ0SespTOFT4YRFzm7O1LNtEc",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ0SespTOFT4YRFzm7O1LNtEc",
-      "weatherCurrent": {
-        "tempF": 100,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:53:38Z"
-      },
-      "aqi": {
-        "aqi": 69,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:27Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232534",
@@ -122,19 +154,25 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232534",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
         "dump station",
+        "electric",
         "playground",
+        "restrooms",
+        "sewer",
         "showers",
-        "water hookup"
+        "water"
       ],
       "siteCount": null,
-      "rating": 4.7,
-      "reviewCount": 282,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371055",
         "orgName": null,
@@ -144,27 +182,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2020/12/27/20/01/232534_4a372186-79a2-41cb-bb27-4c3daa56de77_700.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Brushy Creek Campground is situated along the banks of Lake O' the Pines in the Ark-La-Tex portion of the Pineywoods of east Texas near the states of Arkansas, Oklahoma, and Louisiana. Gate House Hours: 10am-6pm Monday through Saturday, 12pm-6pm Sunday. Address to get here: 189 Brushy Creek Park Rd. Jefferson, TX 75657 Recreation Boating, fishing, water sports, and wildlife viewing are all popular pastimes at the campground. Hunting opportunities for white-tailed deer, waterfowl, and small game are available on nearby public lands. Lake O' the Pines fishing includes largemouth, spotte"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJSYaLEMRlNoYRhFALiRzDCJg",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJSYaLEMRlNoYRhFALiRzDCJg",
-      "weatherCurrent": {
-        "tempF": 99.4,
-        "conditions": "Cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:53:40Z"
-      },
-      "aqi": {
-        "aqi": 65,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:28Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232536",
@@ -180,19 +203,27 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232536",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
         "dump station",
+        "electric",
+        "fire ring",
+        "picnic table",
         "playground",
+        "restrooms",
+        "sewer",
         "showers",
-        "water hookup"
+        "water"
       ],
       "siteCount": null,
-      "rating": 4.6,
-      "reviewCount": 245,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371057",
         "orgName": null,
@@ -202,27 +233,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2020/12/27/20/06/232536_38c0acc5-bf95-4092-ae6d-2fefb5e14851_700.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Buckhorn Creek Campground is situated along the banks of Lake O' the Pines in the Ark-La-Tex portion of the Pineywoods of east Texas near the states of Arkansas, Oklahoma, and Louisiana. Gate House Hours: 10am-6pm Monday through Saturday, 12pm-6pm Sunday. Address to get here: 2669 FM 726, Jefferson, TX 75657 Recreation Boating, fishing, water sports, and wildlife viewing are all popular pastimes at the campground. Hunting opportunities for white-tailed deer, waterfowl, and small game are available on nearby public lands. Lake O' the Pines fishing includes largemouth, spotted, and whit"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJnwasFmxkNoYRrG7-zvJBCGs",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJnwasFmxkNoYRrG7-zvJBCGs",
-      "weatherCurrent": {
-        "tempF": 99.4,
-        "conditions": "Cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:53:43Z"
-      },
-      "aqi": {
-        "aqi": 64,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:29Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232544",
@@ -238,16 +254,20 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232544",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
-        "flush toilets"
+        "electric",
+        "water"
       ],
       "siteCount": null,
-      "rating": 4.6,
-      "reviewCount": 1760,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371074",
         "orgName": null,
@@ -257,27 +277,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2023/12/13/16/34/232544_fdce9881-3fc6-4c4d-9aa2-27a27c78a782_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Cedar Breaks Park sits on the south side of Georgetown Lake in the Hill Country of Texas, about 25 miles north of Austin. Recreation Boating is the most popular way to enjoy the lake, and a boat ramp is provided for guests. Fishing is excellent in the area, and the lake contains Black bass, White bass, Hybrid stripers, White crappie, Channel catfish and Flathead catfish, but its most known for its abundance of Smallmouth bass. The San Gabriel River Trail is a 26 mile rugged trail winding through dense juniper forest, hardwood bottomlands and prairie grasslands. The trail extends compl"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJjZiKA34qRYYRjUc1BV0dvSg",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJjZiKA34qRYYRjUc1BV0dvSg",
-      "weatherCurrent": {
-        "tempF": 99.7,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:53:46Z"
-      },
-      "aqi": {
-        "aqi": 58,
-        "category": "Moderate air quality",
-        "dominantPollutant": "pm10",
-        "fetchedAt": "2026-08-19T19:00:31Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232547",
@@ -293,20 +298,28 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232547",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
-      "hookups": null,
+      "dataSource": null,
+      "hookups": "partial",
       "amenities": [
         "30 amp",
         "50 amp",
-        "boat ramp",
         "dump station",
+        "electric",
+        "fire ring",
         "playground",
-        "showers"
+        "restroom",
+        "restrooms",
+        "showers",
+        "water"
       ],
       "siteCount": 10,
-      "rating": 4.5,
-      "reviewCount": 188,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371078",
         "orgName": null,
@@ -316,27 +329,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/08/22/23/08/232547_e80f2708-997e-4c43-aaa9-44d12cd18104_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Cedron Creek Campground is located on Whitney Lake on the main channel of the Brazos River in Central Texas. The majority of campsites in Cedron Creek are 30 amp electric hook ups with water and 10 sites have water and 50 amp electric hook ups. Each site has a stand up BBQ cooker or a ground cooker/fire ring. The park also has 3 restrooms, showers, horseshoe pits, a trailer dump station, boat ramp and a playground. Recreation Boating, fishing, swimming, canoeing and kayaking are popular activities at Whitney Lake. Anglers can fish for a variety of bass, crappie and catfish. Facilities"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJobXdhYy3T4YRd8Ns2XrMN7Y",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJobXdhYy3T4YRd8Ns2XrMN7Y",
-      "weatherCurrent": {
-        "tempF": 100.5,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:53:48Z"
-      },
-      "aqi": {
-        "aqi": 73,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:32Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232552",
@@ -352,17 +350,22 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232552",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
-      "hookups": "full",
+      "dataSource": null,
+      "hookups": "partial",
       "amenities": [
-        "boat ramp",
+        "electric",
+        "sewer",
         "showers",
-        "water hookup"
+        "water"
       ],
       "siteCount": 23,
-      "rating": 4.2,
-      "reviewCount": 356,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371092",
         "orgName": null,
@@ -372,27 +375,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2019/01/31/15/41/232552_71aeb57e-d7e0-4b77-b9a4-1d65e4482ad6_700.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Clear Lake Campground has a prime location on the shores of Lavon Lake. It is the only shaded campground at the lake, and provides a quiet space for anglers, bird watchers and photographers. The park is just northeast of Dallas, Texas, and just east of the Southfork Ranch, where the hit TV series, \"Dallas,\" was filmed. Recreation Visitors of all ages enjoy outdoor opportunities like fishing, boating, hiking, and picnicking. Anglers often find channel catfish, crappie, striped bass and hybrid bass. Facilities The Clear Lake Campground offers 23 sites with water, sewer and electric hook"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJS4y7GGUGTIYRIvKD2bniSnY",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJS4y7GGUGTIYRIvKD2bniSnY",
-      "weatherCurrent": {
-        "tempF": 101.7,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:53:51Z"
-      },
-      "aqi": {
-        "aqi": 51,
-        "category": "Moderate air quality",
-        "dominantPollutant": "pm10",
-        "fetchedAt": "2026-08-19T19:00:33Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232553",
@@ -408,20 +396,26 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232553",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
         "30 amp",
         "50 amp",
-        "boat ramp",
+        "electric",
         "playground",
+        "restrooms",
+        "sewer",
         "showers",
-        "water hookup"
+        "water"
       ],
       "siteCount": 12,
       "rating": null,
-      "reviewCount": 0,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371093",
         "orgName": null,
@@ -431,27 +425,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/08/15/20/26/1b305422-8b55-4cec-8572-c885deaa421e_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Clear Spring Park sits along the shore of 30,000-acre Wright Patman Lake within the piney woods of northeast Texas. The campground offers full services to campers. With a boat ramp, playground and swimming area, Clear Spring is sure to provide outdoor fun for families, boaters, anglers and hunters alike. Recreation Wright Patman Lake hosts a wide range of recreational activities, including camping, swimming, boating, fishing, hunting, hiking, picnicking and wildlife viewing. Boaters flock to the lake and anglers try their luck for largemouth bass, catfish, crappie, sunfish and bass. T"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "EiRDbGVhciBTcHJpbmdzIFJkLCBUZXhhcmthbmEsIFRYLCBVU0EiLiosChQKEgmxkx-sZkc0hhHJPmIg5L3WgxIUChIJV2SgwjJBNIYRcFvbYZI8WJ0",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:EiRDbGVhciBTcHJpbmdzIFJkLCBUZXhhcmthbmEsIFRYLCBVU0EiLiosChQKEgmxkx-sZkc0hhHJPmIg5L3WgxIUChIJV2SgwjJBNIYRcFvbYZI8WJ0",
-      "weatherCurrent": {
-        "tempF": 100.4,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:53:53Z"
-      },
-      "aqi": {
-        "aqi": 61,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:34Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232557",
@@ -467,21 +446,27 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232557",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
         "20 amp",
         "30 amp",
         "50 amp",
-        "boat ramp",
         "dump station",
+        "electric",
+        "picnic table",
+        "sewer",
         "showers",
-        "water hookup"
+        "water"
       ],
       "siteCount": 67,
-      "rating": 4.5,
-      "reviewCount": 155,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371103",
         "orgName": null,
@@ -491,27 +476,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2023/08/24/23/16/232557_7a4ad95f-910a-4d15-babd-d50a4e55fb78_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Copperas Creek Park is nestled within the beautiful Cross Timbers Region of Texas and located on the southwestern side of Proctor Lake. Copperas Creek appeals to sportsmen, birdwatchers, naturalists or those simply wanting to relax in the outdoors. Recreation Copperas Creek offers families and friends with an excellent venue to enjoy the outdoors. The park offers overnight camping as well as a day-use area for picnicing and several swim beaches for folks to soak up the sun and enjoy the beautiful lake water. Fishing is Proctor Lake's main attraction: anglers enjoy the lake's tremendou"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJR82lWrj4UIYRiZEXUvQvOo8",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJR82lWrj4UIYRiZEXUvQvOo8",
-      "weatherCurrent": {
-        "tempF": 98.9,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:53:56Z"
-      },
-      "aqi": {
-        "aqi": 69,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:36Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232588",
@@ -527,16 +497,21 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232588",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
-        "water hookup"
+        "electric",
+        "sewer",
+        "water"
       ],
       "siteCount": 50,
-      "rating": 3.8,
-      "reviewCount": 13,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371170",
         "orgName": null,
@@ -546,27 +521,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/images/66246_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Flatrock campground is situated on Hords Creek Lake with nice shade from trees, a fishing dock and gravel swimming areas for beating the Texas heat. Recreation Visitors come to Flatrock for fishing, boating and simple relaxation. The popular catches on the lake include largemouth bass, sunfish and white crappie. When water levels are high enough, water skiing is also a fun sport here. Facilities More than 50 campsites have water and electric hookups - ten of which have sewer hookups. Seven group shelters are available for day use. The swim beach, open to all overnight campers, is in F"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJt5ackhcYV4YRlUJqhE8V-rg",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJt5ackhcYV4YRlUJqhE8V-rg",
-      "weatherCurrent": {
-        "tempF": 96.5,
-        "conditions": "Cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:53:58Z"
-      },
-      "aqi": {
-        "aqi": 66,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:37Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232594",
@@ -582,17 +542,22 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232594",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
+        "electric",
         "playground",
-        "showers"
+        "showers",
+        "water"
       ],
       "siteCount": 47,
-      "rating": 4.5,
-      "reviewCount": 143,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371188",
         "orgName": null,
@@ -602,27 +567,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/08/20/20/25/232594_c750bec2-3e87-4b00-846d-dacf61a05a64_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Hanks Creek Park has something for everyone, with plenty of water sports on Sam Rayburn Reservoir and volleyball, mountain biking, wild life viewing and birding for those who want to stay on shore. The Red-cockaded woodpecker, an endangered species, is found throughout the forest surrounding the reservoir. The bird makes its home by pecking cavities in large, living pine trees. Recreation Fishing is excellent for largemouth bass, crappie, catfish and sunfish, with frequent fishing tournaments. The lake is also popular for jet skiing, water skiing and swimming. Facilities The park feat"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJ4bKCo640OIYRPsrpa4eYIpI",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ4bKCo640OIYRPsrpa4eYIpI",
-      "weatherCurrent": {
-        "tempF": 94.4,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:01Z"
-      },
-      "aqi": {
-        "aqi": 69,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:38Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232600",
@@ -638,17 +588,22 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232600",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
         "dump station",
-        "showers"
+        "electric",
+        "showers",
+        "water"
       ],
       "siteCount": 121,
       "rating": null,
-      "reviewCount": 0,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371200",
         "orgName": null,
@@ -658,27 +613,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2023/10/17/17/44/232600_f781d8da-705c-4c37-be3f-140dcad930ae_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Hickory Creek sits on the extremely popular Lewisville Lake near Dallas, Texas. The almost 30,000-acre reservoir attracts a fair amount of visitors in summer months with warm water temperatures and excellent fishing opportunities. Recreation Visitors at Lewisville Lake enjoy picnicking, swimming, boating, fishing and relaxing. Photographers will stay entertained with wildlife and colorful sunsets, while hikers and bikers like to explore the 50 miles of natural surface and paved trails surrounding the lake. Facilities The large campground boasts 121 sites with electric hookups. Tent pr"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJa3Col2YxTIYRZeho4uW38xE",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJa3Col2YxTIYRZeho4uW38xE",
-      "weatherCurrent": {
-        "tempF": 102.5,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:03Z"
-      },
-      "aqi": {
-        "aqi": 50,
-        "category": "Moderate air quality",
-        "dominantPollutant": "pm10",
-        "fetchedAt": "2026-08-19T19:00:40Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232612",
@@ -694,17 +634,20 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232612",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
       "amenities": [
-        "boat ramp",
-        "flush toilets",
-        "showers"
+        "showers",
+        "water"
       ],
       "siteCount": null,
-      "rating": 4.5,
-      "reviewCount": 1052,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371231",
         "orgName": null,
@@ -714,27 +657,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2023/12/13/16/33/232612_ae873dd7-bbc4-4779-ac2b-556579df6ec5_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Jim Hogg Park sits on the north side of Georgetown Lake in the Hill Country of Texas, about 25 miles north of Austin. Recreation Boating is the most popular way to enjoy the lake, and a boat ramp is provided for guests. Fishing is excellent in the area, and the lake contains Black bass, White bass, Hybrid stripers, White crappie, Channel catfish and Flathead catfish, but its most known for its abundance of Smallmouth bass. The San Gabriel River Trail is a 26 mile rugged trail winding through dense juniper forest, hardwood bottomlands and prairie grasslands. The trail wraps completely "
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJb1tbSooqRYYR2sEV351EmR0",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJb1tbSooqRYYR2sEV351EmR0",
-      "weatherCurrent": {
-        "tempF": 99.7,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:06Z"
-      },
-      "aqi": {
-        "aqi": 58,
-        "category": "Moderate air quality",
-        "dominantPollutant": "pm10",
-        "fetchedAt": "2026-08-19T19:00:41Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232614",
@@ -750,19 +678,25 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232614",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
         "dump station",
+        "electric",
         "playground",
+        "restrooms",
+        "sewer",
         "showers",
-        "water hookup"
+        "water"
       ],
       "siteCount": null,
-      "rating": 4.5,
-      "reviewCount": 550,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371234",
         "orgName": null,
@@ -772,27 +706,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2020/12/20/17/48/232614_76fd0a00-58bf-4c37-afe9-fb261a5e3220_700.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Johnson Creek Campground is situated along the banks of Lake O' the Pines in the in the Ark-La-Tex portion of the Pineywoods of east Texas near Arkansas, Oklahoma, and Louisiana. Gate House Hours: 10am-6pm Monday through Saturday, 12pm-6pm Sunday. Address to get here: 580 Crestwood Lp. Avinger, TX 75657 Recreation Boating, fishing, water sports, and wildlife viewing are all popular pastimes at the campground. Hunting opportunities for white-tailed deer, waterfowl, and small game are available on nearby public lands. Lake O' the Pines fishing includes largemouth, spotted, and white bas"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJYUXYPm9lNoYRWvaRvBXSuL8",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJYUXYPm9lNoYRWvaRvBXSuL8",
-      "weatherCurrent": {
-        "tempF": 99.1,
-        "conditions": "Cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:08Z"
-      },
-      "aqi": {
-        "aqi": 65,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:42Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232618",
@@ -808,17 +727,22 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232618",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
+        "electric",
+        "sewer",
         "showers",
-        "water hookup"
+        "water"
       ],
       "siteCount": null,
-      "rating": 4.7,
-      "reviewCount": 34,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371247",
         "orgName": null,
@@ -828,27 +752,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/08/03/13/55/79c828ff-51fd-4d18-b3f9-31f4a25c12ea_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview The Lakeside Campground and Recreation Area is partially open year-round on the northern side Hords Creek Lake and fully open March 1 through September 30 . Recreation Bring your rod for fishing that includes largemouth bass, white crappie, channel and flathead catfish and sunfish. The record largemouth bass caught here is 11 pounds 4 ounces. Facilities All of the campsites have water and electric hookups, some have sewer hookups. Boat ramps, fishing piers and showers can be found throughout the campground. Also, six sites come with screened shelters to aid with windy weather. Natural"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJEanB408YV4YRMVi4n8PO6m8",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJEanB408YV4YRMVi4n8PO6m8",
-      "weatherCurrent": {
-        "tempF": 96.5,
-        "conditions": "Cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:10Z"
-      },
-      "aqi": {
-        "aqi": 67,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:43Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232620",
@@ -864,17 +773,24 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232620",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
-      "hookups": null,
+      "dataSource": null,
+      "hookups": "partial",
       "amenities": [
         "30 amp",
-        "boat ramp",
-        "showers"
+        "electric",
+        "sewer",
+        "showers",
+        "tent sites",
+        "water"
       ],
-      "siteCount": 38,
-      "rating": 4.1,
-      "reviewCount": 628,
+      "siteCount": null,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371250",
         "orgName": null,
@@ -884,27 +800,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2019/01/31/15/49/232620_b3bef362-4250-4ad0-8073-3d723593bfd5_700.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Lavonia Campground is a scenic Texas getaway just beyond the Dallas metropolitan area. Visitors can camp, swim, fish, boat or use the day use area. Recreation Visitors of all ages can enjoy activities like camping, fishing, boating and picnicking. Anglers seek species like channel catfish, crappie and striped bass. Facilities The campground offers 38 RV sites with water, 30 amp electric and sewer hook-ups. The campground has 15 tent sites. Additional perks include hot showers and a boat launch. Natural Features The Lavon Lake, in northern Texas, spans 21,400 acres and stems from the E"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJtYRzbwMHTIYRZshfy0kQHP4",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJtYRzbwMHTIYRZshfy0kQHP4",
-      "weatherCurrent": {
-        "tempF": 101.7,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:13Z"
-      },
-      "aqi": {
-        "aqi": 50,
-        "category": "Moderate air quality",
-        "dominantPollutant": "pm10",
-        "fetchedAt": "2026-08-19T19:00:45Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232628",
@@ -920,21 +821,25 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232628",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
         "30 amp",
-        "boat ramp",
         "dump station",
-        "flush toilets",
+        "electric",
+        "fire ring",
         "playground",
         "showers",
-        "water hookup"
+        "water"
       ],
       "siteCount": 66,
       "rating": null,
-      "reviewCount": 0,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371269",
         "orgName": null,
@@ -944,27 +849,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/08/22/23/10/232628_d368b57d-056e-440d-82db-7fb55e43b479_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Lofers Bend East Campground is located on Whitney Lake on the Brazos River in Central Texas. This campground has 66 campsites and six of which that are \"water only\" sites and the remaining sites have water and 30 amp hook ups. All sites have either a stand up BBQ grill or a ground cooker/fire ring. The park is equipped with flushable toilets, showers, trailer dump station and two boat ramps. Recreation Boating, fishing, swimming, canoeing, and kayaking are popular activities at Whitney Lake. Anglers can fish for a variety of bass, crappie and catfish. Facilities This campground offers"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJ6-Pjz1i5T4YRvRNpcPN_Cpg",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ6-Pjz1i5T4YRvRNpcPN_Cpg",
-      "weatherCurrent": {
-        "tempF": 100.7,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:15Z"
-      },
-      "aqi": {
-        "aqi": 68,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:46Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232633",
@@ -980,15 +870,19 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232633",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
-      "hookups": "none",
+      "dataSource": null,
+      "hookups": null,
       "amenities": [
-        "boat ramp"
+        "restrooms"
       ],
       "siteCount": null,
-      "rating": 4.3,
-      "reviewCount": 2357,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371275",
         "orgName": null,
@@ -998,27 +892,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/09/17/15/25/232633_d3446997-99f3-4e07-99bf-94463f065e1a_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Longhorn Park Picnic Area overlooks Benbrook Lake & Dam in north-central Texas, easiley accessible from the Chisholm Trail Parkway and southwest Fort Worth. Along with a scenic overlook, a large group pavilion is available as well as picnicking, fishing and boat launching. Recreation The large group pavilion is popular for family and group activitries. Individual picnic sites and boat launching is also available in the park. The nearby spillway cut for the dam is a popular fossil-hunting locaiotn where visitors can search rof Cretaceous clams and coral remnants form 85 million yeats a"
       },
-      "dataSource": null,
-      "priceLevel": 2,
-      "placeId": "ChIJpW65dZrZTYYRr75i1vkekqw",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJpW65dZrZTYYRr75i1vkekqw",
-      "weatherCurrent": {
-        "tempF": 101.9,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:18Z"
-      },
-      "aqi": {
-        "aqi": 59,
-        "category": "Moderate air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:47Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232635",
@@ -1034,15 +913,19 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232635",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
       "amenities": [
-        "boat ramp"
+        "water"
       ],
       "siteCount": null,
-      "rating": 3.3,
-      "reviewCount": 1051,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371277",
         "orgName": null,
@@ -1052,27 +935,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2021/10/26/14/25/232635_4ca123b4-fb33-434a-a007-4bb06e405484_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Love Park is on the southeastern shore of Bardwell Lake, less than an hour south of the Dallas-Fort Worth area in north-central Texas. The lake has favorable fish and wildlife habitats, providing plenty of opportunities for fishing and hunting, and great locations for camping, boating and hiking. Deer, armadillo, rabbit, squirrel and a variety of bird species inhabit the area. Recreation Many local fishermen consider Bardwell Lake one of the best kept secrets in the state. Bass fishermen seldom leave empty-handed. Crappie fishing is moderate, and catfish are usually excellent. The lak"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJ_9uQepu-ToYRA_zibZoM6X8",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_9uQepu-ToYRA_zibZoM6X8",
-      "weatherCurrent": {
-        "tempF": 100,
-        "conditions": "Cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:20Z"
-      },
-      "aqi": {
-        "aqi": 58,
-        "category": "Moderate air quality",
-        "dominantPollutant": "pm10",
-        "fetchedAt": "2026-08-19T19:00:48Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232637",
@@ -1088,19 +956,24 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232637",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
         "dump station",
+        "electric",
         "playground",
         "showers",
-        "water hookup"
+        "tent sites",
+        "water"
       ],
       "siteCount": null,
-      "rating": 4.6,
-      "reviewCount": 688,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371286",
         "orgName": null,
@@ -1110,27 +983,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2019/12/09/22/00/232637_382a7bd1-4701-451e-8469-531fec075e7d_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview McCown Valley is located on Whitney Lake on the main channel of the Brazos River in Central Texas. Over two million people visit Whitney Lake each year to enjoy the plethora of recreational activities and scenic beauty the lake provides. Recreation McCown Valley offers five miles of trails in its equestrian park. Visitors enjoy riding their horses through open pastures and wooded areas near the lake. Boating, fishing, swimming, canoeing and kayaking are popular activities at Whitney Lake. Anglers can fish for a variety of bass, crappie and catfish with a state fishing license. Facilit"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJ72OXIzG4T4YRpyfoEo3V3rg",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ72OXIzG4T4YRpyfoEo3V3rg",
-      "weatherCurrent": {
-        "tempF": 100.3,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:23Z"
-      },
-      "aqi": {
-        "aqi": 72,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:50Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232641",
@@ -1146,18 +1004,23 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232641",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
+        "electric",
         "playground",
+        "sewer",
         "showers",
-        "water hookup"
+        "water"
       ],
       "siteCount": 37,
       "rating": null,
-      "reviewCount": 0,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371293",
         "orgName": null,
@@ -1167,27 +1030,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/08/22/15/14/232641_8514640a-c65c-48b6-952b-ca137b1f74ff_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Midway Park is ideal for families and friends to enjoy sightseeing and water activities, all while staying within the Waco city limits. Recreation The main lake shoreline has a large amount of submerged timber, which typically holds fish year-round. Anglers will find plenty of catfish, crappie, large and smallmouth bass as well as sunfish. A boat ramp and dock help visitors enjoy the lake. Facilities Midway Park campground has 37 campsites. There are 32 sites with water and electric hookups, and 11 that also have sewer hookups. The campground has 5 tents sites. Other perks include hot"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJ_29EOWKGT4YR3gRm8DS4vro",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_29EOWKGT4YR3gRm8DS4vro",
-      "weatherCurrent": {
-        "tempF": 99.6,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:25Z"
-      },
-      "aqi": {
-        "aqi": 69,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:51Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232646",
@@ -1203,17 +1051,22 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232646",
       "nightlyPriceMin": 14.0,
       "nightlyPriceMax": 16.0,
+      "dataSource": "ridb",
       "hookups": "partial",
       "amenities": [
-        "30 amp",
-        "boat ramp",
-        "showers"
+        "electric",
+        "restrooms",
+        "showers",
+        "water"
       ],
       "siteCount": 33,
-      "rating": 4,
-      "reviewCount": 122,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371300",
         "orgName": null,
@@ -1227,23 +1080,8 @@
         "timeZone": null,
         "description": "Overview Mott Park is located on the western shore of Bardwell Lake, less than an hour south of the Dallas-Fort Worth area in north-central Texas. The lake has favorable fish and wildlife habitats, providing plenty of opportunities for fishing and hunting, and great locations for camping, boating and hiking. Deer, armadillo, rabbit, squirrel and a variety of bird species inhabit the area. Recreation Many local fishermen consider Bardwell Lake one of the best kept secrets in the state. Bass fishermen seldom leave empty-handed. Crappie fishing is moderate, and catfish are usually excellent. The "
       },
-      "dataSource": "ridb",
-      "priceLevel": null,
-      "placeId": "ChIJj1U3hLPeToYRVzUDJQdPKcI",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJj1U3hLPeToYRVzUDJQdPKcI",
-      "weatherCurrent": {
-        "tempF": 100.2,
-        "conditions": "Cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:28Z"
-      },
-      "aqi": {
-        "aqi": 54,
-        "category": "Moderate air quality",
-        "dominantPollutant": "pm10",
-        "fetchedAt": "2026-08-19T19:00:52Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232674",
@@ -1259,18 +1097,23 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232674",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
         "dump station",
+        "picnic tables",
+        "restrooms",
         "showers",
-        "water hookup"
+        "water"
       ],
       "siteCount": 45,
-      "rating": 4.5,
-      "reviewCount": 185,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371357",
         "orgName": null,
@@ -1280,27 +1123,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/08/15/20/21/4ba340b9-bbe1-49e2-b1ad-d701213c0568_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Piney Point Park is situated on the shore of 30,000-acre Wright Patman Lake within the piney woods of northeast Texas. This facility offers campers a complete range of services and year-round outdoor activities like fishing, hunting and wildlife viewing. Recreation Piney Point has plenty of open space and shade in which children can play, as well as a volleyball court and a 1.3-mile hiking trail that leads to nearby Rocky Point Campground and its swimming beach. Other activities on the lake include boating, fishing, hunting, picnicking and wildlife viewing. Boaters can make use of the"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJpYXbEUE5NIYRWeyhlctx_6I",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJpYXbEUE5NIYRWeyhlctx_6I",
-      "weatherCurrent": {
-        "tempF": 99.5,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:30Z"
-      },
-      "aqi": {
-        "aqi": 60,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:53Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232676",
@@ -1316,21 +1144,26 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232676",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
         "30 amp",
-        "boat ramp",
         "dump station",
-        "flush toilets",
+        "fire ring",
+        "picnic tables",
         "playground",
+        "restrooms",
         "showers",
-        "water hookup"
+        "water"
       ],
       "siteCount": 44,
-      "rating": 4.4,
-      "reviewCount": 150,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371359",
         "orgName": null,
@@ -1340,27 +1173,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2023/01/23/21/04/232676_bf02606d-77ac-4b6b-94ba-fc9d47990bc3_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Plowman Creek Campground is located on the west side of Whitney Lake off the main channel of the Brazos River in Central Texas. Plowman Creek not only offers many campsites but also includes flush toilets, showers, drinking water, a dump station, boat ramp and playground. Recreation Boating, fishing, swimming, canoeing and kayaking are popular activities on the river and downstream at Whitney Lake. Anglers can fish for a variety of bass, crappie, and catfish. The 12.5 mile Hopewell Trail allows hiking, mountain biking and horseback riding. Visitors can choose to travel north on the tr"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJR-NIULjLT4YR3cy8Wbjv6MU",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJR-NIULjLT4YR3cy8Wbjv6MU",
-      "weatherCurrent": {
-        "tempF": 100.9,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:33Z"
-      },
-      "aqi": {
-        "aqi": 71,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:55Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232681",
@@ -1376,15 +1194,19 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232681",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
-      "hookups": null,
+      "dataSource": null,
+      "hookups": "partial",
       "amenities": [
-        "boat ramp"
+        "water"
       ],
       "siteCount": null,
-      "rating": 3.6,
-      "reviewCount": 38,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371368",
         "orgName": null,
@@ -1394,27 +1216,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2020/06/26/16/04/232681_919c99ec-0488-4b0e-80e1-bb0a5fba98c9_700.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Promontory Campground sits along Proctor Lake in the Cross Timbers Region of Texas. The area appeals to sportsmen, birders, naturalists or those simply wanting to relax in the outdoors. Recreation Fishing is Proctor Lake's main draw; anglers enjoy the lake's tremendous populations of bass, shad and crappie. The lake is also recognized as one of the best hybrid striped bass lakes in the state. Boating and swimming are popular activities on the water as well, and boat ramps and docks provide easy lake access for visitors. The surrounding wildlife areas at Proctor Lake provide ample hunt"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJEQwoC2_6UIYRVqlCQVxqSsA",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJEQwoC2_6UIYRVqlCQVxqSsA",
-      "weatherCurrent": {
-        "tempF": 100,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:36Z"
-      },
-      "aqi": {
-        "aqi": 67,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:56Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232685",
@@ -1430,17 +1237,22 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232685",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
         "50 amp",
-        "boat ramp",
-        "playground"
+        "electric",
+        "playground",
+        "water"
       ],
       "siteCount": 16,
-      "rating": 4.4,
-      "reviewCount": 455,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371373",
         "orgName": null,
@@ -1450,27 +1262,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2025/01/17/21/58/232685_7b7e5fcc-65d1-4c77-8251-84a4481e0b69_700.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Rayburn Park lies on the north shore of Sam Rayburn Reservoir, a popular family destination with boating and fishing and access to hunting less than a mile away. Sam Rayburn Reservoir and the surrounding Angelina National Forest provide a wintering habitat for the bald eagle. During the winter months, forest visitors may see the bald eagle soaring over the lake, perched on a flooded snag or in a tall pine along the shoreline. Recreation Sam Rayburn Reservoir is well-known for its largemouth bass, with numerous tournaments hosted here each year. Among the most impressive catches ever r"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJa1GTXveWOYYRK953DPzdvz4",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJa1GTXveWOYYRK953DPzdvz4",
-      "weatherCurrent": {
-        "tempF": 94.3,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:38Z"
-      },
-      "aqi": {
-        "aqi": 69,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:57Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232695",
@@ -1486,20 +1283,24 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232695",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
-      "hookups": null,
+      "dataSource": null,
+      "hookups": "partial",
       "amenities": [
-        "30 amp",
-        "50 amp",
-        "boat ramp",
         "dump station",
-        "flush toilets",
-        "showers"
+        "fire rings",
+        "picnic tables",
+        "showers",
+        "tent sites",
+        "water"
       ],
       "siteCount": 192,
-      "rating": 4.4,
-      "reviewCount": 369,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371396",
         "orgName": null,
@@ -1509,27 +1310,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2022/08/28/14/02/232695_51368590-391b-49d7-902a-5b990b86e5d2_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Rocky Creek Park is located at Somerville Lake near Somerville, Texas. The lake offers various types of recreation such as camping, fishing, boating, swimming, nature trails and much more for registered campers only. Recreation Somerville Lake offers many opportunities for outdoor recreation. Water sports, hiking and biking are popular activities. The lake is great for crappie, catfish, white, hybrid-striped and largemouth bass fishing, with catches weighing up to 10 or more pounds. Facilities Rocky Creek Campground offers 192 sites: 30 sites have 30-amp electrical hookups, 127 sites "
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJFz1tI90ZRIYRj_AThrBY_VE",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJFz1tI90ZRIYRj_AThrBY_VE",
-      "weatherCurrent": {
-        "tempF": 96.7,
-        "conditions": "Mostly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:40Z"
-      },
-      "aqi": {
-        "aqi": 72,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:00:59Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232696",
@@ -1545,19 +1331,24 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232696",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "50 amp",
-        "boat ramp",
         "dump station",
+        "electric",
+        "picnic table",
         "playground",
-        "water hookup"
+        "sewer",
+        "water"
       ],
       "siteCount": 124,
-      "rating": 4.7,
-      "reviewCount": 427,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371398",
         "orgName": null,
@@ -1567,27 +1358,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2024/09/30/14/06/232696_1dffd168-bc97-4535-8eec-3f533724d8aa_700.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Rocky Point Park offers a campground and group day use picnic shelter use on the shore of 30,000-acre Wright Patman Lake within the piney woods of northeast Texas. This large facility offers campers a complete range of services and year-round outdoor activities like fishing, hunting and wildlife viewing. Recreation Rocky Point has hiking and walking trails for registered campers, including a 1.3-mile trail that connects with nearby Piney Point Campground. Children enjoy the facility's swimming beach, playground, volleyball court and amphitheater with educational programs. Boaters and "
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJK5E07Vw5NIYRGpobld5iHNs",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJK5E07Vw5NIYRGpobld5iHNs",
-      "weatherCurrent": {
-        "tempF": 99.6,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:43Z"
-      },
-      "aqi": {
-        "aqi": 61,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:00Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232698",
@@ -1603,15 +1379,20 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232698",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
       "amenities": [
-        "boat ramp"
+        "electric",
+        "water"
       ],
       "siteCount": 100,
-      "rating": 4.5,
-      "reviewCount": 245,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371406",
         "orgName": null,
@@ -1621,27 +1402,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2025/01/24/20/12/232698_6899b486-a9f3-418b-89e6-aee71ddff00f_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview San Augustine Park is set along the Ayish Bayou tributary on the shores of Sam Rayburn Reservoir. In spring, take advantage of excellent birding opportunities as neotropical birds like warblers and vireos pass through the lake en route to the Gulf of Mexico. Recreation The lake is a highly popular destination for boating and fishing. Game fish include largemouth bass, bluegill and channel catfish, but it is the abundance of bass, which inspires more than 500 annual tournaments. Facilities San Augustine features 100 sites with electric and water hook-ups. Among the many amenities are a"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJbQ7niAfAOYYRiZ7lsLOFEI4",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJbQ7niAfAOYYRiZ7lsLOFEI4",
-      "weatherCurrent": {
-        "tempF": 95.5,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:45Z"
-      },
-      "aqi": {
-        "aqi": 67,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:01Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232699",
@@ -1657,19 +1423,23 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232699",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
         "dump station",
+        "electric",
         "playground",
         "showers",
-        "water hookup"
+        "water"
       ],
       "siteCount": null,
-      "rating": 4.7,
-      "reviewCount": 164,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371407",
         "orgName": null,
@@ -1679,27 +1449,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/08/06/13/39/0dccbdae-c8e7-4af5-9f65-6d39b635e58d_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Sandy Creek Park is located on the southeast side of B.A. Steinhagen Lake between the towns of Woodville and Jasper in southeast Texas. The lake provides a great getaway for fishing, boating, picnicking, camping and birding. Recreation B.A. Steinhagen Lake is a prime location for boating, canoeing, fishing and wildlife viewing. Several parks with boat ramps and docks are scattered around the lake, including facilities within Sandy Creek. Boat rentals are also available. Fishing is a popular pastime. Largemouth bass, catfish and crappie are the primary sport species found in the lake. "
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJ5an0EPMJOYYRHVQvpexORJQ",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ5an0EPMJOYYRHVQvpexORJQ",
-      "weatherCurrent": {
-        "tempF": 95.7,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:48Z"
-      },
-      "aqi": {
-        "aqi": 67,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:03Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232708",
@@ -1715,21 +1470,27 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232708",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
         "20 amp",
         "30 amp",
         "50 amp",
-        "boat ramp",
         "dump station",
+        "electric",
+        "picnic table",
+        "sewer",
         "showers",
-        "water hookup"
+        "water"
       ],
       "siteCount": 61,
-      "rating": 4.4,
-      "reviewCount": 223,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371424",
         "orgName": null,
@@ -1739,27 +1500,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2020/06/26/20/07/232708_0250f1d1-ed23-480e-a56e-21c038787c09_700.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Sowell Creek Park is nestled within the beautiful Cross Timbers Region of Texas and located on the east side of Proctor Lake. Sowell Creek appeals to sportsmen, birdwatchers, naturalists or those simply wanting to relax in the outdoors. Recreation Sowell Creek offers families and friends with an excellent venue to enjoy the outdoors. The park offers overnight camping as well as two day-use areas for picnicing and several swim beaches for folks to soak up the sun and enjoy the beautiful lake water. Fishing is Proctor Lake's main attraction: anglers enjoy the lake's tremendous populatio"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJGQujyd1VUIYR_qU0XN3B4rc",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJGQujyd1VUIYR_qU0XN3B4rc",
-      "weatherCurrent": {
-        "tempF": 99.8,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:50Z"
-      },
-      "aqi": {
-        "aqi": 68,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:04Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232709",
@@ -1775,19 +1521,26 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232709",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
-        "dump station",
+        "electric",
+        "picnic tables",
         "playground",
+        "restrooms",
+        "rv dump",
         "showers",
-        "water hookup"
+        "tent sites",
+        "water"
       ],
-      "siteCount": 10,
-      "rating": 4.3,
-      "reviewCount": 91,
+      "siteCount": 51,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371427",
         "orgName": null,
@@ -1797,27 +1550,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/08/01/21/22/1b2c9077-ed3a-4d63-b735-f869681d85d0_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Perched on the scenic western shores of Waco Lake, Reynolds Creek is a premier destination for outdoor enthusiasts. Whether you are looking for a relaxing stroll or a rugged trek, the park serves as the perfect launchpad. Visitors can tackle the expansive 20-mile Lacy Point Trail, a favorite for local mountain bikers, bird watchers and horseback riders alike. On the water, anglers and boaters can utilize the convenient on-site boat ramps and day-use picnic tables to explore or relax by Waco Lake\u2014a reservoir famous for its abundant catfish, crappie, and largemouth bass. Recreation From"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJv9a5XfaPT4YRSJ8kMgq7r68",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJv9a5XfaPT4YRSJ8kMgq7r68",
-      "weatherCurrent": {
-        "tempF": 100,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:53Z"
-      },
-      "aqi": {
-        "aqi": 69,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:05Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232718",
@@ -1833,18 +1571,22 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232718",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "flush toilets",
+        "electric",
         "playground",
         "showers",
-        "water hookup"
+        "water"
       ],
       "siteCount": 48,
       "rating": null,
-      "reviewCount": 0,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371448",
         "orgName": null,
@@ -1854,27 +1596,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2019/08/02/18/21/232718_05a2b865-a9e5-47d4-85f0-cc84ee385e57_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Taylor Campground, on the banks of Granger Lake, is an excellent lakeside destination for families of all ages. The park pleases nature lovers with its hiking trail and water skiers with its easily accessible boat dock. Anglers flock to Granger Lake because it is one of the top five crappie and white bass fishing destinations in central Texas. Recreation Boating, hiking, hunting and wildlife viewing are all reasons visitors camp at Taylor. Hikers can enjoy the Comanche Bluff Trail, which loops around the campground and carries on in both directions along the southern side of the lake."
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJyxcemt_eRIYRgwlOeCh5lT8",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJyxcemt_eRIYRgwlOeCh5lT8",
-      "weatherCurrent": {
-        "tempF": 98.6,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:55Z"
-      },
-      "aqi": {
-        "aqi": 59,
-        "category": "Moderate air quality",
-        "dominantPollutant": "pm10",
-        "fetchedAt": "2026-08-19T19:01:06Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232726",
@@ -1890,17 +1617,21 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232726",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
         "50 amp",
-        "boat ramp",
+        "electric",
         "showers"
       ],
       "siteCount": 48,
-      "rating": 4.6,
-      "reviewCount": 145,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371463",
         "orgName": null,
@@ -1910,27 +1641,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2021/02/02/02/01/232726_9338cb6e-12e4-44f0-9d9a-0df2b860d38d_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Twin Dikes Park is located on the waters of the Sam Rayburn Reservoir, in the Piney Woods of southeast Texas. The region lies in the migration path of warblers, vireos, and other species of neotropical migrants, so spring is an opportune time for birders to visit the park. Recreation The lake is a highly popular recreation destination for boating and fishing. Game fish include largemouth bass, bluegill and channel catfish. The abundance of bass in the lake, has inspired more than 300 annual tournaments. Facilities The park features 48 campsites with 30 to 50 amp electric hookups, hot "
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJ51-y_i-WOYYR50GhJy4MAcg",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ51-y_i-WOYYR50GhJy4MAcg",
-      "weatherCurrent": {
-        "tempF": 93.9,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:54:58Z"
-      },
-      "aqi": {
-        "aqi": 67,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:08Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232728",
@@ -1946,18 +1662,23 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232728",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
-        "flush toilets",
+        "electric",
+        "restrooms",
         "showers",
-        "water hookup"
+        "tent sites",
+        "water"
       ],
       "siteCount": 30,
       "rating": null,
-      "reviewCount": 0,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371466",
         "orgName": null,
@@ -1967,27 +1688,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2024/10/24/15/48/232728_8a27423c-92f6-41d7-9330-21afa7e95721_700.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Union Grove Park is located on the southwestern shore of Stillhouse Hollow Lake in central Texas. The lake offers a wide variety of recreation opportunities, including water sports, hiking, biking, horseback riding, picnicking, large group pavilions, hunting, fishing and simply enjoying the scenery. This facility has RV and tent camping sites with water and electric hookups available. The facility is one of only two reservable campgrounds on the lake. Stillhouse Hollow Lake was created by the U.S. Army Corps of Engineers with the construction of Stillhouse Hollow Dam in 1968. The 6,43"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJw3UDjzo4RYYRJDmHH3JVj7k",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJw3UDjzo4RYYRJDmHH3JVj7k",
-      "weatherCurrent": {
-        "tempF": 100.7,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:00Z"
-      },
-      "aqi": {
-        "aqi": 74,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:09Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232737",
@@ -2003,16 +1709,20 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232737",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
-      "hookups": null,
+      "dataSource": null,
+      "hookups": "partial",
       "amenities": [
-        "30 amp",
-        "boat ramp"
+        "electric",
+        "water"
       ],
       "siteCount": 65,
       "rating": null,
       "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371486",
         "orgName": null,
@@ -2026,23 +1736,8 @@
         "timeZone": null,
         "description": "Overview Waxahachie Creek Park is on the western shore of Bardwell Lake, less than an hour south of the Dallas-Fort Worth area in north-central Texas. City-dwellers frequent the park's campground and day-use area to enjoy outdoor activities without going far from home. The lake has favorable fish and wildlife habitats, providing plenty of opportunities for fishing and hunting, and great locations for camping, boating and hiking. Deer, armadillo, rabbit, squirrel and a variety of bird species inhabit the area. Recreation Many local fishermen consider Bardwell Lake one of the best kept secrets i"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null,
-      "weatherCurrent": {
-        "tempF": 100.1,
-        "conditions": "Cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:03Z"
-      },
-      "aqi": {
-        "aqi": 52,
-        "category": "Moderate air quality",
-        "dominantPollutant": "pm10",
-        "fetchedAt": "2026-08-19T19:01:10Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232745",
@@ -2058,16 +1753,22 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232745",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
         "20 amp",
-        "water hookup"
+        "electric",
+        "sewer",
+        "water"
       ],
       "siteCount": null,
-      "rating": 4.4,
-      "reviewCount": 111,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371502",
         "orgName": null,
@@ -2077,27 +1778,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2022/08/26/16/20/232745_48ad3711-9806-458a-ae0b-23f84fa6b77a_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Willis Creek is the ideal place for campers looking for a variety of accommodations. A group campground and five equestrian sites are available, in addition to a row of standard camping sites. Granger Lake is a popular recreational destination, especially for boating and fishing. In fact, it's one of the best lakes in the region for crappie and white bass fishing. Recreation Boating and fishing are the most popular activities for campers. Horseback riders have six trails to explore in the Willis Creek Equestrian Area, ranging from 1 to 5.5 miles in length. Facilities Equestrian sites "
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJ919SpSweRYYRJf_1mh_2UJg",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ919SpSweRYYRJf_1mh_2UJg",
-      "weatherCurrent": {
-        "tempF": 99,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:05Z"
-      },
-      "aqi": {
-        "aqi": 61,
-        "category": "Good air quality",
-        "dominantPollutant": "pm10",
-        "fetchedAt": "2026-08-19T19:01:11Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232748",
@@ -2113,17 +1799,21 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232748",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
-        "playground",
-        "water hookup"
+        "electric",
+        "picnic table",
+        "water"
       ],
       "siteCount": null,
-      "rating": 4.3,
-      "reviewCount": 115,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371505",
         "orgName": null,
@@ -2133,27 +1823,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2019/07/28/20/18/232748_154ac3aa-9565-44e4-887a-2868bcb344c7_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Wilson H. Fox Park attracts a variety of campers looking for a fun-filled escape. In springtime, the campground is a colorful place covered in a blanket of wildflowers. In the hot summer months, there's no place like a lakeside campsite with a swimming beach, fishing dock and two ramps to set sail or paddle out on the lake. Recreation Whether it's sailing, swimming or water skiing, visitors have many options for fun out on the water. Fish for catfish, white bass or crappie. Just beyond the park, archery hunting for feral hogs is allowed year-round. Facilities All sites have water and "
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJRfvBoQXiRIYRPn9iyjrJjks",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJRfvBoQXiRIYRPn9iyjrJjks",
-      "weatherCurrent": {
-        "tempF": 98.4,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:08Z"
-      },
-      "aqi": {
-        "aqi": 62,
-        "category": "Good air quality",
-        "dominantPollutant": "pm10",
-        "fetchedAt": "2026-08-19T19:01:13Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232752",
@@ -2169,20 +1844,23 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232752",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "50 amp",
-        "boat ramp",
         "dump station",
-        "flush toilets",
+        "fire rings",
+        "picnic tables",
         "showers",
-        "water hookup"
+        "water"
       ],
       "siteCount": 82,
-      "rating": 4.4,
-      "reviewCount": 373,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371510",
         "orgName": null,
@@ -2192,27 +1870,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2022/08/28/14/11/232752_d2d803de-c637-41ee-870f-14adb8936730_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Yegua Creek is located at Somerville Lake near Somerville, Texas. The lake offers various types of recreation such as camping, fishing, boating, nature trails and much more for registered campers only. Recreation Somerville Lake offers many opportunities for outdoor recreation. Water sports, hiking and biking are popular activities. White and hybrid-striped bass, crappie and catfish populate the lake, as well as largemouth bass which can reach 10 or more pounds. Facilities Yegua Creek Campground has 82 sites, 65 of which have 50-amp electrical and water hookups. Flush toilets and show"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJ9yuY66QZRIYRHM43wk43y-E",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ9yuY66QZRIYRHM43wk43y-E",
-      "weatherCurrent": {
-        "tempF": 96.6,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:10Z"
-      },
-      "aqi": {
-        "aqi": 72,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:14Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "232917",
@@ -2228,17 +1891,21 @@
       "website": "https://www.recreation.gov/camping/campgrounds/232917",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
       "amenities": [
-        "boat ramp",
         "dump station",
+        "restrooms",
         "showers"
       ],
       "siteCount": null,
       "rating": null,
       "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN371731",
         "orgName": null,
@@ -2248,27 +1915,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/09/17/21/06/232917_d6c43d9e-b53e-4b60-8d93-fbc8957a6b96_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Bear Creek Campground is on the south side of Benbrook Lake in north central Texas, accessible from Ben Day Murrin Road. Individual & group camping, along with boat launching, is available. Recreation Both individual & group camping are available in Bear Creek, April thru September, along with boat launching and wildlife viewing. Deer, hawks, owls, roadrunners and woodpeckers can be spotted around the lake. Facilities Bear Creek has individual campsites with utility hookups, a large group camping pavilion, restrooms with showers, trailer dump station, and boat launching. Natural Featu"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null,
-      "weatherCurrent": {
-        "tempF": 101.9,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:13Z"
-      },
-      "aqi": {
-        "aqi": 64,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:15Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "233125",
@@ -2284,16 +1936,20 @@
       "website": "https://www.recreation.gov/camping/campgrounds/233125",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
-        "water hookup"
+        "electric",
+        "water"
       ],
       "siteCount": 30,
-      "rating": 4.3,
-      "reviewCount": 98,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN372008",
         "orgName": null,
@@ -2303,27 +1959,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2023/03/10/16/37/233125_6bfdbbae-05e0-4f14-8039-c7b23fb1b373_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Speegleville Park is perched on the south end of a scenic cove of Waco Lake. The park provides outdoor recreation options like boating, jet skiing, fishing, swimming and bird watching. Recreation The main lake shoreline has a large amount of submerged timber, which typically holds fish year-round. Anglers will find plenty of catfish, crappie, large and smallmouth bass as well as sunfish. At least 51 species of fish inhabit the lake's waters, and a record flathead catfish weighed in at a whopping 59.5 pounds. A four-lane boat ramp helps visitors enjoy the lake. Facilities The park incl"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJybGnQKKFT4YRGKWW6jCWcyo",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJybGnQKKFT4YRGKWW6jCWcyo",
-      "weatherCurrent": {
-        "tempF": 100.5,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:15Z"
-      },
-      "aqi": {
-        "aqi": 66,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:17Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "233170",
@@ -2339,20 +1980,23 @@
       "website": "https://www.recreation.gov/camping/campgrounds/233170",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
         "50 amp",
-        "boat ramp",
         "dump station",
-        "flush toilets",
+        "electric",
         "showers",
-        "water hookup"
+        "water"
       ],
       "siteCount": 34,
-      "rating": 4.1,
-      "reviewCount": 217,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN372062",
         "orgName": null,
@@ -2362,27 +2006,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/08/22/23/20/233170_bbb3dd1b-5767-41bb-a895-c9289bb76078_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Kimball Bend Campground is located on Whitney Lake off the main channel of the Brazos River in Central Texas. The campground offers thirty four 50 amp campsites. Recreation Boating, fishing, swimming, canoeing and kayaking are popular activities on the river and downstream at Whitney Lake. Anglers can fish for a variety of bass, crappie and catfish. Visitors enjoy hiking the Chisholm Trail, a historic route followed by upwards of ten million cattle as they traveled northbound from southern Texas to Kansas and adjacent destinations between 1867 and the 1880s. It crosses through the cam"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJP5zAozDLT4YRnF7wi3gC5Y8",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJP5zAozDLT4YRnF7wi3gC5Y8",
-      "weatherCurrent": {
-        "tempF": 101.4,
-        "conditions": "Cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:18Z"
-      },
-      "aqi": {
-        "aqi": 72,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:18Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "233200",
@@ -2398,15 +2027,20 @@
       "website": "https://www.recreation.gov/camping/campgrounds/233200",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "water hookup"
+        "electric",
+        "water"
       ],
       "siteCount": 20,
       "rating": null,
       "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN372102",
         "orgName": null,
@@ -2416,27 +2050,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/images/68490_700.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Boles Field is located in the northern portion of Sabine National Forest in eastern Texas, near the border of Louisiana. The area centers around a cemetery for fox hounds established at the turn of the century, and some of the world's most well-known hunting dogs are buried here. Campsites: First come, first served; 20 campsites with electric and water. Camping Fee: $6; 14 days camping limit; up to 2 tents;8 people per site Recreation With the Toledo Bend Reservoir just six miles miles away, Boles Field offers an opportunity to visit one of the nation's most regarded freshwater fishin"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": null,
-      "googleUrl": null,
-      "weatherCurrent": {
-        "tempF": 93.2,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:20Z"
-      },
-      "aqi": {
-        "aqi": 65,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:19Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "233383",
@@ -2452,13 +2071,17 @@
       "website": "https://www.recreation.gov/camping/campgrounds/233383",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
       "amenities": [],
       "siteCount": null,
-      "rating": 4.1,
-      "reviewCount": 39,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN372426",
         "orgName": null,
@@ -2468,27 +2091,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2021/06/23/16/50/233383_d694f670-0bbf-4888-a8f0-20bb49e93926_700.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Friendship Park is located in the gently rolling hills of the Texas Blackland Prairie. In the Spring it offers and exceptional array of wildflowers that blanket the landscape. Friendship Park is approximately 15 miles from Taylor, TX and 40 miles from Austin, TX."
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJTfLx-7UdRYYR3X1EVYfdNLQ",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJTfLx-7UdRYYR3X1EVYfdNLQ",
-      "weatherCurrent": {
-        "tempF": 98.7,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:23Z"
-      },
-      "aqi": {
-        "aqi": 64,
-        "category": "Good air quality",
-        "dominantPollutant": "pm10",
-        "fetchedAt": "2026-08-19T19:01:20Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "233527",
@@ -2504,19 +2112,21 @@
       "website": "https://www.recreation.gov/camping/campgrounds/233527",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
-        "dump station",
         "playground",
         "showers",
-        "water hookup"
+        "water"
       ],
       "siteCount": 44,
-      "rating": 4,
-      "reviewCount": 404,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN373233",
         "orgName": null,
@@ -2526,27 +2136,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2023/05/19/03/33/233527_bb6995d1-5318-4d47-82c6-2b194b7cce4e_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview The Juniper Point Campground is located on Lake Texoma, in the Cross Timbers region of Texas. The lake is said to be the \"Playground of the Southwest,\" where outdoor activities like fishing, boating, hiking and hunting abound. Recreation Lake Texoma is a large reservoir with an excellent fishery and many access points. Boating, swimming, water skiing, hunting, birding and relaxing on the sandy beaches are the typical pursuits of most visitors. The lake is known as the \"Striper Capital of the World,\" one of the few reservoirs in the nation where striped bass reproduce naturally. Other "
       },
-      "dataSource": null,
-      "priceLevel": 2,
-      "placeId": "ChIJ_ecB4dGRTIYRL95AQFZ9VBA",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ_ecB4dGRTIYRL95AQFZ9VBA",
-      "weatherCurrent": {
-        "tempF": 103.2,
-        "conditions": "Cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:25Z"
-      },
-      "aqi": {
-        "aqi": 49,
-        "category": "Moderate air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:22Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "233579",
@@ -2562,17 +2157,22 @@
       "website": "https://www.recreation.gov/camping/campgrounds/233579",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
         "dump station",
-        "showers"
+        "electric",
+        "showers",
+        "water"
       ],
       "siteCount": 88,
-      "rating": 4.4,
-      "reviewCount": 48,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN373333",
         "orgName": null,
@@ -2582,27 +2182,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2019/01/14/17/15/233579_8e7a15ca-0628-4889-acfc-0b6778417030_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Pat Mayse West Campground is on the banks of its namesake lake in the Red River Basin in Lamar County, Texas. Easy access to developed park areas has made the lake a haven for families who enjoy camping, picnicking, swimming, boating, fishing and other outdoor recreation. Recreation The lake provides excellent opportunities for boating, swimming, and fishing. Anglers will find largemouth bass, white crappie, sunfish, striped bass and channel and flathead catfish, among other species. Hunting is a very popular activity in the area. The surrounding lands are managed for upland game and "
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJnb7K0tTkSoYRrl_bQKTjpP8",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJnb7K0tTkSoYRrl_bQKTjpP8",
-      "weatherCurrent": {
-        "tempF": 102.1,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:27Z"
-      },
-      "aqi": {
-        "aqi": 60,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:23Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "233586",
@@ -2618,19 +2203,23 @@
       "website": "https://www.recreation.gov/camping/campgrounds/233586",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
         "dump station",
         "playground",
         "showers",
-        "water hookup"
+        "tent sites",
+        "water"
       ],
       "siteCount": null,
       "rating": null,
-      "reviewCount": 0,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN373345",
         "orgName": null,
@@ -2640,27 +2229,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2023/05/23/03/48/233586_74643f01-c977-40d6-8b76-d3463933b2a6_700.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Platter Flats Campground is located on Lake Texoma in Oklahoma's Cross Timbers Region. The lake is said to be the \"Playground of the Southwest,\" where outdoor activities like fishing, boating, hiking and hunting abound. Recreation Lake Texoma is a large reservoir with an excellent fishery and many access points. Boating, swimming, water skiing, hunting, birding and relaxing on the sandy beaches are the typical pursuits of most visitors. The lake is known as the \"Striper Capital of the World,\" one of the few reservoirs in the nation where striped bass reproduce naturally. Other popular"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJpcejZaWZTIYRe0jd4zEZ6F4",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJpcejZaWZTIYRe0jd4zEZ6F4",
-      "weatherCurrent": {
-        "tempF": 103.7,
-        "conditions": "Cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:30Z"
-      },
-      "aqi": {
-        "aqi": 52,
-        "category": "Moderate air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:24Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "233595",
@@ -2676,19 +2250,22 @@
       "website": "https://www.recreation.gov/camping/campgrounds/233595",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
         "dump station",
         "playground",
         "showers",
-        "water hookup"
+        "water"
       ],
       "siteCount": 22,
       "rating": null,
-      "reviewCount": 0,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN373357",
         "orgName": null,
@@ -2698,27 +2275,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2023/05/13/23/38/233595_4c2d0d90-fc1a-4255-a7d2-ca6ce22be2b0_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Preston Bend Campground is located on Lake Texoma, in the Cross Timbers region of Texas. The lake is said to be the \"Playground of the Southwest,\" where outdoor activities like fishing, boating, hiking and hunting abound. Recreation Lake Texoma is a large reservoir with an excellent fishery and many access points. Boating, swimming, water skiing, hunting, birding and relaxing on the sandy beaches are the typical pursuits of most visitors. The lake is known as the \"Striper Capital of the World,\" one of the few reservoirs in the nation where striped bass reproduce naturally. Other popul"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "EilQcmVzdG9uIEJlbmQgUmQsIFBvdHRzYm9ybywgVFggNzUwNzYsIFVTQSIuKiwKFAoSCVVDSCiMkUyGEUmn9DFSxu_yEhQKEgkPAWbJ2Y1MhhGXvve_IPpH0Q",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:EilQcmVzdG9uIEJlbmQgUmQsIFBvdHRzYm9ybywgVFggNzUwNzYsIFVTQSIuKiwKFAoSCVVDSCiMkUyGEUmn9DFSxu_yEhQKEgkPAWbJ2Y1MhhGXvve_IPpH0Q",
-      "weatherCurrent": {
-        "tempF": 101.7,
-        "conditions": "Cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:32Z"
-      },
-      "aqi": {
-        "aqi": 51,
-        "category": "Moderate air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:26Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "233617",
@@ -2734,17 +2296,22 @@
       "website": "https://www.recreation.gov/camping/campgrounds/233617",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
         "dump station",
-        "showers"
+        "electric",
+        "showers",
+        "water"
       ],
       "siteCount": 85,
-      "rating": 4.3,
-      "reviewCount": 31,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN373385",
         "orgName": null,
@@ -2754,27 +2321,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2019/01/14/17/11/233617_947e4283-8789-4e19-9b08-f917120263a4_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Sanders Cove Campground is on the banks of Pat Mayse Lake in the Red River Basin in Lamar County, Texas. Easy access to developed park areas has made the lake a haven for families who enjoy camping, picnicking, swimming, boating, fishing and other outdoor recreation. Recreation The lake provides excellent opportunities for boating, swimming and fishing. Anglers fish for largemouth bass, white crappie, sunfish, striped bass and channel and flathead catfish, among other species. Hunting is a very popular activity in the area. The surrounding lands are managed for upland game and whiteta"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJwceUUgDiRIYRpQ9geaBlP38",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJwceUUgDiRIYRpQ9geaBlP38",
-      "weatherCurrent": {
-        "tempF": 102.1,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:35Z"
-      },
-      "aqi": {
-        "aqi": 60,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:27Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "233716",
@@ -2790,19 +2342,22 @@
       "website": "https://www.recreation.gov/camping/campgrounds/233716",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
-        "flush toilets",
+        "electric",
         "playground",
         "showers",
-        "water hookup"
+        "water"
       ],
       "siteCount": null,
-      "rating": 4.6,
-      "reviewCount": 175,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN373554",
         "orgName": null,
@@ -2812,27 +2367,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/08/22/23/14/233716_ef78c849-993a-4b3e-9dff-9de58a063ef1_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Lofers Bend West Campground is located on Whitney Lake on the Brazos River in Central Texas. Over two million people visit Whitney Lake each year to enjoy the plethora of recreational activities and scenic beauty the lake provides. Recreation Boating, fishing, swimming, canoeing and kayaking are popular activities at Whitney Lake. Anglers can fish for a variety of bass, crappie and catfish. Facilities The campground offers 51 electric sites, one group site, and one day-use group picnic shelter with water and electric hookups. 23 non-electric sites are available, many of which have wat"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJoYUHIlu5T4YR6IxSBTe_PVA",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJoYUHIlu5T4YR6IxSBTe_PVA",
-      "weatherCurrent": {
-        "tempF": 100.7,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:37Z"
-      },
-      "aqi": {
-        "aqi": 68,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:28Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "233790",
@@ -2848,15 +2388,19 @@
       "website": "https://www.recreation.gov/camping/campgrounds/233790",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp"
+        "electric"
       ],
       "siteCount": null,
-      "rating": 4.6,
-      "reviewCount": 283,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN373653",
         "orgName": null,
@@ -2866,27 +2410,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/08/09/17/34/d63b2c2b-8981-470f-9fc4-2f5453bc334d_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Ebenezer Park features some of the most beautiful horseback riding trails in southeast Texas. It's the only Army Corps of Engineers park on Sam Rayburn Reservoir with equestrian campsites, making it the go-to destination for horse-owners. The horse trail terrain is soft and sandy, so horseshoes are not required. Trails glide over rolling hills through creeks and gullies. Some trails even have beach access, allowing riders and their horses to cool off on a hot day. Note: The horse access beach and majority of the trail system are located on USFS property. Recreation In addition to hors"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJOyK8qUO8OYYR1O83lGftpMo",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJOyK8qUO8OYYR1O83lGftpMo",
-      "weatherCurrent": {
-        "tempF": 94,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:40Z"
-      },
-      "aqi": {
-        "aqi": 68,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:29Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "233828",
@@ -2902,18 +2431,22 @@
       "website": "https://www.recreation.gov/camping/campgrounds/233828",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "50 amp",
-        "boat ramp",
         "dump station",
-        "water hookup"
+        "electric",
+        "picnic table",
+        "water"
       ],
       "siteCount": 39,
-      "rating": 4,
-      "reviewCount": 12,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN373733",
         "orgName": null,
@@ -2923,27 +2456,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/08/15/20/37/4c923bcc-de34-4529-8c2e-36e176b7a8ab_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Malden Lake Campground is situated on the shore of 30,000-acre Wright Patman Lake within the piney woods of northeast Texas. This facility offers year-round enjoyment of outdoor activities like fishing, hunting and wildlife viewing. Recreation Wright Patman Lake hosts a wide range of recreational activities, including camping, swimming, boating, fishing, hunting, hiking, picnicking and wildlife viewing. Boaters flock to the lake, and anglers try their luck for bass, catfish, crappie and sunfish. Malden Lake Park has a trail system behind the campsites in the H Loop, which is great for"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJC8FFVbE1NIYRHZsdcmhgm0E",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJC8FFVbE1NIYRHZsdcmhgm0E",
-      "weatherCurrent": {
-        "tempF": 100.1,
-        "conditions": "Cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:43Z"
-      },
-      "aqi": {
-        "aqi": 61,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:31Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "233875",
@@ -2959,16 +2477,19 @@
       "website": "https://www.recreation.gov/camping/campgrounds/233875",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
       "amenities": [
-        "boat ramp",
-        "flush toilets"
+        "water"
       ],
       "siteCount": null,
-      "rating": 4.3,
-      "reviewCount": 53,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN373795",
         "orgName": null,
@@ -2978,27 +2499,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2022/02/25/20/57/233875_5aee84c8-25df-4f54-b31c-4c5d5f1bad7a_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Bluffview Park is located on the southwest side of B.A. Steinhagen Lake, in Town Bluff, Texas. The lake provides a great getaway for fishing, boating, picnicking, camping and birding. Recreation B.A. Steinhagen Lake is a prime location for boating, canoeing, fishing and wildlife viewing. Several parks with boat ramps and docks are scattered around the lake. Fishing is a popular pastime. Largemouth bass, catfish and crappie are the primary sport species found in the lake. Younger anglers love the children's fishing pond within Magnolia Park, just 6.5 miles north. A Kid's Fish Day is he"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJdTbaGLsJOYYRjVgryCMnupU",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJdTbaGLsJOYYRjVgryCMnupU",
-      "weatherCurrent": {
-        "tempF": 95.8,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:45Z"
-      },
-      "aqi": {
-        "aqi": 67,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:32Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "233951",
@@ -3014,15 +2520,20 @@
       "website": "https://www.recreation.gov/camping/campgrounds/233951",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "water hookup"
+        "electric",
+        "water"
       ],
       "siteCount": null,
-      "rating": 4,
-      "reviewCount": 2,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN373899",
         "orgName": null,
@@ -3032,27 +2543,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/08/15/19/14/dcae4c6f-2ae3-460b-b3aa-a4b0b8a873bd_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Oak Park is a day use area located just below the dam on Wright Patman Lake in northeastern Texas. Its picnic shelter and ball fields make it a great location for larger groups and special events. Recreation This facility is a relaxing and spacious location for group gatherings and picnics. Wright Patman Lake hosts a wide range of recreational activities to allow visitors to get outdoors and enjoy the area, including boating, fishing, hunting, hiking, picnicking and wildlife viewing. Several boating, fishing and swimming facilities can be accessed in nearby parks around the lake. Angl"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJP0qLICU5NIYRfBBeoUJaqFY",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJP0qLICU5NIYRfBBeoUJaqFY",
-      "weatherCurrent": {
-        "tempF": 99.9,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:47Z"
-      },
-      "aqi": {
-        "aqi": 60,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:33Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "233991",
@@ -3068,18 +2564,21 @@
       "website": "https://www.recreation.gov/camping/campgrounds/233991",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
-        "flush toilets",
         "playground",
-        "water hookup"
+        "restroom",
+        "water"
       ],
       "siteCount": null,
-      "rating": 4.5,
-      "reviewCount": 17,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN373948",
         "orgName": null,
@@ -3089,27 +2588,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/08/15/19/22/8eeb9ccc-ceee-4c6d-9907-0bd1adf0707e_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview North Shore Park is the largest day-use area on Wright Patman Lake, a 30,000-acre lake set amidst the piney woods of northeast Texas. With a sandy swimming beach, accessible boat ramp, reservable group picnic shelter and numerous other amenities, the park provides a fun, enjoyable day at the lake for a wide variety of visitors. Recreation This facility provides easy lake access for boating and fishing activities, as well as plenty of on-shore fun. Picnickers enjoy swimming and relaxing on the beach. Children have plenty of options to keep busy, including basketball and sand volleyball"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJMcL4b5o4NIYRfbSybc4VIik",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJMcL4b5o4NIYRfbSybc4VIik",
-      "weatherCurrent": {
-        "tempF": 100.3,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:50Z"
-      },
-      "aqi": {
-        "aqi": 60,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:35Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "234004",
@@ -3125,17 +2609,21 @@
       "website": "https://www.recreation.gov/camping/campgrounds/234004",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
       "amenities": [
-        "boat ramp",
-        "flush toilets",
-        "showers"
+        "restrooms",
+        "showers",
+        "water"
       ],
       "siteCount": null,
-      "rating": 4.6,
-      "reviewCount": 579,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN373966",
         "orgName": null,
@@ -3145,27 +2633,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2020/06/01/20/42/234004_e40b0577-875a-436b-afaa-b64aae9d2589_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Cagle Recreation Area is a popular campground and day-use area that sits along the shoreline of Lake Conroe on the west fork of the San Jacinto River, just 1 hour north of Houston, Texas. The area offers great camping, fishing, hiking, hunting, birding and water sports year-round. Recreation Anglers are drawn to the 22,000-acre Lake Conroe for its forested lake shore and open water. The lake is particularly noted for black bass and year-round fishing. Swimming is not allowed, but fishing, hiking, picnicking and shoreline wading are sure to provide plenty of fun for kids. Hikers and mo"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJ2aP75-sQR4YRFuZ9AWzycPw",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ2aP75-sQR4YRFuZ9AWzycPw",
-      "weatherCurrent": {
-        "tempF": 95.1,
-        "conditions": "Mostly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:52Z"
-      },
-      "aqi": {
-        "aqi": 70,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:36Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "234013",
@@ -3181,13 +2654,20 @@
       "website": "https://www.recreation.gov/camping/campgrounds/234013",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
-      "amenities": [],
+      "amenities": [
+        "picnic table",
+        "water"
+      ],
       "siteCount": null,
-      "rating": 4.8,
-      "reviewCount": 634,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN373981",
         "orgName": null,
@@ -3197,27 +2677,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2019/06/13/15/45/234013_5ebcde96-d85d-4476-9c2f-f1348c62a7dd_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Chisos Basin Group Campground, situated high in the rugged Chisos Mountains, is one of the most sought-after campgrounds in Big Bend National Park. It has seven group camping sites available for groups of nine to 20 people (size is site-dependent). At an altitude of 5,400 ft. (1646 m),, the campground is surrounded on all sides by tall, rocky cliffs and conveniently located near some of the park's most spectacular and popular trails. The Rio Grande is only a short drive away. Also found in the area is the Chisos Basin Visitor Center, the General Store and the Chisos Mountains Lodge , "
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJHSSRefEQ8oYRrT0BuvVpy6w",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJHSSRefEQ8oYRrT0BuvVpy6w",
-      "weatherCurrent": {
-        "tempF": 89.4,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:55:55Z"
-      },
-      "aqi": {
-        "aqi": 71,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:37Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "234014",
@@ -3233,16 +2698,23 @@
       "website": "https://www.recreation.gov/camping/campgrounds/234014",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
       "amenities": [
         "laundry",
-        "showers"
+        "picnic table",
+        "restrooms",
+        "showers",
+        "water"
       ],
       "siteCount": null,
-      "rating": 4.6,
-      "reviewCount": 330,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN373982",
         "orgName": null,
@@ -3252,27 +2724,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2024/05/06/21/05/234014_27cf2a69-a90b-42d2-9276-287a22e659e3_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview The Rio Grande Village Group Campground sits on the banks of the Rio Grande, the International Boundary between the United States and Mexico. The four group campsites are great options for groups of nine people or more and is one of the most popular campgrounds in Big Bend National Park. It is located close to Boquillas Canyon and Hot Springs, and acts as a launch point for visitors accessing the river or the endless miles of backcountry roads. Rio Grande Village has an outstanding view of the Sierra del Carmen Mountains, located in Mexico to the east, which light up with hues of red "
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJ0wB8F7g38oYRPz500b4r8W4",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ0wB8F7g38oYRPz500b4r8W4",
-      "weatherCurrent": {
-        "tempF": 100.9,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Monterrey",
-        "fetchedAt": "2026-08-19T18:55:57Z"
-      },
-      "aqi": {
-        "aqi": 71,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:38Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "234035",
@@ -3288,18 +2745,25 @@
       "website": "https://www.recreation.gov/camping/campgrounds/234035",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "none",
       "amenities": [
         "dump station",
-        "flush toilets",
         "laundry",
-        "showers"
+        "picnic table",
+        "pull-through",
+        "showers",
+        "tent sites",
+        "water"
       ],
       "siteCount": 100,
       "rating": null,
-      "reviewCount": 0,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN374041",
         "orgName": null,
@@ -3309,27 +2773,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2022/12/21/20/57/234035_6d8ee817-34e1-483f-9595-4771dfa5c35e_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview The Rio Grande Village Campground sits near the banks of the Rio Grande, the International Boundary between the United States and Mexico. It is one of the most popular campgrounds in Big Bend National Park, especially for those traveling in large recreational vehicles. It is located close to Boquillas Canyon and Hot Springs, and serves as a launch point for visitors accessing the river or the endless miles of backcountry roads. Rio Grande Village has an outstanding view of the Sierra del Carmen Mountains, located in Mexico to the east, which light up with hues of red and orange during"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJV-Ijvb438oYRTSMZyyGp57U",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJV-Ijvb438oYRTSMZyyGp57U",
-      "weatherCurrent": {
-        "tempF": 100.9,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Monterrey",
-        "fetchedAt": "2026-08-19T18:56:00Z"
-      },
-      "aqi": {
-        "aqi": 71,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:40Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "234038",
@@ -3345,15 +2794,22 @@
       "website": "https://www.recreation.gov/camping/campgrounds/234038",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
       "amenities": [
-        "dump station"
+        "dump station",
+        "picnic table",
+        "sewer",
+        "water"
       ],
       "siteCount": null,
-      "rating": 4.8,
-      "reviewCount": 634,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN374044",
         "orgName": null,
@@ -3363,27 +2819,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2021/06/11/16/16/234038_b39939d5-af26-42ab-8785-7278ed91d3b0_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Chisos Basin Campground, perched high in the rugged Chisos Mountains, is the most sought-after campground in Big Bend National Park. At an altitude of 5,400 ft. (1646 m), the campground is surrounded on all sides by tall, rocky cliffs and is conveniently located near some of the park's most spectacular and popular trails. This campground offers excellent views and mild temperatures. Also found in the Chisos Basin area is the Chisos Basin Visitor Center, the General Store and the Chisos Mountains Lodge, which houses the only restaurant in Big Bend National Park. Important : The road to"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJHSSRefEQ8oYRrT0BuvVpy6w",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJHSSRefEQ8oYRrT0BuvVpy6w",
-      "weatherCurrent": {
-        "tempF": 89.4,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:56:02Z"
-      },
-      "aqi": {
-        "aqi": 71,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:41Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "234078",
@@ -3399,15 +2840,22 @@
       "website": "https://www.recreation.gov/camping/campgrounds/234078",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "none",
       "amenities": [
-        "dump station"
+        "dump station",
+        "picnic table",
+        "picnic tables",
+        "water"
       ],
       "siteCount": null,
-      "rating": 4.6,
-      "reviewCount": 117,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN374087",
         "orgName": null,
@@ -3417,27 +2865,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2024/05/03/19/58/234078_56deda77-054e-4993-878e-09b217b9a240_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Cottonwood Campground is a quiet desert oasis in the southwestern corner of Big Bend National Park. Conveniently located between the Castolon Historic District, the scenic Santa Elena Canyon and the tail end of the Ross Maxwell Scenic Drive, this small, 30-site campground is one of the least-known and quiet campgrounds in the park. There is one group campsite and 30 individual sites. This is a remote campground in a remote park. It is dry camping, no hook-ups, and no generators are permitted. There is not a fill or dump station, please come prepared. Cottonwood gets its name from the "
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJkQhQ5YwK8oYRMGozzDJTp2o",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJkQhQ5YwK8oYRMGozzDJTp2o",
-      "weatherCurrent": {
-        "tempF": 98.8,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Ojinaga",
-        "fetchedAt": "2026-08-19T18:56:05Z"
-      },
-      "aqi": {
-        "aqi": 71,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:42Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "234094",
@@ -3453,17 +2886,21 @@
       "website": "https://www.recreation.gov/camping/campgrounds/234094",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": "partial",
       "amenities": [
-        "boat ramp",
-        "flush toilets",
-        "water hookup"
+        "electric",
+        "picnic tables",
+        "water"
       ],
       "siteCount": 35,
-      "rating": 4.2,
-      "reviewCount": 63,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN374106",
         "orgName": null,
@@ -3473,27 +2910,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/09/18/15/47/234094_41af4906-ddca-408b-8d6a-65c7295cf256_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Pecan Point Park is located on the northern shore of Navarro Mills Lake in central Texas. Visitors can enjoy a view of the lake from the facility and participate in popular outdoor actives like camping, boating, fishing and picnicking. The lake area provides the perfect setting to get away from it all, especially for city-dwellers from the nearby Dallas-Fort Worth metro area. Recreation Birding is a favorite year-round pastime for lake guests. Many species of songbirds, hawks, great blue herons, ducks, geese, other shorebirds and even an occasional bald eagle visit the area. Fishing i"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJ42QMNWQ9T4YRdeywmgV5Yxs",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ42QMNWQ9T4YRdeywmgV5Yxs",
-      "weatherCurrent": {
-        "tempF": 99.4,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:56:07Z"
-      },
-      "aqi": {
-        "aqi": 71,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:44Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "234362",
@@ -3509,18 +2931,22 @@
       "website": "https://www.recreation.gov/camping/campgrounds/234362",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
-      "hookups": null,
+      "dataSource": null,
+      "hookups": "partial",
       "amenities": [
-        "boat ramp",
-        "flush toilets",
+        "electric",
         "playground",
-        "showers"
+        "showers",
+        "water"
       ],
       "siteCount": 56,
-      "rating": 4.8,
-      "reviewCount": 183,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN375227",
         "orgName": null,
@@ -3530,27 +2956,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2023/07/10/13/16/234362_fda18a8f-9e60-42b5-8ed9-dc758a2077ea_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Ratcliff Lake Recreation Area was built in 1936 by the Civilian Conservation Corps. It surrounds a picturesque 45-acre lake that was once a log pond and a source of water for the Central Coal and Coke Company sawmill which operated from 1902 to 1920. The facility is open year-round and includes a large campground, picnic areas, a reservable amphitheater, a swim area and many opportunities for outdoor recreation. Camping is available year-round. The Davy Crockett National Forest, named for the legendary pioneer, contains more than 160,000 acres of East Texas woodlands, streams, recreat"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJ26Q-33j5R4YRJxQARJZUwTc",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ26Q-33j5R4YRJxQARJZUwTc",
-      "weatherCurrent": {
-        "tempF": 95.9,
-        "conditions": "Sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:56:10Z"
-      },
-      "aqi": {
-        "aqi": 69,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:45Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "234628",
@@ -3566,17 +2977,21 @@
       "website": "https://www.recreation.gov/camping/campgrounds/234628",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
-      "hookups": "none",
+      "dataSource": null,
+      "hookups": null,
       "amenities": [
-        "boat ramp",
-        "flush toilets",
-        "showers"
+        "picnic tables",
+        "shower",
+        "water"
       ],
       "siteCount": null,
-      "rating": 4.6,
-      "reviewCount": 1200,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN375539",
         "orgName": null,
@@ -3586,27 +3001,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/09/14/15/15/234628_2859f62e-d491-45df-84a2-a2efd31d97cd_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Murrell Park offers day use facilities, boat ramp access and primitive camping on scenic Grapevine Lake, in the middle of the Dallas-Fort Worth Metroplex in Texas. The lake has become a premier recreation destination for the Southwest and offers some of the best camping, fishing and boating in Texas. This facility is open year-round, but particularly in hot summer months, the cool water provides a refreshing break from the Texas heat. Recreation Murrell Park is popular for picnicking, hiking, mountain biking, boating and fishing. The park is home to the well known Northshore Trail, wh"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJHXVhQcwsTIYRvmoYtf37RJg",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJHXVhQcwsTIYRvmoYtf37RJg",
-      "weatherCurrent": {
-        "tempF": 102.5,
-        "conditions": "Mostly cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:56:12Z"
-      },
-      "aqi": {
-        "aqi": 55,
-        "category": "Moderate air quality",
-        "dominantPollutant": "pm10",
-        "fetchedAt": "2026-08-19T19:01:46Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "234643",
@@ -3622,13 +3022,21 @@
       "website": "https://www.recreation.gov/camping/campgrounds/234643",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
-      "amenities": [],
+      "amenities": [
+        "fire rings",
+        "picnic table",
+        "water"
+      ],
       "siteCount": null,
-      "rating": 4.7,
-      "reviewCount": 293,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN379012",
         "orgName": null,
@@ -3638,27 +3046,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2023/12/13/16/56/234643_ca9f53d0-8a83-4677-b032-11d684d0b101_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Tejas Park sits on the south side of Georgetown Lake in the Hill Country of Texas, about 25 miles north of Austin. Tejas park sits upon the south bank of the North San Gabriel River offering good opportunities for fishing, wading or floating and features plenty of large, grassy open areas for running around and enjoying the scenic Texas countryside. Recreation Boating is the most popular way to enjoy the clear waters of the lake. Fishing is excellent in the area, and the lake contains Black bass, White bass, Hybrid stripers, White crappie, Channel catfish and Flathead catfish, but its"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJvRxVvgfVWoYR0xWHsEB7sKM",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJvRxVvgfVWoYR0xWHsEB7sKM",
-      "weatherCurrent": {
-        "tempF": 100,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:56:15Z"
-      },
-      "aqi": {
-        "aqi": 59,
-        "category": "Moderate air quality",
-        "dominantPollutant": "pm10",
-        "fetchedAt": "2026-08-19T19:01:48Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "234665",
@@ -3674,16 +3067,19 @@
       "website": "https://www.recreation.gov/camping/campgrounds/234665",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
       "amenities": [
-        "boat ramp",
-        "flush toilets"
+        "water"
       ],
       "siteCount": null,
-      "rating": 4.5,
-      "reviewCount": 735,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN393618",
         "orgName": null,
@@ -3693,27 +3089,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2023/12/13/16/43/234665_57aef5c4-92f8-401a-aae1-c179d6103b72_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Russell Park is located on the west side of Georgetown Lake, in the Texas Hill Country approximately 25 miles north of Austin. Visitors enjoy boating, fishing and exploring the San Gabriel River Trail. Recreation Boating is the most popular way to enjoy the lake, and a boat ramp is provided for guests. Fishing is excellent in the area, and the lake contains black bass, white bass, hybrid stripers, white crappie and channel and flathead catfish, but it's most known for its abundance of smallmouth bass. Fishing docks are located on the shore within the campground. The San Gabriel River "
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJr3mrPZcqRYYRZ72qVvpBqz8",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJr3mrPZcqRYYRZ72qVvpBqz8",
-      "weatherCurrent": {
-        "tempF": 99.8,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:56:17Z"
-      },
-      "aqi": {
-        "aqi": 58,
-        "category": "Moderate air quality",
-        "dominantPollutant": "pm10",
-        "fetchedAt": "2026-08-19T19:01:49Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "234702",
@@ -3729,15 +3110,17 @@
       "website": "https://www.recreation.gov/camping/campgrounds/234702",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
-      "amenities": [
-        "boat ramp"
-      ],
+      "amenities": [],
       "siteCount": null,
-      "rating": 4.3,
-      "reviewCount": 371,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN397119",
         "orgName": null,
@@ -3747,27 +3130,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2018/09/17/20/02/234702_133177ec-faa5-4dff-8d2b-681504971f70_1440.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Holiday Park dayuse area (North Holiday Park) is on the west side of Benbrook Lake in north central Texas, accessible from US Hwy 377. Picnicking, hiking & horeseback trails, boat launch, swimming, fishing, & wildlife viewsing are available. Recreation The Holiday Park dayuse area offers picnicking, boat launching, swimming, fishing, and several miles of open, shallow shoreline. Prevailing winds attract windsurfers. The lake record for largemouth bass is over thirteen pounds. Other catches include carp, crappie, sunfish, channel & flathead catfish. Facilities This day-use park provide"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJlfhNpvASToYRdeVl_B66aR0",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJlfhNpvASToYRdeVl_B66aR0",
-      "weatherCurrent": {
-        "tempF": 102.3,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:56:20Z"
-      },
-      "aqi": {
-        "aqi": 61,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:50Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "234703",
@@ -3783,15 +3151,19 @@
       "website": "https://www.recreation.gov/camping/campgrounds/234703",
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
       "amenities": [
-        "boat ramp"
+        "water"
       ],
       "siteCount": null,
-      "rating": 4,
-      "reviewCount": 63,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "AN397171",
         "orgName": null,
@@ -3801,27 +3173,12 @@
         "facilityType": "Campground",
         "equipment": [],
         "maxVehicleLength": null,
-        "imageUrl": "https://cdn.recreation.gov/public/2022/11/07/01/34/234703_81a0c506-a53e-4503-927a-811cc7d49c19_700.webp",
+        "imageUrl": null,
         "timeZone": null,
         "description": "Overview Rocky Creek Park is on the east side of Benbrook Lake in north central Texas, accessible form Granbury Road or McPherson Road. Picnicking, camping, hiking & horseback trails, boat launch, and fishing are available. Recreation Picnicking, fishing, boating, hiking and birding are all available in the Rocky Creek Park Primitive, seasonal camping may be available. Facilities Drinking water, vault tolets, and boat launching ramps are available in both the picnic areas and campground.. There are several miles of hiking & horseback trail accessible from Rocky Creek Park. The primitive campgr"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJJ0fuorkTToYR7-pxdpGzf7w",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJJ0fuorkTToYR7-pxdpGzf7w",
-      "weatherCurrent": {
-        "tempF": 102.1,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:56:22Z"
-      },
-      "aqi": {
-        "aqi": 62,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:51Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "248408",
@@ -3837,13 +3194,17 @@
       "website": null,
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
       "amenities": [],
       "siteCount": null,
-      "rating": 4,
-      "reviewCount": 98,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "29936",
         "orgName": null,
@@ -3857,23 +3218,8 @@
         "timeZone": null,
         "description": "This recreation area is part of Benbrook Lake"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJh4iy8ZMTToYRD6yBZnYgAdQ",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJh4iy8ZMTToYRD6yBZnYgAdQ",
-      "weatherCurrent": {
-        "tempF": 102.2,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:56:25Z"
-      },
-      "aqi": {
-        "aqi": 64,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:53Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "248432",
@@ -3889,13 +3235,17 @@
       "website": null,
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
       "amenities": [],
       "siteCount": null,
-      "rating": 4.5,
-      "reviewCount": 335,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "201364",
         "orgName": null,
@@ -3909,23 +3259,8 @@
         "timeZone": null,
         "description": "This recreation area is part of Lake Texoma"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJPa3nyAyRTIYRmc8_eKgtpcc",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJPa3nyAyRTIYRmc8_eKgtpcc",
-      "weatherCurrent": {
-        "tempF": 103.2,
-        "conditions": "Cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:56:27Z"
-      },
-      "aqi": {
-        "aqi": 54,
-        "category": "Moderate air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:54Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "248443",
@@ -3941,13 +3276,17 @@
       "website": null,
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
       "amenities": [],
       "siteCount": null,
-      "rating": 4.3,
-      "reviewCount": 124,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "203940",
         "orgName": null,
@@ -3961,23 +3300,8 @@
         "timeZone": null,
         "description": "This recreation area is part of Lake Texoma"
       },
-      "dataSource": null,
-      "priceLevel": null,
-      "placeId": "ChIJSfpvEwvyTIYR2bL2JGpeVVU",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJSfpvEwvyTIYR2bL2JGpeVVU",
-      "weatherCurrent": {
-        "tempF": 103.2,
-        "conditions": "Cloudy",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:56:30Z"
-      },
-      "aqi": {
-        "aqi": 48,
-        "category": "Moderate air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:55Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "248470",
@@ -3991,15 +3315,19 @@
       "lng": -96.51719383,
       "phone": null,
       "website": null,
-      "nightlyPriceMin": 10.0,
-      "nightlyPriceMax": 20.0,
+      "nightlyPriceMin": null,
+      "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
       "amenities": [],
       "siteCount": null,
-      "rating": 4.4,
-      "reviewCount": 1008,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "217110008",
         "orgName": null,
@@ -4013,23 +3341,8 @@
         "timeZone": null,
         "description": "This recreation area is part of Somerville Lake"
       },
-      "dataSource": "tpwd",
-      "priceLevel": null,
-      "placeId": "ChIJnQctMRYZRIYRxT1kAo0cwG4",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJnQctMRYZRIYRxT1kAo0cwG4",
-      "weatherCurrent": {
-        "tempF": 96.3,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:56:32Z"
-      },
-      "aqi": {
-        "aqi": 72,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:56Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "248473",
@@ -4045,13 +3358,17 @@
       "website": null,
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
       "amenities": [],
       "siteCount": null,
-      "rating": 4.3,
-      "reviewCount": 10,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "274871009",
         "orgName": null,
@@ -4065,23 +3382,133 @@
         "timeZone": null,
         "description": "This recreation area is part of Steinhagen Lake"
       },
+      "weatherCurrent": null,
+      "aqi": null
+    },
+    {
+      "facilityId": "253552",
+      "name": "Mills Canyon Rim Campground",
+      "slug": "mills-canyon-rim-campground",
+      "street": null,
+      "city": null,
+      "state": "TX",
+      "zip": null,
+      "lat": 36.071833,
+      "lng": -104.349431,
+      "phone": null,
+      "website": null,
+      "nightlyPriceMin": null,
+      "nightlyPriceMax": null,
       "dataSource": null,
+      "hookups": null,
+      "amenities": [],
+      "siteCount": null,
+      "rating": null,
+      "reviewCount": null,
       "priceLevel": null,
-      "placeId": "ChIJPwHo4WYJOYYR9vGjUXIN5Qk",
-      "googleUrl": "https://www.google.com/maps/place/?q=place_id:ChIJPwHo4WYJOYYR9vGjUXIN5Qk",
-      "weatherCurrent": {
-        "tempF": 95.7,
-        "conditions": "Partly sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:56:35Z"
+      "placeId": null,
+      "googleUrl": null,
+      "petPolicy": null,
+      "lastVerified": "2026-08-21",
+      "source": {
+        "orgId": "64058",
+        "orgName": null,
+        "parentId": "131",
+        "parentName": null,
+        "reservable": false,
+        "facilityType": "Campground",
+        "equipment": [],
+        "maxVehicleLength": null,
+        "imageUrl": null,
+        "timeZone": null,
+        "description": "Elevation of this campground is 5,760 feet and offers 6 camping units."
       },
-      "aqi": {
-        "aqi": 68,
-        "category": "Good air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:58Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
+    },
+    {
+      "facilityId": "253557",
+      "name": "Fourth of July Campground",
+      "slug": "fourth-of-july-campground",
+      "street": null,
+      "city": null,
+      "state": "TX",
+      "zip": null,
+      "lat": 34.791955,
+      "lng": -106.381616,
+      "phone": null,
+      "website": null,
+      "nightlyPriceMin": null,
+      "nightlyPriceMax": null,
+      "dataSource": null,
+      "hookups": null,
+      "amenities": [
+        "water"
+      ],
+      "siteCount": null,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
+      "petPolicy": null,
+      "lastVerified": "2026-08-21",
+      "source": {
+        "orgId": "64176",
+        "orgName": null,
+        "parentId": "131",
+        "parentName": null,
+        "reservable": false,
+        "facilityType": "Campground",
+        "equipment": [],
+        "maxVehicleLength": null,
+        "imageUrl": null,
+        "timeZone": null,
+        "description": "Campground and Picnic Area This site is open for day use or overnight camping. No water available. PLEASE NOTE: Recreational Vehicles (RV's) longer than 22 feet are not allowed in this campground. Vehicles of this size may only park at Ox Canyon Trailhead, approximately 1.5 miles South of Red Canyon Campground."
+      },
+      "weatherCurrent": null,
+      "aqi": null
+    },
+    {
+      "facilityId": "253563",
+      "name": "New Canyon Campground",
+      "slug": "new-canyon-campground",
+      "street": null,
+      "city": null,
+      "state": "TX",
+      "zip": null,
+      "lat": 34.40316,
+      "lng": -106.24735,
+      "phone": null,
+      "website": null,
+      "nightlyPriceMin": null,
+      "nightlyPriceMax": null,
+      "dataSource": null,
+      "hookups": null,
+      "amenities": [],
+      "siteCount": null,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
+      "petPolicy": null,
+      "lastVerified": "2026-08-21",
+      "source": {
+        "orgId": "64084",
+        "orgName": null,
+        "parentId": "131",
+        "parentName": null,
+        "reservable": false,
+        "facilityType": "Campground",
+        "equipment": [],
+        "maxVehicleLength": null,
+        "imageUrl": null,
+        "timeZone": null,
+        "description": "West of the community of Manzano."
+      },
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "253578",
@@ -4097,13 +3524,17 @@
       "website": null,
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
       "amenities": [],
       "siteCount": null,
       "rating": null,
       "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "64106",
         "orgName": null,
@@ -4117,23 +3548,172 @@
         "timeZone": null,
         "description": "Campground has pullouts for campers. Opportunities include day use and overnight camping."
       },
+      "weatherCurrent": null,
+      "aqi": null
+    },
+    {
+      "facilityId": "253589",
+      "name": "Black Kettle Campground",
+      "slug": "black-kettle-campground",
+      "street": null,
+      "city": null,
+      "state": "TX",
+      "zip": null,
+      "lat": 35.745169,
+      "lng": -99.714289,
+      "phone": null,
+      "website": null,
+      "nightlyPriceMin": null,
+      "nightlyPriceMax": null,
       "dataSource": null,
+      "hookups": null,
+      "amenities": [],
+      "siteCount": null,
+      "rating": null,
+      "reviewCount": null,
       "priceLevel": null,
       "placeId": null,
       "googleUrl": null,
-      "weatherCurrent": {
-        "tempF": 98.5,
-        "conditions": "Sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:56:37Z"
+      "petPolicy": null,
+      "lastVerified": "2026-08-21",
+      "source": {
+        "orgId": "64090",
+        "orgName": null,
+        "parentId": "131",
+        "parentName": null,
+        "reservable": false,
+        "facilityType": "Campground",
+        "equipment": [],
+        "maxVehicleLength": null,
+        "imageUrl": null,
+        "timeZone": null,
+        "description": "Campground is located at an elevation of 2,100 feet and has 12 camping units."
       },
-      "aqi": {
-        "aqi": 59,
-        "category": "Moderate air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:01:59Z"
-      }
+      "weatherCurrent": null,
+      "aqi": null
+    },
+    {
+      "facilityId": "253592",
+      "name": "Spring Creek Campground",
+      "slug": "spring-creek-campground",
+      "street": null,
+      "city": null,
+      "state": "TX",
+      "zip": null,
+      "lat": 35.772781,
+      "lng": -99.839506,
+      "phone": null,
+      "website": null,
+      "nightlyPriceMin": null,
+      "nightlyPriceMax": null,
+      "dataSource": null,
+      "hookups": null,
+      "amenities": [],
+      "siteCount": null,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
+      "petPolicy": null,
+      "lastVerified": "2026-08-21",
+      "source": {
+        "orgId": "64096",
+        "orgName": null,
+        "parentId": "131",
+        "parentName": null,
+        "reservable": false,
+        "facilityType": "Campground",
+        "equipment": [],
+        "maxVehicleLength": null,
+        "imageUrl": null,
+        "timeZone": null,
+        "description": "This campground has 5 camping units located at an elevation of 2,300 feet."
+      },
+      "weatherCurrent": null,
+      "aqi": null
+    },
+    {
+      "facilityId": "253603",
+      "name": "Bosque Campground",
+      "slug": "bosque-campground",
+      "street": null,
+      "city": null,
+      "state": "TX",
+      "zip": null,
+      "lat": 34.762704,
+      "lng": -106.403846,
+      "phone": null,
+      "website": null,
+      "nightlyPriceMin": null,
+      "nightlyPriceMax": null,
+      "dataSource": null,
+      "hookups": null,
+      "amenities": [],
+      "siteCount": null,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
+      "petPolicy": null,
+      "lastVerified": "2026-08-21",
+      "source": {
+        "orgId": "64112",
+        "orgName": null,
+        "parentId": "131",
+        "parentName": null,
+        "reservable": false,
+        "facilityType": "Campground",
+        "equipment": [],
+        "maxVehicleLength": null,
+        "imageUrl": null,
+        "timeZone": null,
+        "description": "Bosque Campground"
+      },
+      "weatherCurrent": null,
+      "aqi": null
+    },
+    {
+      "facilityId": "253634",
+      "name": "Red Cloud Campground",
+      "slug": "red-cloud-campground",
+      "street": null,
+      "city": null,
+      "state": "TX",
+      "zip": null,
+      "lat": 34.176237,
+      "lng": -105.699657,
+      "phone": null,
+      "website": null,
+      "nightlyPriceMin": null,
+      "nightlyPriceMax": null,
+      "dataSource": null,
+      "hookups": null,
+      "amenities": [],
+      "siteCount": null,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
+      "petPolicy": null,
+      "lastVerified": "2026-08-21",
+      "source": {
+        "orgId": "64060",
+        "orgName": null,
+        "parentId": "131",
+        "parentName": null,
+        "reservable": false,
+        "facilityType": "Campground",
+        "equipment": [],
+        "maxVehicleLength": null,
+        "imageUrl": null,
+        "timeZone": null,
+        "description": "Small (5 sites) quiet and primitive camp in a Ponderosa forest at 7600\u00b4elevation. Located near an old mining district, the campground gets heavy use in fall hunting seasons, less at other times."
+      },
+      "weatherCurrent": null,
+      "aqi": null
     },
     {
       "facilityId": "253635",
@@ -4149,13 +3729,17 @@
       "website": null,
       "nightlyPriceMin": null,
       "nightlyPriceMax": null,
+      "dataSource": null,
       "hookups": null,
       "amenities": [],
       "siteCount": null,
       "rating": null,
       "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
       "petPolicy": null,
-      "lastVerified": "2026-08-19",
+      "lastVerified": "2026-08-21",
       "source": {
         "orgId": "64098",
         "orgName": null,
@@ -4169,336 +3753,49 @@
         "timeZone": null,
         "description": "East Bluff #1 Campground offers picnicking, fishing and camping opportunities at Lake McClellan."
       },
+      "weatherCurrent": null,
+      "aqi": null
+    },
+    {
+      "facilityId": "253642",
+      "name": "Spring Creek Dispersed Sites",
+      "slug": "spring-creek-dispersed-sites",
+      "street": null,
+      "city": null,
+      "state": "TX",
+      "zip": null,
+      "lat": 35.773156,
+      "lng": -99.834636,
+      "phone": null,
+      "website": null,
+      "nightlyPriceMin": null,
+      "nightlyPriceMax": null,
       "dataSource": null,
+      "hookups": null,
+      "amenities": [],
+      "siteCount": null,
+      "rating": null,
+      "reviewCount": null,
       "priceLevel": null,
       "placeId": null,
       "googleUrl": null,
-      "weatherCurrent": {
-        "tempF": 98.5,
-        "conditions": "Sunny",
-        "isDaytime": true,
-        "timeZone": "America/Chicago",
-        "fetchedAt": "2026-08-19T18:56:40Z"
+      "petPolicy": null,
+      "lastVerified": "2026-08-21",
+      "source": {
+        "orgId": "80494",
+        "orgName": null,
+        "parentId": "131",
+        "parentName": null,
+        "reservable": false,
+        "facilityType": "Facility",
+        "equipment": [],
+        "maxVehicleLength": null,
+        "imageUrl": null,
+        "timeZone": null,
+        "description": "Dispersed camping."
       },
-      "aqi": {
-        "aqi": 59,
-        "category": "Moderate air quality",
-        "dominantPollutant": "o3",
-        "fetchedAt": "2026-08-19T19:02:00Z"
-      }
-    },
-    {
-      "facilityId": "10028875",
-      "name": "Big Bend Backcountry Camping",
-      "slug": "big-bend-backcountry-camping",
-      "street": "",
-      "city": "",
-      "state": "TX",
-      "zip": "",
-      "lat": 29.327814895368295,
-      "lng": -103.20595580099624,
-      "phone": "432-477-1158",
-      "website": "",
-      "nightlyPriceMin": 10.0,
-      "nightlyPriceMax": 10.0,
-      "dataSource": "ridb-fee-description",
-      "priceNote": "nightly",
-      "priceRaw": "Camping Use Fee: $10 per night",
       "weatherCurrent": null,
-      "aqi": null,
-      "hookups": "partial",
-      "amenities": [],
-      "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
-      "petPolicy": null,
-      "lastVerified": "2026-08-19",
-      "source": {
-        "orgId": "2584",
-        "orgName": null,
-        "parentId": "2584",
-        "parentName": null,
-        "reservable": false,
-        "facilityType": "Campground",
-        "equipment": [],
-        "maxVehicleLength": null,
-        "imageUrl": "",
-        "timeZone": null,
-        "description": ""
-      }
-    },
-    {
-      "facilityId": "10104621",
-      "name": "Frijole Horse Corral Campground",
-      "slug": "frijole-horse-corral-campground",
-      "street": "",
-      "city": "",
-      "state": "TX",
-      "zip": "",
-      "lat": 31.899444,
-      "lng": -104.799722,
-      "phone": "915-828-3251",
-      "website": "",
-      "nightlyPriceMin": 15.0,
-      "nightlyPriceMax": 20.0,
-      "dataSource": "ridb-fee-description",
-      "priceNote": "nightly",
-      "priceRaw": "Guadalupe Mountains National Park group campsite fees are $20.00 per night. Frijole Horse Corral Campsite allows a minimum of 1 person and is limited to a maximum of 12 persons in the site. An additional fee of $15 per night is required to be paid if using the corrals.",
-      "weatherCurrent": null,
-      "aqi": null,
-      "hookups": "partial",
-      "amenities": [],
-      "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
-      "petPolicy": null,
-      "lastVerified": "2026-08-19",
-      "source": {
-        "orgId": "2744",
-        "orgName": null,
-        "parentId": "2744",
-        "parentName": null,
-        "reservable": false,
-        "facilityType": "Campground",
-        "equipment": [],
-        "maxVehicleLength": null,
-        "imageUrl": "",
-        "timeZone": null,
-        "description": ""
-      }
-    },
-    {
-      "facilityId": "10158678",
-      "name": "Caney Creek",
-      "slug": "caney-creek",
-      "street": "",
-      "city": "",
-      "state": "TX",
-      "zip": "",
-      "lat": 31.1367,
-      "lng": -94.2565,
-      "phone": "N/A",
-      "website": "",
-      "nightlyPriceMin": 5.0,
-      "nightlyPriceMax": 6.0,
-      "dataSource": "ridb-fee-description",
-      "priceNote": "nightly",
-      "priceRaw": "Day Use/Boat Launch Fee $5.00, per day, per vehicle Camping Fee $6.00 per night (includes parking for up to 2 vehicles)",
-      "weatherCurrent": null,
-      "aqi": null,
-      "hookups": "partial",
-      "amenities": [
-        "boat ramp"
-      ],
-      "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
-      "petPolicy": null,
-      "lastVerified": "2026-08-19",
-      "source": {
-        "orgId": "1049",
-        "orgName": null,
-        "parentId": "1049",
-        "parentName": null,
-        "reservable": false,
-        "facilityType": "Campground",
-        "equipment": [],
-        "maxVehicleLength": null,
-        "imageUrl": "",
-        "timeZone": null,
-        "description": ""
-      }
-    },
-    {
-      "facilityId": "10182619",
-      "name": "Rock Quarry Group Campground",
-      "slug": "rock-quarry-group-campground",
-      "street": "",
-      "city": "",
-      "state": "TX",
-      "zip": "",
-      "lat": 0.0,
-      "lng": -101.0236,
-      "phone": "830-775-7491",
-      "website": "",
-      "nightlyPriceMin": 35.0,
-      "nightlyPriceMax": 75.0,
-      "dataSource": "ridb-fee-description",
-      "priceNote": "nightly",
-      "priceRaw": "1-15 people for $35.00 per night, 16-35 people $75.00 per night.",
-      "weatherCurrent": null,
-      "aqi": null,
-      "hookups": "partial",
-      "amenities": [],
-      "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
-      "petPolicy": null,
-      "lastVerified": "2026-08-19",
-      "source": {
-        "orgId": "2562",
-        "orgName": null,
-        "parentId": "2562",
-        "parentName": null,
-        "reservable": false,
-        "facilityType": "Campground",
-        "equipment": [],
-        "maxVehicleLength": null,
-        "imageUrl": "",
-        "timeZone": null,
-        "description": ""
-      }
-    },
-    {
-      "facilityId": "232602",
-      "name": "HIGH VIEW",
-      "slug": "high-view",
-      "street": "",
-      "city": "",
-      "state": "TX",
-      "zip": "",
-      "lat": 32.2713889,
-      "lng": -96.6677778,
-      "phone": "972-875-5711",
-      "website": "",
-      "nightlyPriceMin": 18.0,
-      "nightlyPriceMax": 22.0,
-      "dataSource": "ridb-fee-description",
-      "priceNote": "camping-context",
-      "priceRaw": "$22 fee applies to 50 amp electrical service sites. $18 fee applies to 30 amp electrical service sites. Failure to checkout by 2pm may result in additional fees.",
-      "weatherCurrent": null,
-      "aqi": null,
-      "hookups": "partial",
-      "amenities": [
-        "50 amp",
-        "30 amp"
-      ],
-      "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
-      "petPolicy": null,
-      "lastVerified": "2026-08-19",
-      "source": {
-        "orgId": "492",
-        "orgName": null,
-        "parentId": "492",
-        "parentName": null,
-        "reservable": false,
-        "facilityType": "Campground",
-        "equipment": [],
-        "maxVehicleLength": null,
-        "imageUrl": "",
-        "timeZone": null,
-        "description": ""
-      }
-    },
-    {
-      "facilityId": "232607",
-      "name": "Holiday (Texas)",
-      "slug": "holiday-texas",
-      "street": "",
-      "city": "",
-      "state": "TX",
-      "zip": "",
-      "lat": 32.6183333,
-      "lng": -97.4975,
-      "phone": "817-292-2400",
-      "website": "",
-      "nightlyPriceMin": 14.0,
-      "nightlyPriceMax": 40.0,
-      "dataSource": "ridb-fee-description",
-      "priceNote": "camping-context",
-      "priceRaw": "Campsite Prices: $40 Screen Shelter with water & 50 amp electric hookups $28 RV Sites with water & 50/30 amp electric hookups $26 RV Electric only (no water hookups) $14 Tent Camping Site",
-      "weatherCurrent": null,
-      "aqi": null,
-      "hookups": "partial",
-      "amenities": [
-        "50 amp",
-        "30 amp",
-        "water hookup"
-      ],
-      "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
-      "petPolicy": null,
-      "lastVerified": "2026-08-19",
-      "source": {
-        "orgId": "494",
-        "orgName": null,
-        "parentId": "494",
-        "parentName": null,
-        "reservable": false,
-        "facilityType": "Campground",
-        "equipment": [],
-        "maxVehicleLength": null,
-        "imageUrl": "",
-        "timeZone": null,
-        "description": ""
-      }
-    },
-    {
-      "facilityId": "258851",
-      "name": "Pine Springs Campground",
-      "slug": "pine-springs-campground",
-      "street": "",
-      "city": "",
-      "state": "TX",
-      "zip": "",
-      "lat": 31.89553,
-      "lng": -104.82603,
-      "phone": "915-828-3251",
-      "website": "",
-      "nightlyPriceMin": 60.0,
-      "nightlyPriceMax": 60.0,
-      "dataSource": "ridb-fee-description",
-      "priceNote": "nightly",
-      "priceRaw": "Guadalupe Mountains National Park group campsite fees are $60.00 per night. Group site occupancy requires a minimum of 10 persons and is limited to a maximum of 20 persons per site. Groups larger than 20 persons are required to obtain a Special Use Permit 3 weeks prior to your visit. To begin the SUP process, click here.",
-      "weatherCurrent": null,
-      "aqi": null,
-      "hookups": "partial",
-      "amenities": [],
-      "siteCount": null,
-      "rating": null,
-      "reviewCount": null,
-      "petPolicy": null,
-      "lastVerified": "2026-08-19",
-      "source": {
-        "orgId": "2744",
-        "orgName": null,
-        "parentId": "2744",
-        "parentName": null,
-        "reservable": false,
-        "facilityType": "Campground",
-        "equipment": [],
-        "maxVehicleLength": null,
-        "imageUrl": "",
-        "timeZone": null,
-        "description": ""
-      }
+      "aqi": null
     }
-  ],
-  "meta": {
-    "fetchedAt": "2026-08-19T01:07:52Z",
-    "lastVerified": "2026-08-19",
-    "source": "RIDB API v1 (ridb.recreation.gov/api/v1) with registered developer apikey",
-    "sourceUrls": [
-      "https://ridb.recreation.gov/api/v1/facilities?state=TX&limit=100&offset=N",
-      "https://ridb.recreation.gov/api/v1/facilities/{facilityId}",
-      "https://ridb.recreation.gov/api/v1/facilities/{facilityId}/facilityaddresses"
-    ],
-    "counts": {
-      "parks": 82,
-      "parksWithPrice": 9,
-      "parksWithRating": 60,
-      "parksWithWeather": 75,
-      "parksWithAqi": 75,
-      "cities": 47
-    },
-    "detailFailures": [],
-    "websiteDerivation": "FacilityReservationURL when present; otherwise canonical Recreation.gov listing URL (https://www.recreation.gov/camping/campgrounds/{facilityId}) only when Reservable=true.",
-    "stateVerification": "RIDB state=TX filter is unreliable (returns NM facilities, museums, hotels). Kept only facilities whose facilityaddresses AddressStateCode == TX, or (no address) coordinates inside the Texas bounding box. See droppedPhaseB.",
-    "antiFabrication": "rating/reviewCount/petPolicy always null (not published at RIDB facility level). Prices parsed only from FacilityUseFeeDescription with per-night/per-day context. Hookups/amenities/siteCount parsed from FacilityDescription/Keywords.",
-    "crawlerPacingMs": 450,
-    "weatherFetchedAt": "2026-08-19T19:18:31Z"
-  }
+  ]
 }

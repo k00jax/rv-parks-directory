@@ -1,0 +1,318 @@
+{
+  "meta": {
+    "state": "WA",
+    "stateAbbr": "WA"
+  },
+  "cities": [
+    {
+      "name": "TROUT LAKE",
+      "slug": "trout-lake",
+      "parkIds": [
+        "10087203",
+        "234091",
+        "234092",
+        "250032"
+      ]
+    },
+    {
+      "name": "Spokane",
+      "slug": "spokane",
+      "parkIds": [
+        "10136092",
+        "10154777",
+        "10155226"
+      ]
+    },
+    {
+      "name": "Wenatchee",
+      "slug": "wenatchee",
+      "parkIds": [
+        "201792",
+        "250985",
+        "262748"
+      ]
+    },
+    {
+      "name": "METALINE FALLS",
+      "slug": "metaline-falls",
+      "parkIds": [
+        "231987",
+        "231988",
+        "231989",
+        "273799",
+        "273820"
+      ]
+    },
+    {
+      "name": "Easton",
+      "slug": "easton",
+      "parkIds": [
+        "232064"
+      ]
+    },
+    {
+      "name": "Ronald",
+      "slug": "ronald",
+      "parkIds": [
+        "232094",
+        "233682",
+        "233818",
+        "234709"
+      ]
+    },
+    {
+      "name": "Goose Prairie",
+      "slug": "goose-prairie",
+      "parkIds": [
+        "232356",
+        "234024"
+      ]
+    },
+    {
+      "name": "Cle Elum",
+      "slug": "cle-elum",
+      "parkIds": [
+        "232407",
+        "233997",
+        "234126"
+      ]
+    },
+    {
+      "name": "Mile Post Marker157683",
+      "slug": "mile-post-marker157683",
+      "parkIds": [
+        "232464"
+      ]
+    },
+    {
+      "name": "Packwood",
+      "slug": "packwood",
+      "parkIds": [
+        "232465",
+        "232509",
+        "233877"
+      ]
+    },
+    {
+      "name": "Longmire",
+      "slug": "longmire",
+      "parkIds": [
+        "232466",
+        "232510"
+      ]
+    },
+    {
+      "name": "CARSON",
+      "slug": "carson",
+      "parkIds": [
+        "232797",
+        "232799",
+        "232800",
+        "232862",
+        "232864",
+        "232895",
+        "233103"
+      ]
+    },
+    {
+      "name": "Randle",
+      "slug": "randle",
+      "parkIds": [
+        "232852",
+        "232853",
+        "232855",
+        "232857",
+        "232860",
+        "232861",
+        "232896",
+        "232897",
+        "232898",
+        "233713"
+      ]
+    },
+    {
+      "name": "Naches",
+      "slug": "naches",
+      "parkIds": [
+        "232892",
+        "233984",
+        "233985",
+        "233986",
+        "233987",
+        "233988",
+        "234016",
+        "234017",
+        "234018",
+        "234020",
+        "234021",
+        "234022",
+        "234023",
+        "234025",
+        "234026",
+        "234027",
+        "234493",
+        "234498",
+        "234503",
+        "251362",
+        "251884",
+        "256348"
+      ]
+    },
+    {
+      "name": "Entiat",
+      "slug": "entiat",
+      "parkIds": [
+        "233143",
+        "273975"
+      ]
+    },
+    {
+      "name": "Quilcene",
+      "slug": "quilcene",
+      "parkIds": [
+        "233384"
+      ]
+    },
+    {
+      "name": "BURBANK",
+      "slug": "burbank",
+      "parkIds": [
+        "233454",
+        "233514"
+      ]
+    },
+    {
+      "name": "PRESCOTT",
+      "slug": "prescott",
+      "parkIds": [
+        "233499"
+      ]
+    },
+    {
+      "name": "Plymouth",
+      "slug": "plymouth",
+      "parkIds": [
+        "233587"
+      ]
+    },
+    {
+      "name": "PASCO",
+      "slug": "pasco",
+      "parkIds": [
+        "233675"
+      ]
+    },
+    {
+      "name": "THORP",
+      "slug": "thorp",
+      "parkIds": [
+        "233727"
+      ]
+    },
+    {
+      "name": "LEAVENWORTH",
+      "slug": "leavenworth",
+      "parkIds": [
+        "233937",
+        "233938",
+        "233939",
+        "233940",
+        "234705",
+        "234784"
+      ]
+    },
+    {
+      "name": "CUSICK",
+      "slug": "cusick",
+      "parkIds": [
+        "233949"
+      ]
+    },
+    {
+      "name": "NEWPORT",
+      "slug": "newport",
+      "parkIds": [
+        "233950"
+      ]
+    },
+    {
+      "name": "ASHFORD",
+      "slug": "ashford",
+      "parkIds": [
+        "234086"
+      ]
+    },
+    {
+      "name": "IONE",
+      "slug": "ione",
+      "parkIds": [
+        "234137"
+      ]
+    },
+    {
+      "name": "Skykomish",
+      "slug": "skykomish",
+      "parkIds": [
+        "234178",
+        "269838"
+      ]
+    },
+    {
+      "name": "DARRINGTON",
+      "slug": "darrington",
+      "parkIds": [
+        "234215"
+      ]
+    },
+    {
+      "name": "POMEROY",
+      "slug": "pomeroy",
+      "parkIds": [
+        "234269",
+        "234270",
+        "234271",
+        "234272",
+        "234682",
+        "248513"
+      ]
+    },
+    {
+      "name": "TONASKET",
+      "slug": "tonasket",
+      "parkIds": [
+        "234310",
+        "252036"
+      ]
+    },
+    {
+      "name": "Republic",
+      "slug": "republic",
+      "parkIds": [
+        "234632",
+        "234673"
+      ]
+    },
+    {
+      "name": "Seattle",
+      "slug": "seattle",
+      "parkIds": [
+        "248506"
+      ]
+    },
+    {
+      "name": "Quinault",
+      "slug": "quinault",
+      "parkIds": [
+        "251365"
+      ]
+    },
+    {
+      "name": "Friday Harbor",
+      "slug": "friday-harbor",
+      "parkIds": [
+        "255185",
+        "255186"
+      ]
+    }
+  ]
+}

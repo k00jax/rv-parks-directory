@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "state": "CT",
+    "stateAbbr": "CT"
+  },
+  "cities": [
+    {
+      "name": "Middlebury",
+      "slug": "middlebury",
+      "parkIds": [
+        "233330"
+      ]
+    },
+    {
+      "name": "N. GROSVENORDALE",
+      "slug": "n-grosvenordale",
+      "parkIds": [
+        "233476"
+      ]
+    }
+  ]
+}

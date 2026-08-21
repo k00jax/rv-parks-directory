@@ -24,17 +24,17 @@ function load(name) {
 
 let dataset, citiesData;
 try {
-  dataset = load('parks.tx.json');
-  citiesData = load('cities.tx.json');
+  dataset = load('parks.us.json');
+  citiesData = load('cities.us.json');
 } catch (e) {
-  console.error(`[validate] FATAL: could not read dataset: ${e.message}`);
-  console.error('[validate] Run `node scripts/fetch-ridb.mjs` first.');
+  console.error(`[validate] FATAL: could not read US dataset: ${e.message}`);
+  console.error('[validate] Run `python scripts/fetch-ridb-all.py` first.');
   process.exit(1);
 }
 
 const parks = dataset.parks;
 if (!Array.isArray(parks) || parks.length === 0) {
-  console.error('[validate] FATAL: parks.tx.json has no parks array.');
+  console.error('[validate] FATAL: parks.us.json has no parks array.');
   process.exit(1);
 }
 
@@ -179,7 +179,12 @@ for (const [i, p] of parks.entries()) {
     errors.push(`${where}: lastVerified not an ISO date ("${p.lastVerified}")`);
   }
 
-  if (p.state !== 'TX') warnings.push(`${where}: unexpected state "${p.state}" (pilot is TX-only)`);
+  if (p.state !== 'US') {
+    // multi-state dataset — every park's state should be a known US state
+    if (!/^[A-Z]{2}$/.test(p.state)) {
+      errors.push(`${where}: unexpected state code "${p.state}"`);
+    }
+  }
 }
 
 // city hub references resolve

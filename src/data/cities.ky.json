@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "state": "KY",
+    "stateAbbr": "KY"
+  },
+  "cities": [
+    {
+      "name": "BUCKHORN,",
+      "slug": "buckhorn",
+      "parkIds": [
+        "10007154"
+      ]
+    },
+    {
+      "name": "BUCKHORN",
+      "slug": "buckhorn",
+      "parkIds": [
+        "10007179",
+        "232566",
+        "233809"
+      ]
+    },
+    {
+      "name": "LONDON",
+      "slug": "london",
+      "parkIds": [
+        "232257",
+        "232259"
+      ]
+    },
+    {
+      "name": "Corbin",
+      "slug": "corbin",
+      "parkIds": [
+        "232258"
+      ]
+    },
+    {
+      "name": "Mammoth Cave",
+      "slug": "mammoth-cave",
+      "parkIds": [
+        "232467",
+        "232468"
+      ]
+    },
+    {
+      "name": "GRAND RIVERS",
+      "slug": "grand-rivers",
+      "parkIds": [
+        "232538"
+      ]
+    },
+    {
+      "name": "NANCY",
+      "slug": "nancy",
+      "parkIds": [
+        "232563"
+      ]
+    },
+    {
+      "name": "SOMERSET",
+      "slug": "somerset",
+      "parkIds": [
+        "232587",
+        "232733",
+        "248056"
+      ]
+    },
+    {
+      "name": "JAMESTOWN",
+      "slug": "jamestown",
+      "parkIds": [
+        "232615"
+      ]
+    },
+    {
+      "name": "CADIZ",
+      "slug": "cadiz",
+      "parkIds": [
+        "232624"
+      ]
+    },
+    {
+      "name": "SASSAFRAS",
+      "slug": "sassafras",
+      "parkIds": [
+        "232625"
+      ]
+    },
+    {
+      "name": "KUTTAWA",
+      "slug": "kuttawa",
+      "parkIds": [
+        "232661"
+      ]
+    },
+    {
+      "name": "McDaniels",
+      "slug": "mcdaniels",
+      "parkIds": [
+        "233408",
+        "233409",
+        "233410"
+      ]
+    },
+    {
+      "name": "Falls of Rough",
+      "slug": "falls-of-rough",
+      "parkIds": [
+        "233411"
+      ]
+    },
+    {
+      "name": "Scottsville",
+      "slug": "scottsville",
+      "parkIds": [
+        "233420",
+        "233698"
+      ]
+    },
+    {
+      "name": "GLASGOW",
+      "slug": "glasgow",
+      "parkIds": [
+        "233650"
+      ]
+    },
+    {
+      "name": "MOREHEAD",
+      "slug": "morehead",
+      "parkIds": [
+        "233782",
+        "251820"
+      ]
+    },
+    {
+      "name": "Monticello",
+      "slug": "monticello",
+      "parkIds": [
+        "234727"
+      ]
+    },
+    {
+      "name": "Van Lear",
+      "slug": "van-lear",
+      "parkIds": [
+        "248040"
+      ]
+    },
+    {
+      "name": "Louisa",
+      "slug": "louisa",
+      "parkIds": [
+        "248066"
+      ]
+    }
+  ]
+}

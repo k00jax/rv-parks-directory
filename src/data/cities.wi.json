@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "state": "WI",
+    "stateAbbr": "WI"
+  },
+  "cities": [
+    {
+      "name": "DESOTO",
+      "slug": "desoto",
+      "parkIds": [
+        "233697"
+      ]
+    },
+    {
+      "name": "Hayward",
+      "slug": "hayward",
+      "parkIds": [
+        "233756",
+        "233757",
+        "233758",
+        "233759",
+        "233760",
+        "233761",
+        "249579"
+      ]
+    },
+    {
+      "name": "MEDFORD",
+      "slug": "medford",
+      "parkIds": [
+        "233763",
+        "233766",
+        "233781"
+      ]
+    },
+    {
+      "name": "PARK FALLS",
+      "slug": "park-falls",
+      "parkIds": [
+        "233764",
+        "233773"
+      ]
+    },
+    {
+      "name": "Glidden",
+      "slug": "glidden",
+      "parkIds": [
+        "234093",
+        "234095"
+      ]
+    },
+    {
+      "name": "FLORENCE",
+      "slug": "florence",
+      "parkIds": [
+        "234167"
+      ]
+    },
+    {
+      "name": "EAGLE RIVER",
+      "slug": "eagle-river",
+      "parkIds": [
+        "234169",
+        "255120",
+        "255121",
+        "255122",
+        "255123",
+        "255124"
+      ]
+    }
+  ]
+}

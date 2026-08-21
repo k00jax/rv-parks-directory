@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "state": "WY",
+    "stateAbbr": "WY"
+  },
+  "cities": [
+    {
+      "name": "Kemmerer",
+      "slug": "kemmerer",
+      "parkIds": [
+        "10000167",
+        "14716",
+        "14718",
+        "234580",
+        "234582"
+      ]
+    },
+    {
+      "name": "Rawlins",
+      "slug": "rawlins",
+      "parkIds": [
+        "10000675",
+        "14703",
+        "14704",
+        "14713",
+        "202226",
+        "202231"
+      ]
+    },
+    {
+      "name": "LARAMIE",
+      "slug": "laramie",
+      "parkIds": [
+        "10009517"
+      ]
+    },
+    {
+      "name": "Cody",
+      "slug": "cody",
+      "parkIds": [
+        "14640",
+        "14707",
+        "14711",
+        "202216",
+        "233292",
+        "233293",
+        "233934",
+        "234594",
+        "234595",
+        "234606",
+        "234611",
+        "269584"
+      ]
+    },
+    {
+      "name": "Lander",
+      "slug": "lander",
+      "parkIds": [
+        "14702",
+        "202232",
+        "202234",
+        "254060"
+      ]
+    },
+    {
+      "name": "Pinedale",
+      "slug": "pinedale",
+      "parkIds": [
+        "14720",
+        "14721",
+        "231912",
+        "231913",
+        "232899",
+        "233874",
+        "234785",
+        "261702",
+        "261703",
+        "261706",
+        "264411"
+      ]
+    },
+    {
+      "name": "Worland",
+      "slug": "worland",
+      "parkIds": [
+        "14723"
+      ]
+    },
+    {
+      "name": "Saratoga",
+      "slug": "saratoga",
+      "parkIds": [
+        "231848",
+        "233944",
+        "233945",
+        "233948",
+        "234084",
+        "234141",
+        "234240"
+      ]
+    },
+    {
+      "name": "GREEN RIVER",
+      "slug": "green-river",
+      "parkIds": [
+        "231898"
+      ]
+    },
+    {
+      "name": "ASHLEY",
+      "slug": "ashley",
+      "parkIds": [
+        "231904"
+      ]
+    },
+    {
+      "name": "Alta, WY via Driggs",
+      "slug": "alta-wy-via-driggs",
+      "parkIds": [
+        "231927"
+      ]
+    },
+    {
+      "name": "BUFFALO",
+      "slug": "buffalo",
+      "parkIds": [
+        "232323",
+        "234454",
+        "250041",
+        "272279"
+      ]
+    },
+    {
+      "name": "SNAKE RIVER CANYON",
+      "slug": "snake-river-canyon",
+      "parkIds": [
+        "232382",
+        "232383"
+      ]
+    },
+    {
+      "name": "DRIGGS",
+      "slug": "driggs",
+      "parkIds": [
+        "233844"
+      ]
+    },
+    {
+      "name": "DOUGLAS",
+      "slug": "douglas",
+      "parkIds": [
+        "233942"
+      ]
+    },
+    {
+      "name": "AFTON",
+      "slug": "afton",
+      "parkIds": [
+        "234519",
+        "234520",
+        "234521",
+        "234522",
+        "234523"
+      ]
+    },
+    {
+      "name": "Casper",
+      "slug": "casper",
+      "parkIds": [
+        "254052",
+        "254056",
+        "254057",
+        "254058",
+        "272188",
+        "274351",
+        "274353",
+        "274354"
+      ]
+    },
+    {
+      "name": "Rock Springs",
+      "slug": "rock-springs",
+      "parkIds": [
+        "262640",
+        "262649",
+        "262654",
+        "272281",
+        "272295",
+        "273321"
+      ]
+    }
+  ]
+}

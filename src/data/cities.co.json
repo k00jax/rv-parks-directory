@@ -1,0 +1,417 @@
+{
+  "meta": {
+    "state": "CO",
+    "stateAbbr": "CO"
+  },
+  "cities": [
+    {
+      "name": "Idaho Springs",
+      "slug": "idaho-springs",
+      "parkIds": [
+        "10087438",
+        "234792"
+      ]
+    },
+    {
+      "name": "Ward",
+      "slug": "ward",
+      "parkIds": [
+        "10087515"
+      ]
+    },
+    {
+      "name": "ANTONITO",
+      "slug": "antonito",
+      "parkIds": [
+        "231849",
+        "273348"
+      ]
+    },
+    {
+      "name": "LA JARA",
+      "slug": "la-jara",
+      "parkIds": [
+        "231851"
+      ]
+    },
+    {
+      "name": "COLORADO",
+      "slug": "colorado",
+      "parkIds": [
+        "231863"
+      ]
+    },
+    {
+      "name": "SALIDA",
+      "slug": "salida",
+      "parkIds": [
+        "231865",
+        "231866",
+        "231867",
+        "231868",
+        "231870",
+        "232350",
+        "233868"
+      ]
+    },
+    {
+      "name": "COLORADO SPRINGS",
+      "slug": "colorado-springs",
+      "parkIds": [
+        "231871",
+        "231872",
+        "231873",
+        "231874",
+        "232339",
+        "232340",
+        "232341"
+      ]
+    },
+    {
+      "name": "Bailey",
+      "slug": "bailey",
+      "parkIds": [
+        "231875"
+      ]
+    },
+    {
+      "name": "S.PLATTE RANGER DIST",
+      "slug": "s-platte-ranger-dist",
+      "parkIds": [
+        "231876",
+        "231877",
+        "231878",
+        "233859",
+        "233883",
+        "234118"
+      ]
+    },
+    {
+      "name": "Durango",
+      "slug": "durango",
+      "parkIds": [
+        "231879",
+        "233254",
+        "234475"
+      ]
+    },
+    {
+      "name": "LEADVILLE",
+      "slug": "leadville",
+      "parkIds": [
+        "232017",
+        "232044",
+        "232067",
+        "232073",
+        "232086",
+        "232294",
+        "232385",
+        "232387",
+        "234129",
+        "234683"
+      ]
+    },
+    {
+      "name": "Canon City",
+      "slug": "canon-city",
+      "parkIds": [
+        "232066",
+        "232093",
+        "232101",
+        "233804",
+        "233805",
+        "233812",
+        "233932",
+        "234104",
+        "234684",
+        "254080",
+        "254082",
+        "261774",
+        "261777"
+      ]
+    },
+    {
+      "name": "ALMONT",
+      "slug": "almont",
+      "parkIds": [
+        "232154"
+      ]
+    },
+    {
+      "name": "DEL NORTE",
+      "slug": "del-norte",
+      "parkIds": [
+        "232252",
+        "247595",
+        "247596"
+      ]
+    },
+    {
+      "name": "OURAY",
+      "slug": "ouray",
+      "parkIds": [
+        "232275"
+      ]
+    },
+    {
+      "name": "CREEDE",
+      "slug": "creede",
+      "parkIds": [
+        "232338",
+        "233810",
+        "233811"
+      ]
+    },
+    {
+      "name": "Estes Park",
+      "slug": "estes-park",
+      "parkIds": [
+        "232462",
+        "232463",
+        "233187"
+      ]
+    },
+    {
+      "name": "Morrison",
+      "slug": "morrison",
+      "parkIds": [
+        "233185",
+        "234737"
+      ]
+    },
+    {
+      "name": "Mesa",
+      "slug": "mesa",
+      "parkIds": [
+        "233189"
+      ]
+    },
+    {
+      "name": "Saguache",
+      "slug": "saguache",
+      "parkIds": [
+        "233232",
+        "234483",
+        "234487",
+        "234660"
+      ]
+    },
+    {
+      "name": "Rico",
+      "slug": "rico",
+      "parkIds": [
+        "233250"
+      ]
+    },
+    {
+      "name": "Dolores",
+      "slug": "dolores",
+      "parkIds": [
+        "233251",
+        "261730",
+        "261731",
+        "261741"
+      ]
+    },
+    {
+      "name": "San Juan NF",
+      "slug": "san-juan-nf",
+      "parkIds": [
+        "233265",
+        "233268",
+        "233281",
+        "233318"
+      ]
+    },
+    {
+      "name": "Montrose",
+      "slug": "montrose",
+      "parkIds": [
+        "233289",
+        "233902",
+        "234667",
+        "262611",
+        "262614",
+        "262615",
+        "262616"
+      ]
+    },
+    {
+      "name": "Pagosa Springs",
+      "slug": "pagosa-springs",
+      "parkIds": [
+        "233335",
+        "251844"
+      ]
+    },
+    {
+      "name": "Delta",
+      "slug": "delta",
+      "parkIds": [
+        "233387"
+      ]
+    },
+    {
+      "name": "Fort Collins",
+      "slug": "fort-collins",
+      "parkIds": [
+        "233731"
+      ]
+    },
+    {
+      "name": "FAIRPLAY",
+      "slug": "fairplay",
+      "parkIds": [
+        "233808"
+      ]
+    },
+    {
+      "name": "MINTURN",
+      "slug": "minturn",
+      "parkIds": [
+        "233927"
+      ]
+    },
+    {
+      "name": "CEDAREDGE",
+      "slug": "cedaredge",
+      "parkIds": [
+        "233936"
+      ]
+    },
+    {
+      "name": "GRANBY",
+      "slug": "granby",
+      "parkIds": [
+        "233941"
+      ]
+    },
+    {
+      "name": "WALDEN",
+      "slug": "walden",
+      "parkIds": [
+        "233979"
+      ]
+    },
+    {
+      "name": "GUNNISON",
+      "slug": "gunnison",
+      "parkIds": [
+        "234053",
+        "234054",
+        "234055",
+        "234056",
+        "234057",
+        "250026",
+        "261726",
+        "261763",
+        "300007"
+      ]
+    },
+    {
+      "name": "WESTCLIFFE",
+      "slug": "westcliffe",
+      "parkIds": [
+        "234105"
+      ]
+    },
+    {
+      "name": "Clark",
+      "slug": "clark",
+      "parkIds": [
+        "234197",
+        "234246"
+      ]
+    },
+    {
+      "name": "PARSHALL",
+      "slug": "parshall",
+      "parkIds": [
+        "234211"
+      ]
+    },
+    {
+      "name": "STEAMBOAT SPRINGS",
+      "slug": "steamboat-springs",
+      "parkIds": [
+        "234551",
+        "234552"
+      ]
+    },
+    {
+      "name": "Mosca",
+      "slug": "mosca",
+      "parkIds": [
+        "234685"
+      ]
+    },
+    {
+      "name": "Platoro",
+      "slug": "platoro",
+      "parkIds": [
+        "234706",
+        "234707"
+      ]
+    },
+    {
+      "name": "Montrose County",
+      "slug": "montrose-county",
+      "parkIds": [
+        "234724"
+      ]
+    },
+    {
+      "name": "Fruita",
+      "slug": "fruita",
+      "parkIds": [
+        "234778"
+      ]
+    },
+    {
+      "name": "Mancos",
+      "slug": "mancos",
+      "parkIds": [
+        "234786"
+      ]
+    },
+    {
+      "name": "Dinosaur",
+      "slug": "dinosaur",
+      "parkIds": [
+        "250014"
+      ]
+    },
+    {
+      "name": "Silt",
+      "slug": "silt",
+      "parkIds": [
+        "261760",
+        "261767",
+        "261839",
+        "262586"
+      ]
+    },
+    {
+      "name": "Meeker",
+      "slug": "meeker",
+      "parkIds": [
+        "261788"
+      ]
+    },
+    {
+      "name": "Grand Junction",
+      "slug": "grand-junction",
+      "parkIds": [
+        "262607",
+        "264294"
+      ]
+    },
+    {
+      "name": "Kremmling",
+      "slug": "kremmling",
+      "parkIds": [
+        "271732"
+      ]
+    }
+  ]
+}

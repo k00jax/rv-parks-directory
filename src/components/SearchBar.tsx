@@ -6,12 +6,14 @@ import { useRouter } from 'next/navigation';
 export interface SearchPark {
   name: string;
   slug: string;
+  state: string;
   city: string | null;
 }
 
 export interface SearchCity {
   name: string;
   slug: string;
+  state?: string;
 }
 
 // Pin + magnifier SVG icons (filled, thick outline look).
@@ -75,8 +77,8 @@ export default function SearchBar({
     if (!results || results === 'empty') return;
     const firstPark = results.parkMatches[0];
     const firstCity = results.cityMatches[0];
-    if (firstPark) go(`/parks/tx/${firstPark.slug}/`);
-    else if (firstCity) go(`/rv-parks/texas/${firstCity.slug}/`);
+    if (firstPark) go(`/parks/${firstPark.state.toLowerCase()}/${firstPark.slug}/`);
+    else if (firstCity) go(`/rv-parks/${(firstCity.state ?? 'tx').toLowerCase()}/${firstCity.slug}/`);
   }
 
   return (
@@ -118,15 +120,15 @@ export default function SearchBar({
               {results.cityMatches.map((c) => (
                 <li key={`c-${c.slug}`}>
                   <a
-                    href={`/rv-parks/texas/${c.slug}/`}
+                    href={`/rv-parks/${(c.state ?? 'tx').toLowerCase()}/${c.slug}/`}
                     onMouseDown={(e) => e.preventDefault()}
                     onClick={(e) => {
                       e.preventDefault();
-                      go(`/rv-parks/texas/${c.slug}/`);
+                      go(`/rv-parks/${(c.state ?? 'tx').toLowerCase()}/${c.slug}/`);
                     }}
                   >
                     {PIN}
-                    {titleCase(c.name)}, TX
+                    {titleCase(c.name)}, {c.state ?? 'TX'}
                     <span className="res-meta">City</span>
                   </a>
                 </li>
@@ -142,11 +144,11 @@ export default function SearchBar({
               {results.parkMatches.map((p) => (
                 <li key={`p-${p.slug}`}>
                   <a
-                    href={`/parks/tx/${p.slug}/`}
+                    href={`/parks/${p.state.toLowerCase()}/${p.slug}/`}
                     onMouseDown={(e) => e.preventDefault()}
                     onClick={(e) => {
                       e.preventDefault();
-                      go(`/parks/tx/${p.slug}/`);
+                      go(`/parks/${p.state.toLowerCase()}/${p.slug}/`);
                     }}
                   >
                     {PIN}

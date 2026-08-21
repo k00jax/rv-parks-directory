@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "state": "FL",
+    "stateAbbr": "FL"
+  },
+  "cities": [
+    {
+      "name": "Salt Springs",
+      "slug": "salt-springs",
+      "parkIds": [
+        "10090625"
+      ]
+    },
+    {
+      "name": "Altoona",
+      "slug": "altoona",
+      "parkIds": [
+        "10112101",
+        "234032",
+        "234657"
+      ]
+    },
+    {
+      "name": "MOORE HAVEN",
+      "slug": "moore-haven",
+      "parkIds": [
+        "233570"
+      ]
+    },
+    {
+      "name": "STUART",
+      "slug": "stuart",
+      "parkIds": [
+        "233638"
+      ]
+    },
+    {
+      "name": "ALVA",
+      "slug": "alva",
+      "parkIds": [
+        "233661",
+        "261793"
+      ]
+    },
+    {
+      "name": "SILVER SPRINGS",
+      "slug": "silver-springs",
+      "parkIds": [
+        "234031",
+        "234514",
+        "234599"
+      ]
+    },
+    {
+      "name": "PAISLEY",
+      "slug": "paisley",
+      "parkIds": [
+        "234033"
+      ]
+    },
+    {
+      "name": "UMATILLA",
+      "slug": "umatilla",
+      "parkIds": [
+        "234513"
+      ]
+    },
+    {
+      "name": "DELAND",
+      "slug": "deland",
+      "parkIds": [
+        "234597"
+      ]
+    },
+    {
+      "name": "Sanderson",
+      "slug": "sanderson",
+      "parkIds": [
+        "251903"
+      ]
+    },
+    {
+      "name": "Bristol",
+      "slug": "bristol",
+      "parkIds": [
+        "251904",
+        "251908"
+      ]
+    },
+    {
+      "name": "Homestead",
+      "slug": "homestead",
+      "parkIds": [
+        "4675314"
+      ]
+    }
+  ]
+}

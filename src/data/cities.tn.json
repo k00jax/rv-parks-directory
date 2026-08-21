@@ -1,0 +1,232 @@
+{
+  "meta": {
+    "state": "TN",
+    "stateAbbr": "TN"
+  },
+  "cities": [
+    {
+      "name": "Allons",
+      "slug": "allons",
+      "parkIds": [
+        "10101848"
+      ]
+    },
+    {
+      "name": "TELLICO PLAINS",
+      "slug": "tellico-plains",
+      "parkIds": [
+        "232216",
+        "234139"
+      ]
+    },
+    {
+      "name": "Gatlinburg",
+      "slug": "gatlinburg",
+      "parkIds": [
+        "232436",
+        "232440",
+        "233299",
+        "233374",
+        "234712",
+        "273821",
+        "273847"
+      ]
+    },
+    {
+      "name": "Cosby",
+      "slug": "cosby",
+      "parkIds": [
+        "232438",
+        "232479"
+      ]
+    },
+    {
+      "name": "Townsend",
+      "slug": "townsend",
+      "parkIds": [
+        "232485",
+        "232488"
+      ]
+    },
+    {
+      "name": "ONEIDA",
+      "slug": "oneida",
+      "parkIds": [
+        "232505",
+        "232506",
+        "251468"
+      ]
+    },
+    {
+      "name": "NASHVILLE",
+      "slug": "nashville",
+      "parkIds": [
+        "232515"
+      ]
+    },
+    {
+      "name": "GALLATIN",
+      "slug": "gallatin",
+      "parkIds": [
+        "232539",
+        "232650"
+      ]
+    },
+    {
+      "name": "CARTHAGE",
+      "slug": "carthage",
+      "parkIds": [
+        "232572",
+        "232716"
+      ]
+    },
+    {
+      "name": "GRAND RIVERS",
+      "slug": "grand-rivers",
+      "parkIds": [
+        "232577"
+      ]
+    },
+    {
+      "name": "DOVER",
+      "slug": "dover",
+      "parkIds": [
+        "232579"
+      ]
+    },
+    {
+      "name": "SILVER POINT",
+      "slug": "silver-point",
+      "parkIds": [
+        "232589"
+      ]
+    },
+    {
+      "name": "ASHLAND CITY",
+      "slug": "ashland-city",
+      "parkIds": [
+        "232627",
+        "251574",
+        "256349"
+      ]
+    },
+    {
+      "name": "MT. JULIET",
+      "slug": "mt-juliet",
+      "parkIds": [
+        "232629"
+      ]
+    },
+    {
+      "name": "LANCASTER",
+      "slug": "lancaster",
+      "parkIds": [
+        "232630"
+      ]
+    },
+    {
+      "name": "OLD HICKORY",
+      "slug": "old-hickory",
+      "parkIds": [
+        "232658",
+        "232705"
+      ]
+    },
+    {
+      "name": "LAVERGNE",
+      "slug": "lavergne",
+      "parkIds": [
+        "232677"
+      ]
+    },
+    {
+      "name": "SPARTA",
+      "slug": "sparta",
+      "parkIds": [
+        "232684"
+      ]
+    },
+    {
+      "name": "Gainesboro",
+      "slug": "gainesboro",
+      "parkIds": [
+        "232693",
+        "232697",
+        "232734"
+      ]
+    },
+    {
+      "name": "HERMITAGE",
+      "slug": "hermitage",
+      "parkIds": [
+        "232702"
+      ]
+    },
+    {
+      "name": "Antioch",
+      "slug": "antioch",
+      "parkIds": [
+        "233106"
+      ]
+    },
+    {
+      "name": "SMYRNA",
+      "slug": "smyrna",
+      "parkIds": [
+        "233107"
+      ]
+    },
+    {
+      "name": "SMITHVILLE",
+      "slug": "smithville",
+      "parkIds": [
+        "234087"
+      ]
+    },
+    {
+      "name": "Hendersonville",
+      "slug": "hendersonville",
+      "parkIds": [
+        "234754"
+      ]
+    },
+    {
+      "name": "Benton",
+      "slug": "benton",
+      "parkIds": [
+        "250024",
+        "251438",
+        "251723",
+        "251938"
+      ]
+    },
+    {
+      "name": "Unicoi",
+      "slug": "unicoi",
+      "parkIds": [
+        "251724"
+      ]
+    },
+    {
+      "name": "Shady Valley",
+      "slug": "shady-valley",
+      "parkIds": [
+        "251757"
+      ]
+    },
+    {
+      "name": "Wartburg",
+      "slug": "wartburg",
+      "parkIds": [
+        "253502"
+      ]
+    },
+    {
+      "name": "Greeneville",
+      "slug": "greeneville",
+      "parkIds": [
+        "267551"
+      ]
+    }
+  ]
+}

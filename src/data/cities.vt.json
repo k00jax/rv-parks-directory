@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "state": "VT",
+    "stateAbbr": "VT"
+  },
+  "cities": [
+    {
+      "name": "Springfield",
+      "slug": "springfield",
+      "parkIds": [
+        "249983"
+      ]
+    },
+    {
+      "name": "North Hartland",
+      "slug": "north-hartland",
+      "parkIds": [
+        "251044"
+      ]
+    },
+    {
+      "name": "Rochester",
+      "slug": "rochester",
+      "parkIds": [
+        "251609",
+        "256347"
+      ]
+    }
+  ]
+}

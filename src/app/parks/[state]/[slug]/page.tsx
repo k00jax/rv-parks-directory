@@ -18,7 +18,7 @@ import {
   getParkBySlug,
   neighbors,
   parks,
-  STATE_NAME,
+  stateName,
 } from '@/lib/parks';
 import Link from 'next/link';
 
@@ -27,15 +27,15 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return parks.map((p) => ({ state: 'tx', slug: p.slug }));
+  return parks.map((p) => ({ state: p.state.toLowerCase(), slug: p.slug }));
 }
 
 export function generateMetadata({ params }: Props): Metadata {
   const park = getParkBySlug(params.slug);
   if (!park) return { title: 'Not found' };
   return {
-    title: `${park.name} — ${park.city ? park.city + ', ' : ''}TX`,
-    description: `${park.name} in ${park.city ?? 'Texas'}: nightly price ${fmtPrice(
+    title: `${park.name} — ${park.city ? park.city + ', ' : ''}${park.state}`,
+    description: `${park.name} in ${park.city ?? stateName(park.state)}: nightly price ${fmtPrice(
       park
     )}, ${fmtRating(park)}, ${fmtSiteCount(park)}. Verified ${park.lastVerified} from Recreation.gov data.`,
   };
@@ -109,9 +109,9 @@ export default function ParkPage({ params }: Props) {
     <div>
       <Breadcrumbs
         crumbs={[
-          { label: 'Texas', href: '/rv-parks/texas/' },
+          { label: stateName(park.state), href: `/rv-parks/${park.state.toLowerCase()}/` },
           ...(city && getCitySlug(park)
-            ? [{ label: city, href: `/rv-parks/texas/${getCitySlug(park)}/` }]
+            ? [{ label: city, href: `/rv-parks/${park.state.toLowerCase()}/${getCitySlug(park)}/` }]
             : []),
           { label: park.name },
         ]}
@@ -255,9 +255,9 @@ export default function ParkPage({ params }: Props) {
         <ul className="plain">
           {near.map((n) => (
             <li key={n.facilityId}>
-              <Link href={`/parks/tx/${n.slug}/`}>{n.name}</Link>{' '}
+              <Link href={`/parks/${n.state.toLowerCase()}/${n.slug}/`}>{n.name}</Link>{' '}
               <span className="muted">
-                — {n.city ?? 'Texas'} · {fmtPrice(n)}
+                — {n.city ?? stateName(n.state)} · {fmtPrice(n)}
               </span>
             </li>
           ))}
@@ -269,13 +269,15 @@ export default function ParkPage({ params }: Props) {
         <ul className="plain">
           {city ? (
             <li>
-              <Link href={`/rv-parks/texas/${getCitySlug(park)}/`}>
-                RV parks in {city}, TX
+              <Link href={`/rv-parks/${park.state.toLowerCase()}/${getCitySlug(park)}/`}>
+                RV parks in {city}, {park.state}
               </Link>
             </li>
           ) : null}
           <li>
-            <Link href="/rv-parks/texas/">All RV parks &amp; campgrounds in {STATE_NAME}</Link>
+            <Link href={`/rv-parks/${park.state.toLowerCase()}/`}>
+              All RV parks &amp; campgrounds in {stateName(park.state)}
+            </Link>
           </li>
           {parkAmenityHubs.length > 0 ? (
             <li>
@@ -289,7 +291,7 @@ export default function ParkPage({ params }: Props) {
             </li>
           ) : null}
           <li>
-            <Link href="/rv-parks/amenities/">All RV park amenities in {STATE_NAME}</Link>
+            <Link href="/rv-parks/amenities/">All RV park amenities</Link>
           </li>
           {amenityHubs.map((a) => (
             <li key={a.slug}>

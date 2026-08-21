@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "state": "NV",
+    "stateAbbr": "NV"
+  },
+  "cities": [
+    {
+      "name": "ELY",
+      "slug": "ely",
+      "parkIds": [
+        "234207",
+        "234208",
+        "234209"
+      ]
+    },
+    {
+      "name": "Las Vegas",
+      "slug": "las-vegas",
+      "parkIds": [
+        "250877"
+      ]
+    },
+    {
+      "name": "Alamo",
+      "slug": "alamo",
+      "parkIds": [
+        "262713"
+      ]
+    },
+    {
+      "name": "Carson City",
+      "slug": "carson-city",
+      "parkIds": [
+        "272246",
+        "274314",
+        "274410"
+      ]
+    }
+  ]
+}

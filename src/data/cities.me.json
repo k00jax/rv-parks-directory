@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "state": "ME",
+    "stateAbbr": "ME"
+  },
+  "cities": [
+    {
+      "name": "Bar Harbor",
+      "slug": "bar-harbor",
+      "parkIds": [
+        "264293"
+      ]
+    }
+  ]
+}

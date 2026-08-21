@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "state": "SD",
+    "stateAbbr": "SD"
+  },
+  "cities": [
+    {
+      "name": "CUSTER",
+      "slug": "custer",
+      "parkIds": [
+        "234273"
+      ]
+    },
+    {
+      "name": "Pickstown",
+      "slug": "pickstown",
+      "parkIds": [
+        "248357"
+      ]
+    },
+    {
+      "name": "Yankton",
+      "slug": "yankton",
+      "parkIds": [
+        "248372"
+      ]
+    }
+  ]
+}

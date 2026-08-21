@@ -1,0 +1,197 @@
+{
+  "meta": {
+    "state": "NC",
+    "stateAbbr": "NC"
+  },
+  "cities": [
+    {
+      "name": "ASHEVILLE",
+      "slug": "asheville",
+      "parkIds": [
+        "10004919",
+        "231995"
+      ]
+    },
+    {
+      "name": "PISGAH FOREST",
+      "slug": "pisgah-forest",
+      "parkIds": [
+        "10011396",
+        "231992",
+        "231993",
+        "231994",
+        "233108",
+        "233109",
+        "234743"
+      ]
+    },
+    {
+      "name": "MILLS RIVER",
+      "slug": "mills-river",
+      "parkIds": [
+        "232380"
+      ]
+    },
+    {
+      "name": "HIGHLANDS",
+      "slug": "highlands",
+      "parkIds": [
+        "232399"
+      ]
+    },
+    {
+      "name": "Waynesville",
+      "slug": "waynesville",
+      "parkIds": [
+        "232434",
+        "232482",
+        "233284"
+      ]
+    },
+    {
+      "name": "Cherokee",
+      "slug": "cherokee",
+      "parkIds": [
+        "232441",
+        "232481",
+        "232483",
+        "232486",
+        "273848"
+      ]
+    },
+    {
+      "name": "Bryson City",
+      "slug": "bryson-city",
+      "parkIds": [
+        "232478"
+      ]
+    },
+    {
+      "name": "OCRACOKE",
+      "slug": "ocracoke",
+      "parkIds": [
+        "232504"
+      ]
+    },
+    {
+      "name": "Cedar Point",
+      "slug": "cedar-point",
+      "parkIds": [
+        "233312"
+      ]
+    },
+    {
+      "name": "Harkers Island",
+      "slug": "harkers-island",
+      "parkIds": [
+        "233332"
+      ]
+    },
+    {
+      "name": "WILKESBORO",
+      "slug": "wilkesboro",
+      "parkIds": [
+        "233421",
+        "234253",
+        "251770"
+      ]
+    },
+    {
+      "name": "Boomer",
+      "slug": "boomer",
+      "parkIds": [
+        "233665"
+      ]
+    },
+    {
+      "name": "EAST TROY",
+      "slug": "east-troy",
+      "parkIds": [
+        "233910"
+      ]
+    },
+    {
+      "name": "TROY",
+      "slug": "troy",
+      "parkIds": [
+        "233911",
+        "233912"
+      ]
+    },
+    {
+      "name": "BURNSVILLE",
+      "slug": "burnsville",
+      "parkIds": [
+        "233947",
+        "233954",
+        "273780"
+      ]
+    },
+    {
+      "name": "TUCKASEGEE",
+      "slug": "tuckasegee",
+      "parkIds": [
+        "233975"
+      ]
+    },
+    {
+      "name": "HAYESVILLE",
+      "slug": "hayesville",
+      "parkIds": [
+        "234180"
+      ]
+    },
+    {
+      "name": "FRANKLIN",
+      "slug": "franklin",
+      "parkIds": [
+        "234228"
+      ]
+    },
+    {
+      "name": "ROBBINSVILLE",
+      "slug": "robbinsville",
+      "parkIds": [
+        "234313",
+        "234370",
+        "234584",
+        "234585"
+      ]
+    },
+    {
+      "name": "Mars Hill",
+      "slug": "mars-hill",
+      "parkIds": [
+        "234424"
+      ]
+    },
+    {
+      "name": "Moncure",
+      "slug": "moncure",
+      "parkIds": [
+        "248182"
+      ]
+    },
+    {
+      "name": "Nebo",
+      "slug": "nebo",
+      "parkIds": [
+        "251469"
+      ]
+    },
+    {
+      "name": "Buxton",
+      "slug": "buxton",
+      "parkIds": [
+        "251945"
+      ]
+    },
+    {
+      "name": "HOT SPRINGS",
+      "slug": "hot-springs",
+      "parkIds": [
+        "264886"
+      ]
+    }
+  ]
+}

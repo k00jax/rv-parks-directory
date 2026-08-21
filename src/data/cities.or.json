@@ -1,0 +1,619 @@
+{
+  "meta": {
+    "state": "OR",
+    "stateAbbr": "OR"
+  },
+  "cities": [
+    {
+      "name": "Prineville",
+      "slug": "prineville",
+      "parkIds": [
+        "10000447",
+        "10001666",
+        "10005676",
+        "10039204",
+        "10039215",
+        "10039225",
+        "10039234",
+        "10039245",
+        "10039255",
+        "10039266",
+        "10039275",
+        "10155245",
+        "10155457",
+        "10278932",
+        "10279050",
+        "10279174",
+        "10283829",
+        "10283852",
+        "10319380",
+        "10319389",
+        "10321880",
+        "10322469",
+        "233237",
+        "233406",
+        "233894",
+        "233895",
+        "234136",
+        "234779",
+        "255193",
+        "255194",
+        "255199",
+        "260547",
+        "272256",
+        "274330",
+        "274478"
+      ]
+    },
+    {
+      "name": "Hines",
+      "slug": "hines",
+      "parkIds": [
+        "10005523",
+        "10369871",
+        "234217",
+        "255182",
+        "255183",
+        "262776"
+      ]
+    },
+    {
+      "name": "Ashland",
+      "slug": "ashland",
+      "parkIds": [
+        "10067370",
+        "250031"
+      ]
+    },
+    {
+      "name": "Cloverdale",
+      "slug": "cloverdale",
+      "parkIds": [
+        "10113281"
+      ]
+    },
+    {
+      "name": "Klamath Falls",
+      "slug": "klamath-falls",
+      "parkIds": [
+        "10221499",
+        "201783",
+        "233705",
+        "233707",
+        "251712",
+        "262728",
+        "262739"
+      ]
+    },
+    {
+      "name": "Grants Pass",
+      "slug": "grants-pass",
+      "parkIds": [
+        "10274269",
+        "234163"
+      ]
+    },
+    {
+      "name": "Juntura",
+      "slug": "juntura",
+      "parkIds": [
+        "10314202"
+      ]
+    },
+    {
+      "name": "Salem",
+      "slug": "salem",
+      "parkIds": [
+        "10405539",
+        "10406676"
+      ]
+    },
+    {
+      "name": "IDLEYLD PARK",
+      "slug": "idleyld-park",
+      "parkIds": [
+        "231979",
+        "231980",
+        "231981",
+        "233154",
+        "251360",
+        "251548",
+        "251883",
+        "251886",
+        "251894",
+        "251895",
+        "251907"
+      ]
+    },
+    {
+      "name": "MCKENZIE BRIDGE",
+      "slug": "mckenzie-bridge",
+      "parkIds": [
+        "231983",
+        "231984",
+        "234173",
+        "234174",
+        "234175",
+        "234731"
+      ]
+    },
+    {
+      "name": "Coburg",
+      "slug": "coburg",
+      "parkIds": [
+        "231985",
+        "234214",
+        "234216",
+        "234218"
+      ]
+    },
+    {
+      "name": "Blue River",
+      "slug": "blue-river",
+      "parkIds": [
+        "231986",
+        "233339",
+        "233340",
+        "233341",
+        "234730",
+        "234732",
+        "234733"
+      ]
+    },
+    {
+      "name": "CRESCENT",
+      "slug": "crescent",
+      "parkIds": [
+        "232778",
+        "232779",
+        "233113",
+        "233195",
+        "233225",
+        "234289",
+        "251567",
+        "252282",
+        "266138",
+        "267070",
+        "267079",
+        "267557"
+      ]
+    },
+    {
+      "name": "SISTERS",
+      "slug": "sisters",
+      "parkIds": [
+        "232787",
+        "232788",
+        "232791",
+        "233197",
+        "233198",
+        "233770",
+        "234477",
+        "251454",
+        "251472",
+        "251566",
+        "251569",
+        "251577",
+        "266139",
+        "266142",
+        "267071",
+        "267074",
+        "267078",
+        "267080",
+        "267081",
+        "267082",
+        "267083",
+        "267552",
+        "267554",
+        "267556"
+      ]
+    },
+    {
+      "name": "Lake Harriet",
+      "slug": "lake-harriet",
+      "parkIds": [
+        "232856"
+      ]
+    },
+    {
+      "name": "Timothy Lake",
+      "slug": "timothy-lake",
+      "parkIds": [
+        "232865",
+        "232866",
+        "232867",
+        "232868"
+      ]
+    },
+    {
+      "name": "Westfir",
+      "slug": "westfir",
+      "parkIds": [
+        "233133",
+        "234188",
+        "234189"
+      ]
+    },
+    {
+      "name": "North Powder",
+      "slug": "north-powder",
+      "parkIds": [
+        "233136",
+        "233236",
+        "234212",
+        "234213",
+        "234250"
+      ]
+    },
+    {
+      "name": "Oakland",
+      "slug": "oakland",
+      "parkIds": [
+        "233153"
+      ]
+    },
+    {
+      "name": "BEND",
+      "slug": "bend",
+      "parkIds": [
+        "233193",
+        "233215",
+        "233217",
+        "233787",
+        "234085",
+        "234661",
+        "251448",
+        "251581",
+        "251722",
+        "266140",
+        "267072",
+        "267073",
+        "267553",
+        "267555"
+      ]
+    },
+    {
+      "name": "Prairie City",
+      "slug": "prairie-city",
+      "parkIds": [
+        "233248"
+      ]
+    },
+    {
+      "name": "Mt Hood",
+      "slug": "mt-hood",
+      "parkIds": [
+        "233305"
+      ]
+    },
+    {
+      "name": "Tiller",
+      "slug": "tiller",
+      "parkIds": [
+        "233322",
+        "234149",
+        "234170",
+        "234179"
+      ]
+    },
+    {
+      "name": "Maupin",
+      "slug": "maupin",
+      "parkIds": [
+        "233323",
+        "234720"
+      ]
+    },
+    {
+      "name": "Parkdale",
+      "slug": "parkdale",
+      "parkIds": [
+        "233326",
+        "233329"
+      ]
+    },
+    {
+      "name": "Cave Junction",
+      "slug": "cave-junction",
+      "parkIds": [
+        "233351",
+        "234154"
+      ]
+    },
+    {
+      "name": "Oakridge",
+      "slug": "oakridge",
+      "parkIds": [
+        "233364",
+        "234219",
+        "254094"
+      ]
+    },
+    {
+      "name": "Rufus",
+      "slug": "rufus",
+      "parkIds": [
+        "233536"
+      ]
+    },
+    {
+      "name": "KLAMATH",
+      "slug": "klamath",
+      "parkIds": [
+        "233706"
+      ]
+    },
+    {
+      "name": "Florence",
+      "slug": "florence",
+      "parkIds": [
+        "233885",
+        "233963",
+        "234502"
+      ]
+    },
+    {
+      "name": "YACHATS",
+      "slug": "yachats",
+      "parkIds": [
+        "233900"
+      ]
+    },
+    {
+      "name": "ALSEA",
+      "slug": "alsea",
+      "parkIds": [
+        "233903"
+      ]
+    },
+    {
+      "name": "WALDPORT",
+      "slug": "waldport",
+      "parkIds": [
+        "233916",
+        "233965"
+      ]
+    },
+    {
+      "name": "Tidewater",
+      "slug": "tidewater",
+      "parkIds": [
+        "233964"
+      ]
+    },
+    {
+      "name": "BUTTE FALLS",
+      "slug": "butte-falls",
+      "parkIds": [
+        "234103",
+        "234157",
+        "234630",
+        "234631",
+        "234760"
+      ]
+    },
+    {
+      "name": "HEPPNER",
+      "slug": "heppner",
+      "parkIds": [
+        "234138",
+        "234145"
+      ]
+    },
+    {
+      "name": "COTTAGE GROVE",
+      "slug": "cottage-grove",
+      "parkIds": [
+        "234144"
+      ]
+    },
+    {
+      "name": "GLIDE",
+      "slug": "glide",
+      "parkIds": [
+        "234146",
+        "234147",
+        "234148",
+        "251357",
+        "251364",
+        "251471",
+        "251885"
+      ]
+    },
+    {
+      "name": "POWERS",
+      "slug": "powers",
+      "parkIds": [
+        "234155"
+      ]
+    },
+    {
+      "name": "Gold Beach",
+      "slug": "gold-beach",
+      "parkIds": [
+        "234159",
+        "234168"
+      ]
+    },
+    {
+      "name": "BROOKINGS",
+      "slug": "brookings",
+      "parkIds": [
+        "234161"
+      ]
+    },
+    {
+      "name": "LAKEVIEW",
+      "slug": "lakeview",
+      "parkIds": [
+        "234183",
+        "234185",
+        "251769",
+        "262731",
+        "262741"
+      ]
+    },
+    {
+      "name": "PAISLEY",
+      "slug": "paisley",
+      "parkIds": [
+        "234184",
+        "234186"
+      ]
+    },
+    {
+      "name": "SILVER LAKE",
+      "slug": "silver-lake",
+      "parkIds": [
+        "234187"
+      ]
+    },
+    {
+      "name": "JACKSONVILLE",
+      "slug": "jacksonville",
+      "parkIds": [
+        "234202",
+        "234203",
+        "251546",
+        "251611",
+        "272277"
+      ]
+    },
+    {
+      "name": "UKIAH",
+      "slug": "ukiah",
+      "parkIds": [
+        "234205",
+        "234206",
+        "234279",
+        "246027"
+      ]
+    },
+    {
+      "name": "ZIGZAG",
+      "slug": "zigzag",
+      "parkIds": [
+        "234239"
+      ]
+    },
+    {
+      "name": "WALLA WALLA",
+      "slug": "walla-walla",
+      "parkIds": [
+        "234461",
+        "234462"
+      ]
+    },
+    {
+      "name": "Mill City",
+      "slug": "mill-city",
+      "parkIds": [
+        "234621"
+      ]
+    },
+    {
+      "name": "Lowell",
+      "slug": "lowell",
+      "parkIds": [
+        "248305",
+        "248306"
+      ]
+    },
+    {
+      "name": "Junction City",
+      "slug": "junction-city",
+      "parkIds": [
+        "248308"
+      ]
+    },
+    {
+      "name": "Umatilla",
+      "slug": "umatilla",
+      "parkIds": [
+        "248319",
+        "251913"
+      ]
+    },
+    {
+      "name": "Trail",
+      "slug": "trail",
+      "parkIds": [
+        "248323"
+      ]
+    },
+    {
+      "name": "The Dalles",
+      "slug": "the-dalles",
+      "parkIds": [
+        "248324"
+      ]
+    },
+    {
+      "name": "NORTH BEND",
+      "slug": "north-bend",
+      "parkIds": [
+        "249989",
+        "261695"
+      ]
+    },
+    {
+      "name": "Roseburg",
+      "slug": "roseburg",
+      "parkIds": [
+        "251351",
+        "262718"
+      ]
+    },
+    {
+      "name": "1375 SE Wilson Avenue Bend",
+      "slug": "1375-se-wilson-avenue-bend",
+      "parkIds": [
+        "251911"
+      ]
+    },
+    {
+      "name": "Merlin",
+      "slug": "merlin",
+      "parkIds": [
+        "251982"
+      ]
+    },
+    {
+      "name": "Vale",
+      "slug": "vale",
+      "parkIds": [
+        "255175",
+        "255188",
+        "262773"
+      ]
+    },
+    {
+      "name": "HEBO",
+      "slug": "hebo",
+      "parkIds": [
+        "264686"
+      ]
+    },
+    {
+      "name": "ESTACADA",
+      "slug": "estacada",
+      "parkIds": [
+        "267076"
+      ]
+    },
+    {
+      "name": "Medford",
+      "slug": "medford",
+      "parkIds": [
+        "272170"
+      ]
+    },
+    {
+      "name": "Marcola",
+      "slug": "marcola",
+      "parkIds": [
+        "273310"
+      ]
+    }
+  ]
+}

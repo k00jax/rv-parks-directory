@@ -1,0 +1,204 @@
+{
+  "meta": {
+    "state": "GA",
+    "stateAbbr": "GA"
+  },
+  "cities": [
+    {
+      "name": "WEST POINT",
+      "slug": "west-point",
+      "parkIds": [
+        "10003508",
+        "10004589",
+        "10004592",
+        "10004594",
+        "10004596",
+        "10004598",
+        "10004600",
+        "10004602",
+        "10004604",
+        "247929"
+      ]
+    },
+    {
+      "name": "LINCOLNTON",
+      "slug": "lincolnton",
+      "parkIds": [
+        "232514"
+      ]
+    },
+    {
+      "name": "CUMMING",
+      "slug": "cumming",
+      "parkIds": [
+        "232519",
+        "232700"
+      ]
+    },
+    {
+      "name": "HARTWELL",
+      "slug": "hartwell",
+      "parkIds": [
+        "232527",
+        "232533",
+        "232584",
+        "232655",
+        "232678",
+        "232711",
+        "232735",
+        "247913",
+        "251648",
+        "251657"
+      ]
+    },
+    {
+      "name": "GAINESVILLE",
+      "slug": "gainesville",
+      "parkIds": [
+        "232531",
+        "232578"
+      ]
+    },
+    {
+      "name": "Townville",
+      "slug": "townville",
+      "parkIds": [
+        "232555"
+      ]
+    },
+    {
+      "name": "Ft. Gaines",
+      "slug": "ft-gaines",
+      "parkIds": [
+        "232559"
+      ]
+    },
+    {
+      "name": "Starr",
+      "slug": "starr",
+      "parkIds": [
+        "232561",
+        "232706"
+      ]
+    },
+    {
+      "name": "BAINBRIDGE",
+      "slug": "bainbridge",
+      "parkIds": [
+        "232580"
+      ]
+    },
+    {
+      "name": "APPLING",
+      "slug": "appling",
+      "parkIds": [
+        "232617"
+      ]
+    },
+    {
+      "name": "FLOWERY BRANCH",
+      "slug": "flowery-branch",
+      "parkIds": [
+        "232657"
+      ]
+    },
+    {
+      "name": "Acworth",
+      "slug": "acworth",
+      "parkIds": [
+        "232665"
+      ]
+    },
+    {
+      "name": "Canton",
+      "slug": "canton",
+      "parkIds": [
+        "232715"
+      ]
+    },
+    {
+      "name": "Pendlton",
+      "slug": "pendlton",
+      "parkIds": [
+        "232727"
+      ]
+    },
+    {
+      "name": "Woodstock",
+      "slug": "woodstock",
+      "parkIds": [
+        "232730"
+      ]
+    },
+    {
+      "name": "LAGRANGE",
+      "slug": "lagrange",
+      "parkIds": [
+        "232742"
+      ]
+    },
+    {
+      "name": "Clayton",
+      "slug": "clayton",
+      "parkIds": [
+        "234374"
+      ]
+    },
+    {
+      "name": "SUCHES",
+      "slug": "suches",
+      "parkIds": [
+        "234469"
+      ]
+    },
+    {
+      "name": "MORGANTON",
+      "slug": "morganton",
+      "parkIds": [
+        "234590"
+      ]
+    },
+    {
+      "name": "Cartersville",
+      "slug": "cartersville",
+      "parkIds": [
+        "247900"
+      ]
+    },
+    {
+      "name": "Folkston",
+      "slug": "folkston",
+      "parkIds": [
+        "250860"
+      ]
+    },
+    {
+      "name": "Elberton",
+      "slug": "elberton",
+      "parkIds": [
+        "251655"
+      ]
+    },
+    {
+      "name": "St. Marys",
+      "slug": "st-marys",
+      "parkIds": [
+        "253730"
+      ]
+    },
+    {
+      "name": "Dawsonville",
+      "slug": "dawsonville",
+      "parkIds": [
+        "255286"
+      ]
+    },
+    {
+      "name": "Lakemont",
+      "slug": "lakemont",
+      "parkIds": [
+        "273352"
+      ]
+    }
+  ]
+}

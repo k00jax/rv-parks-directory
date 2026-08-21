@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "fetchedAt": "2026-08-21T04:08:49Z",
+    "lastVerified": "2026-08-21",
+    "state": "CT",
+    "source": "RIDB API v1 (ridb.recreation.gov/api/v1) with registered developer apikey",
+    "sourceUrls": [
+      "https://ridb.recreation.gov/api/v1/facilities?state=CT&limit=100&offset=N",
+      "https://ridb.recreation.gov/api/v1/facilities/{facilityId}",
+      "https://ridb.recreation.gov/api/v1/facilities/{facilityId}/facilityaddresses"
+    ],
+    "counts": {
+      "totalRidbRecords": 3,
+      "phaseACandidates": 2,
+      "parksKept": 2,
+      "droppedPhaseA": {
+        "type-campground-but-day-use-name": 1
+      },
+      "droppedPhaseB": {},
+      "stateEvidence": {
+        "address": 2
+      },
+      "typeBreakdown": {
+        "Campground": 2
+      },
+      "parksWithAddress": 2,
+      "parksWithCity": 2,
+      "parksWithZip": 2,
+      "parksWithPhone": 2,
+      "parksWithLatLng": 2,
+      "parksWithPrice": 0,
+      "parksWithSiteCount": 1,
+      "parksWithAmenities": 2,
+      "parksWithHookups": 1,
+      "parksWithMedia": 0,
+      "parksWithWebsite": 2
+    },
+    "detailFailures": [],
+    "antiFabrication": "rating/reviewCount/petPolicy always null. Prices only from per-night/per-day fee text.",
+    "crawlerPacingMs": 450
+  },
+  "parks": [
+    {
+      "facilityId": "233330",
+      "name": "HOP BROOK LAKE RECREATION AREA",
+      "slug": "hop-brook-lake-recreation-area",
+      "street": "HOP BROOK LAKE   ",
+      "city": "Middlebury",
+      "state": "CT",
+      "zip": "06762",
+      "lat": 41.5133333,
+      "lng": -73.0666667,
+      "phone": "203-729-8840",
+      "website": "https://www.recreation.gov/camping/campgrounds/233330",
+      "nightlyPriceMin": null,
+      "nightlyPriceMax": null,
+      "dataSource": null,
+      "hookups": null,
+      "amenities": [
+        "picnic tables",
+        "restroom",
+        "water"
+      ],
+      "siteCount": null,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
+      "petPolicy": null,
+      "lastVerified": "2026-08-21",
+      "source": {
+        "orgId": "AN372359",
+        "orgName": null,
+        "parentId": "130",
+        "parentName": null,
+        "reservable": true,
+        "facilityType": "Campground",
+        "equipment": [],
+        "maxVehicleLength": null,
+        "imageUrl": null,
+        "timeZone": null,
+        "description": "Overview Hop Brook Lake Recreation Area is located within the towns of Middlebury, Naugatuck and Waterbury, Connecticut. Its 536 acres provide excellent recreation opportunities and a chance to escape from the growing suburbia surrounding the park. Visitors can enjoy picnicking, hiking, mountain biking, canoeing/kayaking, swimming and fishing. Recreation Exploring Hop Brook Lake by canoe, kayak or rowboat is a favorite activity of visitors. The park's beach and designated swimming area are also a great place to relax in the warm summer sun. Fishing is welcome at the lake and its feeder streams"
+      },
+      "weatherCurrent": null,
+      "aqi": null
+    },
+    {
+      "facilityId": "233476",
+      "name": "West Thompson Lake Campground",
+      "slug": "west-thompson-lake-campground",
+      "street": "400 REARDON RD",
+      "city": "N. GROSVENORDALE",
+      "state": "CT",
+      "zip": "06255-9801",
+      "lat": 41.955623,
+      "lng": -71.899092,
+      "phone": "860-923-3121",
+      "website": "https://www.recreation.gov/camping/campgrounds/233476",
+      "nightlyPriceMin": null,
+      "nightlyPriceMax": null,
+      "dataSource": null,
+      "hookups": "partial",
+      "amenities": [
+        "dump station",
+        "electric",
+        "playground",
+        "showers",
+        "water"
+      ],
+      "siteCount": 11,
+      "rating": null,
+      "reviewCount": null,
+      "priceLevel": null,
+      "placeId": null,
+      "googleUrl": null,
+      "petPolicy": null,
+      "lastVerified": "2026-08-21",
+      "source": {
+        "orgId": "AN373147",
+        "orgName": null,
+        "parentId": "130",
+        "parentName": null,
+        "reservable": true,
+        "facilityType": "Campground",
+        "equipment": [],
+        "maxVehicleLength": null,
+        "imageUrl": null,
+        "timeZone": null,
+        "description": "Overview West Thompson Lake Campground is located near the wooded shoreline of its namesake lake in northeastern Connecticut. The natural setting surrounding West Thompson Lake can be enjoyed year round. Visitors come to the lake for camping, fishing, boating, kayaking and hiking. Recreation West Thompson Lake provides great boating, kayaking, canoeing and fishing opportunities. It has an excellent population of warm-water fish, including bass and small panfish. A boat ramp is located near the campground for easy access to the water. The Thompson Section of the Quinebaug River Water Trail offe"
+      },
+      "weatherCurrent": null,
+      "aqi": null
+    }
+  ]
+}

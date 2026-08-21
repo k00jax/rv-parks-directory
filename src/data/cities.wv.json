@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "state": "WV",
+    "stateAbbr": "WV"
+  },
+  "cities": [
+    {
+      "name": "Parsons",
+      "slug": "parsons",
+      "parkIds": [
+        "232006",
+        "232007"
+      ]
+    },
+    {
+      "name": "WHITE SULPHUR SPRING",
+      "slug": "white-sulphur-spring",
+      "parkIds": [
+        "232009"
+      ]
+    },
+    {
+      "name": "Lost City",
+      "slug": "lost-city",
+      "parkIds": [
+        "232162"
+      ]
+    },
+    {
+      "name": "WHITE SULPHUR SPRINGS",
+      "slug": "white-sulphur-springs",
+      "parkIds": [
+        "232331"
+      ]
+    },
+    {
+      "name": "BARTOW",
+      "slug": "bartow",
+      "parkIds": [
+        "232424"
+      ]
+    },
+    {
+      "name": "SUMMERSVILLE",
+      "slug": "summersville",
+      "parkIds": [
+        "233422",
+        "248536"
+      ]
+    },
+    {
+      "name": "Napier",
+      "slug": "napier",
+      "parkIds": [
+        "233443"
+      ]
+    },
+    {
+      "name": "KIAHSVILLE",
+      "slug": "kiahsville",
+      "parkIds": [
+        "233493"
+      ]
+    },
+    {
+      "name": "ELK GARDEN",
+      "slug": "elk-garden",
+      "parkIds": [
+        "233604"
+      ]
+    },
+    {
+      "name": "SUTTON",
+      "slug": "sutton",
+      "parkIds": [
+        "233678",
+        "248537",
+        "248538"
+      ]
+    },
+    {
+      "name": "PETERSBURG",
+      "slug": "petersburg",
+      "parkIds": [
+        "233990"
+      ]
+    },
+    {
+      "name": "RIVERTON",
+      "slug": "riverton",
+      "parkIds": [
+        "234132"
+      ]
+    },
+    {
+      "name": "Burnsville",
+      "slug": "burnsville",
+      "parkIds": [
+        "248530"
+      ]
+    },
+    {
+      "name": "Justice",
+      "slug": "justice",
+      "parkIds": [
+        "248533"
+      ]
+    }
+  ]
+}

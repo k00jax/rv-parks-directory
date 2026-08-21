@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "state": "IN",
+    "stateAbbr": "IN"
+  },
+  "cities": [
+    {
+      "name": "Brookville",
+      "slug": "brookville",
+      "parkIds": [
+        "247955"
+      ]
+    },
+    {
+      "name": "Rockville",
+      "slug": "rockville",
+      "parkIds": [
+        "247957"
+      ]
+    },
+    {
+      "name": "Huntington",
+      "slug": "huntington",
+      "parkIds": [
+        "247958"
+      ]
+    }
+  ]
+}

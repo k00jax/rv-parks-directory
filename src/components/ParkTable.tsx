@@ -38,7 +38,13 @@ function sortValue(p: Park, key: SortKey): string | number | null {
 
 const ARROW: Record<SortDir, string> = { asc: '▲', desc: '▼' };
 
-export default function ParkTable({ parks }: { parks: Park[] }) {
+export default function ParkTable({
+  parks,
+  showRank = false,
+}: {
+  parks: Park[];
+  showRank?: boolean;
+}) {
   const [sortKey, setSortKey] = useState<SortKey>('name');
   const [sortDir, setSortDir] = useState<SortDir>('asc');
 
@@ -82,6 +88,11 @@ export default function ParkTable({ parks }: { parks: Park[] }) {
     <table className="data sortable">
       <thead>
         <tr>
+          {showRank ? (
+            <th scope="col" className="rank-head">
+              #
+            </th>
+          ) : null}
           {COLUMNS.map((c) => {
             const active = c.key === sortKey;
             const ariaSort = active
@@ -114,10 +125,15 @@ export default function ParkTable({ parks }: { parks: Park[] }) {
         </tr>
       </thead>
       <tbody>
-        {sorted.map((p) => (
-          <tr key={p.facilityId}>
+        {sorted.map((p, i) => (
+          <tr key={p.facilityId} className={showRank && i < 3 ? 'row-top-pick' : undefined}>
+            {showRank ? (
+              <td className="rank-cell">
+                {i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : i + 1}
+              </td>
+            ) : null}
             <td>
-              <Link href={`/parks/tx/${p.slug}/`}>{p.name}</Link>
+              <Link href={`/parks/${p.state.toLowerCase()}/${p.slug}/`}>{p.name}</Link>
             </td>
             <td>{p.city ?? '—'}</td>
             <td>{fmtPrice(p)}</td>

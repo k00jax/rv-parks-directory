@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "state": "IA",
+    "stateAbbr": "IA"
+  },
+  "cities": [
+    {
+      "name": "JOHNSTON",
+      "slug": "johnston",
+      "parkIds": [
+        "233412",
+        "233432",
+        "233455",
+        "233594",
+        "234696",
+        "234699"
+      ]
+    },
+    {
+      "name": "CENTERVILLE",
+      "slug": "centerville",
+      "parkIds": [
+        "233435",
+        "233438",
+        "233593"
+      ]
+    },
+    {
+      "name": "Mystic Iowa",
+      "slug": "mystic-iowa",
+      "parkIds": [
+        "233522"
+      ]
+    },
+    {
+      "name": "Solon",
+      "slug": "solon",
+      "parkIds": [
+        "233618",
+        "233642"
+      ]
+    },
+    {
+      "name": "Iowa City",
+      "slug": "iowa-city",
+      "parkIds": [
+        "233671",
+        "272084",
+        "272091",
+        "272094"
+      ]
+    },
+    {
+      "name": "Knoxville",
+      "slug": "knoxville",
+      "parkIds": [
+        "247966",
+        "247967",
+        "247969"
+      ]
+    },
+    {
+      "name": "Pleasant Valley",
+      "slug": "pleasant-valley",
+      "parkIds": [
+        "251676"
+      ]
+    }
+  ]
+}

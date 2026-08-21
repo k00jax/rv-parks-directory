@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import ParkTable from '@/components/ParkTable';
 import SearchBar from '@/components/SearchBar';
-import { amenityHubs, cities, datasetMeta, parks } from '@/lib/parks';
+import { amenityHubs, cities, citiesInState, datasetMeta, parks, parksInState, stateAbbrs, stateName } from '@/lib/parks';
 
 // Leaflet map is client-only (window APIs). ssr:false keeps Leaflet out of
 // the static prerender; the loading fallback holds the 420px frame so the
@@ -14,8 +14,8 @@ const ParkMap = dynamic(() => import('@/components/ParkMap'), {
 });
 
 export const metadata: Metadata = {
-  title: 'RV Parks & Campgrounds Directory — All Texas Parks',
-  description: `Browse all ${parks.length} campgrounds and RV parks in Texas with prices, ratings, and amenities from Recreation.gov data.`,
+  title: 'RV Parks & Campgrounds Directory — All United States Parks',
+  description: `Browse all ${parks.length} campgrounds and RV parks across the United States with prices, ratings, and amenities from Recreation.gov data.`,
 };
 
 // Source city names are ALL-CAPS (e.g. "COLDSPRING"); display as Title Case.
@@ -35,12 +35,12 @@ const AMENITY_EMOJI: Record<string, string> = {
   'dump-station': '🗑️',
   playground: '🛝',
   'flush-toilets': '🚽',
-  '50-amp': '⚡',
-  '30-amp': '⚡',
+  '50-amp': '⚡⚡⚡',
+  '30-amp': '⚡⚡',
   '20-amp': '⚡',
   laundry: '🧺',
   'full-hookup': '🔌',
-  '50-amp-full-hookup': '⚡🔌',
+  '50-amp-full-hookup': '⚡⚡⚡🔌',
 };
 
 // Short tile label per hub slug (full title is long-form SEO copy).
@@ -71,13 +71,15 @@ export default function HomePage() {
   const searchParks = parks.map((p) => ({
     name: p.name,
     slug: p.slug,
+    state: p.state,
     city: p.city,
   }));
-  const searchCities = cities.map((c) => ({ name: c.name, slug: c.slug }));
+  const searchCities = cities.map((c) => ({ name: c.name, slug: c.slug, state: c.state }));
   // Minimal park shape for the interactive map (keeps the client payload slim).
   const mapParks = parks.map((p) => ({
     name: p.name,
     slug: p.slug,
+    state: p.state,
     lat: p.lat,
     lng: p.lng,
     rating: p.rating,
@@ -86,6 +88,28 @@ export default function HomePage() {
     nightlyPriceMax: p.nightlyPriceMax,
     amenities: p.amenities,
   }));
+  // Home table = TOP Texas campgrounds ONLY (50 max). Ranked by Google rating
+  // desc, reviews desc as tiebreak, then name. Parks without a rating sort
+  // last (honest — never fabricate). TX-scoped by design: this table is for
+  // Texas campgrounds, not the whole country.
+  const topTxParks = parks
+    .filter((p) => p.state === 'TX')
+    .sort((a, b) => {
+      const ra = a.rating ?? -1;
+      const rb = b.rating ?? -1;
+      if (ra !== rb) return rb - ra;
+      const va = a.reviewCount ?? 0;
+      const vb = b.reviewCount ?? 0;
+      if (va !== vb) return vb - va;
+      return (a.name || '').localeCompare(b.name || '');
+    })
+    .slice(0, 50);
+  // City browse = the cities with the most parks, biggest first (the count
+  // pill on each chip is the number of parks there). Capped so the home page
+  // stays scannable — searching or browsing by state covers the long tail.
+  const topCities = [...cities]
+    .sort((a, b) => b.parkIds.length - a.parkIds.length)
+    .slice(0, 20);
   return (
     <div>
       {/* Hero: animated banner video (autoplay muted loop) + search bar */}
@@ -106,12 +130,12 @@ export default function HomePage() {
         <SearchBar parks={searchParks} cities={searchCities} />
       </section>
 
-      <h1>RV Parks &amp; Campgrounds Directory — Texas</h1>
+      <h1>RV Parks &amp; Campgrounds Directory — United States</h1>
       <p className="muted home-intro">
-        {parks.length} verified campgrounds across Texas, from public Recreation.gov data —
+        {parks.length} verified campgrounds across the United States, from public Recreation.gov data —
         sortable, with ratings, weather, and live prices where published.
       </p>
-      <p className="muted" style={{ color: '#fff', fontStyle: 'italic' }}>
+      <p className="muted home-intro">
         Every campground listed on this site, driven by public Recreation.gov (RIDB) facility data.
         {parks.length} parks · {cities.length} cities · verified {lastVerified}.
       </p>
@@ -119,23 +143,52 @@ export default function HomePage() {
       <div className="light-trail" aria-hidden="true" />
 
       <section>
-        <h2>Explore by city</h2>
+        <h2>Explore by state</h2>
         <div className="chip-row">
-          {cities.map((c) => {
-            const count = c.parkIds.length;
+          {stateAbbrs.map((abbr) => {
+            const stParks = parksInState(abbr);
+            const count = stParks.length;
             return (
               <Link
-                key={c.slug}
+                key={abbr}
                 className="chip"
-                href={`/rv-parks/texas/${c.slug}/`}
-                aria-label={`${titleCase(c.name)} — ${count} park${count === 1 ? '' : 's'}`}
+                href={`/rv-parks/${abbr.toLowerCase()}/`}
+                aria-label={`${stateName(abbr)} — ${count} park${count === 1 ? '' : 's'}`}
               >
-                {titleCase(c.name)}
-                <span className={`chip-count${count >= 5 ? ' chip-count-hot' : ''}`}>{count}</span>
+                {stateName(abbr)}
+                <span className={`chip-count${count >= 20 ? ' chip-count-hot' : ''}`}>{count}</span>
               </Link>
             );
           })}
         </div>
+      </section>
+
+      <section>
+        <h2>Explore by city</h2>
+        <p className="muted home-intro">
+          The {topCities.length} cities with the most campgrounds, biggest first.
+        </p>
+        <div className="chip-row">
+          {topCities.map((c) => {
+            const count = c.parkIds.length;
+            const state = c.state ?? 'TX';
+            return (
+              <Link
+                key={c.slug}
+                className="chip"
+                href={`/rv-parks/${state.toLowerCase()}/${c.slug}/`}
+                aria-label={`${titleCase(c.name)}, ${state} — ${count} park${count === 1 ? '' : 's'}`}
+              >
+                {titleCase(c.name)}, {state}
+                <span className="chip-count">{count}</span>
+              </Link>
+            );
+          })}
+        </div>
+        <p className="small muted" style={{ marginTop: '0.6rem' }}>
+          Counting every city would overflow this page — search a specific city above, or browse
+          by <Link href="/rv-parks/tx/">state</Link>.
+        </p>
       </section>
 
       <section>
@@ -164,7 +217,7 @@ export default function HomePage() {
           <Link
             className={`amenity-tile ${AMENITY_TINTS[amenityHubs.length % AMENITY_TINTS.length]}`}
             href="/rv-parks/amenities/"
-            aria-label="All RV park amenities in Texas — full amenity filter index"
+            aria-label="All RV park amenities in the United States — full amenity filter index"
           >
             <span className="amenity-icon" aria-hidden="true">
               🧭
@@ -180,13 +233,13 @@ export default function HomePage() {
           progressive enhancement on top. */}
       <section>
         <h2>Explore the map</h2>
-        <p className="muted">
+        <p className="muted home-intro">
           All {parks.length} parks plotted — filter by amenities, reviews, or pricing, then
           click a pin for ratings and nightly rates.
         </p>
         <ParkMap parks={mapParks} />
         <noscript>
-          <p className="small muted" style={{ marginTop: '0.6rem' }}>
+          <p className="small muted home-intro" style={{ marginTop: '0.6rem' }}>
             Enable JavaScript to explore the interactive map — the full table below lists every
             park with the same data.
           </p>
@@ -194,8 +247,12 @@ export default function HomePage() {
       </section>
 
       <section>
-        <h2>All campgrounds in Texas ({parks.length})</h2>
-        <ParkTable parks={parks} />
+        <h2>Top campgrounds in Texas ({topTxParks.length})</h2>
+        <ParkTable parks={topTxParks} showRank />
+        <p className="small muted" style={{ marginTop: '0.6rem' }}>
+          Ranked by Google rating — the top {topTxParks.length} Texas campgrounds. Browse every
+          Texas campground in the <Link href="/rv-parks/tx/">Texas hub</Link>.
+        </p>
       </section>
 
       <p className="small muted" style={{ marginTop: '2rem' }}>

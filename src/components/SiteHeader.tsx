@@ -11,7 +11,7 @@ export default function SiteHeader() {
           American RV Parks
         </Link>
         <nav>
-          <Link href="/rv-parks/texas/">Texas RV Parks</Link>
+          <Link href="/">RV Parks</Link>
           <Link href="/rv-parks/amenities/">Amenities</Link>
           <Link href="/rv-parks/full-hookup/">Full Hookup</Link>
           <Link href="/rv-parks/50-amp/">50 Amp</Link>
