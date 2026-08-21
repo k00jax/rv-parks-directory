@@ -370,7 +370,7 @@ export default function HomePage() {
 
       {growingParks.length > 0 ? (
         <section>
-          <h2>Growing in popularity ({growingParks.length})</h2>
+          <h2>Growing in popularity</h2>
           <ParkTable parks={growingParks} showRank showGrowing />
           <p className="small muted" style={{ marginTop: '0.6rem' }}>
             High-rated (4.8★+) campgrounds still building their review base — hidden gems that are
@@ -380,12 +380,12 @@ export default function HomePage() {
       ) : null}
 
       <section>
-        <h2>Top campgrounds in Texas ({topTxParks.length})</h2>
+        <h2>Top campgrounds in Texas</h2>
         <ParkTable parks={topTxParks} showRank />
       </section>
 
       <section>
-        <h2>Most-featured campgrounds ({mostFeaturedParks.length})</h2>
+        <h2>Most-featured campgrounds</h2>
         <ParkTable parks={mostFeaturedParks} />
         <p className="small muted" style={{ marginTop: '0.6rem' }}>
           Ranked by amenities listed in the source data (site count as tiebreak) — a rating-free national

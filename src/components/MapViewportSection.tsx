@@ -48,11 +48,14 @@ export default function MapViewportSection({
   totalParks: number;
 }) {
   const [mapBounds, setMapBounds] = useState<MapBounds | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
   const visibleTop = useMemo(
     () => (mapBounds ? topParks.filter((p) => inBounds(p, mapBounds)) : topParks),
     [topParks, mapBounds]
   );
+  // Top 10 by default; 'Show more' reveals the rest of the ranked list.
+  const displayedTop = showAll ? visibleTop : visibleTop.slice(0, 10);
 
   return (
     <div className="map-viewport-wrap">
@@ -74,7 +77,7 @@ export default function MapViewportSection({
 
       {/* Top-50 table — viewport-filtered after hydration, full list in SSR */}
       <section>
-        <h2>Top campgrounds in America ({topParks.length})</h2>
+        <h2>Top campgrounds in America</h2>
         {mapBounds ? (
           <div className="map-bound-chip" role="status">
             <span className="map-bound-chip-label">
@@ -93,7 +96,18 @@ export default function MapViewportSection({
             Pan or zoom the map above to narrow this list to parks in view.
           </p>
         )}
-        <ParkTable parks={visibleTop} showRank />
+        <ParkTable parks={displayedTop} showRank />
+        {!showAll && visibleTop.length > 10 ? (
+          <p style={{ marginTop: '0.75rem' }}>
+            <button
+              type="button"
+              className="btn"
+              onClick={() => setShowAll(true)}
+            >
+              Show more ({visibleTop.length - 10} more)
+            </button>
+          </p>
+        ) : null}
         <p className="small muted" style={{ marginTop: '0.6rem' }}>
           Ranked by a trust score that weighs Google rating AND review volume — a 4.8★ park with 500
           reviews outranks a 5★ park with 6 reviews. Parks with fewer than 5 reviews are shown honestly
