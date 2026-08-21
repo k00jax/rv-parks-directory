@@ -5,13 +5,16 @@
 // The dataset covers 48 states (DE, DC, RI are absent from Recreation.gov
 // source data) — every abbr here exists and links to a live /rv-parks/{abbr}/.
 //
-// One consistent grouping (no state appears in two regions):
-//   Pacific   — West Coast + Alaska + Hawaii
-//   West      — Mountain/West interior (incl. AZ + NM)
-//   Southwest — TX + OK (AZ/NM live in West per the grouping above)
-//   Midwest   — Great Plains + Great Lakes interior
-//   Southeast — South Atlantic + Gulf + lower Mississippi
-//   Northeast — New England + Mid-Atlantic
+// Groupings follow the standard splits (Census Bureau divisions + BEA):
+//   Pacific   — Census Pacific division (AK CA HI OR WA)
+//   West      — Census Mountain division minus the Southwest states
+//               (CO ID MT UT WY)
+//   Southwest — BEA Southwest (AZ NM OK TX) + NV (Census files NV under
+//               Mountain, but culturally/commonly it reads Southwest —
+//               Kyle's call, 2026-08-21)
+//   Midwest   — Census East+West North Central (12 states)
+//   Southeast — Census South Atlantic + East South Central + AR/LA
+//   Northeast — Census New England + Mid-Atlantic (8 states with data)
 export interface RegionState {
   abbr: string;
   name: string;
@@ -36,12 +39,9 @@ export const REGIONS: Region[] = [
   {
     name: 'West',
     states: [
-      { abbr: 'AZ', name: 'Arizona' },
       { abbr: 'CO', name: 'Colorado' },
       { abbr: 'ID', name: 'Idaho' },
       { abbr: 'MT', name: 'Montana' },
-      { abbr: 'NM', name: 'New Mexico' },
-      { abbr: 'NV', name: 'Nevada' },
       { abbr: 'UT', name: 'Utah' },
       { abbr: 'WY', name: 'Wyoming' },
     ],
@@ -49,6 +49,9 @@ export const REGIONS: Region[] = [
   {
     name: 'Southwest',
     states: [
+      { abbr: 'AZ', name: 'Arizona' },
+      { abbr: 'NV', name: 'Nevada' },
+      { abbr: 'NM', name: 'New Mexico' },
       { abbr: 'OK', name: 'Oklahoma' },
       { abbr: 'TX', name: 'Texas' },
     ],
