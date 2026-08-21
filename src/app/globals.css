@@ -66,6 +66,34 @@ a:hover { text-decoration: underline; }
   padding: 1.25rem 1rem 3rem;
 }
 
+/* Park detail pages: white card surface so ALL text (incl. muted) is
+   dark-on-light and readable. The site body is the navy→cyan gradient —
+   content placed directly on it makes grey .muted text unreadable (Kyle's
+   standing rule: no grey text that can't be read). */
+.park-page {
+  background: var(--white);
+  border: 3px solid var(--asphalt);
+  border-radius: 16px;
+  box-shadow: 6px 6px 0 rgba(10, 25, 47, 0.45);
+  padding: 1.4rem 1.5rem 1.6rem;
+  margin: 1rem 0;
+}
+.park-page h1,
+.park-page h2,
+.park-page h3 {
+  color: var(--asphalt);
+  text-shadow: none;
+}
+.park-page .muted {
+  color: var(--muted);
+}
+.park-page .breadcrumbs {
+  color: var(--muted);
+}
+.park-page .breadcrumbs a {
+  color: var(--orange);
+}
+
 /* ---------- Typography ---------- */
 h1, h2, h3 {
   font-family: 'Fredoka', 'Paytone One', 'Trebuchet MS', sans-serif;
@@ -789,12 +817,13 @@ table.data.sortable thead th[aria-sort='descending'] {
 }
 .disclosure strong { color: var(--asphalt); }
 .affiliate-slot {
-  border: 3px solid var(--orange);
+  border: 3px solid var(--asphalt);
   border-radius: 16px;
   padding: 0.8rem 1rem;
   color: var(--asphalt);
   font-size: 0.85rem;
-  background: rgba(255, 77, 0, 0.08);
+  background: var(--white);
+  box-shadow: 4px 4px 0 rgba(10, 25, 47, 0.45);
   margin: 1rem 0;
   font-weight: 600;
 }

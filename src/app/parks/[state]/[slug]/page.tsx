@@ -106,7 +106,7 @@ export default function ParkPage({ params }: Props) {
   };
 
   return (
-    <div>
+    <div className="park-page">
       <Breadcrumbs
         crumbs={[
           { label: stateName(park.state), href: `/rv-parks/${park.state.toLowerCase()}/` },
@@ -244,6 +244,9 @@ export default function ParkPage({ params }: Props) {
 
       <WeatherCard park={park} />
 
+      {/* Affiliate slot (book + RV rentals) — above the owner claim form. */}
+      <AffiliateDisclosure slotId={`park-${park.facilityId}-reserve`} website={park.website} slotOnly />
+
       {/* Owner claim/update funnel (mailto to Director-controlled inbox). */}
       <ClaimForm park={park} />
 
@@ -299,7 +302,10 @@ export default function ParkPage({ params }: Props) {
       </section>
 
       {/* FTC disclosure at the bottom of the page, per Kyle (no white bg). */}
-      <AffiliateDisclosure slotId={`park-${park.facilityId}-reserve`} website={park.website} />
+      <div className="disclosure" data-testid="affiliate-disclosure">
+        <strong>Affiliate disclosure:</strong> we may earn a commission from links
+        (including booking and partner links) at no extra cost to you.
+      </div>
     </div>
   );
 }

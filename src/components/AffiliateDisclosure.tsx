@@ -11,9 +11,11 @@ import { AFFILIATES } from '@/lib/affiliates';
 export default function AffiliateDisclosure({
   website,
   slotId,
+  slotOnly = false,
 }: {
   website: string | null;
   slotId: string;
+  slotOnly?: boolean;
 }) {
   return (
     <>
@@ -59,10 +61,12 @@ export default function AffiliateDisclosure({
           →
         </p>
       </div>
-      <div className="disclosure" data-testid="affiliate-disclosure">
-        <strong>Affiliate disclosure:</strong> we may earn a commission from links
-        (including booking and partner links) at no extra cost to you.
-      </div>
+      {!slotOnly ? (
+        <div className="disclosure" data-testid="affiliate-disclosure">
+          <strong>Affiliate disclosure:</strong> we may earn a commission from links
+          (including booking and partner links) at no extra cost to you.
+        </div>
+      ) : null}
     </>
   );
 }
