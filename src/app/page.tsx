@@ -148,19 +148,6 @@ export default function HomePage() {
     )
     .sort((a, b) => (b.reviewCount ?? 0) - (a.reviewCount ?? 0))
     .slice(0, 10);
-  // Texas top-25 (secondary list once national is live).
-  const topTxParks = parks
-    .filter((p) => p.state === 'TX' && p.rating !== null)
-    .sort((a, b) => {
-      const ra = a.rating ?? -1;
-      const rb = b.rating ?? -1;
-      if (ra !== rb) return rb - ra;
-      const va = a.reviewCount ?? 0;
-      const vb = b.reviewCount ?? 0;
-      if (va !== vb) return vb - va;
-      return (a.name || '').localeCompare(b.name || '');
-    })
-    .slice(0, 25);
   // National "Most-featured" table: ranked by amenities listed in the source
   // (site count as tiebreak, then name) — no ratings needed, fully honest.
   const mostFeaturedParks = parks
@@ -378,11 +365,6 @@ export default function HomePage() {
           </p>
         </section>
       ) : null}
-
-      <section>
-        <h2>Top campgrounds in Texas</h2>
-        <ParkTable parks={topTxParks} showRank />
-      </section>
 
       <section>
         <h2>Most-featured campgrounds</h2>
