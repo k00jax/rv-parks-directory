@@ -84,6 +84,7 @@ export default function HomePage() {
     reviewCount: p.reviewCount,
     nightlyPriceMin: p.nightlyPriceMin,
     nightlyPriceMax: p.nightlyPriceMax,
+    amenities: p.amenities,
   }));
   return (
     <div>
@@ -180,7 +181,8 @@ export default function HomePage() {
       <section>
         <h2>Explore the map</h2>
         <p className="muted">
-          All {parks.length} parks plotted — click a pin for ratings and nightly rates.
+          All {parks.length} parks plotted — filter by amenities, reviews, or pricing, then
+          click a pin for ratings and nightly rates.
         </p>
         <ParkMap parks={mapParks} />
         <noscript>
