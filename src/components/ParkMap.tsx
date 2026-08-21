@@ -225,13 +225,10 @@ export default function ParkMap({ parks }: { parks: MapPark[] }) {
     });
 
     if (!didFitRef.current) {
-      if (group.getLayers().length > 0) {
-        // Fit to the plotted pins; maxZoom cap keeps a dense city cluster from
-        // zooming in on one neighborhood — the map opens on all of the US.
-        map.fitBounds(group.getBounds(), { padding: [30, 30], maxZoom: 10 });
-      } else {
-        map.setView(US_CENTER, 4);
-      }
+      // Default: show the whole continental US, centered. Fixed view + zoom 4
+      // puts the country in frame on first load (the national view Kyle wants),
+      // instead of fitBounds zooming into wherever the densest pins are.
+      map.setView(US_CENTER, 4);
       didFitRef.current = true;
     }
   }, [visibleParks, mapReady]);

@@ -101,6 +101,22 @@ function haversine(
 // the parks dataset (Recreation.gov facility amenity data) — no invented terms.
 // Single-amenity pages cover each vocabulary value; combined pages cover
 // meaningful combinations that actually exist in the dataset (>=3 parks).
+//
+// NOTE: the US dataset uses its own RIDB amenity vocabulary (e.g. 'water',
+// 'showers', 'restrooms', 'picnic tables', 'electric', 'sewer') which differs
+// from the TX-only vocabulary ('water hookup', 'flush toilets', ...). The
+// matchers below accept BOTH forms so hub counts never silently drop to 0.
+const hasAmenity = (p: Park, ...words: string[]): boolean => {
+  const ams = p.amenities ?? [];
+  return words.some((w) => ams.includes(w));
+};
+// Some facilities carry amenity signals only in their description text (the
+// US RIDB parse left 'boat ramp' out of the amenities array but the source
+// description says it). Check both so hub counts stay honest.
+const descHas = (p: Park, ...words: string[]): boolean => {
+  const blob = ` ${p.name} ${(p.source?.description ?? '').toLowerCase()} `;
+  return words.some((w) => blob.includes(w.toLowerCase()));
+};
 export const amenityHubs: AmenityHub[] = [
   // ---- single-amenity pages (every vocabulary term in the dataset) ----
   {
@@ -108,88 +124,90 @@ export const amenityHubs: AmenityHub[] = [
     title: 'RV Parks with Boat Ramp in the United States',
     description:
       'Campgrounds and RV parks in the United States with a boat ramp on site, from Recreation.gov facility amenity data. Great for anglers and boaters who want to launch within walking distance of their site.',
-    match: (p) => p.amenities.includes('boat ramp'),
+    match: (p) => hasAmenity(p, 'boat ramp', 'boat launch', 'boat landing') || descHas(p, 'boat ramp', 'boat launch', 'boat landing'),
   },
   {
     slug: 'showers',
     title: 'RV Parks with Showers in the United States',
     description:
       'RV parks and campgrounds in the United States with shower facilities, from Recreation.gov facility amenity data. A hot shower after a long day on the road makes all the difference.',
-    match: (p) => p.amenities.includes('showers'),
+    match: (p) => hasAmenity(p, 'showers', 'shower'),
   },
   {
     slug: 'water-hookup',
     title: 'RV Parks with Water Hookup in the United States',
     description:
       'RV parks in the United States with water hookups at campsites, from Recreation.gov facility amenity data. Skip the tank fills and camp with running water at your site.',
-    match: (p) => p.amenities.includes('water hookup'),
+    match: (p) => hasAmenity(p, 'water hookup', 'water'),
   },
   {
     slug: 'dump-station',
     title: 'RV Parks with Dump Station in the United States',
     description:
       'RV parks and campgrounds in the United States with an on-site dump station, from Recreation.gov facility amenity data. Empty your tanks before the drive home without hunting for a service stop.',
-    match: (p) => p.amenities.includes('dump station'),
+    match: (p) => hasAmenity(p, 'dump station', 'rv dump', 'sewage disposal'),
   },
   {
     slug: 'playground',
     title: 'RV Parks with Playground in the United States',
     description:
       'Family-friendly RV parks and campgrounds in the United States with a playground, from Recreation.gov facility amenity data. Keep the kids entertained while you set up camp.',
-    match: (p) => p.amenities.includes('playground'),
+    match: (p) => hasAmenity(p, 'playground'),
   },
   {
     slug: 'flush-toilets',
     title: 'RV Parks with Flush Toilets in the United States',
     description:
       'RV parks and campgrounds in the United States with flush toilets, from Recreation.gov facility amenity data. Real restrooms instead of vault toilets make campground life a lot more comfortable.',
-    match: (p) => p.amenities.includes('flush toilets'),
+    match: (p) => hasAmenity(p, 'flush toilets', 'restrooms', 'restroom'),
   },
   {
     slug: '50-amp',
     title: 'RV Parks with 50 Amp Service in the United States',
     description:
       'RV parks in the United States with 50-amp electrical service, from Recreation.gov facility amenity data. Run your air conditioner and high-draw appliances without tripping a breaker.',
-    match: (p) => p.amenities.includes('50 amp'),
+    match: (p) => hasAmenity(p, '50 amp'),
   },
   {
     slug: '30-amp',
     title: 'RV Parks with 30 Amp Service in the United States',
     description:
       'RV parks in the United States with 30-amp electrical service, from Recreation.gov facility amenity data. The standard hookup for most travel trailers and motorhomes.',
-    match: (p) => p.amenities.includes('30 amp'),
+    match: (p) => hasAmenity(p, '30 amp'),
   },
   {
     slug: '20-amp',
     title: 'RV Parks with 20 Amp Service in the United States',
     description:
       'RV parks in the United States with 20-amp electrical service, from Recreation.gov facility amenity data. Basic power for tent campers and small rigs.',
-    match: (p) => p.amenities.includes('20 amp'),
+    match: (p) => hasAmenity(p, '20 amp'),
   },
   {
     slug: 'laundry',
     title: 'RV Parks with Laundry in the United States',
     description:
       'RV parks and campgrounds in the United States with on-site laundry facilities, from Recreation.gov facility amenity data. Pack lighter and wash clothes on the road.',
-    match: (p) => p.amenities.includes('laundry'),
+    match: (p) => hasAmenity(p, 'laundry'),
   },
   // ---- combined amenity pages (only combos that exist in the dataset) ----
   {
     slug: 'full-hookup',
     title: 'RV Parks with Full Hookups in the United States',
     description:
-      'RV parks in the United States with full hookups — water hookup plus dump station at the campground, from Recreation.gov facility amenity data. The classic full-hookup setup for worry-free camping.',
-    match: (p) => p.amenities.includes('water hookup') && p.amenities.includes('dump station'),
+      'RV parks in the United States with full hookups — water plus sewer/electric at the campground, from Recreation.gov facility amenity data. The classic full-hookup setup for worry-free camping.',
+    match: (p) =>
+      hasAmenity(p, 'water hookup', 'water') &&
+      (hasAmenity(p, 'dump station', 'rv dump', 'sewage disposal') || hasAmenity(p, 'sewer')),
   },
   {
     slug: '50-amp-full-hookup',
     title: 'RV Parks with 50 Amp Full Hookups in the United States',
     description:
-      'RV parks in the United States with 50-amp service plus full hookups (water hookup and dump station), from Recreation.gov facility amenity data. The complete setup for big rigs: all the power, water, and tank service you need.',
+      'RV parks in the United States with 50-amp service plus full hookups (water, sewer, electric), from Recreation.gov facility amenity data. The complete setup for big rigs: all the power, water, and tank service you need.',
     match: (p) =>
-      p.amenities.includes('50 amp') &&
-      p.amenities.includes('water hookup') &&
-      p.amenities.includes('dump station'),
+      hasAmenity(p, '50 amp') &&
+      hasAmenity(p, 'water hookup', 'water') &&
+      (hasAmenity(p, 'dump station', 'rv dump', 'sewage disposal') || hasAmenity(p, 'sewer')),
   },
 ];
 

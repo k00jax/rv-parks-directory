@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import type { Park } from '@/lib/types';
 import ParkTable from '@/components/ParkTable';
 import SearchBar from '@/components/SearchBar';
 import { amenityHubs, cities, citiesInState, computeHomeStats, datasetMeta, parks, parksInState, stateAbbrs, stateName } from '@/lib/parks';
@@ -95,20 +96,45 @@ export default function HomePage() {
   // desc, reviews desc as tiebreak, then name. Parks without a rating sort
   // last (honest — never fabricate). TX-scoped by design: this table is for
   // Texas campgrounds, not the whole country.
-  // National top-50: ranked by Google rating desc, reviews desc as tiebreak,
-  // then name. Only parks with a rating qualify (honest — never fabricate).
+  // National top-50: composite "trust score" = rating tempered by review
+  // count. Pure average-star ranking puts obscure 5★ cabins (12 reviews) above
+  // proven parks (4.8★ × 1,000 reviews) — wrong for a directory. Use a weighted
+  // score: rating scaled by min(1, reviews/50) so a park needs BOTH a high
+  // rating AND a meaningful review base to rank. Parks with 50+ reviews rank
+  // on raw rating; below that the score decays honestly toward the mean.
+  const REVIEW_SCALE = 50; // reviews at/above this = full weight
+  const MIN_REVIEWS = 5; // below this, rating is too thin to trust
+  const trustScore = (p: Park): number => {
+    const r = p.rating ?? 0;
+    const n = p.reviewCount ?? 0;
+    if (n < MIN_REVIEWS) return 0;
+    const w = Math.min(1, n / REVIEW_SCALE);
+    return r * w + 3.5 * (1 - w); // blends toward a neutral 3.5 baseline
+  };
   const topNationalParks = parks
-    .filter((p) => p.rating !== null)
+    .filter((p) => p.rating !== null && (p.reviewCount ?? 0) >= MIN_REVIEWS)
     .sort((a, b) => {
-      const ra = a.rating ?? -1;
-      const rb = b.rating ?? -1;
-      if (ra !== rb) return rb - ra;
+      const sa = trustScore(a);
+      const sb = trustScore(b);
+      if (sa !== sb) return sb - sa;
       const va = a.reviewCount ?? 0;
       const vb = b.reviewCount ?? 0;
       if (va !== vb) return vb - va;
       return (a.name || '').localeCompare(b.name || '');
     })
     .slice(0, 50);
+  // 'Growing in popularity' = high rating but still building a review base
+  // (5★+ with <50 reviews). Shown as a flag badge, not ranked in the top-50.
+  const growingParks = parks
+    .filter(
+      (p) =>
+        p.rating !== null &&
+        p.rating >= 4.8 &&
+        (p.reviewCount ?? 0) >= MIN_REVIEWS &&
+        (p.reviewCount ?? 0) < REVIEW_SCALE
+    )
+    .sort((a, b) => (b.reviewCount ?? 0) - (a.reviewCount ?? 0))
+    .slice(0, 10);
   // Texas top-25 (secondary list once national is live).
   const topTxParks = parks
     .filter((p) => p.state === 'TX' && p.rating !== null)
@@ -343,10 +369,22 @@ export default function HomePage() {
         <h2>Top campgrounds in America ({topNationalParks.length})</h2>
         <ParkTable parks={topNationalParks} showRank />
         <p className="small muted" style={{ marginTop: '0.6rem' }}>
-          Ranked by Google rating — {stats.withRating} of {stats.totalParks.toLocaleString()} parks have
-          ratings today. Parks without a verified rating are shown honestly as “—” rather than guessed.
+          Ranked by a trust score that weighs Google rating AND review volume — a 4.8★ park with 500
+          reviews outranks a 5★ park with 6 reviews. Parks with fewer than 5 reviews are shown honestly
+          as “—” rather than guessed.
         </p>
       </section>
+
+      {growingParks.length > 0 ? (
+        <section>
+          <h2>Growing in popularity ({growingParks.length})</h2>
+          <ParkTable parks={growingParks} showRank showGrowing />
+          <p className="small muted" style={{ marginTop: '0.6rem' }}>
+            High-rated (4.8★+) campgrounds still building their review base — hidden gems that are
+            climbing, not yet proven at scale.
+          </p>
+        </section>
+      ) : null}
 
       <section>
         <h2>Top campgrounds in Texas ({topTxParks.length})</h2>

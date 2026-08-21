@@ -41,9 +41,11 @@ const ARROW: Record<SortDir, string> = { asc: '▲', desc: '▼' };
 export default function ParkTable({
   parks,
   showRank = false,
+  showGrowing = false,
 }: {
   parks: Park[];
   showRank?: boolean;
+  showGrowing?: boolean;
 }) {
   const [sortKey, setSortKey] = useState<SortKey>('name');
   const [sortDir, setSortDir] = useState<SortDir>('asc');
@@ -134,6 +136,7 @@ export default function ParkTable({
             ) : null}
             <td>
               <Link href={`/parks/${p.state.toLowerCase()}/${p.slug}/`}>{p.name}</Link>
+              {showGrowing ? <span className="growing-badge">🔥 Growing</span> : null}
             </td>
             <td>{p.city ?? '—'}</td>
             <td>{fmtPrice(p)}</td>
