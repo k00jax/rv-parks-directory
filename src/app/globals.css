@@ -171,7 +171,9 @@ header.site-header {
   position: relative;
   width: 100%;
   min-height: clamp(320px, 52vh, 560px);
-  overflow: hidden;
+  /* overflow visible so the search dropdown can paint OVER the hero video.
+     The video itself is clipped by its own overflow:hidden below. */
+  overflow: visible;
   border-bottom: 4px solid var(--asphalt);
   background: #0a192f;
 }
@@ -182,6 +184,7 @@ header.site-header {
   height: 100%;
   object-fit: cover;
   display: block;
+  overflow: hidden;
 }
 /* subtle dark gradient overlay at bottom for search visibility */
 .hero-overlay {
@@ -731,6 +734,94 @@ ul.plain a { font-weight: 700; }
 .arvp-popup-price {
   display: block;
   font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+/* ---------- Map filter bar (white card above the map) ---------- */
+.park-map-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.park-map-filters {
+  background: var(--white);
+  border: 3px solid var(--asphalt);
+  border-radius: 16px;
+  box-shadow: 4px 4px 0 rgba(10, 25, 47, 0.5);
+  padding: 0.9rem 1rem 0.75rem;
+}
+.park-map-filters-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+.park-map-filters-title {
+  font-family: 'Fredoka', 'Paytone One', 'Trebuchet MS', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--asphalt);
+}
+.park-map-clear {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--orange);
+  cursor: pointer;
+}
+.park-map-clear:hover { text-decoration: underline; }
+.park-map-filter-group { margin-bottom: 0.55rem; }
+.park-map-filter-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+.park-map-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.park-map-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.75rem;
+  border: 2px solid var(--asphalt);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--asphalt);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.3;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+.park-map-chip:hover { background: #fff1e8; }
+.park-map-chip:focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; }
+.park-map-chip.is-active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+  box-shadow: 2px 2px 0 rgba(10, 25, 47, 0.45);
+}
+.park-map-count {
+  margin: 0.6rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--asphalt);
+}
+.park-map-empty {
+  margin: 0.3rem 0 0;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--muted);
 }
