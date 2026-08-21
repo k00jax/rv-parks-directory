@@ -372,7 +372,7 @@ export default function HomePage() {
         <section>
           <h2>Growing in popularity</h2>
           <ParkTable parks={growingParks} showRank showGrowing />
-          <p className="small muted" style={{ marginTop: '0.6rem' }}>
+          <p className="small table-explain">
             High-rated (4.8★+) campgrounds still building their review base — hidden gems that are
             climbing, not yet proven at scale.
           </p>
@@ -387,7 +387,7 @@ export default function HomePage() {
       <section>
         <h2>Most-featured campgrounds</h2>
         <ParkTable parks={mostFeaturedParks} />
-        <p className="small muted" style={{ marginTop: '0.6rem' }}>
+        <p className="small table-explain">
           Ranked by amenities listed in the source data (site count as tiebreak) — a rating-free national
           list for campgrounds with the most on-site features.
         </p>

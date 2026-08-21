@@ -98,6 +98,28 @@ a:hover { text-decoration: underline; }
   color: var(--orange);
 }
 
+/* Generic white content card — for sections whose TITLE sits on the
+   gradient (default white-stroke h2) with the content in its own card
+   (e.g. the map block). Keeps cards separate instead of merging. */
+.section-card {
+  background: var(--white);
+  border: 3px solid var(--asphalt);
+  border-radius: 16px;
+  box-shadow: 6px 6px 0 rgba(10, 25, 47, 0.45);
+  padding: 1.1rem 1.2rem;
+  margin: 0.4rem 0 1.4rem;
+}
+.section-card .muted {
+  color: var(--muted);
+}
+/* Table explainer lines under tables: these sit on the gradient (the table
+   card is separate), so they need light-on-dark treatment to stay readable. */
+.table-explain {
+  color: var(--muted-on-dark);
+  font-weight: 600;
+  margin-top: 0.6rem;
+}
+
 /* ---------- Typography ---------- */
 h1, h2, h3 {
   font-family: 'Fredoka', 'Paytone One', 'Trebuchet MS', sans-serif;

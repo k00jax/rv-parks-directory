@@ -58,24 +58,26 @@ export default function MapViewportSection({
   const displayedTop = showAll ? visibleTop : visibleTop.slice(0, 10);
 
   return (
-    <div className="map-viewport-wrap park-page">
-      {/* Map section — sticky on desktop (>= 1100px) via .park-map-wrap */}
+    <div className="map-viewport-wrap">
+      {/* Map section — title on the gradient, content in its own white card */}
       <section aria-label="Explore the map">
         <h2>Explore the map</h2>
-        <p className="muted home-intro">
-          All {totalParks} parks plotted — filter by amenities, reviews, or pricing, then
-          click a pin for ratings and nightly rates.
-        </p>
-        <ParkMap parks={mapParks} onBoundsChange={setMapBounds} />
-        <noscript>
-          <p className="small muted home-intro" style={{ marginTop: '0.6rem' }}>
-            Enable JavaScript to explore the interactive map — the full table below lists every
-            park with the same data.
+        <div className="section-card">
+          <p className="muted">
+            All {totalParks} parks plotted — filter by amenities, reviews, or pricing, then
+            click a pin for ratings and nightly rates.
           </p>
-        </noscript>
+          <ParkMap parks={mapParks} onBoundsChange={setMapBounds} />
+          <noscript>
+            <p className="small muted" style={{ marginTop: '0.6rem' }}>
+              Enable JavaScript to explore the interactive map — the full table below lists every
+              park with the same data.
+            </p>
+          </noscript>
+        </div>
       </section>
 
-      {/* Top-50 table — viewport-filtered after hydration, full list in SSR */}
+      {/* Top-50 table — title outside; table card + light-on-dark hints */}
       <section>
         <h2>Top campgrounds in America</h2>
         {mapBounds ? (
@@ -92,7 +94,7 @@ export default function MapViewportSection({
             </button>
           </div>
         ) : (
-          <p className="small muted map-bound-hint">
+          <p className="small muted map-bound-hint table-explain">
             Pan or zoom the map above to narrow this list to parks in view.
           </p>
         )}
@@ -108,7 +110,7 @@ export default function MapViewportSection({
             </button>
           </p>
         ) : null}
-        <p className="small muted" style={{ marginTop: '0.6rem' }}>
+        <p className="small muted table-explain">
           Ranked by a trust score that weighs Google rating AND review volume — a 4.8★ park with 500
           reviews outranks a 5★ park with 6 reviews. Parks with fewer than 5 reviews are shown honestly
           as “—” rather than guessed.
