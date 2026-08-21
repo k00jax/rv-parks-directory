@@ -58,7 +58,7 @@ export default function MapViewportSection({
   const displayedTop = showAll ? visibleTop : visibleTop.slice(0, 10);
 
   return (
-    <div className="map-viewport-wrap">
+    <div className="map-viewport-wrap park-page">
       {/* Map section — sticky on desktop (>= 1100px) via .park-map-wrap */}
       <section aria-label="Explore the map">
         <h2>Explore the map</h2>

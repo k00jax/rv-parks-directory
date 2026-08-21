@@ -87,6 +87,10 @@ a:hover { text-decoration: underline; }
 .park-page .muted {
   color: var(--muted);
 }
+.park-page .home-intro {
+  color: var(--asphalt);
+  text-shadow: none;
+}
 .park-page .breadcrumbs {
   color: var(--muted);
 }
