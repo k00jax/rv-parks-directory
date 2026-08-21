@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import type { Park } from '@/lib/types';
 import MapViewportSection from '@/components/MapViewportSection';
+import { AFFILIATES } from '@/lib/affiliates';
 import ParkTable from '@/components/ParkTable';
 import SearchBar from '@/components/SearchBar';
 import { amenityHubs, cities, citiesInState, computeHomeStats, datasetMeta, parks, parksInState, stateAbbrs, stateName } from '@/lib/parks';
@@ -388,6 +390,20 @@ export default function HomePage() {
         <p className="small muted" style={{ marginTop: '0.6rem' }}>
           Ranked by amenities listed in the source data (site count as tiebreak) — a rating-free national
           list for campgrounds with the most on-site features.
+        </p>
+      </section>
+
+      <section className="affiliate-banner">
+        <p className="affiliate-banner-text">
+          Looking for a unique stay? Find cabins, glamping, and private campgrounds on{' '}
+          <a
+            href={AFFILIATES.hipcamp.url}
+            target="_blank"
+            rel="sponsored nofollow noopener"
+          >
+            Hipcamp
+          </a>{' '}
+          → (affiliate link — we may earn a commission at no extra cost to you)
         </p>
       </section>
 

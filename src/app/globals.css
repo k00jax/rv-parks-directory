@@ -1260,3 +1260,25 @@ ul.plain a { font-weight: 700; }
   animation: light-trail 3s linear infinite;
   border: 2px solid var(--navy);
 }
+
+/* Affiliate banner (homepage Hipcamp CTA) */
+.affiliate-banner {
+  margin: 1.5rem 0;
+  padding: 0.9rem 1.2rem;
+  border: 3px solid var(--asphalt);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 209, 102, 0.35), rgba(255, 77, 0, 0.12));
+  box-shadow: 4px 4px 0 rgba(10, 25, 47, 0.5);
+}
+.affiliate-banner-text {
+  margin: 0;
+  font-weight: 700;
+  color: var(--asphalt);
+}
+.affiliate-banner-text a {
+  color: var(--orange);
+  font-weight: 800;
+}
+.affiliate-banner-text a:hover {
+  text-decoration: underline;
+}

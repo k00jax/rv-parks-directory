@@ -1,10 +1,12 @@
+import { AFFILIATES } from '@/lib/affiliates';
+
 /**
  * Affiliate compliance per brief section 7 + skill:
  * - FTC disclosure rendered ABOVE the first affiliate link/slot on the page.
  * - Phase 2: the slot carries a REAL booking CTA to the park's official
  *   Recreation.gov reservation page (or an honest fallback to Recreation.gov
- *   when the dataset has no URL — never fabricate), plus a partner CTA to
- *   RVshare. Every monetized link uses rel="sponsored nofollow noopener".
+ *   when the dataset has no URL — never fabricate), plus partner CTAs to
+ *   RVshare + Outdoorsy. Every monetized link uses rel="sponsored nofollow noopener".
  */
 export default function AffiliateDisclosure({
   website,
@@ -44,11 +46,19 @@ export default function AffiliateDisclosure({
         <p className="affiliate-partner">
           Compare rental RVs near this park on{' '}
           <a
-            href="https://www.rvshare.com/"
+            href={AFFILIATES.rvshare.url}
             target="_blank"
             rel="sponsored nofollow noopener"
           >
-            RVshare
+            {AFFILIATES.rvshare.label}
+          </a>{' '}
+          or{' '}
+          <a
+            href={AFFILIATES.outdoorsy.url}
+            target="_blank"
+            rel="sponsored nofollow noopener"
+          >
+            {AFFILIATES.outdoorsy.label}
           </a>{' '}
           →
         </p>
