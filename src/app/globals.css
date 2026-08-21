@@ -256,10 +256,23 @@ header.site-header {
   padding: 0.16rem 0.4rem;
   border-radius: 8px;
 }
-.nav-region-state:hover {
-  background: var(--lightblue);
+/* Override the white nav-link color — state links sit on a WHITE panel, so
+   they must be dark to be visible (the generic .site-header nav a rule would
+   otherwise render them white-on-white until hover). */
+.site-header nav .nav-states-panel a.nav-region-state {
+  color: var(--asphalt);
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  transform: none;
+}
+.site-header nav .nav-states-panel a.nav-region-state:hover {
   color: var(--navy);
+  background: var(--sun);
+  border-color: var(--asphalt);
+  box-shadow: 2px 2px 0 var(--asphalt);
   text-decoration: none;
+  transform: translateY(-1px);
 }
 
 /* ---------- Hero (banner video + search) ---------- */
