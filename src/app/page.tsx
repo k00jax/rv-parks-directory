@@ -86,21 +86,21 @@ export default function HomePage() {
       </section>
 
       <h1>RV Parks &amp; Campgrounds Directory — Texas</h1>
+      <p className="muted home-intro">
+        {parks.length} verified campgrounds across Texas, from public Recreation.gov data —
+        sortable, with ratings, weather, and live prices where published.
+      </p>
       <p className="muted">
         Every campground listed on this site, driven by public Recreation.gov (RIDB) facility data.
         {parks.length} parks · {cities.length} cities · verified {lastVerified}.
       </p>
 
-      {/* Map view placeholder — no map API wired yet (Phase 1). */}
-      <div className="map-placeholder">
-        <svg viewBox="0 0 24 24" className="map-pin-big" aria-hidden="true">
-          <path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
-        </svg>
-        Interactive map view is coming soon — meanwhile, use the search bar above or browse
-        by city, amenity, or the full table below.
-      </div>
-
       <div className="light-trail" aria-hidden="true" />
+
+      <section>
+        <h2>All campgrounds in Texas ({parks.length})</h2>
+        <ParkTable parks={parks} />
+      </section>
 
       <section>
         <h2>Explore by city</h2>
@@ -159,13 +159,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section>
-        <h2>All campgrounds in Texas ({parks.length})</h2>
-        <ParkTable parks={parks} />
-      </section>
+      {/* Map view placeholder — no map API wired yet (Phase 1). */}
+      <div className="map-placeholder">
+        <svg viewBox="0 0 24 24" className="map-pin-big" aria-hidden="true">
+          <path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
+        </svg>
+        Interactive map view is coming soon — meanwhile, use the search bar above or browse
+        by city, amenity, or the full table above.
+      </div>
 
       <p className="small muted" style={{ marginTop: '2rem' }}>
-        Phase 0 pilot. Missing values (prices, ratings, hookups) are shown as “—” when the source
+        v2.0.0. Missing values (prices, ratings, hookups) are shown as “—” when the source
         data does not publish them — nothing on this site is estimated or invented. Data:{' '}
         {datasetMeta.source} · fetched {datasetMeta.fetchedAt}.
       </p>

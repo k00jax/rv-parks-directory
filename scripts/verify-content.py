@@ -3,9 +3,11 @@
 
 Checks (fail = exit 1):
   1. Every data/*.json number field is finite (no NaN sneaking in via JSON import).
-  2. Phase 0: zero real rel="sponsored nofollow" links (affiliate slots are reserved,
-     not live). When affiliates go live this becomes >= 1 with disclosure ordering.
-  3. On one park page: FTC disclosure text appears BEFORE the reserved affiliate slot.
+  2. Phase 2: at least one real rel="sponsored nofollow" affiliate link (booking CTAs
+     are live). Falls back to a hard fail if none exist.
+  3. On one park page: FTC disclosure div appears BEFORE the affiliate-slot div, no
+     sponsored link appears before the slot, and the dead "Reserved affiliate slot"
+     placeholder text is gone.
   4. No "we tested" / "we've tested" / "we reviewed" framing anywhere.
   5. JSON-LD blocks parse and the park page has Campground + FAQPage schemas.
   6. Updated badge (Updated YYYY-MM-DD) renders on a park page.
@@ -52,16 +54,16 @@ for f in sorted(glob.glob(f"{ROOT}/src/data/*.json")):
             fail(f"{f}: {key} out of range: {v}")
 checks.append("finite numbers / range in src/data/*.json")
 
-# 2. sponsored links (Phase 0 expect zero live affiliate links)
-print("[verify] 2. rel=sponsored nofollow link count (Phase 0: expect 0)")
+# 2. sponsored links (Phase 2: booking + partner CTAs are live)
+print("[verify] 2. rel=sponsored nofollow link count (Phase 2: expect >= 1)")
 sponsored = 0
 for f in glob.glob(f"{DOCS}/**/*.html", recursive=True):
     html = open(f, encoding="utf-8").read()
-    sponsored += len(re.findall(r'<a[^>]*rel="sponsored nofollow"', html))
+    sponsored += len(re.findall(r'<a[^>]*rel="sponsored nofollow', html))
 print(f"  sponsored-links: {sponsored}")
-if sponsored != 0:
-    fail(f"expected 0 live affiliate links in Phase 0, found {sponsored}")
-checks.append("zero live affiliate links")
+if sponsored < 1:
+    fail(f"expected at least 1 live affiliate link in Phase 2, found {sponsored}")
+checks.append("live affiliate links (>= 1)")
 
 # 3. disclosure before slot on one park page
 print("[verify] 3. disclosure-before-first-slot ordering (park page)")
@@ -70,16 +72,24 @@ if not park_pages:
     fail("no park pages found in docs/parks/tx/")
 else:
     sample = park_pages[0]
-    t = text_of(open(sample, encoding="utf-8").read())
-    disc = t.find("Affiliate disclosure")
-    slot = t.find("Reserved affiliate slot")
+    raw = open(sample, encoding="utf-8").read()
+    t = text_of(raw)
+    disc = raw.find('data-testid="affiliate-disclosure"')
+    slot = raw.find('data-testid="affiliate-slot"')
+    first_sponsored = raw.find('rel="sponsored nofollow')
     if disc == -1:
-        fail(f"{sample}: no affiliate disclosure text")
+        fail(f"{sample}: no affiliate disclosure marker")
     if slot == -1:
-        fail(f"{sample}: no reserved affiliate slot")
+        fail(f"{sample}: no affiliate slot marker")
     if disc != -1 and slot != -1 and disc > slot:
         fail(f"{sample}: disclosure appears AFTER the affiliate slot")
-    print(f"  {sample}: disclosure@{disc} slot@{slot}")
+    if first_sponsored != -1 and slot != -1 and first_sponsored < slot:
+        fail(f"{sample}: a sponsored link appears BEFORE the disclosure slot")
+    if "Reserved affiliate slot" in t:
+        fail(f"{sample}: dead 'Reserved affiliate slot' placeholder text still present")
+    print(
+        f"  {sample}: disclosure@{disc} slot@{slot} first_sponsored@{first_sponsored}"
+    )
 checks.append("FTC disclosure above first affiliate slot")
 
 # 4. no "we tested" framing

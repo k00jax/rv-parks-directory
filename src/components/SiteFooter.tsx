@@ -10,8 +10,8 @@ export default function SiteFooter() {
           the campground before booking.
         </p>
         <p className="muted">
-          Data source: Recreation.gov (RIDB) public facility data · Phase 0 pilot · Not affiliated
-          with Recreation.gov.
+          Data source: Recreation.gov (RIDB) public facility data · v2.0.0 · Updated 2026-08-20 ·
+          Not affiliated with Recreation.gov.
         </p>
       </div>
     </footer>

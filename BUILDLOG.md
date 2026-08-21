@@ -545,3 +545,65 @@ Files changed: `src/app/globals.css` (theme rewrite), `src/app/layout.tsx` (font
 `src/app/page.tsx` (hero video + map placeholder + light-trail), `src/components/
 SearchBar.tsx` (new client search), `src/components/SiteHeader.tsx` (brand + logo),
 `BUILDLOG.md` (this section).
+
+## 11. AFFILIATE PHASE 2 + DATA-FIRST HOMEPAGE + v2.0.0 (2026-08-20)
+
+### 11.1 Affiliate Phase 2 — real booking CTAs (the money task)
+- `src/components/AffiliateDisclosure.tsx` — dead "Reserved affiliate slot" text REMOVED; the
+  slot now renders (on every park page, `slotId=park-{facilityId}-reserve`):
+  - FTC disclosure copy updated: "we may earn a commission from links (including booking and
+    partner links) at no extra cost to you." (Phase 0 pilot line gone).
+  - Primary CTA: **Book this campground** → `park.website` (official Recreation.gov
+    reservation page), `target="_blank"` + `rel="sponsored nofollow noopener"`.
+  - Honest fallback for the 14 parks with no website: "Rates not published — check
+    Recreation.gov" → https://www.recreation.gov/ (never fabricates a URL).
+  - Phase 2 partner line (real working link): "Compare rental RVs near this park on RVshare →"
+    → https://www.rvshare.com/, `rel="sponsored nofollow noopener"`.
+- `src/app/parks/[state]/[slug]/page.tsx` line 251: passes `website={park.website}`.
+- `src/app/globals.css`: `.affiliate-slot` dashed → solid orange border (live slot);
+  added `.affiliate-fallback`, `.affiliate-partner`; `.btn` CTA reuses the theme's
+  sun→orange gradient pill.
+- `scripts/verify-content.py` moved to Phase 2 expectations: check 2 requires >= 1
+  sponsored link (was: exactly 0); check 3 verifies disclosure marker precedes slot marker,
+  no sponsored link appears before the slot, and "Reserved affiliate slot" text is gone.
+  Note: regex counts `rel="sponsored nofollow` prefix (HTML renders the full
+  `sponsored nofollow noopener` value).
+- Dataset check: 68/82 parks have official Recreation.gov reservation URLs (all 68 verified
+  recreation.gov); 14 have none (fallback path).
+
+### 11.2 Build B — data-first homepage (`src/app/page.tsx`)
+- Before: Hero → h1 → stats → map placeholder → city chips → amenity tiles → table → note.
+- After: Hero → h1 → intro line → stats → light-trail → **All campgrounds table** → city
+  chips → amenity tiles → map placeholder → note.
+- New intro line (dynamic count): "82 verified campgrounds across Texas, from public
+  Recreation.gov data — sortable, with ratings, weather, and live prices where published."
+  Existing stats line kept.
+- Table section moved up to sit right after the intro; `table.data` already carries the
+  redesign treatment from section 10 (white card, 3px #2B2D42 border, 16px radius, 6px
+  offset shadow) — no re-theme needed.
+- Map placeholder moved below amenity tiles; copy "full table below" → "full table above".
+- All sections, links, SEO text preserved — reorder + intro only.
+
+### 11.3 Versioning
+- `src/components/SiteFooter.tsx`: "Phase 0 pilot" → "v2.0.0 · Updated 2026-08-20".
+- `src/app/page.tsx` footer note: "Phase 0 pilot." → "v2.0.0." (honesty line about missing
+  values kept).
+- `package.json`: version 0.1.0 → 2.0.0; description updated (drops "Phase 0 pilot").
+
+### 11.4 Gates (2026-08-20, all real outputs)
+| Gate | Command | Result |
+|---|---|---|
+| 1. Validator | `node scripts/validate-data.mjs` | exit 0 — parks 82, cities 38, OK |
+| 2. Typecheck | `npx tsc --noEmit` | exit 0 |
+| 3. Clean rebuild | `rm -rf docs .next && npm run build` | exit 0 — 148 static pages (82 park + 40 city + 25 amenity + 1 home) |
+| 4. Real rec.gov href on park page | grep docs/parks/tx/double-lake-recreation-area/index.html | `href="https://www.recreation.gov/camping/campgrounds/232430" target="_blank" rel="sponsored nofollow noopener"` — 1x "Book this campground" |
+| 5. Reserved slot text | `grep -rl 'Reserved affiliate slot' docs` | 0 files |
+| 6. Table before chips | python index('All campgrounds') < index('Explore by city') in docs/index.html | 3389 < 15501 — OK |
+| 7. Footer version | grep 'v2.0.0' docs/index.html | 1 — "Data source: Recreation.gov (RIDB) public facility data · v2.0.0 · Updated 2026-08-20 · Not affiliated with Recreation.gov." |
+| 8. Hero video + search | grep '<video' / 'type="search"' docs/index.html | 1 / 1 |
+| 9. Content verify | `python3 scripts/verify-content.py .` | PASS — 10/10 checks, sponsored-links: 164 (82 RVshare + 68 CTA + 14 fallback) |
+| 10. Deploy | git push origin main (git@github-rvparks:) | GitHub Actions — live URL verified after push |
+
+Files changed: `src/components/AffiliateDisclosure.tsx`, `src/app/parks/[state]/[slug]/page.tsx`,
+`src/app/page.tsx`, `src/components/SiteFooter.tsx`, `src/app/globals.css`,
+`package.json`, `scripts/verify-content.py`, `BUILDLOG.md` (this section).

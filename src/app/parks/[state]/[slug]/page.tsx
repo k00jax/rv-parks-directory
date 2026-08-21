@@ -248,7 +248,7 @@ export default function ParkPage({ params }: Props) {
       <ClaimForm park={park} />
 
       {/* FTC disclosure sits ABOVE the first affiliate slot on this page. */}
-      <AffiliateDisclosure slotId={`park-${park.facilityId}-reserve`} />
+      <AffiliateDisclosure slotId={`park-${park.facilityId}-reserve`} website={park.website} />
 
       <section>
         <h2>Nearby campgrounds</h2>

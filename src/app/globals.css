@@ -100,6 +100,14 @@ table.data h1, table.data h2 {
 .muted { color: var(--muted); }
 .small { font-size: 0.85rem; }
 
+/* Data-first homepage intro (under h1, above the table) */
+.home-intro {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.02rem;
+  text-shadow: 1px 1px 0 var(--navy);
+}
+
 /* ---------- Site header (vector navbar) ---------- */
 header.site-header {
   background: linear-gradient(90deg, #0a192f 0%, #06406b 60%, #0077a3 100%);
@@ -535,7 +543,7 @@ table.data.sortable thead th[aria-sort='descending'] {
 }
 .disclosure strong { color: var(--asphalt); }
 .affiliate-slot {
-  border: 3px dashed var(--orange);
+  border: 3px solid var(--orange);
   border-radius: 16px;
   padding: 0.8rem 1rem;
   color: var(--asphalt);
@@ -544,6 +552,16 @@ table.data.sortable thead th[aria-sort='descending'] {
   margin: 1rem 0;
   font-weight: 600;
 }
+.affiliate-slot .btn { margin-bottom: 0.4rem; }
+.affiliate-fallback { margin: 0 0 0.4rem; color: var(--muted); font-weight: 600; }
+.affiliate-fallback a { font-weight: 800; }
+.affiliate-partner {
+  margin: 0.1rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--asphalt);
+}
+.affiliate-partner a { font-weight: 800; }
 .breadcrumbs {
   font-size: 0.85rem;
   color: var(--muted-on-dark);
