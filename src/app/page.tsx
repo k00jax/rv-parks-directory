@@ -252,7 +252,7 @@ export default function HomePage() {
             </div>
           )}
         </div>
-        <p className="small muted stat-footnote">
+        <p className="small table-explain">
           Coverage from the live dataset: {stats.withAmenities.toLocaleString()} parks list amenities ·{' '}
           {stats.withPrice} publish nightly prices · {stats.withRating} of {stats.totalParks.toLocaleString()}{' '}
           parks have Google ratings — national rating enrichment is pending.
