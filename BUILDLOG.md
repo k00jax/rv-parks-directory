@@ -895,11 +895,16 @@ pages) is unchanged.
 | 10. SSR integrity | python docs/index.html check | 'Top campgrounds in America (50)' present (after stripping `<!-- -->` separators); 90 unique park deep-links across the 4 tables; `park-map-loading` fallback present, zero leaflet markup in SSR |
 
 ### 16.9 Deploy
-- Commit pushed to origin main via `git@github-rvparks:k00jax/rv-parks-directory.git`
-  (auto-deploy on push to main).
-- Live checks (real curl, after push):
-  - `https://americanrvparks.com/` → HTTP 200 + mega-menu markup + full top-50 table
-  - `https://americanrvparks.com/rv-parks/co/` → HTTP 200
+- Commit `5aec726` pushed to origin main via `git@github-rvparks:k00jax/rv-parks-directory.git`
+  (auto-deploy on push to main; `scripts/fetch-google-ratings.py` worktree edit
+  intentionally left uncommitted — unrelated enrichment-session change).
+- Live checks (real curl, after push, new build confirmed live):
+  - `https://americanrvparks.com/` → HTTP 200 (1.72 MB); `nav-states-panel`
+    present; all 6 region names in SSR mega-menu markup; 48 unique state links;
+    'Pan or zoom the map above' (viewport-binding hint) present; placeholder
+    'Search a park, city, or state…' live.
+  - `https://americanrvparks.com/rv-parks/co/` → HTTP 200; title
+    'RV Parks & Campgrounds in Colorado' present.
 
 Files changed: `src/lib/regions.ts` (new), `src/components/MapViewportSection.tsx`
 (new), `src/components/SiteHeader.tsx`, `src/components/SearchBar.tsx`,
