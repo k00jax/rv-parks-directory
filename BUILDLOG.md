@@ -764,9 +764,14 @@ section), `src/app/globals.css` (placeholder → map/marker/popup styles), `pack
 ### 15.5 Deploy
 - Commits `87858a6` (feature) + `229c43f` (rating-note fix after the TX-enrichment
   rebase) pushed to origin main via `git@github-rvparks:k00jax/rv-parks-directory.git`.
-- Live checks (real curl, after push):
-  - `https://americanrvparks.com/` → `<<LIVE_HOME>>`
-  - `https://americanrvparks.com/rv-parks/ca/` → `<<LIVE_CA>>`
+- Live checks (real curl, after push; new build confirmed live):
+  - `https://americanrvparks.com/` → HTTP 200; 'Plan your next trip' + stat numbers
+    3,736 / 48 / 931 / 664 / 37 / 2,614 present; 'Explore by state' + 'California —
+    664 parks' chip + banner.mp4 + search-form intact; 'national ratings coming soon'
+    + 'Most-featured campgrounds' present; park-map-loading SSR frame present.
+  - `https://americanrvparks.com/rv-parks/ca/` → HTTP 200.
+  - Cluster plugin chunk `840.f5adefca9b0d6f6a.js` served → HTTP 200, contains
+    markerClusterGroup (clustering live).
 
 Files changed: `src/lib/parks.ts` (computeHomeStats), `src/app/page.tsx` (stats band +
 table headings + most-featured), `src/components/ParkMap.tsx` (marker clustering),
