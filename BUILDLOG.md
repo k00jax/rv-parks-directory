@@ -683,3 +683,88 @@ Interactive map = Leaflet + OpenStreetMap (no API key, static-export friendly).
 Files changed: `src/components/ParkMap.tsx` (new), `src/app/page.tsx` (reorder + map
 section), `src/app/globals.css` (placeholder → map/marker/popup styles), `package.json`
 (+ leaflet, + @types/leaflet), `package-lock.json`, `BUILDLOG.md` (this section).
+## 15. NATIONAL HOMEPAGE POLISH 2026-08-21 — stats band + map clustering + honest top table (PUSHED)
+
+### 15.1 Task 1 — "Plan your next trip" stats band (src/lib/parks.ts, src/app/page.tsx, globals.css)
+- New `computeHomeStats()` in `src/lib/parks.ts`. Every number is computed from the
+  committed datasets (parks.us.json: 3,736 parks; cities.us.json: 931 hubs) at build
+  time — nothing hardcoded, nothing estimated.
+- Band renders between the intro paragraphs and the light-trail divider, directly
+  before "Explore by state". Heading "Plan your next trip" + one-line italic white
+  subtitle (`.home-subtitle`, same white+navy-stroke pattern as `.home-intro`).
+- 6 white stat cards (3px #2B2D42 border, 16px radius, 4px offset shadow — the
+  `.card`/`.amenity-tile` language): big Fredoka number + muted label + sub-line.
+  - **3,736** campgrounds & RV parks nationwide (`parks.us.json` length)
+  - **48** states covered — sub "DE, DC, RI absent from source data" (per-park state
+    set vs. 50 states + DC list)
+  - **931** cities with campgrounds (`cities.us.json` length)
+  - **664** parks in California — most of any state (sub "Oregon 325 · Idaho 281")
+  - **37** campgrounds in one city — Moab, UT (largest hub by parkIds; sub "Prineville,
+    OR 35 · Juneau, AK 24" — the 24-count tie is broken by name, deterministic)
+  - **2,614** parks list "water" — the #1 amenity (amenity-vocabulary counts)
+- Honest coverage footnote under the grid: 2,960 parks list amenities · 200 publish
+  nightly prices · 0 have Google ratings yet (national rating enrichment pending).
+- Anti-fabrication note: the brief's suggested top-state numbers (CA 391 / OR 241 /
+  AK 217) did NOT match the dataset. Real computed counts: CA 664 / OR 325 / ID 281.
+  The band shows the real numbers.
+
+### 15.2 Task 2 — map clustering (src/components/ParkMap.tsx, globals.css)
+- 3,707 of 3,736 parks have usable coords; at US zoom 3.7k pins overlap into a blob →
+  clustering added (it materially helps; the national map needs it).
+- `npm i leaflet.markercluster@1.5.3` + `npm i -D @types/leaflet.markercluster`.
+- Dynamic `await import('leaflet.markercluster')` inside the client component's init
+  effect — the plugin ships in its own chunk (840.f5adefca9b0d6f6a.js), never the
+  initial bundle. The package has no ESM exports; its factory attaches
+  `L.markerClusterGroup` to the shared leaflet `L` (leaflet sets `window.L`), so the
+  import is a pure side effect.
+- New `src/types/leaflet-markercluster.d.ts` ambient module declaration (the package
+  ships no types for itself; `@types/leaflet.markercluster` augments "leaflet").
+- Options: `maxClusterRadius 55`, `spiderfyOnMaxZoom`, `showCoverageOnHover: false`,
+  `chunkedLoading: true`; custom `iconCreateFunction` → `.arvp-cluster` (teal
+  navy→cyan gradient circle, 3px white border, Fredoka count; 44/54/64px by count).
+  Plugin CSS intentionally not imported — styles live in globals.css, zero image
+  assets (static-export safe). `L.featureGroup()` kept as fallback if the plugin
+  ever failed to attach.
+- Filter panel unchanged: filters still operate on the underlying parks — the cluster
+  group is rebuilt from `visibleParks` on filter change; the "Showing X of Y" count
+  is untouched. `fitBounds` still runs once over the cluster group (maxZoom 10).
+- `mapReady` state gates the marker effect until the async init (plugin load + map +
+  group creation) completes; `disposed` flag guards StrictMode double-mount.
+
+### 15.3 Task 3 — top-table heading honesty (src/app/page.tsx)
+- Verified the dataset has ZERO Google ratings (rating non-null = 0 of 3,736; TX
+  slice 0 of 73). The old "Top campgrounds in Texas (N)" + "Ranked by Google rating"
+  overclaimed a ranking that cannot exist yet.
+- Heading is now "Top campgrounds in Texas (50) — national ratings coming soon", and
+  the sub-line states plainly: 0 of 3,736 parks rated, table is alphabetical for
+  now, re-ranks when national enrichment lands. (Rows genuinely are alphabetical:
+  rating desc → reviewCount desc → name asc, all ties.)
+- Added the optional honest national table: "Most-featured campgrounds (10)" —
+  ranked by amenities listed (siteCount tiebreak, then name), no ratings involved.
+  Top rows: ORTONA SOUTH (FL, 12 amenities), CEDRON CREEK (TX, 10), STUART
+  RECREATION AREA (WV, 10).
+
+### 15.4 Gates (2026-08-21, all real outputs)
+| Gate | Command | Result |
+|---|---|---|
+| 1. Validator | `node scripts/validate-data.mjs` | exit 0 — parks 3,736, cities 931, OK |
+| 2. Typecheck | `npx tsc --noEmit` | exit 0 |
+| 3. Clean rebuild | `rm -rf docs .next && npm run build` | exit 0 — 5,304 static pages (3,736 park pages + 1,562 /rv-parks routes + home); sitemaps wrote (parks 3736, cities 980, amenities 589) |
+| 4. Stats band | grep docs/index.html | 'Plan your next trip' present; dataset stat numbers 3,736 / 48 / 931 / 664 / 37 / 2,614 present (≥4 required) |
+| 5. Browse sections | grep docs/index.html | 'Explore by state' present; 'California — 664 parks' chip present |
+| 6. Video + search | grep docs/index.html | banner.mp4 + search-form present; park-map-loading SSR frame present |
+| 7. Cluster plugin | grep docs/_next/static/chunks + css | markerClusterGroup in chunk `840.f5adefca9b0d6f6a.js` (plugin) + `app/page-14e5db9194029d0a.js` (component); .arvp-cluster in CSS `a68c13d2ab9f5a6a.css` |
+| 8. Table honesty | grep docs/index.html | 'national ratings coming soon' present; 'Most-featured campgrounds (10)' present |
+
+### 15.5 Deploy
+- Commit `<<COMMIT>>` pushed to origin main via
+  `git@github-rvparks:k00jax/rv-parks-directory.git`.
+- Live checks (real curl, after push):
+  - `https://americanrvparks.com/` → `<<LIVE_HOME>>`
+  - `https://americanrvparks.com/rv-parks/ca/` → `<<LIVE_CA>>`
+
+Files changed: `src/lib/parks.ts` (computeHomeStats), `src/app/page.tsx` (stats band +
+table headings + most-featured), `src/components/ParkMap.tsx` (marker clustering),
+`src/app/globals.css` (stats band + cluster styles), `src/types/leaflet-markercluster.d.ts`
+(new), `package.json` (+leaflet.markercluster, +@types/leaflet.markercluster),
+`package-lock.json`, `BUILDLOG.md` (this section).

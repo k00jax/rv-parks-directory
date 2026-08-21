@@ -261,3 +261,81 @@ export function fmtPhone(park: Park): string {
   if (!park.phone) return '—';
   return park.phone;
 }
+
+// ---- homepage stats band ("Plan your next trip") ----
+// Every number below is computed from the committed datasets at build time
+// (parks.us.json + cities.us.json). Nothing is hardcoded or estimated —
+// the band renders exactly what the data says, including honest coverage
+// gaps (e.g. withRating = 0 while Google enrichment is pending).
+export interface HomeStats {
+  totalParks: number;
+  statesWithParks: number;
+  /** US states/districts with no parks in the source (honest gap note). */
+  statesMissing: string[];
+  totalCities: number;
+  topStates: { abbr: string; count: number }[];
+  largestCity: { name: string; state: string; count: number } | null;
+  topCities: { name: string; state: string; count: number }[];
+  withAmenities: number;
+  withPrice: number;
+  /** Parks with a Google rating AND at least one review (0 until enrichment lands). */
+  withRating: number;
+  mostCommonAmenity: { amenity: string; count: number } | null;
+}
+
+// All 50 states + DC (the 51 entries the US dataset is expected to cover).
+const US_STATES_51: string[] = [
+  'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', 'GA',
+  'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA',
+  'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY',
+  'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX',
+  'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY',
+];
+
+export function computeHomeStats(): HomeStats {
+  const byState = new Map<string, number>();
+  const amenityCounts = new Map<string, number>();
+  let withAmenities = 0;
+  let withPrice = 0;
+  let withRating = 0;
+
+  for (const p of parks) {
+    byState.set(p.state, (byState.get(p.state) ?? 0) + 1);
+    const amens = p.amenities ?? [];
+    if (amens.length > 0) withAmenities += 1;
+    if (p.nightlyPriceMin !== null || p.nightlyPriceMax !== null) withPrice += 1;
+    if (p.rating !== null && (p.reviewCount ?? 0) > 0) withRating += 1;
+    for (const a of amens) amenityCounts.set(a, (amenityCounts.get(a) ?? 0) + 1);
+  }
+
+  const topStates = [...byState.entries()]
+    .map(([abbr, count]) => ({ abbr, count }))
+    .sort((a, b) => b.count - a.count || a.abbr.localeCompare(b.abbr))
+    .slice(0, 3);
+
+  const topCities = [...cities]
+    .map((c) => ({ name: c.name, state: c.state ?? '', count: c.parkIds.length }))
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name))
+    .slice(0, 3);
+
+  let mostCommonAmenity: HomeStats['mostCommonAmenity'] = null;
+  for (const [amenity, count] of amenityCounts) {
+    if (!mostCommonAmenity || count > mostCommonAmenity.count) {
+      mostCommonAmenity = { amenity, count };
+    }
+  }
+
+  return {
+    totalParks: parks.length,
+    statesWithParks: byState.size,
+    statesMissing: US_STATES_51.filter((s) => !byState.has(s)),
+    totalCities: cities.length,
+    topStates,
+    largestCity: topCities[0] ?? null,
+    topCities,
+    withAmenities,
+    withPrice,
+    withRating,
+    mostCommonAmenity,
+  };
+}

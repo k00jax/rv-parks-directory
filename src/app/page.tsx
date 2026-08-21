@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import ParkTable from '@/components/ParkTable';
 import SearchBar from '@/components/SearchBar';
-import { amenityHubs, cities, citiesInState, datasetMeta, parks, parksInState, stateAbbrs, stateName } from '@/lib/parks';
+import { amenityHubs, cities, citiesInState, computeHomeStats, datasetMeta, parks, parksInState, stateAbbrs, stateName } from '@/lib/parks';
 
 // Leaflet map is client-only (window APIs). ssr:false keeps Leaflet out of
 // the static prerender; the loading fallback holds the 420px frame so the
@@ -68,6 +68,9 @@ function amenityLabel(slug: string): string {
 
 export default function HomePage() {
   const lastVerified = datasetMeta.lastVerified;
+  // Every stat in the "Plan your next trip" band is computed from the live
+  // datasets at build time — never hardcoded, never estimated.
+  const stats = computeHomeStats();
   const searchParks = parks.map((p) => ({
     name: p.name,
     slug: p.slug,
@@ -104,6 +107,19 @@ export default function HomePage() {
       return (a.name || '').localeCompare(b.name || '');
     })
     .slice(0, 50);
+  // National "Most-featured" table: ranked by amenities listed in the source
+  // (site count as tiebreak, then name) — no ratings needed, fully honest.
+  const mostFeaturedParks = parks
+    .filter((p) => (p.amenities ?? []).length > 0)
+    .sort((a, b) => {
+      const da = (a.amenities ?? []).length - (b.amenities ?? []).length;
+      if (da !== 0) return -da;
+      const sa = a.siteCount ?? -1;
+      const sb = b.siteCount ?? -1;
+      if (sa !== sb) return sb - sa;
+      return (a.name || '').localeCompare(b.name || '');
+    })
+    .slice(0, 10);
   // City browse = the cities with the most parks, biggest first (the count
   // pill on each chip is the number of parks there). Capped so the home page
   // stays scannable — searching or browsing by state covers the long tail.
@@ -139,6 +155,68 @@ export default function HomePage() {
         Every campground listed on this site, driven by public Recreation.gov (RIDB) facility data.
         {parks.length} parks · {cities.length} cities · verified {lastVerified}.
       </p>
+
+      {/* Stats band — every number computed from the live dataset at build
+          time (computeHomeStats in src/lib/parks.ts). Nothing estimated. */}
+      <section aria-label="Plan your next trip — US camping stats">
+        <h2>Plan your next trip</h2>
+        <p className="home-subtitle">
+          Fun facts from {stats.totalParks.toLocaleString()} real campground listings — no estimates, ever.
+        </p>
+        <div className="stats-grid">
+          <div className="stat-card">
+            <div className="stat-value">{stats.totalParks.toLocaleString()}</div>
+            <div className="stat-label">Campgrounds &amp; RV parks nationwide</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">{stats.statesWithParks}</div>
+            <div className="stat-label">States covered</div>
+            <div className="stat-sub">
+              {stats.statesMissing.join(', ')} absent from source data
+            </div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">{stats.totalCities.toLocaleString()}</div>
+            <div className="stat-label">Cities with campgrounds</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-value">{stats.topStates[0].count.toLocaleString()}</div>
+            <div className="stat-label">
+              Parks in {stateName(stats.topStates[0].abbr)} — most of any state
+            </div>
+            <div className="stat-sub">
+              {stateName(stats.topStates[1].abbr)} {stats.topStates[1].count} ·{' '}
+              {stateName(stats.topStates[2].abbr)} {stats.topStates[2].count}
+            </div>
+          </div>
+          {stats.largestCity && (
+            <div className="stat-card">
+              <div className="stat-value">{stats.largestCity.count}</div>
+              <div className="stat-label">
+                Campgrounds in one city — {titleCase(stats.largestCity.name)}, {stats.largestCity.state}
+              </div>
+              <div className="stat-sub">
+                {titleCase(stats.topCities[1].name)}, {stats.topCities[1].state}{' '}
+                {stats.topCities[1].count} · {titleCase(stats.topCities[2].name)},{' '}
+                {stats.topCities[2].state} {stats.topCities[2].count}
+              </div>
+            </div>
+          )}
+          {stats.mostCommonAmenity && (
+            <div className="stat-card">
+              <div className="stat-value">{stats.mostCommonAmenity.count.toLocaleString()}</div>
+              <div className="stat-label">
+                Parks list “{stats.mostCommonAmenity.amenity}” — the #1 amenity
+              </div>
+            </div>
+          )}
+        </div>
+        <p className="small muted stat-footnote">
+          Coverage from the live dataset: {stats.withAmenities.toLocaleString()} parks list amenities ·{' '}
+          {stats.withPrice} publish nightly prices · {stats.withRating} parks have Google ratings yet —
+          national rating enrichment is pending.
+        </p>
+      </section>
 
       <div className="light-trail" aria-hidden="true" />
 
@@ -247,11 +325,22 @@ export default function HomePage() {
       </section>
 
       <section>
-        <h2>Top campgrounds in Texas ({topTxParks.length})</h2>
+        <h2>Top campgrounds in Texas ({topTxParks.length}) — national ratings coming soon</h2>
         <ParkTable parks={topTxParks} showRank />
         <p className="small muted" style={{ marginTop: '0.6rem' }}>
-          Ranked by Google rating — the top {topTxParks.length} Texas campgrounds. Browse every
-          Texas campground in the <Link href="/rv-parks/tx/">Texas hub</Link>.
+          The US dataset has no Google ratings yet ({stats.withRating} of {stats.totalParks} parks rated),
+          so this Texas example table is listed alphabetically for now — it re-ranks by rating once
+          national enrichment lands. Browse every Texas campground in the{' '}
+          <Link href="/rv-parks/tx/">Texas hub</Link>.
+        </p>
+      </section>
+
+      <section>
+        <h2>Most-featured campgrounds ({mostFeaturedParks.length})</h2>
+        <ParkTable parks={mostFeaturedParks} />
+        <p className="small muted" style={{ marginTop: '0.6rem' }}>
+          Ranked by amenities listed in the source data (site count as tiebreak) — a rating-free national
+          list. A true rating-based top-N lands when Google rating enrichment ships.
         </p>
       </section>
 

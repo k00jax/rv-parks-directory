@@ -5,7 +5,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 // Minimal park shape the map needs. The server page maps full Park records
-// down to these fields so the RSC payload stays small (82 parks × 9 fields).
+// down to these fields so the RSC payload stays small (3,736 parks × 9 fields).
 export interface MapPark {
   name: string;
   slug: string;
@@ -107,6 +107,9 @@ export default function ParkMap({ parks }: { parks: MapPark[] }) {
   const [amenityFilters, setAmenityFilters] = useState<string[]>([]);
   const [withReviews, setWithReviews] = useState(false);
   const [withPricing, setWithPricing] = useState(false);
+  // Set once the async map init (leaflet.markercluster dynamic import)
+  // finishes; gates the marker effect so it never runs against a null map.
+  const [mapReady, setMapReady] = useState(false);
 
   const hasActiveFilters = amenityFilters.length > 0 || withReviews || withPricing;
 
@@ -138,34 +141,71 @@ export default function ParkMap({ parks }: { parks: MapPark[] }) {
     [parks, amenityFilters, withReviews, withPricing]
   );
 
-  // Init map once (tile layer + the shared feature group markers live in).
+  // Init map once (tile layer + the shared group markers live in). The
+  // marker-cluster plugin is loaded via a dynamic import so it never ships in
+  // the initial JS chunk; it has no ESM exports — its factory attaches
+  // L.markerClusterGroup to the shared leaflet L (leaflet sets window.L), so
+  // importing it for the side effect is the whole story. mapReady gates the
+  // marker effect until the map (and group) actually exist.
   useEffect(() => {
     // Belt-and-suspenders: the page loads this with ssr:false, so window
     // exists here; the guard keeps the component safe in any future caller.
     if (typeof window === 'undefined') return;
     if (!containerRef.current || mapRef.current) return;
 
-    const map = L.map(containerRef.current, {
-      minZoom: 5,
-      scrollWheelZoom: true,
-    });
-    mapRef.current = map;
+    let disposed = false;
 
-    L.tileLayer(TILE_URL, {
-      maxZoom: 19,
-      attribution: TILE_ATTR,
-    }).addTo(map);
+    (async () => {
+      await import('leaflet.markercluster');
 
-    const group = L.featureGroup();
-    groupRef.current = group;
-    group.addTo(map);
+      if (disposed || !containerRef.current) return;
+
+      const map = L.map(containerRef.current, {
+        minZoom: 5,
+        scrollWheelZoom: true,
+      });
+      mapRef.current = map;
+
+      L.tileLayer(TILE_URL, {
+        maxZoom: 19,
+        attribution: TILE_ATTR,
+      }).addTo(map);
+
+      // 3,700+ national pins overlap badly at US zoom, so cluster them.
+      // Plugin is always present by the time the map mounts; featureGroup is
+      // the (untested) fallback if L.markerClusterGroup never attached.
+      const group = L.markerClusterGroup
+        ? L.markerClusterGroup({
+            maxClusterRadius: 55,
+            spiderfyOnMaxZoom: true,
+            showCoverageOnHover: false,
+            chunkedLoading: true,
+            iconCreateFunction: (cluster) => {
+              const count = cluster.getChildCount();
+              const size = count < 100 ? 44 : count < 1000 ? 54 : 64;
+              return L.divIcon({
+                html: `<div class="arvp-cluster" style="width:${size}px;height:${size}px"><span>${count}</span></div>`,
+                className: 'arvp-cluster-wrap',
+                iconSize: L.point(size, size),
+              });
+            },
+          })
+        : L.featureGroup();
+      groupRef.current = group;
+      group.addTo(map);
+      setMapReady(true);
+    })();
 
     return () => {
-      map.remove();
-      mapRef.current = null;
-      groupRef.current = null;
-      // Re-fit on the next mount (dev StrictMode double-mounts effects).
-      didFitRef.current = false;
+      disposed = true;
+      if (mapRef.current) {
+        mapRef.current.remove();
+        mapRef.current = null;
+        groupRef.current = null;
+        // Re-fit on the next mount (dev StrictMode double-mounts effects).
+        didFitRef.current = false;
+      }
+      setMapReady(false);
     };
   }, []);
 
@@ -175,7 +215,7 @@ export default function ParkMap({ parks }: { parks: MapPark[] }) {
   useEffect(() => {
     const map = mapRef.current;
     const group = groupRef.current;
-    if (!map || !group) return;
+    if (!map || !group || !mapReady) return;
 
     group.clearLayers();
     visibleParks.forEach((p) => {
@@ -194,7 +234,7 @@ export default function ParkMap({ parks }: { parks: MapPark[] }) {
       }
       didFitRef.current = true;
     }
-  }, [visibleParks]);
+  }, [visibleParks, mapReady]);
 
   const [filtersOpen, setFiltersOpen] = useState(false);
 
