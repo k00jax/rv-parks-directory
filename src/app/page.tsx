@@ -1,8 +1,17 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import ParkTable from '@/components/ParkTable';
 import SearchBar from '@/components/SearchBar';
 import { amenityHubs, cities, datasetMeta, parks } from '@/lib/parks';
+
+// Leaflet map is client-only (window APIs). ssr:false keeps Leaflet out of
+// the static prerender; the loading fallback holds the 420px frame so the
+// layout doesn't shift when the map hydrates.
+const ParkMap = dynamic(() => import('@/components/ParkMap'), {
+  ssr: false,
+  loading: () => <div className="park-map park-map-loading" aria-hidden="true" />,
+});
 
 export const metadata: Metadata = {
   title: 'RV Parks & Campgrounds Directory — All Texas Parks',
@@ -65,6 +74,17 @@ export default function HomePage() {
     city: p.city,
   }));
   const searchCities = cities.map((c) => ({ name: c.name, slug: c.slug }));
+  // Minimal park shape for the interactive map (keeps the client payload slim).
+  const mapParks = parks.map((p) => ({
+    name: p.name,
+    slug: p.slug,
+    lat: p.lat,
+    lng: p.lng,
+    rating: p.rating,
+    reviewCount: p.reviewCount,
+    nightlyPriceMin: p.nightlyPriceMin,
+    nightlyPriceMax: p.nightlyPriceMax,
+  }));
   return (
     <div>
       {/* Hero: animated banner video (autoplay muted loop) + search bar */}
@@ -96,11 +116,6 @@ export default function HomePage() {
       </p>
 
       <div className="light-trail" aria-hidden="true" />
-
-      <section>
-        <h2>All campgrounds in Texas ({parks.length})</h2>
-        <ParkTable parks={parks} />
-      </section>
 
       <section>
         <h2>Explore by city</h2>
@@ -159,14 +174,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Map view placeholder — no map API wired yet (Phase 1). */}
-      <div className="map-placeholder">
-        <svg viewBox="0 0 24 24" className="map-pin-big" aria-hidden="true">
-          <path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
-        </svg>
-        Interactive map view is coming soon — meanwhile, use the search bar above or browse
-        by city, amenity, or the full table above.
-      </div>
+      {/* Interactive map (Leaflet + OpenStreetMap, client-only). The full
+          table below still server-renders every park — SEO intact; the map is
+          progressive enhancement on top. */}
+      <section>
+        <h2>Explore the map</h2>
+        <p className="muted">
+          All {parks.length} parks plotted — click a pin for ratings and nightly rates.
+        </p>
+        <ParkMap parks={mapParks} />
+        <noscript>
+          <p className="small muted" style={{ marginTop: '0.6rem' }}>
+            Enable JavaScript to explore the interactive map — the full table below lists every
+            park with the same data.
+          </p>
+        </noscript>
+      </section>
+
+      <section>
+        <h2>All campgrounds in Texas ({parks.length})</h2>
+        <ParkTable parks={parks} />
+      </section>
 
       <p className="small muted" style={{ marginTop: '2rem' }}>
         v2.0.0. Missing values (prices, ratings, hookups) are shown as “—” when the source

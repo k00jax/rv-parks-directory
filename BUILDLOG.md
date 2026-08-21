@@ -607,3 +607,70 @@ SearchBar.tsx` (new client search), `src/components/SiteHeader.tsx` (brand + log
 Files changed: `src/components/AffiliateDisclosure.tsx`, `src/app/parks/[state]/[slug]/page.tsx`,
 `src/app/page.tsx`, `src/components/SiteFooter.tsx`, `src/app/globals.css`,
 `package.json`, `scripts/verify-content.py`, `BUILDLOG.md` (this section).
+
+## 12. MAP BUILD — homepage reorder (Kyle's Build B reversal) + interactive Leaflet map
+
+Spec (2026-08-20): Kyle REVERSED Build B's data-first order. New homepage order: Hero →
+h1/intro → Explore by city → Explore by amenity → NEW Explore the map → full table LAST.
+Interactive map = Leaflet + OpenStreetMap (no API key, static-export friendly).
+
+### 12.1 Task 1 — homepage order reverted (`src/app/page.tsx`)
+- Before (Build B): Hero → h1 → intro → stats → light-trail → **All campgrounds table** →
+  city chips → amenity tiles → map placeholder.
+- After: Hero → h1 → intro → stats → light-trail → **city chips** → **amenity tiles** →
+  **Explore the map** (new) → **All campgrounds table** (last) → footer note.
+- Pure reorder + the new map section; all links/SEO text preserved; the old
+  "Interactive map view is coming soon" placeholder div and its CSS are GONE
+  (replaced by the real map + styles).
+
+### 12.2 Task 2 — interactive map (`src/components/ParkMap.tsx`, new)
+- `npm install leaflet@1.9.4` (dependency) + `npm install -D @types/leaflet@1.9.22`.
+- `'use client'` component; page loads it via `next/dynamic` with `ssr:false` +
+  a 420px loading fallback (`.park-map-loading`), so the static HTML keeps the frame
+  (verified: `<div class="park-map park-map-loading">` in docs/index.html) and Leaflet
+  never touches the server render. `typeof window !== 'undefined'` guard inside the
+  effect as belt-and-suspenders (spec 2h).
+- All 82 parks passed from the server page as a slim 8-field shape (name, slug, lat,
+  lng, rating, reviewCount, nightlyPriceMin, nightlyPriceMax) — full Park objects stay
+  server-side for the table (SEO intact; map is progressive enhancement, spec 2g).
+- Markers: `L.divIcon` — teal circle (cyan→#0077a3 gradient, white 3px border) with an
+  orange-red inner dot; inline HTML/CSS only, NO image assets (spec 2c). `iconAnchor`
+  centered, popup above the pin. Class `arvp-pin-wrap` overrides leaflet's default
+  `leaflet-div-icon` box so no default styling leaks in.
+- Coordinate guard: one RIDB record (Rock Quarry Group Campground) ships lat=0.0 —
+  treated as "no location", excluded from markers/fitBounds (81 plotted, not 82).
+- Popups (spec 2d): park name → `/parks/tx/{slug}/` deep link (escaped); rating line
+  `4.7★ (33 reviews)` when present; price line `from $X/night` (min) or `$X/night`
+  (max-only) when present, else "Rates not published". Popup themed to the redesign
+  (3px asphalt border, 12px radius, offset shadow).
+- Tiles (spec 2f): `https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png` with the
+  required `© OpenStreetMap contributors` attribution link.
+- View (spec 2e): container 420px, 16px radius, 3px #2B2D42 border, 6px offset shadow
+  (matches `.table.data` card language). `L.featureGroup` + `fitBounds` over plotted
+  pins with `padding [30,30]` and `maxZoom: 10` cap (won't zoom into one city);
+  `minZoom: 5`; Texas fallback view if no pins.
+
+### 12.3 Gates (2026-08-20, all real outputs)
+| Gate | Command | Result |
+|---|---|---|
+| 1. Validator | `node scripts/validate-data.mjs` | exit 0 — parks 82, cities 38, OK |
+| 2. Typecheck | `npx tsc --noEmit` | exit 0 (leaflet types via @types/leaflet) |
+| 3. Clean rebuild | `rm -rf docs .next && npm run build` | exit 0 — 150 static pages; homepage 170 kB First Load JS |
+| 4. Section order | python index() on docs/index.html | 'Explore by city' 3564 < 'Explore the map' 12002 < 'All campgrounds' 12477 — OK |
+| 5. SSR map frame | grep docs/index.html | `<div class="park-map park-map-loading">` present (loading fallback of ssr:false dynamic import) |
+| 6. Leaflet CSS | grep docs/_next/static/css/*.css | `d3e383b9ef67ddcb.css` contains `.leaflet-pane`/`.leaflet-container` rules |
+| 7. Leaflet JS | grep docs/_next/static/chunks | `page-a1397cd90503560d.js` contains `divIcon` + `tile.openstreetmap.org` + `openstreetmap.org/copyright` attribution |
+| 8. divIcon markers | grep chunks for `divIcon` | 2 chunks (`d0deef33-08e72c68cc07d6b8.js` = leaflet lib, `page-*.js` = our component) |
+| 9. No 404 marker images | grep + ls docs/_next/static/media/ | Default `marker-icon.d577052a.png` + `layers*.png` ARE emitted by webpack (exist on disk → no 404), but no marker ever references them: all 81 pins are divIcon, `L.Icon.Default` is never instantiated |
+| 10. Content verify | `python3 scripts/verify-content.py .` | PASS — all checks (no regression from reorder) |
+
+### 12.4 Deploy
+- Commit + push origin main via `git@github-rvparks:k00jax/rv-parks-directory.git`.
+- GitHub Actions (`.github/workflows/deploy.yml`): npm ci → npm run build (SITE_URL,
+  SITE_BASEPATH env) → upload `./docs` → deploy-pages.
+- Live checks after Actions completes: `curl -s -o /dev/null -w '%{http_code}'`
+  https://americanrvparks.com/ → 200 and one park page → 200.
+
+Files changed: `src/components/ParkMap.tsx` (new), `src/app/page.tsx` (reorder + map
+section), `src/app/globals.css` (placeholder → map/marker/popup styles), `package.json`
+(+ leaflet, + @types/leaflet), `package-lock.json`, `BUILDLOG.md` (this section).

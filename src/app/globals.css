@@ -654,24 +654,85 @@ ul.plain a { font-weight: 700; }
 .aqi-unhealthy-sens { color: var(--aqi-unhealthy-sens); border-color: var(--aqi-unhealthy-sens); }
 .aqi-unhealthy { color: var(--aqi-unhealthy); border-color: var(--aqi-unhealthy); }
 
-/* ---------- Map placeholder (no map API wired yet) ---------- */
-.map-placeholder {
-  margin: 1.5rem 0 0.5rem;
-  border: 3px dashed var(--asphalt);
+/* ---------- Interactive map (Leaflet, client-only; table below stays SSR) ---------- */
+.park-map {
+  width: 100%;
+  height: 420px;
+  border: 3px solid var(--asphalt);
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.7);
-  padding: 1.2rem 1.4rem;
-  text-align: center;
-  font-weight: 700;
-  color: var(--asphalt);
+  box-shadow: 6px 6px 0 rgba(10, 25, 47, 0.4);
+  overflow: hidden;
+  background: #e3f2f7; /* soft water tint while tiles load */
+  position: relative;
+  z-index: 1;
 }
-.map-placeholder .map-pin-big {
-  width: 2.2rem;
-  height: 2.2rem;
-  fill: var(--orange);
+.park-map-loading {
+  background: linear-gradient(180deg, var(--cyan) 0%, #0077a3 100%);
+  animation: map-pulse 1.4s ease-in-out infinite alternate;
+}
+@keyframes map-pulse {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+/* ARVP theme marker pins (L.divIcon inline HTML — no image assets) */
+.arvp-pin-wrap {
+  background: none;
+  border: none;
+}
+.arvp-pin {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--cyan) 0%, #0077a3 100%);
+  border: 3px solid var(--white);
+  box-shadow: 0 3px 0 rgba(10, 25, 47, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+.arvp-pin:hover {
+  transform: scale(1.15);
+}
+.arvp-pin-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--orange);
+  border: 1px solid rgba(10, 25, 47, 0.35);
+}
+
+/* Leaflet popup matched to the redesign card language */
+.leaflet-popup-content-wrapper {
+  border: 3px solid var(--asphalt);
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 rgba(10, 25, 47, 0.45);
+}
+.leaflet-popup-content {
+  margin: 0.6rem 0.75rem;
+  font-family: 'Nunito', -apple-system, sans-serif;
+  line-height: 1.45;
+}
+.arvp-popup-name {
   display: block;
-  margin: 0 auto 0.4rem;
-  filter: drop-shadow(2px 2px 0 var(--asphalt));
+  font-weight: 800;
+  color: var(--navy);
+  font-size: 0.95rem;
+  margin-bottom: 0.15rem;
+}
+.arvp-popup-name:hover { color: var(--orange); }
+.arvp-popup-rating {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #b8860b; /* amber stars */
+}
+.arvp-popup-price {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--muted);
 }
 
 /* ---------- Animations ---------- */
