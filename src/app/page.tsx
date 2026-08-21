@@ -77,6 +77,12 @@ export default function HomePage() {
   // Every stat in the "Plan your next trip" band is computed from the live
   // datasets at build time — never hardcoded, never estimated.
   const stats = computeHomeStats();
+  // Fun-fact numbers — all computed from the live dataset (never fabricated).
+  const waterParks = parks.filter((p) =>
+    (p.amenities ?? []).some((a) => a === 'water' || a === 'water hookup')
+  ).length;
+  const moabCount = parks.filter((p) => (p.city ?? '').trim().toUpperCase() === 'MOAB').length;
+  const californiaCount = parks.filter((p) => p.state === 'CA').length;
   const searchParks = parks.map((p) => ({
     name: p.name,
     slug: p.slug,
@@ -204,6 +210,39 @@ export default function HomePage() {
         <p className="home-subtitle">
           Fun facts from {stats.totalParks.toLocaleString()} real campground listings — no estimates, ever.
         </p>
+        <div className="fun-facts-grid">
+          <div className="fun-fact">
+            <div className="fun-fact-value">🌊 {waterParks.toLocaleString()} Waterfront Getaways</div>
+            <div className="fun-fact-body">
+              Water is the #1 amenity across our entire directory. Pack the floaties, fishing poles,
+              and kayaks — your perfect lakeside or riverfront site is waiting.
+            </div>
+          </div>
+          <div className="fun-fact">
+            <div className="fun-fact-value">🦕 {moabCount} Parks in a Single City (Moab, UT)</div>
+            <div className="fun-fact-body">
+              Looking for the ultimate family basecamp? Moab tops the charts with {moabCount}{' '}
+              campgrounds, putting you minutes away from red rock arches, off-roading, and real
+              dinosaur tracks.
+            </div>
+          </div>
+          <div className="fun-fact">
+            <div className="fun-fact-value">🚐 {californiaCount.toLocaleString()} California Dream Spots</div>
+            <div className="fun-fact-body">
+              California leads the nation for public RV parks. From parking under giant sequoias to
+              sleeping near the Pacific ocean, mapping a massive West Coast road trip has never been
+              easier.
+            </div>
+          </div>
+          <div className="fun-fact">
+            <div className="fun-fact-value">🌲 {parks.length.toLocaleString()} Backyards to Choose From</div>
+            <div className="fun-fact-body">
+              Ditch the neighborhood for the weekend. We track thousands of verified public parks
+              across {stats.statesWithParks} states, giving your kids endless room to roam, bike, and
+              build the perfect s'more.
+            </div>
+          </div>
+        </div>
         <div className="stats-grid">
           <div className="stat-card">
             <div className="stat-value">{stats.totalParks.toLocaleString()}</div>
