@@ -767,9 +767,8 @@ table.data.sortable thead th[aria-sort='descending'] {
 /* ---------- Disclosure / affiliate / claim / buttons ---------- */
 .disclosure {
   border: 3px solid var(--asphalt);
-  background: var(--white);
+  background: transparent;
   border-radius: 16px;
-  box-shadow: 4px 4px 0 rgba(10, 25, 47, 0.45);
   padding: 0.7rem 0.9rem;
   font-size: 0.82rem;
   color: var(--muted);
@@ -857,6 +856,15 @@ ul.plain a { font-weight: 700; }
   box-shadow: 2px 2px 0 var(--asphalt);
   filter: brightness(1.06);
   text-decoration: none;
+}
+
+/* "Book this campground" — green so it reads as the primary action,
+   distinct from the orange claim/update button. */
+.btn.btn-green {
+  background: linear-gradient(135deg, #06d6a0 0%, #2d6a4f 100%);
+}
+.btn.btn-green:hover {
+  background: linear-gradient(135deg, #06d6a0 0%, #2d6a4f 100%);
 }
 
 /* ---------- Weather + AQI card ---------- */

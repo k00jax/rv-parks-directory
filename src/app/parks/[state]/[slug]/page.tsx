@@ -247,9 +247,6 @@ export default function ParkPage({ params }: Props) {
       {/* Owner claim/update funnel (mailto to Director-controlled inbox). */}
       <ClaimForm park={park} />
 
-      {/* FTC disclosure sits ABOVE the first affiliate slot on this page. */}
-      <AffiliateDisclosure slotId={`park-${park.facilityId}-reserve`} website={park.website} />
-
       <section>
         <h2>Nearby campgrounds</h2>
         <ul className="plain">
@@ -300,6 +297,9 @@ export default function ParkPage({ params }: Props) {
           ))}
         </ul>
       </section>
+
+      {/* FTC disclosure at the bottom of the page, per Kyle (no white bg). */}
+      <AffiliateDisclosure slotId={`park-${park.facilityId}-reserve`} website={park.website} />
     </div>
   );
 }

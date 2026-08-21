@@ -17,14 +17,10 @@ export default function AffiliateDisclosure({
 }) {
   return (
     <>
-      <div className="disclosure" data-testid="affiliate-disclosure">
-        <strong>Affiliate disclosure:</strong> we may earn a commission from links
-        (including booking and partner links) at no extra cost to you.
-      </div>
       <div className="affiliate-slot" data-affiliate-slot={slotId} data-testid="affiliate-slot">
         {website ? (
           <a
-            className="btn btn-book"
+            className="btn btn-book btn-green"
             href={website}
             target="_blank"
             rel="sponsored nofollow noopener"
@@ -62,6 +58,10 @@ export default function AffiliateDisclosure({
           </a>{' '}
           →
         </p>
+      </div>
+      <div className="disclosure" data-testid="affiliate-disclosure">
+        <strong>Affiliate disclosure:</strong> we may earn a commission from links
+        (including booking and partner links) at no extra cost to you.
       </div>
     </>
   );
