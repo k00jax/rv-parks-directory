@@ -229,6 +229,93 @@ table.data.sortable thead th[aria-sort='descending'] {
   font-size: 0.85rem;
 }
 
+/* ---- Homepage browse: city chips (compact tag row) ---- */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: nowrap;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+.chip:hover {
+  background: var(--hover);
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.chip .chip-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.15rem;
+  height: 1.15rem;
+  padding: 0 0.3rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.chip .chip-count.chip-count-hot {
+  background: rgba(62, 110, 78, 0.14);
+  color: var(--accent);
+}
+
+/* ---- Homepage browse: amenity icon tiles ---- */
+.amenity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 0.75rem;
+}
+.amenity-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  transition: border-color 0.12s ease, transform 0.08s ease;
+}
+.amenity-tile:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+.amenity-tile .amenity-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.amenity-tile .amenity-label {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.25;
+}
+.amenity-tile .amenity-count {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+/* Subtle sage/amber/green tints — light enough to keep text legible */
+.amenity-tile.tint-sage { background: #eef2e6; }
+.amenity-tile.tint-amber { background: #f6efdc; }
+.amenity-tile.tint-green { background: #e8f0e6; }
+.amenity-tile.tint-moss { background: #edf0e4; }
+.amenity-tile.tint-earth { background: #f5eee4; }
+.amenity-tile.tint-olive { background: #eef1e0; }
+
 .disclosure {
   border: 1px solid var(--border);
   background: var(--surface-2);

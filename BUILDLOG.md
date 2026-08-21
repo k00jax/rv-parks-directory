@@ -423,3 +423,47 @@ outdoorsy brochure feel; body stays sans. Header now a deep sage-green band
 Files changed: `src/app/globals.css` (light palette + sortable/table CSS),
 `src/components/ParkTable.tsx` (sortable client component), `BUILDLOG.md` (this section).
 No data files, lib, or pages touched — theme and table only.
+
+## 9. UX BUILD (A) 2026-08-20 — homepage browse hierarchy (PUSHED)
+
+Kyle: "The many cards at the top with no distinguishing features is really unfriendly."
+Before: 38 identical city cards + 13 identical amenity cards on the homepage, wall of
+look-alike boxes, table buried below fold.
+
+### 9.1 Changes
+- `src/app/page.tsx`:
+  - City cards → compact **tag-chip row** (`flex-wrap`): 38 chips, each a link to
+    `/rv-parks/texas/{slug}/`. Fixed ALL-CAPS source names → **Title Case** (Coldspring,
+    Waco, Jasper). Park count encoded INSIDE the chip as a small round badge; big cities
+    (>=5 parks, e.g. Jasper=6) get a bolder sage-tinted `chip-count-hot` badge so they
+    stand out at a glance. Each chip carries an `aria-label` ("Coldspring — 1 park").
+  - Amenity cards → **icon + tinted tiles**: each hub gets a nature emoji (⛵ boat ramp,
+    🚿 showers, 💧 water hookup, 🗑️ dump station, 🛝 playground, 🚽 flush toilets, ⚡
+    30/50/20 amp, 🧺 laundry, 🔌 full hookup, ⚡🔌 50A full) with a short Title-Case label,
+    a subtle per-tile sage/amber/green tint (cycled, not loud), and a count line. The
+    "All RV park amenities" card kept (🧭). Full `href` to `/rv-parks/{slug}/` preserved.
+  - Section headers: "Browse by city" → "Explore by city" and "Browse by amenity" →
+    "Explore by amenity".
+- `src/app/globals.css`: added `.chip-row`, `.chip`, `.chip-count(.chip-count-hot)`,
+  `.amenity-grid`, `.amenity-tile(.tint-*)` — all consume the light nature vars; no new
+  hard-coded hex beyond the documented tint palette.
+- SEO/a11y: hrefs unchanged, text content server-rendered (no lazy hiding), aria-labels
+  on chips + tiles. Table NOT moved (that's build B).
+
+### 9.2 Gates (2026-08-20, all real outputs)
+| Gate | Command | Result |
+|---|---|---|
+| 1. Typecheck | `npx tsc --noEmit` | exit 0 |
+| 2. Validator | `node scripts/validate-data.mjs` | exit 0 — parks 82, cities 38, OK |
+| 3. Clean rebuild | `rm -rf docs .next && npm run build` | exit 0 — 150 static pages generated |
+| 4. Content verify | `python3 scripts/verify-content.py .` | PASS — all checks |
+| 5. Chip markup (homepage) | `grep -o 'class="chip"' docs/index.html` | 38 chips |
+| 6. Hot-city badges | `grep -o 'class="chip-count chip-count-hot"' docs/index.html` | 1 (Jasper, 6 parks) |
+| 7. Amenity icon tiles | `grep -o 'class="amenity-tile' docs/index.html` | 13 tiles (12 hubs + All Amenities) |
+| 8. Amenity emoji present | `grep` icon spans | ⛵🚿💧🗑️🛝🚽⚡🧺🔌🧭 (13 icon spans) |
+| 9. No ALL-CAPS city text | `grep -oE '>[A-Z]{3,}<span class="chip-count"'` | 0 (Title Case now) |
+| 10. Leftover city cards | `grep -o 'class="card"' docs/index.html` | 0 |
+| 11. Static pages | `find docs -name 'index.html' \| wc -l` | 148 (150 HTML files) |
+| 12. Deploy | git push origin main | GitHub Actions — verify live after push |
+
+Files changed: `src/app/page.tsx`, `src/app/globals.css`, `BUILDLOG.md` (this section).

@@ -8,6 +8,54 @@ export const metadata: Metadata = {
   description: `Browse all ${parks.length} campgrounds and RV parks in Texas with prices, ratings, and amenities from Recreation.gov data.`,
 };
 
+// Source city names are ALL-CAPS (e.g. "COLDSPRING"); display as Title Case.
+function titleCase(name: string): string {
+  return name
+    .toLowerCase()
+    .split(/(\s+|-)/)
+    .map((w) => (/^\s*$/.test(w) || w === '-' ? w : w.charAt(0).toUpperCase() + w.slice(1)))
+    .join('');
+}
+
+// Nature-theme emoji per amenity hub slug (sensible, not literal).
+const AMENITY_EMOJI: Record<string, string> = {
+  'boat-ramp': '⛵',
+  showers: '🚿',
+  'water-hookup': '💧',
+  'dump-station': '🗑️',
+  playground: '🛝',
+  'flush-toilets': '🚽',
+  '50-amp': '⚡',
+  '30-amp': '⚡',
+  '20-amp': '⚡',
+  laundry: '🧺',
+  'full-hookup': '🔌',
+  '50-amp-full-hookup': '⚡🔌',
+};
+
+// Short tile label per hub slug (full title is long-form SEO copy).
+const AMENITY_LABEL: Record<string, string> = {
+  'boat-ramp': 'Boat Ramp',
+  showers: 'Showers',
+  'water-hookup': 'Water Hookup',
+  'dump-station': 'Dump Station',
+  playground: 'Playground',
+  'flush-toilets': 'Flush Toilets',
+  '50-amp': '50 Amp',
+  '30-amp': '30 Amp',
+  '20-amp': '20 Amp',
+  laundry: 'Laundry',
+  'full-hookup': 'Full Hookup',
+  '50-amp-full-hookup': '50 Amp + Full Hookup',
+};
+
+// Subtle sage/amber/green tints cycled across tiles (not loud).
+const AMENITY_TINTS = ['tint-sage', 'tint-amber', 'tint-green', 'tint-moss', 'tint-earth', 'tint-olive'];
+
+function amenityLabel(slug: string): string {
+  return AMENITY_LABEL[slug] ?? titleCase(slug.replace(/-/g, ' '));
+}
+
 export default function HomePage() {
   const lastVerified = datasetMeta.lastVerified;
   return (
@@ -19,35 +67,59 @@ export default function HomePage() {
       </p>
 
       <section>
-        <h2>Browse by city</h2>
-        <div className="card-grid">
-          {cities.map((c) => (
-            <div className="card" key={c.slug}>
-              <Link href={`/rv-parks/texas/${c.slug}/`}>
-                RV Parks in {c.name}, TX
+        <h2>Explore by city</h2>
+        <div className="chip-row">
+          {cities.map((c) => {
+            const count = c.parkIds.length;
+            return (
+              <Link
+                key={c.slug}
+                className="chip"
+                href={`/rv-parks/texas/${c.slug}/`}
+                aria-label={`${titleCase(c.name)} — ${count} park${count === 1 ? '' : 's'}`}
+              >
+                {titleCase(c.name)}
+                <span className={`chip-count${count >= 5 ? ' chip-count-hot' : ''}`}>{count}</span>
               </Link>
-              <div className="muted">{c.parkIds.length} parks</div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
       <section>
-        <h2>Browse by amenity</h2>
-        <div className="card-grid">
-          {amenityHubs.map((a) => {
+        <h2>Explore by amenity</h2>
+        <div className="amenity-grid">
+          {amenityHubs.map((a, i) => {
             const count = parks.filter(a.match).length;
+            const label = amenityLabel(a.slug);
             return (
-              <div className="card" key={a.slug}>
-                <Link href={`/rv-parks/${a.slug}/`}>{a.title}</Link>
-                <div className="muted">{count} parks</div>
-              </div>
+              <Link
+                key={a.slug}
+                className={`amenity-tile ${AMENITY_TINTS[i % AMENITY_TINTS.length]}`}
+                href={`/rv-parks/${a.slug}/`}
+                aria-label={`${label} — ${count} park${count === 1 ? '' : 's'}`}
+              >
+                <span className="amenity-icon" aria-hidden="true">
+                  {AMENITY_EMOJI[a.slug] ?? '⛺'}
+                </span>
+                <span className="amenity-label">{label}</span>
+                <span className="amenity-count">
+                  {count} park{count === 1 ? '' : 's'}
+                </span>
+              </Link>
             );
           })}
-          <div className="card">
-            <Link href="/rv-parks/amenities/">All RV park amenities in Texas</Link>
-            <div className="muted">Full amenity filter index</div>
-          </div>
+          <Link
+            className={`amenity-tile ${AMENITY_TINTS[amenityHubs.length % AMENITY_TINTS.length]}`}
+            href="/rv-parks/amenities/"
+            aria-label="All RV park amenities in Texas — full amenity filter index"
+          >
+            <span className="amenity-icon" aria-hidden="true">
+              🧭
+            </span>
+            <span className="amenity-label">All Amenities</span>
+            <span className="amenity-count">Full filter index</span>
+          </Link>
         </div>
       </section>
 
