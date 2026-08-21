@@ -95,8 +95,10 @@ export default function HomePage() {
   // desc, reviews desc as tiebreak, then name. Parks without a rating sort
   // last (honest — never fabricate). TX-scoped by design: this table is for
   // Texas campgrounds, not the whole country.
-  const topTxParks = parks
-    .filter((p) => p.state === 'TX')
+  // National top-50: ranked by Google rating desc, reviews desc as tiebreak,
+  // then name. Only parks with a rating qualify (honest — never fabricate).
+  const topNationalParks = parks
+    .filter((p) => p.rating !== null)
     .sort((a, b) => {
       const ra = a.rating ?? -1;
       const rb = b.rating ?? -1;
@@ -107,6 +109,19 @@ export default function HomePage() {
       return (a.name || '').localeCompare(b.name || '');
     })
     .slice(0, 50);
+  // Texas top-25 (secondary list once national is live).
+  const topTxParks = parks
+    .filter((p) => p.state === 'TX' && p.rating !== null)
+    .sort((a, b) => {
+      const ra = a.rating ?? -1;
+      const rb = b.rating ?? -1;
+      if (ra !== rb) return rb - ra;
+      const va = a.reviewCount ?? 0;
+      const vb = b.reviewCount ?? 0;
+      if (va !== vb) return vb - va;
+      return (a.name || '').localeCompare(b.name || '');
+    })
+    .slice(0, 25);
   // National "Most-featured" table: ranked by amenities listed in the source
   // (site count as tiebreak, then name) — no ratings needed, fully honest.
   const mostFeaturedParks = parks
@@ -325,13 +340,17 @@ export default function HomePage() {
       </section>
 
       <section>
-        <h2>Top campgrounds in Texas ({topTxParks.length}) — national ratings coming soon</h2>
-        <ParkTable parks={topTxParks} showRank />
+        <h2>Top campgrounds in America ({topNationalParks.length})</h2>
+        <ParkTable parks={topNationalParks} showRank />
         <p className="small muted" style={{ marginTop: '0.6rem' }}>
           Ranked by Google rating — {stats.withRating} of {stats.totalParks.toLocaleString()} parks have
-          ratings today (all Texas); ratings for the other 47 states land with national enrichment. Browse
-          every Texas campground in the <Link href="/rv-parks/tx/">Texas hub</Link>.
+          ratings today. Parks without a verified rating are shown honestly as “—” rather than guessed.
         </p>
+      </section>
+
+      <section>
+        <h2>Top campgrounds in Texas ({topTxParks.length})</h2>
+        <ParkTable parks={topTxParks} showRank />
       </section>
 
       <section>
@@ -339,7 +358,7 @@ export default function HomePage() {
         <ParkTable parks={mostFeaturedParks} />
         <p className="small muted" style={{ marginTop: '0.6rem' }}>
           Ranked by amenities listed in the source data (site count as tiebreak) — a rating-free national
-          list. A true rating-based top-N lands when Google rating enrichment ships.
+          list for campgrounds with the most on-site features.
         </p>
       </section>
 
