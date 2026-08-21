@@ -6,6 +6,9 @@ import 'leaflet/dist/leaflet.css';
 
 // Minimal park shape the map needs. The server page maps full Park records
 // down to these fields so the RSC payload stays small (3,736 parks × 9 fields).
+// boatRamp is a server-computed flag: 'boat ramp' never appears in the RIDB
+// amenities array (it only lives in description text), so the server runs the
+// same desc-aware matcher as the boat-ramp hub page.
 export interface MapPark {
   name: string;
   slug: string;
@@ -17,22 +20,93 @@ export interface MapPark {
   nightlyPriceMin: number | null;
   nightlyPriceMax: number | null;
   amenities: string[];
+  boatRamp?: boolean;
 }
 
-// Amenity filter chips: every vocabulary term present in the dataset with
-// >= 5 parks. 20 amp (3 parks) and laundry (2 parks) are too rare to be useful
-// map filters. Same vocabulary as the amenity hub pages ('boat ramp',
-// 'showers', …) — no invented terms.
-const AMENITY_FILTERS: { value: string; label: string }[] = [
-  { value: 'boat ramp', label: 'Boat Ramp' },
-  { value: 'showers', label: 'Showers' },
-  { value: 'water hookup', label: 'Water Hookup' },
-  { value: 'dump station', label: 'Dump Station' },
-  { value: 'playground', label: 'Playground' },
-  { value: 'flush toilets', label: 'Flush Toilets' },
-  { value: '50 amp', label: '50 Amp' },
-  { value: '30 amp', label: '30 Amp' },
+// Viewport box lifted from the Leaflet map (lat/lng in degrees). The homepage
+// uses it to filter the Top-50 table to what is visible on the map.
+export interface MapBounds {
+  north: number;
+  south: number;
+  east: number;
+  west: number;
+}
+
+// Amenity filters, split into two tiers:
+//   QUICK — the core toggles always visible in the panel (50 Amp, Full Hookup)
+//   MORE  — niche vocabulary chips hidden behind the 'All filters' disclosure
+// Matching mirrors the amenity hub pages (same alternate terms) so a chip
+// count here agrees with the hub page count — no invented terms. Full hookup
+// is the combined water+sewer condition from the full-hookup hub (363 parks).
+interface MapFilter {
+  value: string;
+  label: string;
+  match: (p: MapPark) => boolean;
+}
+
+const fullHookupMatch = (p: MapPark): boolean => {
+  const a = p.amenities;
+  const water = a.includes('water hookup') || a.includes('water');
+  const sewer =
+    a.includes('dump station') ||
+    a.includes('rv dump') ||
+    a.includes('sewage disposal') ||
+    a.includes('sewer');
+  return water && sewer;
+};
+
+const QUICK_FILTERS: MapFilter[] = [
+  { value: '50 amp', label: '50 Amp', match: (p) => p.amenities.includes('50 amp') },
+  { value: 'full hookup', label: 'Full Hookup', match: fullHookupMatch },
 ];
+
+const MORE_FILTERS: MapFilter[] = [
+  {
+    value: 'boat ramp',
+    label: 'Boat Ramp',
+    match: (p) =>
+      p.boatRamp === true ||
+      p.amenities.includes('boat ramp') ||
+      p.amenities.includes('boat launch') ||
+      p.amenities.includes('boat landing'),
+  },
+  {
+    value: 'showers',
+    label: 'Showers',
+    match: (p) => p.amenities.includes('showers') || p.amenities.includes('shower'),
+  },
+  {
+    value: 'water hookup',
+    label: 'Water Hookup',
+    match: (p) => p.amenities.includes('water hookup') || p.amenities.includes('water'),
+  },
+  {
+    value: 'dump station',
+    label: 'Dump Station',
+    match: (p) =>
+      p.amenities.includes('dump station') ||
+      p.amenities.includes('rv dump') ||
+      p.amenities.includes('sewage disposal'),
+  },
+  {
+    value: 'playground',
+    label: 'Playground',
+    match: (p) => p.amenities.includes('playground'),
+  },
+  {
+    value: 'flush toilets',
+    label: 'Flush Toilets',
+    match: (p) =>
+      p.amenities.includes('flush toilets') ||
+      p.amenities.includes('restrooms') ||
+      p.amenities.includes('restroom'),
+  },
+  { value: '30 amp', label: '30 Amp', match: (p) => p.amenities.includes('30 amp') },
+];
+
+const FILTER_BY_VALUE = new Map<string, MapFilter>(
+  [...QUICK_FILTERS, ...MORE_FILTERS].map((f) => [f.value, f])
+);
 
 // Recreation.gov coordinate quirk: one park (Rock Quarry Group Campground)
 // ships lat=0.0 / lng=-101.0236 — a "no location" sentinel, not a real pin.
@@ -96,13 +170,29 @@ const TILE_ATTR =
 // US fallback view (used only if every marker were filtered out).
 const US_CENTER: [number, number] = [39.8, -98.5];
 
-export default function ParkMap({ parks }: { parks: MapPark[] }) {
+export default function ParkMap({
+  parks,
+  onBoundsChange,
+}: {
+  parks: MapPark[];
+  // Viewport binding: fired with the visible box after a USER pan/zoom
+  // (the initial programmatic fit is suppressed so the page doesn't filter
+  // itself on first load).
+  onBoundsChange?: (bounds: MapBounds) => void;
+}) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<L.Map | null>(null);
   const groupRef = useRef<L.FeatureGroup | null>(null);
   // fitBounds runs exactly once (first load); filter changes re-draw pins
   // without moving the viewport.
   const didFitRef = useRef(false);
+  // One-shot: skip the moveend that the initial programmatic setView fires,
+  // so the table never auto-filters before the user actually moves the map.
+  const suppressNextMoveRef = useRef(false);
+  // Keep the latest onBoundsChange prop readable from the once-run init
+  // effect without re-binding Leaflet handlers on every render.
+  const onBoundsChangeRef = useRef(onBoundsChange);
+  onBoundsChangeRef.current = onBoundsChange;
 
   const [amenityFilters, setAmenityFilters] = useState<string[]>([]);
   const [withReviews, setWithReviews] = useState(false);
@@ -125,15 +215,17 @@ export default function ParkMap({ parks }: { parks: MapPark[] }) {
     setWithPricing(false);
   }
 
-  // AND semantics: a park must have EVERY selected amenity to stay visible.
+  // AND semantics: a park must satisfy EVERY selected filter to stay visible.
   // 'With reviews' = rating present with at least one review; 'With pricing'
   // = a nightly min price is published (RIDB fee data).
   const visibleParks = useMemo(
     () =>
       parks.filter((p) => {
         if (!hasCoords(p)) return false;
-        if (amenityFilters.length > 0 && !amenityFilters.every((a) => p.amenities.includes(a)))
-          return false;
+        for (const v of amenityFilters) {
+          const f = FILTER_BY_VALUE.get(v);
+          if (f && !f.match(p)) return false;
+        }
         if (withReviews && (p.rating === null || (p.reviewCount ?? 0) <= 0)) return false;
         if (withPricing && p.nightlyPriceMin === null) return false;
         return true;
@@ -154,6 +246,7 @@ export default function ParkMap({ parks }: { parks: MapPark[] }) {
     if (!containerRef.current || mapRef.current) return;
 
     let disposed = false;
+    let onWindowResize: (() => void) | null = null;
 
     (async () => {
       await import('leaflet.markercluster');
@@ -170,6 +263,26 @@ export default function ParkMap({ parks }: { parks: MapPark[] }) {
         maxZoom: 19,
         attribution: TILE_ATTR,
       }).addTo(map);
+
+      // Viewport binding: report the visible box to the parent after user
+      // moves. The very first moveend (the initial programmatic setView) is
+      // suppressed so the table only filters after genuine interaction.
+      map.on('moveend', () => {
+        if (suppressNextMoveRef.current) {
+          suppressNextMoveRef.current = false;
+          return;
+        }
+        const cb = onBoundsChangeRef.current;
+        if (!cb) return;
+        const b = map.getBounds();
+        cb({ north: b.getNorth(), south: b.getSouth(), east: b.getEast(), west: b.getWest() });
+      });
+
+      // The map is sticky on desktop (Task 7) with a viewport-capped max
+      // height; keep tiles sharp if the window resizes under it.
+      onWindowResize = () => map.invalidateSize();
+      window.addEventListener('resize', onWindowResize);
+      map.on('resize', onWindowResize);
 
       // 3,700+ national pins overlap badly at US zoom, so cluster them.
       // Plugin is always present by the time the map mounts; featureGroup is
@@ -198,6 +311,7 @@ export default function ParkMap({ parks }: { parks: MapPark[] }) {
 
     return () => {
       disposed = true;
+      if (onWindowResize) window.removeEventListener('resize', onWindowResize);
       if (mapRef.current) {
         mapRef.current.remove();
         mapRef.current = null;
@@ -228,6 +342,9 @@ export default function ParkMap({ parks }: { parks: MapPark[] }) {
       // Default: show the whole continental US, centered. Fixed view + zoom 4
       // puts the country in frame on first load (the national view Kyle wants),
       // instead of fitBounds zooming into wherever the densest pins are.
+      // The moveend from this setView is suppressed so the table below does
+      // not auto-filter on first load.
+      suppressNextMoveRef.current = true;
       map.setView(US_CENTER, 4);
       didFitRef.current = true;
     }
@@ -263,30 +380,21 @@ export default function ParkMap({ parks }: { parks: MapPark[] }) {
 
         {filtersOpen && (
           <div className="park-map-filters-body">
-            <div className="park-map-filter-group">
-              <span className="park-map-filter-label" id="park-map-amenities-label">
-                Amenities
-              </span>
-              <div
-                className="park-map-chip-row"
-                role="group"
-                aria-labelledby="park-map-amenities-label"
-              >
-                {AMENITY_FILTERS.map((a) => {
-                  const active = amenityFilters.includes(a.value);
-                  return (
-                    <button
-                      key={a.value}
-                      type="button"
-                      className={`park-map-chip${active ? ' is-active' : ''}`}
-                      aria-pressed={active}
-                      onClick={() => toggleAmenity(a.value)}
-                    >
-                      {a.label}
-                    </button>
-                  );
-                })}
-              </div>
+            <div className="park-map-chip-row" role="group" aria-label="Quick filters">
+              {QUICK_FILTERS.map((a) => {
+                const active = amenityFilters.includes(a.value);
+                return (
+                  <button
+                    key={a.value}
+                    type="button"
+                    className={`park-map-chip${active ? ' is-active' : ''}`}
+                    aria-pressed={active}
+                    onClick={() => toggleAmenity(a.value)}
+                  >
+                    {a.label}
+                  </button>
+                );
+              })}
             </div>
 
             <div className="park-map-chip-row" role="group" aria-label="Reviews and pricing">
@@ -308,8 +416,37 @@ export default function ParkMap({ parks }: { parks: MapPark[] }) {
               </button>
             </div>
 
+            <details className="park-map-more">
+              <summary className="park-map-more-summary">All filters</summary>
+              <div
+                className="park-map-chip-row park-map-more-body"
+                role="group"
+                aria-label="All amenity filters"
+              >
+                {MORE_FILTERS.map((a) => {
+                  const active = amenityFilters.includes(a.value);
+                  return (
+                    <button
+                      key={a.value}
+                      type="button"
+                      className={`park-map-chip${active ? ' is-active' : ''}`}
+                      aria-pressed={active}
+                      onClick={() => toggleAmenity(a.value)}
+                    >
+                      {a.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </details>
+
             {visibleParks.length === 0 && (
-              <p className="park-map-empty">No parks match your filters</p>
+              <p className="park-map-empty">
+                No parks match your filters{' '}
+                <button type="button" className="park-map-empty-clear" onClick={clearAllFilters}>
+                  Clear filters
+                </button>
+              </p>
             )}
           </div>
         )}

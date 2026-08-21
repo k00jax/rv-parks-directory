@@ -166,6 +166,102 @@ header.site-header {
   transform: translateY(-2px);
 }
 
+/* ---------- Nav mega-menu "States" (Browse by State) ---------- */
+/* <details> disclosure: zero-JS. Desktop = hover OR click opens a 6-region
+   column panel (CSS only); mobile (<900px) collapses to an in-flow stacked
+   grid. Every state links to its /rv-parks/{abbr}/ hub. */
+.site-header .nav-states {
+  position: relative;
+  display: inline-flex;
+}
+.site-header .nav-states summary.nav-states-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  list-style: none;
+  cursor: pointer;
+  color: var(--white);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.15s ease, background 0.15s ease;
+}
+.site-header .nav-states summary.nav-states-btn::-webkit-details-marker {
+  display: none;
+}
+.site-header .nav-states summary.nav-states-btn:hover,
+.site-header .nav-states[open] summary.nav-states-btn {
+  color: var(--navy);
+  background: var(--sun);
+  border-color: var(--asphalt);
+  box-shadow: 3px 3px 0 var(--asphalt);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+.site-header .nav-caret {
+  font-size: 0.72rem;
+  line-height: 1;
+  transition: transform 0.18s ease;
+}
+.site-header .nav-states[open] .nav-caret {
+  transform: rotate(180deg);
+}
+.nav-states-panel {
+  display: none;
+  /* Fixed + right-aligned to the container edge (the nav sits right-aligned,
+     and the panel is far wider than the button, so centering on the button
+     would overflow narrow viewports). top clears the header (~4rem tall). */
+  position: fixed;
+  top: 4rem;
+  right: max(1rem, calc((100vw - 1100px) / 2 + 1rem));
+  grid-template-columns: repeat(3, minmax(11rem, 1fr));
+  gap: 0.9rem 1.2rem;
+  padding: 0.95rem 1.1rem;
+  background: var(--white);
+  border: 3px solid var(--asphalt);
+  border-radius: 16px;
+  box-shadow: 6px 6px 0 rgba(10, 25, 47, 0.5);
+  z-index: 60;
+  max-width: calc(100vw - 2rem);
+}
+/* show on hover (desktop) OR when the disclosure is open (click / touch) */
+.site-header .nav-states:hover .nav-states-panel,
+.site-header .nav-states[open] .nav-states-panel {
+  display: grid;
+}
+.nav-region {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+}
+.nav-region-name {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--pine);
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.15rem;
+  border-bottom: 2px solid var(--lightblue);
+}
+.nav-region-state {
+  color: var(--asphalt);
+  font-weight: 700;
+  font-size: 0.86rem;
+  padding: 0.16rem 0.4rem;
+  border-radius: 8px;
+}
+.nav-region-state:hover {
+  background: var(--lightblue);
+  color: var(--navy);
+  text-decoration: none;
+}
+
 /* ---------- Hero (banner video + search) ---------- */
 .hero {
   position: relative;
@@ -314,6 +410,31 @@ header.site-header {
   font-weight: 600;
   font-size: 0.9rem;
 }
+.search-results .search-empty-msg {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.search-results .search-empty-btn {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid var(--asphalt);
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--sun) 0%, var(--orange) 100%);
+  color: var(--white);
+  font: inherit;
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 0.35rem 0.9rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 rgba(10, 25, 47, 0.45);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.2s ease, filter 0.2s ease;
+}
+.search-results .search-empty-btn:hover {
+  transform: translateY(1px);
+  box-shadow: 1px 1px 0 rgba(10, 25, 47, 0.45);
+  filter: brightness(1.06);
+}
 
 /* ---------- Footer (dark asphalt) ---------- */
 footer.site-footer {
@@ -422,6 +543,31 @@ table.data tbody tr.row-top-pick td.rank-cell {
   text-transform: uppercase;
   letter-spacing: 0.03em;
   vertical-align: middle;
+}
+
+/* Skeleton loading rows (ParkTable skeletons prop). Not wired into any page
+   yet — every table renders instantly from SSR — but reusable for a future
+   async view. */
+.park-skeleton-row td {
+  background: transparent !important;
+}
+.skeleton-block {
+  display: block;
+  height: 0.95rem;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #e3eef3 25%, #d3eef6 50%, #e3eef3 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+.skeleton-rank { width: 1.2rem; margin: 0 auto; }
+.skeleton-name { width: 65%; }
+.skeleton-city { width: 55%; }
+.skeleton-price { width: 45%; }
+.skeleton-rating { width: 40%; }
+.skeleton-sites { width: 30%; }
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
 }
 
 /* Sortable ParkTable (client-side) */
@@ -959,6 +1105,139 @@ ul.plain a { font-weight: 700; }
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.park-map-empty-clear {
+  border: 2px solid var(--asphalt);
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--sun) 0%, var(--orange) 100%);
+  color: var(--white);
+  font: inherit;
+  font-weight: 800;
+  font-size: 0.78rem;
+  padding: 0.2rem 0.7rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 rgba(10, 25, 47, 0.45);
+}
+.park-map-empty-clear:hover {
+  filter: brightness(1.06);
+}
+
+/* 'All filters' disclosure: niche amenity chips live behind this so the core
+   quick toggles (50 Amp, Full Hookup, With reviews, With pricing) stay
+   visible without scrolling the panel. */
+.park-map-more {
+  margin-top: 0.55rem;
+  border-top: 2px dashed var(--lightblue);
+  padding-top: 0.45rem;
+}
+.park-map-more-summary {
+  list-style: none;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: var(--orange);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.park-map-more-summary::-webkit-details-marker {
+  display: none;
+}
+.park-map-more-summary::after {
+  content: '▾';
+  font-size: 0.72rem;
+  line-height: 1;
+  transition: transform 0.18s ease;
+}
+.park-map-more[open] .park-map-more-summary::after {
+  transform: rotate(180deg);
+}
+.park-map-more-body {
+  margin-top: 0.45rem;
+}
+
+/* ---------- Viewport binding: map -> Top-50 table ---------- */
+.map-bound-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  margin: 0 0 0.7rem;
+  padding: 0.3rem 0.4rem 0.3rem 0.95rem;
+  background: var(--sun);
+  border: 3px solid var(--asphalt);
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 rgba(10, 25, 47, 0.45);
+  font-weight: 800;
+  font-size: 0.88rem;
+  color: var(--asphalt);
+}
+.map-bound-chip-label {
+  white-space: nowrap;
+}
+.map-bound-clear {
+  border: 2px solid var(--asphalt);
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--sun) 0%, var(--orange) 100%);
+  color: var(--white);
+  font: inherit;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.85rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 rgba(10, 25, 47, 0.45);
+}
+.map-bound-clear:hover {
+  filter: brightness(1.06);
+}
+.map-bound-hint {
+  margin: 0 0 0.6rem;
+}
+
+/* ---------- Sticky map (desktop >= 1100px) + mobile mega-menu ---------- */
+@media (min-width: 1100px) {
+  .map-viewport-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  /* The map sticks to the top of the viewport while the Top-50 table below
+     scrolls past; the wrapper spans both sections so the pin holds until the
+     table is done. Viewport-capped height keeps it from dominating; ParkMap
+     calls invalidateSize() on window resize to stay sharp. */
+  .map-viewport-wrap .park-map-wrap {
+    position: sticky;
+    top: 0.5rem;
+    z-index: 30;
+    max-height: calc(100vh - 1rem);
+  }
+  .map-viewport-wrap .park-map {
+    height: min(600px, calc(100vh - 1rem));
+  }
+}
+
+@media (max-width: 900px) {
+  /* Mega-menu collapses to an in-flow stacked disclosure (no floating
+     panel) so it never overflows a phone viewport. */
+  .nav-states-panel {
+    position: static;
+    left: auto;
+    transform: none;
+    min-width: 0;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .site-header .nav-states:hover .nav-states-panel,
+  .site-header .nav-states[open] .nav-states-panel {
+    display: grid;
+  }
+  .site-header nav {
+    gap: 0.5rem;
+  }
 }
 
 /* ---------- Animations ---------- */

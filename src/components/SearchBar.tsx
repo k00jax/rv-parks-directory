@@ -16,6 +16,12 @@ export interface SearchCity {
   state?: string;
 }
 
+export interface SearchState {
+  abbr: string;
+  name: string;
+  count: number;
+}
+
 // Pin + magnifier SVG icons (filled, thick outline look).
 const PIN = (
   <svg viewBox="0 0 24 24" className="res-icon" aria-hidden="true">
@@ -39,18 +45,29 @@ function titleCase(name: string): string {
 export default function SearchBar({
   parks,
   cities,
+  states,
 }: {
   parks: SearchPark[];
   cities: SearchCity[];
+  states: SearchState[];
 }) {
   const router = useRouter();
   const [q, setQ] = useState('');
   const [open, setOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  // Result priority: STATES first (2-letter abbr or state-name match), then
+  // cities, then parks. State suggestions carry the honest per-state park
+  // count and deep-link to the state hub (/rv-parks/{abbr}/).
   const results = useMemo(() => {
     const term = q.trim().toLowerCase();
     if (!term) return null;
+    const stateMatches =
+      term.length === 2
+        ? states.filter((s) => s.abbr.toLowerCase() === term).slice(0, 4)
+        : term.length >= 3
+          ? states.filter((s) => s.name.toLowerCase().includes(term)).slice(0, 4)
+          : [];
     const cityMatches = cities
       .filter((c) => c.name.toLowerCase().includes(term))
       .slice(0, 6);
@@ -61,9 +78,10 @@ export default function SearchBar({
           (p.city ?? '').toLowerCase().includes(term)
       )
       .slice(0, 10);
-    if (cityMatches.length === 0 && parkMatches.length === 0) return 'empty';
-    return { cityMatches, parkMatches };
-  }, [q, parks, cities]);
+    if (stateMatches.length === 0 && cityMatches.length === 0 && parkMatches.length === 0)
+      return 'empty';
+    return { stateMatches, cityMatches, parkMatches };
+  }, [q, parks, cities, states]);
 
   function go(url: string) {
     setOpen(false);
@@ -75,10 +93,21 @@ export default function SearchBar({
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!results || results === 'empty') return;
-    const firstPark = results.parkMatches[0];
+    // Submit priority mirrors the dropdown order: state → city → park.
+    const firstState = results.stateMatches[0];
     const firstCity = results.cityMatches[0];
-    if (firstPark) go(`/parks/${firstPark.state.toLowerCase()}/${firstPark.slug}/`);
+    const firstPark = results.parkMatches[0];
+    if (firstState) go(`/rv-parks/${firstState.abbr.toLowerCase()}/`);
     else if (firstCity) go(`/rv-parks/${(firstCity.state ?? 'tx').toLowerCase()}/${firstCity.slug}/`);
+    else if (firstPark) go(`/parks/${firstPark.state.toLowerCase()}/${firstPark.slug}/`);
+  }
+
+  // 'Search all parks' zero-result recovery: clear the query and refocus the
+  // input so the full directory is one keystroke away.
+  function searchAllParks() {
+    setQ('');
+    setOpen(false);
+    inputRef.current?.focus();
   }
 
   return (
@@ -96,8 +125,8 @@ export default function SearchBar({
           }}
           onFocus={() => setOpen(true)}
           onBlur={() => setTimeout(() => setOpen(false), 120)}
-          placeholder="Search a park, city, or amenity…"
-          aria-label="Search parks, cities, or amenities"
+          placeholder="Search a park, city, or state…"
+          aria-label="Search parks, cities, or states"
         />
         <button
           className="search-btn"
@@ -112,6 +141,30 @@ export default function SearchBar({
 
       {open && q.trim() && results && results !== 'empty' ? (
         <ul className="search-results" role="listbox" aria-label="Search results">
+          {results.stateMatches.length > 0 ? (
+            <>
+              <li className="search-result-group" role="presentation">
+                States
+              </li>
+              {results.stateMatches.map((s) => (
+                <li key={`s-${s.abbr}`}>
+                  <a
+                    href={`/rv-parks/${s.abbr.toLowerCase()}/`}
+                    onMouseDown={(e) => e.preventDefault()}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      go(`/rv-parks/${s.abbr.toLowerCase()}/`);
+                    }}
+                  >
+                    {PIN}
+                    {s.name} — {s.count} parks
+                    <span className="res-meta">State</span>
+                  </a>
+                </li>
+              ))}
+            </>
+          ) : null}
+
           {results.cityMatches.length > 0 ? (
             <>
               <li className="search-result-group" role="presentation">
@@ -165,7 +218,12 @@ export default function SearchBar({
       {open && q.trim() && results === 'empty' ? (
         <ul className="search-results" role="listbox" aria-label="Search results">
           <li className="search-empty">
-            No parks or cities match “{q.trim()}”. Try a city like Waco or an RV park name.
+            <span className="search-empty-msg">
+              No public RV parks found for “{q.trim()}”.
+            </span>
+            <button type="button" className="search-empty-btn" onClick={searchAllParks}>
+              Search all parks
+            </button>
           </li>
         </ul>
       ) : null}

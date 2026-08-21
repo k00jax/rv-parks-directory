@@ -778,3 +778,130 @@ table headings + most-featured), `src/components/ParkMap.tsx` (marker clustering
 `src/app/globals.css` (stats band + cluster styles), `src/types/leaflet-markercluster.d.ts`
 (new), `package.json` (+leaflet.markercluster, +@types/leaflet.markercluster),
 `package-lock.json`, `BUILDLOG.md` (this section).
+
+---
+
+## 16. NATIONWIDE UX OPTIMIZATION 2026-08-21 — mega-menu, search typeahead, viewport binding
+
+Roadmap: Kyle's nationwide UX pass on the national build (3,736 parks, 48 states).
+Preserved the vector-art redesign (navy→cyan, Fredoka, orange CTAs, video hero,
+chips/tiles). All 7 tasks are client-side UX; the static-export shape (~5,300
+pages) is unchanged.
+
+### 16.1 Task 1 — Nav mega-menu "States" (Browse by State)
+- `src/components/SiteHeader.tsx` now renders a `<details>` "States" disclosure
+  between RV Parks and Amenities (Home/Amenities/Full Hookup/50 Amp links kept).
+  Zero-JS: the panel opens on hover OR click via pure CSS (`.nav-states:hover
+  .nav-states-panel` + `.nav-states[open]`); no client bundle added and the
+  header stays a server component, so every page gets the panel in SSR HTML.
+- Region groupings in the new shared `src/lib/regions.ts` (static data — no
+  parks JSON import, the header renders on every page via the root layout):
+  - Pacific (5): AK CA HI OR WA
+  - West (8): AZ CO ID MT NM NV UT WY  <- AZ/NM live here; the brief's
+    "Southwest" hint overlapped them, so one consistent grouping keeps AZ/NM
+    in West (no duplicate listings)
+  - Southwest (2): OK TX
+  - Midwest (12): IA IL IN KS MI MN MO ND NE OH SD WI
+  - Southeast (13): AL AR FL GA KY LA MD MS NC SC TN VA WV
+  - Northeast (8): CT MA ME NH NJ NY PA VT
+- Every state links to its live `/rv-parks/{abbr}/` hub (48 states — DE, DC, RI
+  are absent from the Recreation.gov source data and intentionally not listed).
+- Desktop panel: fixed, right-aligned to the container edge (the nav sits
+  right-aligned and the panel is far wider than the States button, so centering
+  on the button would overflow narrow viewports), 3-column region grid.
+- Mobile (<900px): floating panel collapses to an in-flow stacked 2-column
+  disclosure grid; the header nav wraps as before.
+
+### 16.2 Task 2 — Search typeahead polish (`src/components/SearchBar.tsx`)
+- New `states` prop (computed at build time in page.tsx: abbr, name, per-state
+  park count). Typing a state name (e.g. "colorado") or a 2-letter abbr ("co")
+  surfaces a "States" group FIRST — "Colorado — 142 parks" deep-links to
+  `/rv-parks/co/`. Match rules: 2-char term = exact abbr; >=3 chars =
+  state-name substring; state group capped at 4.
+- Result ordering is States → Cities → RV Parks in the dropdown, and the submit
+  handler mirrors that priority (state → city → park).
+- 'No matches' state kept, upgraded to Task 5 copy.
+
+### 16.3 Task 3 — Viewport binding (map ↔ table)
+- New client component `src/components/MapViewportSection.tsx` owns BOTH the map
+  section and the Top-50 table section so the map's pan/zoom can filter the
+  table.
+- `ParkMap` gains an optional `onBoundsChange(bounds)` prop fired on Leaflet
+  'moveend' with the visible lat/lng box (north/south/east/west). The first
+  moveend — the initial programmatic setView to US_CENTER zoom 4 — is suppressed
+  via a `suppressNextMoveRef` flag, so the table NEVER auto-filters until the
+  user actually pans/zooms. The latest callback is kept in a ref so the
+  once-run init effect never goes stale.
+- Section component keeps `mapBounds` state: when set, the Top-50 table filters
+  to parks whose lat/lng are inside the box (null/0 coords excluded). A chip
+  shows "N parks in this view" + a "Clear map filter" button that resets to the
+  full ranking. A hint line ("Pan or zoom the map above…") appears in the
+  default state so the behavior is discoverable.
+- SSR honesty: client components still server-render, so the built HTML keeps
+  the FULL 50-row table (SEO intact — verified 50 rows + all section headings
+  in docs/index.html); the filter applies only after hydration and only after a
+  real map interaction. Table stays sortable (ParkTable re-sorts the filtered
+  array).
+
+### 16.4 Task 4 — Filter hierarchy (`src/components/ParkMap.tsx`)
+- Filter panel split into tiers: QUICK_FILTERS always visible (50 Amp, Full
+  Hookup) + the With reviews / With pricing row; niche chips (Boat Ramp,
+  Showers, Water Hookup, Dump Station, Playground, Flush Toilets, 30 Amp) live
+  behind an "All filters" `<details>` disclosure. "Showing N of X parks" and
+  "Clear all" unchanged.
+- Matching upgraded to hub-consistent alternate terms: the RIDB amenities array
+  never carries 'boat ramp'/'water hookup'/'flush toilets' literally (verified
+  against parks.us.json vocabulary), so the old flat includes() left those chips
+  dead. Full Hookup uses the combined water+sewer condition from the full-hookup
+  hub (363 parks). Boat Ramp gets a server-computed `boatRamp` flag in page.tsx
+  (`hasBoatRamp()` — the same desc-aware matcher as the boat-ramp hub, 450
+  parks) because it only exists in description text.
+
+### 16.5 Task 5 — Zero-result handling
+- SearchBar: empty state is now "No public RV parks found for "X"" + a "Search
+  all parks" button that clears the query and refocuses the input.
+- Map panel: when 0 parks match, "No parks match your filters" is joined by a
+  "Clear filters" button (same reset as "Clear all").
+
+### 16.6 Task 6 — Skeleton loading (`src/components/ParkTable.tsx`)
+- Added a reusable `skeletons` prop: 8 shimmer rows (`.park-skeleton-row` +
+  `.skeleton-block` + `@keyframes shimmer`) rendered instead of data.
+- NOT wired anywhere: every table on this site renders instantly from SSR (data
+  is serialized into the page), so there is no async window to cover — the map
+  area already has its loading fallback. The component is ready for a future
+  API-backed table without re-inventing markup. (Per brief: don't over-engineer.)
+
+### 16.7 Task 7 — Sticky map (desktop >= 1100px)
+- `.map-viewport-wrap` (the MapViewportSection wrapper spanning the map AND the
+  Top-50 table) makes `.park-map-wrap` sticky at >= 1100px
+  (`position: sticky; top: 0.5rem; z-index: 30`), so the map pins to the top of
+  the viewport while the table scrolls past and releases when the wrapper ends.
+  Viewport-capped height (`min(600px, calc(100vh - 1rem))`) keeps it from
+  dominating; ParkMap calls `invalidateSize()` on window resize (listener
+  cleaned up on unmount) so tiles stay sharp under the cap. Mobile unchanged.
+
+### 16.8 Gates (2026-08-21, all real outputs)
+| Gate | Command | Result |
+|---|---|---|
+| 1. Validator | `node scripts/validate-data.mjs` | exit 0 — parks 3,736, cities 931, OK |
+| 2. Typecheck | `npx tsc --noEmit` | exit 0 |
+| 3. Clean rebuild | `rm -rf docs .next && npm run build` | exit 0 — 5,304 static pages (3,736 park + 1,562 /rv-parks + home); sitemaps wrote (parks 3736, cities 980, amenities 589) |
+| 4. Mega-menu | grep docs/index.html | 'States' label present; all 6 region names in SSR markup; 48 unique `/rv-parks/{abbr}/` links |
+| 5. Zero-result copy | grep docs/_next/static/chunks/app/page-*.js | 'Search all parks' present (empty state renders only after a typed miss — never in initial SSR HTML by design) |
+| 6. Viewport binding | grep docs/_next/static/chunks/app/page-*.js | 'in this view' + 'clear map filter' present (chip renders only after a real pan/zoom) |
+| 7. 'All filters' | grep docs/_next/static/chunks/652.*.js | present (ParkMap is ssr:false — no map markup in SSR HTML by design) |
+| 8. Skeleton | grep docs/_next/static/css/*.css | `.skeleton-block` + `@keyframes shimmer` in compiled CSS |
+| 9. Sticky | grep docs/_next/static/css/*.css | `position:sticky; top:.5rem; z-index:30` on `.map-viewport-wrap .park-map-wrap` inside `@media (min-width:1100px)` |
+| 10. SSR integrity | python docs/index.html check | 'Top campgrounds in America (50)' present (after stripping `<!-- -->` separators); 90 unique park deep-links across the 4 tables; `park-map-loading` fallback present, zero leaflet markup in SSR |
+
+### 16.9 Deploy
+- Commit pushed to origin main via `git@github-rvparks:k00jax/rv-parks-directory.git`
+  (auto-deploy on push to main).
+- Live checks (real curl, after push):
+  - `https://americanrvparks.com/` → HTTP 200 + mega-menu markup + full top-50 table
+  - `https://americanrvparks.com/rv-parks/co/` → HTTP 200
+
+Files changed: `src/lib/regions.ts` (new), `src/components/MapViewportSection.tsx`
+(new), `src/components/SiteHeader.tsx`, `src/components/SearchBar.tsx`,
+`src/components/ParkMap.tsx`, `src/components/ParkTable.tsx`,
+`src/app/page.tsx`, `src/app/globals.css`, `BUILDLOG.md` (this section).

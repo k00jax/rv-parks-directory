@@ -1,5 +1,12 @@
 import Link from 'next/link';
+import { REGIONS } from '@/lib/regions';
 
+// Nav mega-menu "States": a <details> disclosure so the panel works with NO
+// JavaScript (the root layout renders this header on every page). Desktop
+// shows the 6 regional columns on hover OR click (CSS only); mobile collapses
+// to an in-flow stacked disclosure via media query. Every state links to its
+// live /rv-parks/{abbr}/ hub (48 states — DE, DC, RI are absent from the
+// Recreation.gov source data and are intentionally not listed).
 export default function SiteHeader() {
   return (
     <header className="site-header">
@@ -10,8 +17,32 @@ export default function SiteHeader() {
           </svg>
           American RV Parks
         </Link>
-        <nav>
+        <nav aria-label="Main">
           <Link href="/">RV Parks</Link>
+          <details className="nav-states">
+            <summary className="nav-states-btn">
+              States
+              <span className="nav-caret" aria-hidden="true">
+                ▾
+              </span>
+            </summary>
+            <div className="nav-states-panel">
+              {REGIONS.map((region) => (
+                <div className="nav-region" key={region.name}>
+                  <span className="nav-region-name">{region.name}</span>
+                  {region.states.map((s) => (
+                    <Link
+                      key={s.abbr}
+                      className="nav-region-state"
+                      href={`/rv-parks/${s.abbr.toLowerCase()}/`}
+                    >
+                      {s.name}
+                    </Link>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </details>
           <Link href="/rv-parks/amenities/">Amenities</Link>
           <Link href="/rv-parks/full-hookup/">Full Hookup</Link>
           <Link href="/rv-parks/50-amp/">50 Amp</Link>

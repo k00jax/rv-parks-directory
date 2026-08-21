@@ -1,18 +1,10 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import type { Park } from '@/lib/types';
+import MapViewportSection from '@/components/MapViewportSection';
 import ParkTable from '@/components/ParkTable';
 import SearchBar from '@/components/SearchBar';
 import { amenityHubs, cities, citiesInState, computeHomeStats, datasetMeta, parks, parksInState, stateAbbrs, stateName } from '@/lib/parks';
-
-// Leaflet map is client-only (window APIs). ssr:false keeps Leaflet out of
-// the static prerender; the loading fallback holds the 420px frame so the
-// layout doesn't shift when the map hydrates.
-const ParkMap = dynamic(() => import('@/components/ParkMap'), {
-  ssr: false,
-  loading: () => <div className="park-map park-map-loading" aria-hidden="true" />,
-});
 
 export const metadata: Metadata = {
   title: 'RV Parks & Campgrounds Directory — All United States Parks',
@@ -67,6 +59,17 @@ function amenityLabel(slug: string): string {
   return AMENITY_LABEL[slug] ?? titleCase(slug.replace(/-/g, ' '));
 }
 
+// Boat-ramp flag for the map: the RIDB amenities array never carries the
+// literal 'boat ramp' — the boat-ramp hub page matches alternate amenity
+// terms AND description text. Same matcher here so the map chip count agrees
+// with the hub page (450 parks).
+function hasBoatRamp(p: Park): boolean {
+  const ams = p.amenities ?? [];
+  if (['boat ramp', 'boat launch', 'boat landing'].some((w) => ams.includes(w))) return true;
+  const blob = ` ${p.name} ${(p.source?.description ?? '').toLowerCase()} `;
+  return ['boat ramp', 'boat launch', 'boat landing'].some((w) => blob.includes(w.toLowerCase()));
+}
+
 export default function HomePage() {
   const lastVerified = datasetMeta.lastVerified;
   // Every stat in the "Plan your next trip" band is computed from the live
@@ -79,6 +82,13 @@ export default function HomePage() {
     city: p.city,
   }));
   const searchCities = cities.map((c) => ({ name: c.name, slug: c.slug, state: c.state }));
+  // State suggestions for the search typeahead: honest per-state park counts
+  // computed at build time (48 states in the source data).
+  const searchStates = stateAbbrs.map((abbr) => ({
+    abbr,
+    name: stateName(abbr),
+    count: parksInState(abbr).length,
+  }));
   // Minimal park shape for the interactive map (keeps the client payload slim).
   const mapParks = parks.map((p) => ({
     name: p.name,
@@ -91,6 +101,7 @@ export default function HomePage() {
     nightlyPriceMin: p.nightlyPriceMin,
     nightlyPriceMax: p.nightlyPriceMax,
     amenities: p.amenities,
+    boatRamp: hasBoatRamp(p),
   }));
   // Home table = TOP Texas campgrounds ONLY (50 max). Ranked by Google rating
   // desc, reviews desc as tiebreak, then name. Parks without a rating sort
@@ -184,7 +195,7 @@ export default function HomePage() {
           <source src="/banner.mp4" type="video/mp4" />
         </video>
         <div className="hero-overlay" aria-hidden="true" />
-        <SearchBar parks={searchParks} cities={searchCities} />
+        <SearchBar parks={searchParks} cities={searchCities} states={searchStates} />
       </section>
 
       <h1>RV Parks &amp; Campgrounds Directory — United States</h1>
@@ -347,33 +358,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Interactive map (Leaflet + OpenStreetMap, client-only). The full
-          table below still server-renders every park — SEO intact; the map is
-          progressive enhancement on top. */}
-      <section>
-        <h2>Explore the map</h2>
-        <p className="muted home-intro">
-          All {parks.length} parks plotted — filter by amenities, reviews, or pricing, then
-          click a pin for ratings and nightly rates.
-        </p>
-        <ParkMap parks={mapParks} />
-        <noscript>
-          <p className="small muted home-intro" style={{ marginTop: '0.6rem' }}>
-            Enable JavaScript to explore the interactive map — the full table below lists every
-            park with the same data.
-          </p>
-        </noscript>
-      </section>
-
-      <section>
-        <h2>Top campgrounds in America ({topNationalParks.length})</h2>
-        <ParkTable parks={topNationalParks} showRank />
-        <p className="small muted" style={{ marginTop: '0.6rem' }}>
-          Ranked by a trust score that weighs Google rating AND review volume — a 4.8★ park with 500
-          reviews outranks a 5★ park with 6 reviews. Parks with fewer than 5 reviews are shown honestly
-          as “—” rather than guessed.
-        </p>
-      </section>
+      {/* Map + Top-50 table (MapViewportSection, client): the interactive map
+          (Leaflet + OpenStreetMap) with viewport binding — pan/zoom the map to
+          filter the Top-50 list to what's visible; 'Clear map filter' restores
+          the full ranking. The full top-50 table still server-renders into the
+          HTML (SEO intact); the filter applies only after hydration. The map
+          is sticky on desktop while the table scrolls past. */}
+      <MapViewportSection topParks={topNationalParks} mapParks={mapParks} totalParks={parks.length} />
 
       {growingParks.length > 0 ? (
         <section>

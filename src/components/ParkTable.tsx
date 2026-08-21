@@ -38,14 +38,23 @@ function sortValue(p: Park, key: SortKey): string | number | null {
 
 const ARROW: Record<SortDir, string> = { asc: '▲', desc: '▼' };
 
+// Shimmer skeleton: 8 placeholder rows rendered while data is loading.
+// Every table on this site currently renders instantly from SSR (data is
+// serialized into the page), so skeletons is NOT wired anywhere yet — it is
+// a reusable component for the first async table (e.g. a future API-backed
+// view) without re-inventing the markup.
+const SKELETON_ROWS = 8;
+
 export default function ParkTable({
   parks,
   showRank = false,
   showGrowing = false,
+  skeletons = false,
 }: {
   parks: Park[];
   showRank?: boolean;
   showGrowing?: boolean;
+  skeletons?: boolean;
 }) {
   const [sortKey, setSortKey] = useState<SortKey>('name');
   const [sortDir, setSortDir] = useState<SortDir>('asc');
@@ -72,6 +81,53 @@ export default function ParkTable({
     });
     return arr;
   }, [parks, sortKey, sortDir]);
+
+  if (skeletons) {
+    return (
+      <table className="data sortable" aria-hidden="true">
+        <thead>
+          <tr>
+            {showRank ? (
+              <th scope="col" className="rank-head">
+                #
+              </th>
+            ) : null}
+            {COLUMNS.map((c) => (
+              <th key={c.key} scope="col">
+                {c.label}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {Array.from({ length: SKELETON_ROWS }).map((_, i) => (
+            <tr key={i} className="park-skeleton-row">
+              {showRank ? (
+                <td className="rank-cell">
+                  <span className="skeleton-block skeleton-rank" />
+                </td>
+              ) : null}
+              <td>
+                <span className="skeleton-block skeleton-name" />
+              </td>
+              <td>
+                <span className="skeleton-block skeleton-city" />
+              </td>
+              <td>
+                <span className="skeleton-block skeleton-price" />
+              </td>
+              <td>
+                <span className="skeleton-block skeleton-rating" />
+              </td>
+              <td>
+                <span className="skeleton-block skeleton-sites" />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  }
 
   if (parks.length === 0) {
     return <p className="muted">No parks match this list yet.</p>;
