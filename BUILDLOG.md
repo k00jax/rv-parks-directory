@@ -762,8 +762,8 @@ section), `src/app/globals.css` (placeholder → map/marker/popup styles), `pack
 | 8. Table honesty | grep docs/index.html | 'national ratings coming soon' present; 'Most-featured campgrounds (10)' present |
 
 ### 15.5 Deploy
-- Commit `<<COMMIT>>` pushed to origin main via
-  `git@github-rvparks:k00jax/rv-parks-directory.git`.
+- Commits `87858a6` (feature) + `229c43f` (rating-note fix after the TX-enrichment
+  rebase) pushed to origin main via `git@github-rvparks:k00jax/rv-parks-directory.git`.
 - Live checks (real curl, after push):
   - `https://americanrvparks.com/` → `<<LIVE_HOME>>`
   - `https://americanrvparks.com/rv-parks/ca/` → `<<LIVE_CA>>`
