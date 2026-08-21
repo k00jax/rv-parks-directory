@@ -5,6 +5,15 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import ParkTable from '@/components/ParkTable';
 import { amenityHubs, cities, citiesInState, getAmenityHub, getParksByCity, parks, parksInState, stateAbbrs, stateName } from '@/lib/parks';
 
+// Source city names are ALL-CAPS (e.g. "COLDSPRING"); display as Title Case.
+function titleCase(name: string): string {
+  return name
+    .toLowerCase()
+    .split(/(\s+|-)/)
+    .map((w) => (/^\s*$/.test(w) || w === '-' ? w : w.charAt(0).toUpperCase() + w.slice(1)))
+    .join('');
+}
+
 /**
  * Family B (geo hubs) + Family C (amenity hubs) share the /rv-parks/ tree.
  * Multi-state (2026-08-21): the state segment is the lowercase abbrev (tx,
@@ -194,15 +203,23 @@ function StateHubView({ state }: { state: string }) {
 
       <section>
         <h2>Browse by city</h2>
-        <div className="card-grid">
-          {stCities.map((c) => (
-            <div className="card" key={c.slug}>
-              <Link href={`/rv-parks/${state}/${c.slug}/`}>
-                RV Parks in {c.name}, {state.toUpperCase()}
+        <p className="muted">
+          Cities with the most campgrounds first — the number is how many RV parks are in that city.
+        </p>
+        <div className="chip-row">
+          {[...stCities]
+            .sort((a, b) => b.parkIds.length - a.parkIds.length || a.name.localeCompare(b.name))
+            .map((c) => (
+              <Link
+                key={c.slug}
+                className="chip"
+                href={`/rv-parks/${state}/${c.slug}/`}
+                aria-label={`RV parks in ${c.name}, ${state.toUpperCase()} — ${c.parkIds.length} park${c.parkIds.length === 1 ? '' : 's'}`}
+              >
+                {titleCase(c.name)}, {state.toUpperCase()}
+                <span className="chip-count">{c.parkIds.length}</span>
               </Link>
-              <div className="muted">{c.parkIds.length} parks</div>
-            </div>
-          ))}
+            ))}
         </div>
       </section>
 
