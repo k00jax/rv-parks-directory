@@ -848,6 +848,36 @@ table.data.sortable thead th[aria-sort='descending'] {
   gap: 0.85rem;
   margin-top: 0.9rem;
 }
+/* Fun-fact cards: bigger, warmer storytelling blocks under 'Plan your next
+   trip'. White card + tinted top accent, Fredoka headline. */
+.fun-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.85rem;
+  margin-top: 0.9rem;
+}
+.fun-fact {
+  background: var(--white);
+  border: 3px solid var(--asphalt);
+  border-radius: 16px;
+  box-shadow: 4px 4px 0 rgba(10, 25, 47, 0.5);
+  padding: 0.95rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.fun-fact-value {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  color: var(--navy);
+}
+.fun-fact-body {
+  color: var(--asphalt);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
 .stat-card {
   background: var(--white);
   border: 3px solid var(--asphalt);
