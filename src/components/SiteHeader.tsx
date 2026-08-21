@@ -46,6 +46,9 @@ export default function SiteHeader() {
           <Link href="/rv-parks/amenities/">Amenities</Link>
           <Link href="/rv-parks/full-hookup/">Full Hookup</Link>
           <Link href="/rv-parks/50-amp/">50 Amp</Link>
+          <Link href="/add-your-park/" className="nav-owner">
+            List your park
+          </Link>
         </nav>
       </div>
     </header>

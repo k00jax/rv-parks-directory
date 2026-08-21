@@ -223,6 +223,18 @@ header.site-header {
   text-decoration: none;
   transform: translateY(-2px);
 }
+/* Owner funnel CTA — orange pill so it reads as the action item in the nav. */
+.site-header nav a.nav-owner {
+  background: linear-gradient(135deg, var(--sun) 0%, var(--orange) 100%);
+  color: var(--white);
+  border-color: var(--asphalt);
+  box-shadow: 3px 3px 0 var(--asphalt);
+  font-weight: 800;
+}
+.site-header nav a.nav-owner:hover {
+  filter: brightness(1.08);
+  color: var(--white);
+}
 
 /* ---------- Nav mega-menu "States" (Browse by State) ---------- */
 /* <details> disclosure: zero-JS. Desktop = hover OR click opens a 6-region
