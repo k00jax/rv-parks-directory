@@ -467,3 +467,81 @@ look-alike boxes, table buried below fold.
 | 12. Deploy | git push origin main | GitHub Actions — verify live after push |
 
 Files changed: `src/app/page.tsx`, `src/app/globals.css`, `BUILDLOG.md` (this section).
+
+## 10. THEME OVERHAUL 2026-08-20 — VIBRANT VECTOR-ART CARTOON (PUSHED)
+
+Redesign inspired by the new animated hero banner (public/banner.mp4, 1280x720 10s loop,
+2.6MB + banner-poster.jpg). Replaces the cream/sage light nature theme. Static-export
+safe (Next.js 14, output:export), no server deps, all 82 park / 40 city / 25 amenity
+routes preserved.
+
+### 10.1 Global palette (`src/app/globals.css` `:root` + body)
+- Body background = Deep Navy `#0A192F` → Bright Cyan `#00B4D8` → Soft Light Blue
+  `#90E0EF` vertical gradient (fixed attach). Brand accent = Orange-Red `#FF4D00` +
+  Warm Sun Yellow `#FFD166` (CTA gradient, icons, hover chips/links). Nature accents =
+  Grass Green `#06D6A0` + Deep Pine `#2D6A4F`. Neutrals = White cards/surfaces +
+  Dark Asphalt `#2B2D42` (footer bg, dark text, thick outlines). Glow = Electric Blue
+  `#00F5FF` + Neon Orange `#FF7B00` (light-trail, warn badge, tints).
+
+### 10.2 Typography
+- Headings = Fredoka (rounded bold sans, Google Fonts link in layout head, fallback
+  Paytone One / Trebuchet MS) with thick dark-blue stroke via `text-shadow: 2px 2px 0
+  #0A192F, -1px -1px 0 #0A192F`. Body = Nunito (Google Fonts), Dark Asphalt on light /
+  White on dark.
+
+### 10.3 Shapes and motion
+- 16px radius interactive / 50px pills; 3px solid #2B2D42 outlines; offset block
+  shadows (`4px 4px 0 #0A192F` / table `6px 6px`). CTA buttons = Sun Yellow→Orange-Red
+  gradient, white bold uppercase, hover = 2px 2px shadow + translateY(2px) + brightness.
+- Icons = filled SVG with thick outlines: map pin (header brand, search results, map
+  placeholder), magnifier (search button), amenity tiles via emoji.
+- Animations: `@keyframes bounce` (amenity icon on tile hover), `@keyframes light-trail`
+  (animated cyan/neon section divider), springy `cubic-bezier(0.175,0.885,0.32,1.275)`
+  transitions everywhere; hover = card/tile/chip `scale(1.03)` + lift.
+
+### 10.4 Hero + search (homepage, `src/app/page.tsx` + new `SearchBar.tsx`)
+- Full-width `<video>` background (object-fit cover) in `.hero`, autoplay loop muted
+  playsInline preload=auto + poster attr (muted REQUIRED for autoplay — Kyle's muted-by-
+  default). Subtle dark gradient `.hero-overlay` at bottom for search legibility. Hero
+  text removed (banner carries the "AMERICAN RV PARKS" logo); SEO h1 kept in content.
+- "Find Your Perfect RV Stay" search bar over the bottom third: pill input + Orange-Red
+  search button w/ magnifier. Client-side filter over 82 parks + 40 cities; dropdown
+  groups "Cities" + "RV Parks"; click/Enter navigates to `/parks/tx/{slug}/` or
+  `/rv-parks/texas/{city}/`. Static-export friendly (no server deps).
+
+### 10.5 Listings
+- **Decision: kept the sortable table (ParkTable) and restyled it** into the vector
+  look rather than replacing with cards — the gate requires "82 table rows still
+  present", sort headers stay functional, and the table keeps 82 server-rendered rows
+  for SEO. New look: white surface, 3px asphalt border, 16px radius, offset shadow,
+  cyan gradient header, yellow sort arrows, striped rows.
+- City chips: restyled w/ 3px thick borders + offset shadows, hover lift, cyan/orange
+  count badges (38 chips preserved). Amenity tiles: colorful vector tints (green/blue/
+  yellow/orange), thick borders, offset shadows, bouncing icons (13 tiles preserved).
+
+### 10.6 Other
+- Footer → dark asphalt `#2B2D42` w/ sun-yellow top accent, light-blue links.
+- Map view placeholder note (styled, no map API wired — Phase 1).
+- SiteHeader brand → "American RV Parks" + map-pin SVG logo; nav links become yellow
+  pills w/ offset shadow on hover.
+
+### 10.7 Gates (2026-08-20, all real outputs)
+| Gate | Command | Result |
+|---|---|---|
+| 1. Typecheck | `npx tsc --noEmit` | exit 0 |
+| 2. Clean rebuild | `rm -rf docs .next && npm run build` | exit 0 — 150 static pages generated (148 index.html, same as prior build) |
+| 3. Validator | `node scripts/validate-data.mjs` | exit 0 — parks 82, cities 38, OK |
+| 4. Content verify | `python3 scripts/verify-content.py .` | PASS — 10/10 checks |
+| 5. Hero video (homepage) | `grep -o '<video' docs/index.html` | 1 (autoplay loop muted playsInline poster) |
+| 6. Banner asset | `grep -o 'banner.mp4' docs/index.html` | 2 (source + reference) |
+| 7. Search input/button | `grep 'type="search"' / 'class="search-btn"' docs/index.html` | 1 / 1 |
+| 8. New palette hex | `grep -oiE '#0a192f|#ff4d00' docs/index.html` | 1 (inline CTA gradient on search button; full palette in CSS bundle) |
+| 9. City chips | `grep -o 'class="chip"' docs/index.html` | 38 |
+| 10. Amenity tiles | `grep -o 'class="amenity-tile' docs/index.html` | 13 |
+| 11. Table rows | `grep -o '<tr' docs/index.html` | 83 (82 parks + 1 header) |
+| 12. Deploy | git push origin main (git@github-rvparks:) | GitHub Actions — verify live URL after push |
+
+Files changed: `src/app/globals.css` (theme rewrite), `src/app/layout.tsx` (fonts),
+`src/app/page.tsx` (hero video + map placeholder + light-trail), `src/components/
+SearchBar.tsx` (new client search), `src/components/SiteHeader.tsx` (brand + logo),
+`BUILDLOG.md` (this section).

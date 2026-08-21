@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ParkTable from '@/components/ParkTable';
+import SearchBar from '@/components/SearchBar';
 import { amenityHubs, cities, datasetMeta, parks } from '@/lib/parks';
 
 export const metadata: Metadata = {
@@ -58,13 +59,48 @@ function amenityLabel(slug: string): string {
 
 export default function HomePage() {
   const lastVerified = datasetMeta.lastVerified;
+  const searchParks = parks.map((p) => ({
+    name: p.name,
+    slug: p.slug,
+    city: p.city,
+  }));
+  const searchCities = cities.map((c) => ({ name: c.name, slug: c.slug }));
   return (
     <div>
+      {/* Hero: animated banner video (autoplay muted loop) + search bar */}
+      <section className="hero" aria-label="American RV Parks promotional banner">
+        <video
+          className="hero-video"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          poster="/banner-poster.jpg"
+          aria-hidden="true"
+        >
+          <source src="/banner.mp4" type="video/mp4" />
+        </video>
+        <div className="hero-overlay" aria-hidden="true" />
+        <SearchBar parks={searchParks} cities={searchCities} />
+      </section>
+
       <h1>RV Parks &amp; Campgrounds Directory — Texas</h1>
       <p className="muted">
         Every campground listed on this site, driven by public Recreation.gov (RIDB) facility data.
         {parks.length} parks · {cities.length} cities · verified {lastVerified}.
       </p>
+
+      {/* Map view placeholder — no map API wired yet (Phase 1). */}
+      <div className="map-placeholder">
+        <svg viewBox="0 0 24 24" className="map-pin-big" aria-hidden="true">
+          <path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
+        </svg>
+        Interactive map view is coming soon — meanwhile, use the search bar above or browse
+        by city, amenity, or the full table below.
+      </div>
+
+      <div className="light-trail" aria-hidden="true" />
 
       <section>
         <h2>Explore by city</h2>
