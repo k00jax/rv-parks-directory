@@ -702,8 +702,11 @@ section), `src/app/globals.css` (placeholder → map/marker/popup styles), `pack
   - **37** campgrounds in one city — Moab, UT (largest hub by parkIds; sub "Prineville,
     OR 35 · Juneau, AK 24" — the 24-count tie is broken by name, deterministic)
   - **2,614** parks list "water" — the #1 amenity (amenity-vocabulary counts)
-- Honest coverage footnote under the grid: 2,960 parks list amenities · 200 publish
-  nightly prices · 0 have Google ratings yet (national rating enrichment pending).
+- Honest coverage footnote under the grid: 2,960 parks list amenities · 201 publish nightly prices ·
+  60 of 3,736 have Google ratings (all Texas) — national enrichment pending.
+- Rebase note: mid-build, remote main advanced with `9aee642` (restore TX Google ratings / TPWD prices /
+  weather-AQI enrichment that the fresh 50-state pull had nulled). Rebased onto it and recomputed every
+  stat against the restored dataset — the band numbers above are from the final committed data.
 - Anti-fabrication note: the brief's suggested top-state numbers (CA 391 / OR 241 /
   AK 217) did NOT match the dataset. Real computed counts: CA 664 / OR 325 / ID 281.
   The band shows the real numbers.
@@ -732,13 +735,15 @@ section), `src/app/globals.css` (placeholder → map/marker/popup styles), `pack
   group creation) completes; `disposed` flag guards StrictMode double-mount.
 
 ### 15.3 Task 3 — top-table heading honesty (src/app/page.tsx)
-- Verified the dataset has ZERO Google ratings (rating non-null = 0 of 3,736; TX
-  slice 0 of 73). The old "Top campgrounds in Texas (N)" + "Ranked by Google rating"
-  overclaimed a ranking that cannot exist yet.
-- Heading is now "Top campgrounds in Texas (50) — national ratings coming soon", and
-  the sub-line states plainly: 0 of 3,736 parks rated, table is alphabetical for
-  now, re-ranks when national enrichment lands. (Rows genuinely are alphabetical:
-  rating desc → reviewCount desc → name asc, all ties.)
+- Original dataset (commit 5882465) had ZERO Google ratings (rating non-null = 0 of 3,736; TX slice
+  0 of 73), so the old "Top campgrounds in Texas (N)" + "Ranked by Google rating" overclaimed a ranking
+  that could not exist.
+- Mid-build rebase onto `9aee642` restored ratings for 60 TX parks (e.g. Chisos Basin 4.8★/634 reviews,
+  Ratcliff Lake 4.8★/183) — so the final table IS rating-ranked for Texas, and the heading keeps the
+  honest scope marker: "Top campgrounds in Texas (50) — national ratings coming soon" (the other 47
+  states are still 0-rated until fetch-google-ratings.py runs against the US dataset). Sub-line: "60 of
+  3,736 parks have ratings today (all Texas); ratings for the other 47 states land with national
+  enrichment."
 - Added the optional honest national table: "Most-featured campgrounds (10)" —
   ranked by amenities listed (siteCount tiebreak, then name), no ratings involved.
   Top rows: ORTONA SOUTH (FL, 12 amenities), CEDRON CREEK (TX, 10), STUART

@@ -213,8 +213,8 @@ export default function HomePage() {
         </div>
         <p className="small muted stat-footnote">
           Coverage from the live dataset: {stats.withAmenities.toLocaleString()} parks list amenities ·{' '}
-          {stats.withPrice} publish nightly prices · {stats.withRating} parks have Google ratings yet —
-          national rating enrichment is pending.
+          {stats.withPrice} publish nightly prices · {stats.withRating} of {stats.totalParks.toLocaleString()}{' '}
+          parks have Google ratings — national rating enrichment is pending.
         </p>
       </section>
 
@@ -328,10 +328,9 @@ export default function HomePage() {
         <h2>Top campgrounds in Texas ({topTxParks.length}) — national ratings coming soon</h2>
         <ParkTable parks={topTxParks} showRank />
         <p className="small muted" style={{ marginTop: '0.6rem' }}>
-          The US dataset has no Google ratings yet ({stats.withRating} of {stats.totalParks} parks rated),
-          so this Texas example table is listed alphabetically for now — it re-ranks by rating once
-          national enrichment lands. Browse every Texas campground in the{' '}
-          <Link href="/rv-parks/tx/">Texas hub</Link>.
+          Ranked by Google rating — {stats.withRating} of {stats.totalParks.toLocaleString()} parks have
+          ratings today (all Texas); ratings for the other 47 states land with national enrichment. Browse
+          every Texas campground in the <Link href="/rv-parks/tx/">Texas hub</Link>.
         </p>
       </section>
 
