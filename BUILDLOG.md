@@ -665,11 +665,20 @@ Interactive map = Leaflet + OpenStreetMap (no API key, static-export friendly).
 | 10. Content verify | `python3 scripts/verify-content.py .` | PASS — all checks (no regression from reorder) |
 
 ### 12.4 Deploy
-- Commit + push origin main via `git@github-rvparks:k00jax/rv-parks-directory.git`.
+- Commit `ca5f877` pushed to origin main via `git@github-rvparks:k00jax/rv-parks-directory.git`.
 - GitHub Actions (`.github/workflows/deploy.yml`): npm ci → npm run build (SITE_URL,
-  SITE_BASEPATH env) → upload `./docs` → deploy-pages.
-- Live checks after Actions completes: `curl -s -o /dev/null -w '%{http_code}'`
-  https://americanrvparks.com/ → 200 and one park page → 200.
+  SITE_BASEPATH env) → upload `./docs` → deploy-pages. New version live ~60s after push.
+- Live checks (2026-08-20, real curl + fetched chunks):
+  - `https://americanrvparks.com/` → HTTP 200; section order city=3564 < map=12002 <
+    table=12477 (same indices as local build); SSR map frame present.
+  - `https://americanrvparks.com/parks/tx/double-lake-recreation-area/` → 200
+  - `https://americanrvparks.com/parks/tx/rock-quarry-group-campground/` → 200
+  - Leaflet CSS chunk served 200 (10.6 kB); ParkMap page chunk
+    `page-653cc1106520225c.js` served and contains divIcon + OSM tile URL + OSM
+    attribution + arvp-pin; Leaflet lib chunk `d0deef33-08e72c68cc07d6b8.js` served.
+  - Default marker-icon asset served 200 (no 404s; divIcon pins used exclusively).
+  - Note: cloud browser provider unavailable on this box (no CDP endpoint), so the
+    click-level popup test was replaced by the chunk-content verification above.
 
 Files changed: `src/components/ParkMap.tsx` (new), `src/app/page.tsx` (reorder + map
 section), `src/app/globals.css` (placeholder → map/marker/popup styles), `package.json`
