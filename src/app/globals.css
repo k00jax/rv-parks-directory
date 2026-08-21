@@ -114,9 +114,11 @@ a:hover { text-decoration: underline; }
 }
 /* Table explainer lines under tables: these sit on the gradient (the table
    card is separate), so they need light-on-dark treatment to stay readable.
-   Two-class selector (.muted.table-explain) beats the single .muted rule so
-   white always wins even when both classes are present. */
-.muted.table-explain {
+   Matches BOTH class shapes — bare .table-explain AND .muted.table-explain
+   (some elements carry muted, some don't). The two-class selector beats the
+   single .muted rule; the bare rule covers elements without muted. */
+.muted.table-explain,
+.table-explain {
   color: var(--white);
   font-weight: 600;
   margin-top: 0.6rem;
