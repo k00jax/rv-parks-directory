@@ -111,7 +111,7 @@ export default function HomePage() {
         {parks.length} verified campgrounds across Texas, from public Recreation.gov data —
         sortable, with ratings, weather, and live prices where published.
       </p>
-      <p className="muted">
+      <p className="muted" style={{ color: '#fff', fontStyle: 'italic' }}>
         Every campground listed on this site, driven by public Recreation.gov (RIDB) facility data.
         {parks.length} parks · {cities.length} cities · verified {lastVerified}.
       </p>
