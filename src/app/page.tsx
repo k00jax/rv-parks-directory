@@ -357,26 +357,53 @@ export default function HomePage() {
             All Amenities →
           </Link>
           <div className="amenity-grid">
-            {amenityHubs.map((a, i) => {
-              const count = parks.filter(a.match).length;
-              const label = amenityLabel(a.slug);
-              return (
-                <Link
-                  key={a.slug}
-                  className={`amenity-tile ${AMENITY_TINTS[i % AMENITY_TINTS.length]}`}
-                  href={`/rv-parks/${a.slug}/`}
-                  aria-label={`${label} — ${count} park${count === 1 ? '' : 's'}`}
-                >
-                  <span className="amenity-icon" aria-hidden="true">
-                    {AMENITY_EMOJI[a.slug] ?? '⛺'}
-                  </span>
-                  <span className="amenity-label">{label}</span>
-                  <span className="amenity-count">
-                    {count} park{count === 1 ? '' : 's'}
-                  </span>
-                </Link>
-              );
-            })}
+            {amenityHubs
+              .filter((a) => !['50-amp', '30-amp', '20-amp'].includes(a.slug))
+              .map((a, i) => {
+                const count = parks.filter(a.match).length;
+                const label = amenityLabel(a.slug);
+                return (
+                  <Link
+                    key={a.slug}
+                    className={`amenity-tile ${AMENITY_TINTS[i % AMENITY_TINTS.length]}`}
+                    href={`/rv-parks/${a.slug}/`}
+                    aria-label={`${label} — ${count} park${count === 1 ? '' : 's'}`}
+                  >
+                    <span className="amenity-icon" aria-hidden="true">
+                      {AMENITY_EMOJI[a.slug] ?? '⛺'}
+                    </span>
+                    <span className="amenity-label">{label}</span>
+                    <span className="amenity-count">
+                      {count} park{count === 1 ? '' : 's'}
+                    </span>
+                  </Link>
+                );
+              })}
+            {/* One combined Amp card — 50/30/20 as three options inside. */}
+            <div className="amenity-tile amenity-amp-card">
+              <span className="amenity-icon" aria-hidden="true">
+                ⚡
+              </span>
+              <span className="amenity-label">Amp Service</span>
+              <div className="amp-options">
+                {(['50-amp', '30-amp', '20-amp'] as const).map((slug) => {
+                  const hub = amenityHubs.find((h) => h.slug === slug);
+                  if (!hub) return null;
+                  const count = parks.filter(hub.match).length;
+                  return (
+                    <Link
+                      key={slug}
+                      className="amp-option"
+                      href={`/rv-parks/${slug}/`}
+                      aria-label={`${slug.replace('-amp', '')} amp — ${count} park${count === 1 ? '' : 's'}`}
+                    >
+                      <span className="amp-option-bolt">{slug.replace('-amp', '')}</span>
+                      <span className="amp-option-count">{count}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -839,6 +839,49 @@ table.data.sortable thead th[aria-sort='descending'] {
 .amenity-tile.tint-earth { background: #ffe8d6; border-color: var(--neon); }
 .amenity-tile.tint-olive { background: #f0f7d4; border-color: #8aa02d; }
 
+/* Amp Service card: ONE tile that holds 50/30/20 as three clickable options. */
+.amenity-amp-card {
+  gap: 0.25rem;
+}
+.amenity-amp-card .amenity-label {
+  margin-bottom: 0.1rem;
+}
+.amp-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: 100%;
+}
+.amp-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  padding: 0.28rem 0.55rem;
+  border: 2.5px solid var(--asphalt);
+  border-radius: 10px;
+  background: #fff4dc;
+  font-weight: 800;
+  font-size: 0.78rem;
+  color: var(--asphalt);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.2s ease, background 0.2s ease;
+}
+.amp-option:hover {
+  transform: translateY(-1px);
+  box-shadow: 2px 2px 0 var(--asphalt);
+  background: var(--sun);
+  text-decoration: none;
+}
+.amp-option-bolt {
+  font-family: 'Fredoka', sans-serif;
+}
+.amp-option-count {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
 /* Responsive amenity grid: 4 per row on tablets, 2 per row on phones */
 @media (max-width: 1000px) {
   .amenity-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
