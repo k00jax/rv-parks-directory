@@ -795,11 +795,13 @@ table.data.sortable thead th[aria-sort='descending'] {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 0.5rem;
+  align-items: stretch;
 }
 .amenity-tile {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  height: 100%;
   padding: 0.55rem 0.6rem;
   border: 3px solid var(--asphalt);
   border-radius: 12px;
@@ -846,18 +848,24 @@ table.data.sortable thead th[aria-sort='descending'] {
 .amenity-amp-card .amenity-label {
   margin-bottom: 0.1rem;
 }
+.amenity-amp-card .amp-options {
+  flex: 1;
+}
 .amp-options {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 0.3rem;
   width: 100%;
 }
 .amp-option {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.4rem;
-  padding: 0.28rem 0.55rem;
+  justify-content: center;
+  gap: 0.1rem;
+  flex: 1;
+  min-width: 0;
+  padding: 0.28rem 0.2rem;
   border: 2.5px solid var(--asphalt);
   border-radius: 10px;
   background: #fff4dc;
@@ -875,9 +883,10 @@ table.data.sortable thead th[aria-sort='descending'] {
 }
 .amp-option-bolt {
   font-family: 'Fredoka', sans-serif;
+  font-size: 0.9rem;
 }
 .amp-option-count {
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   font-weight: 700;
   color: var(--muted);
 }
