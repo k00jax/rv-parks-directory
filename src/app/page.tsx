@@ -25,6 +25,7 @@ function titleCase(name: string): string {
 // Nature-theme emoji per amenity hub slug (sensible, not literal).
 const AMENITY_EMOJI: Record<string, string> = {
   'boat-ramp': '⛵',
+  waterfront: '🌊',
   showers: '🚿',
   'water-hookup': '💧',
   'dump-station': '🗑️',
@@ -41,6 +42,7 @@ const AMENITY_EMOJI: Record<string, string> = {
 // Short tile label per hub slug (full title is long-form SEO copy).
 const AMENITY_LABEL: Record<string, string> = {
   'boat-ramp': 'Boat Ramp',
+  waterfront: 'Waterfront',
   showers: 'Showers',
   'water-hookup': 'Water Hookup',
   'dump-station': 'Dump Station',
@@ -78,9 +80,7 @@ export default function HomePage() {
   // datasets at build time — never hardcoded, never estimated.
   const stats = computeHomeStats();
   // Fun-fact numbers — all computed from the live dataset (never fabricated).
-  const waterParks = parks.filter((p) =>
-    (p.amenities ?? []).some((a) => a === 'water' || a === 'water hookup')
-  ).length;
+  const waterfrontCount = parks.filter((p) => amenityHubs.find((h) => h.slug === 'waterfront')!.match(p)).length;
   const moabCount = parks.filter((p) => (p.city ?? '').trim().toUpperCase() === 'MOAB').length;
   const californiaCount = parks.filter((p) => p.state === 'CA').length;
   const searchParks = parks.map((p) => ({
@@ -212,34 +212,31 @@ export default function HomePage() {
         </p>
         <div className="fun-facts-grid">
           <div className="fun-fact">
-            <div className="fun-fact-value">🌊 {waterParks.toLocaleString()} Waterfront Getaways</div>
+            <div className="fun-fact-value">🌊 {waterfrontCount.toLocaleString()} Waterfront Parks</div>
             <div className="fun-fact-body">
-              Water is the #1 amenity across our entire directory. Pack the floaties, fishing poles,
-              and kayaks — your perfect lakeside or riverfront site is waiting.
+              From Great Lakes to coastal bays, find your lake or river spot. Pack your kayak and be
+              on the water this weekend.
             </div>
           </div>
           <div className="fun-fact">
             <div className="fun-fact-value">🦕 {moabCount} Parks in a Single City (Moab, UT)</div>
             <div className="fun-fact-body">
-              Looking for the ultimate family basecamp? Moab tops the charts with {moabCount}{' '}
-              campgrounds, putting you minutes away from red rock arches, off-roading, and real
-              dinosaur tracks.
+              Basecamp for red rock hikes and off-roading adventures. Families ride bikes around
+              dinosaur tracks while you set up.
             </div>
           </div>
           <div className="fun-fact">
             <div className="fun-fact-value">🚐 {californiaCount.toLocaleString()} California Dream Spots</div>
             <div className="fun-fact-body">
-              California leads the nation for public RV parks. From parking under giant sequoias to
-              sleeping near the Pacific ocean, mapping a massive West Coast road trip has never been
-              easier.
+              Public parks from the Sierra Nevada to the Pacific Coast. Highway 1 road trip fuel with
+              real spots to park.
             </div>
           </div>
           <div className="fun-fact">
             <div className="fun-fact-value">🌲 {parks.length.toLocaleString()} Backyards to Choose From</div>
             <div className="fun-fact-body">
-              Ditch the neighborhood for the weekend. We track thousands of verified public parks
-              across {stats.statesWithParks} states, giving your kids endless room to roam, bike, and
-              build the perfect s'more.
+              Verified public campgrounds across {stats.statesWithParks} states. Compare ratings, check
+              weather, and book what fits your schedule.
             </div>
           </div>
         </div>

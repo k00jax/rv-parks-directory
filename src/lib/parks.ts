@@ -127,6 +127,13 @@ export const amenityHubs: AmenityHub[] = [
     match: (p) => hasAmenity(p, 'boat ramp', 'boat launch', 'boat landing') || descHas(p, 'boat ramp', 'boat launch', 'boat landing'),
   },
   {
+    slug: 'waterfront',
+    title: 'RV Parks on the Water in the United States',
+    description:
+      'Lakeside and riverside RV parks and campgrounds across the United States, from Recreation.gov facility descriptions. Park near the water — fishing, kayaking, and sunset views included.',
+    match: (p) => descHas(p, 'waterfront', 'lakeside', 'riverside', 'on the water', "water's edge", 'shore of', 'shoreline', 'by the lake', 'beside the lake', 'along the river', 'on the lake', 'on the river', 'on the reservoir', 'waterfront sites', 'waterfront campsites'),
+  },
+  {
     slug: 'showers',
     title: 'RV Parks with Showers in the United States',
     description:
